@@ -1,0 +1,131 @@
+{
+  "@@locale": "de",
+  "warehousesTitle": "Lager",
+  "boardTitle": "Platte",
+  "offcutTitle": "Verschnitt",
+  "historyLabel": "Verlauf",
+  "noEntries": "Keine Einträge.",
+  "cancel": "Abbrechen",
+  "save": "Speichern",
+  "archive": "Archivieren",
+  "move": "Verschieben",
+  "moveToLabel": "Verschieben nach:",
+  "cut": "Zuschneiden",
+  "cutOffcut": "Verschnitt zuschneiden",
+  "retry": "Erneut versuchen",
+  "searchManually": "Manuell suchen",
+  "scanAgain": "Erneut scannen",
+  "scanQrCode": "QR-Code scannen",
+  "viewSourceBoard": "Ausgangsplatte ansehen",
+  "addBoard": "Platte hinzufügen",
+  "addRack": "Regal hinzufügen",
+  "addSlot": "Fach hinzufügen",
+  "newBoardTitle": "Neue Platte",
+  "newRackTitle": "Neues Regal",
+  "newSlotTitle": "Neues Fach",
+  "deleteSlotQuestion": "Fach löschen?",
+  "archiveBoardQuestion": "Platte archivieren?",
+  "archiveOffcutQuestion": "Verschnitt archivieren?",
+  "historyStaysVisible": "Der Verlauf (Ledger) bleibt sichtbar.",
+  "deleteSlotWarning": "Dieser Vorgang kann nicht widerrufen werden. Platten und Verschnittstücke in diesem Fach werden nicht gelöscht — sie verlieren nur ihren zugewiesenen Standort (slot_id verweist dann auf keinen bestehenden Datensatz — ein späterer Aufräumschritt, falls nötig).",
+  "fillDimensionsCorrectly": "Bitte die Maße korrekt ausfüllen.",
+  "noDecorsInCatalog": "Keine Dekore im Katalog — mindestens eines hinzufügen.",
+  "noOtherSlotInRack": "Kein weiteres Fach in diesem Regal.",
+  "noWarehousesYet": "Noch keine Lager. Fügen Sie das erste mit der +-Taste hinzu.",
+  "nameLabel": "Name",
+  "nameHintSlot": "Name (z. B. A1)",
+  "nameHintRack": "Regalname (z. B. A, LAGER-1)",
+  "addressOptional": "Adresse (optional)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Länge (mm)",
+  "widthMm": "Breite (mm)",
+  "thicknessMm": "Dicke (mm)",
+  "capacityLabel": "Kapazität",
+  "capacityPcsLabel": "Kapazität (Stk.)",
+  "errorPrefix": "Fehler: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Regal {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Regale — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} Stk.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "vorhanden",
+  "statusAvailable": "verfügbar",
+  "statusArchived": "archiviert",
+  "newWarehouseTitle": "Neues Lager",
+  "noItemsInSlot": "Keine Platten oder Verschnittstücke in diesem Fach.",
+  "noRacksYet": "Keine Regale in diesem Lager.\nFügen Sie das erste hinzu, um mit der Organisation zu beginnen.",
+  "noSlotsYet": "Keine Fächer in diesem Regal.\nFügen Sie das erste hinzu, um Platten und Verschnitt zuzuweisen.",
+  "boardsSectionLabel": "PLATTEN",
+  "offcutsSectionLabel": "VERSCHNITT",
+  "qrCodeNotFound": "Dieser Code existiert nicht oder wurde entfernt.",
+  "delete": "Löschen",
+  "deleteSlotButton": "Fach löschen",
+  "cutFromBoardNote": "Von Platte ({decor}) — bleibt im selben Fach.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Etiketten drucken",
+  "eventCreated": "Erstellt",
+  "eventMoved": "Verschoben",
+  "eventArchived": "Archiviert",
+  "eventCut": "Zugeschnitten",
+  "eventQrRegenerated": "QR neu generiert",
+  "ownerDashboardTitle": "Eigentümer-Dashboard",
+  "totalBoardsLabel": "Platten",
+  "totalOffcutsLabel": "Verschnitt",
+  "overallFillRateLabel": "Auslastung",
+  "totalRacksSlotsLabel": "Regale / Fächer",
+  "staleItemsSectionTitle": "Liegengebliebenes Material",
+  "staleItemsSectionSubtitle": "Über ein Jahr ungenutzt",
+  "noStaleItems": "Kein liegengebliebenes Material.",
+  "locationUnknown": "Standort unbekannt",
+  "daysAgo": "vor {days} Tagen",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

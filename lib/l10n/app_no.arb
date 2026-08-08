@@ -1,0 +1,131 @@
+{
+  "@@locale": "no",
+  "warehousesTitle": "Lagre",
+  "boardTitle": "Plate",
+  "offcutTitle": "Kappstykke",
+  "historyLabel": "Historikk",
+  "noEntries": "Ingen oppføringer.",
+  "cancel": "Avbryt",
+  "save": "Lagre",
+  "archive": "Arkiver",
+  "move": "Flytt",
+  "moveToLabel": "Flytt til:",
+  "cut": "Kapp",
+  "cutOffcut": "Kapp et stykke",
+  "retry": "Prøv igjen",
+  "searchManually": "Søk manuelt",
+  "scanAgain": "Skann igjen",
+  "scanQrCode": "Skann QR-kode",
+  "viewSourceBoard": "Vis opprinnelig plate",
+  "addBoard": "Legg til plate",
+  "addRack": "Legg til reol",
+  "addSlot": "Legg til hylle",
+  "newBoardTitle": "Ny plate",
+  "newRackTitle": "Ny reol",
+  "newSlotTitle": "Ny hylle",
+  "deleteSlotQuestion": "Slette denne hyllen?",
+  "archiveBoardQuestion": "Arkivere denne platen?",
+  "archiveOffcutQuestion": "Arkivere dette kappstykket?",
+  "historyStaysVisible": "Historikken (Ledger) forblir synlig.",
+  "deleteSlotWarning": "Denne handlingen kan ikke angres. Plater og kappstykker tilknyttet denne hyllen blir ikke slettet — de mister bare sin tilknyttede plassering (slot_id vil peke på en post som ikke finnes — et fremtidig ryddesteg om nødvendig).",
+  "fillDimensionsCorrectly": "Fyll inn målene riktig.",
+  "noDecorsInCatalog": "Ingen dekorer i katalogen — legg til minst én.",
+  "noOtherSlotInRack": "Ingen annen hylle i denne reolen.",
+  "noWarehousesYet": "Ingen lagre ennå. Legg til det første med +-knappen.",
+  "nameLabel": "Navn",
+  "nameHintSlot": "Navn (f.eks. A1)",
+  "nameHintRack": "Reolnavn (f.eks. A, LAGER-1)",
+  "addressOptional": "Adresse (valgfritt)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Lengde (mm)",
+  "widthMm": "Bredde (mm)",
+  "thicknessMm": "Tykkelse (mm)",
+  "capacityLabel": "Kapasitet",
+  "capacityPcsLabel": "Kapasitet (stk.)",
+  "errorPrefix": "Feil: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Reol {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Reoler — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} stk.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "på lager",
+  "statusAvailable": "tilgjengelig",
+  "statusArchived": "arkivert",
+  "newWarehouseTitle": "Nytt lager",
+  "noItemsInSlot": "Ingen plater eller kappstykker i denne hyllen.",
+  "noRacksYet": "Ingen reoler i dette lageret.\nLegg til den første for å begynne å organisere plasseringer.",
+  "noSlotsYet": "Ingen hyller i denne reolen.\nLegg til den første for å kunne tilordne plater og kappstykker.",
+  "boardsSectionLabel": "PLATER",
+  "offcutsSectionLabel": "KAPPSTYKKER",
+  "qrCodeNotFound": "Denne koden finnes ikke eller er fjernet.",
+  "delete": "Slett",
+  "deleteSlotButton": "Slett hylle",
+  "cutFromBoardNote": "Fra plate ({decor}) — blir i samme hylle.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Skriv ut etiketter",
+  "eventCreated": "Opprettet",
+  "eventMoved": "Flyttet",
+  "eventArchived": "Arkivert",
+  "eventCut": "Kappet",
+  "eventQrRegenerated": "QR regenerert",
+  "ownerDashboardTitle": "Eierpanel",
+  "totalBoardsLabel": "Plater",
+  "totalOffcutsLabel": "Kappstykker",
+  "overallFillRateLabel": "Fyllingsgrad",
+  "totalRacksSlotsLabel": "Reoler / Hyller",
+  "staleItemsSectionTitle": "Liggende materialer",
+  "staleItemsSectionSubtitle": "Ubrukt i over ett år",
+  "noStaleItems": "Ingen liggende materialer.",
+  "locationUnknown": "Ukjent plassering",
+  "daysAgo": "{days} dager siden",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

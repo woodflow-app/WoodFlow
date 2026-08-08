@@ -1,0 +1,131 @@
+{
+  "@@locale": "nl",
+  "warehousesTitle": "Magazijnen",
+  "boardTitle": "Plaat",
+  "offcutTitle": "Restplaat",
+  "historyLabel": "Geschiedenis",
+  "noEntries": "Geen items.",
+  "cancel": "Annuleren",
+  "save": "Opslaan",
+  "archive": "Archiveren",
+  "move": "Verplaatsen",
+  "moveToLabel": "Verplaatsen naar:",
+  "cut": "Zagen",
+  "cutOffcut": "Restplaat zagen",
+  "retry": "Opnieuw proberen",
+  "searchManually": "Handmatig zoeken",
+  "scanAgain": "Opnieuw scannen",
+  "scanQrCode": "QR-code scannen",
+  "viewSourceBoard": "Bronplaat bekijken",
+  "addBoard": "Plaat toevoegen",
+  "addRack": "Rek toevoegen",
+  "addSlot": "Vak toevoegen",
+  "newBoardTitle": "Nieuwe plaat",
+  "newRackTitle": "Nieuw rek",
+  "newSlotTitle": "Nieuw vak",
+  "deleteSlotQuestion": "Dit vak verwijderen?",
+  "archiveBoardQuestion": "Deze plaat archiveren?",
+  "archiveOffcutQuestion": "Deze restplaat archiveren?",
+  "historyStaysVisible": "De geschiedenis (Ledger) blijft zichtbaar.",
+  "deleteSlotWarning": "Deze actie kan niet ongedaan worden gemaakt. Platen en restplaten in dit vak worden niet verwijderd — ze verliezen alleen hun toegewezen locatie (slot_id verwijst dan naar een niet-bestaand record — een toekomstige opruimstap indien nodig).",
+  "fillDimensionsCorrectly": "Vul de afmetingen correct in.",
+  "noDecorsInCatalog": "Geen decors in de catalogus — voeg er minstens één toe.",
+  "noOtherSlotInRack": "Geen ander vak in dit rek.",
+  "noWarehousesYet": "Nog geen magazijnen. Voeg het eerste toe met de +-knop.",
+  "nameLabel": "Naam",
+  "nameHintSlot": "Naam (bijv. A1)",
+  "nameHintRack": "Reknaam (bijv. A, MAGAZIJN-1)",
+  "addressOptional": "Adres (optioneel)",
+  "decorLabel": "Decor",
+  "lengthMm": "Lengte (mm)",
+  "widthMm": "Breedte (mm)",
+  "thicknessMm": "Dikte (mm)",
+  "capacityLabel": "Capaciteit",
+  "capacityPcsLabel": "Capaciteit (stuks)",
+  "errorPrefix": "Fout: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Rek {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Rekken — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} stuks",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "op voorraad",
+  "statusAvailable": "beschikbaar",
+  "statusArchived": "gearchiveerd",
+  "newWarehouseTitle": "Nieuw magazijn",
+  "noItemsInSlot": "Geen platen of restplaten in dit vak.",
+  "noRacksYet": "Geen rekken in dit magazijn.\nVoeg het eerste toe om locaties te organiseren.",
+  "noSlotsYet": "Geen vakken in dit rek.\nVoeg het eerste toe om platen en restplaten toe te wijzen.",
+  "boardsSectionLabel": "PLATEN",
+  "offcutsSectionLabel": "RESTPLATEN",
+  "qrCodeNotFound": "Deze code bestaat niet of is verwijderd.",
+  "delete": "Verwijderen",
+  "deleteSlotButton": "Vak verwijderen",
+  "cutFromBoardNote": "Van plaat ({decor}) — blijft in hetzelfde vak.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Labels afdrukken",
+  "eventCreated": "Aangemaakt",
+  "eventMoved": "Verplaatst",
+  "eventArchived": "Gearchiveerd",
+  "eventCut": "Gezaagd",
+  "eventQrRegenerated": "QR opnieuw gegenereerd",
+  "ownerDashboardTitle": "Eigenaarsdashboard",
+  "totalBoardsLabel": "Platen",
+  "totalOffcutsLabel": "Restplaten",
+  "overallFillRateLabel": "Bezettingsgraad",
+  "totalRacksSlotsLabel": "Rekken / Vakken",
+  "staleItemsSectionTitle": "Liggend materiaal",
+  "staleItemsSectionSubtitle": "Meer dan een jaar ongebruikt",
+  "noStaleItems": "Geen liggend materiaal.",
+  "locationUnknown": "Locatie onbekend",
+  "daysAgo": "{days} dagen geleden",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

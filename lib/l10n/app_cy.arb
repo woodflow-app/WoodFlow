@@ -1,0 +1,131 @@
+{
+  "@@locale": "cy",
+  "warehousesTitle": "Warysau",
+  "boardTitle": "Panel",
+  "offcutTitle": "Toriad",
+  "historyLabel": "Hanes",
+  "noEntries": "Dim cofnodion.",
+  "cancel": "Diddymu",
+  "save": "Cadw",
+  "archive": "Archifo",
+  "move": "Symud",
+  "moveToLabel": "Symud i:",
+  "cut": "Torri",
+  "cutOffcut": "Torri toriad",
+  "retry": "Ceisio eto",
+  "searchManually": "Chwilio â llaw",
+  "scanAgain": "Sganio eto",
+  "scanQrCode": "Sganio cod QR",
+  "viewSourceBoard": "Gweld y panel gwreiddiol",
+  "addBoard": "Ychwanegu panel",
+  "addRack": "Ychwanegu rac",
+  "addSlot": "Ychwanegu slot",
+  "newBoardTitle": "Panel newydd",
+  "newRackTitle": "Rac newydd",
+  "newSlotTitle": "Slot newydd",
+  "deleteSlotQuestion": "Dileu'r slot yma?",
+  "archiveBoardQuestion": "Archifo'r panel yma?",
+  "archiveOffcutQuestion": "Archifo'r toriad yma?",
+  "historyStaysVisible": "Bydd yr hanes (Ledger) yn parhau i fod yn weladwy.",
+  "deleteSlotWarning": "Ni ellir dad-wneud y weithred hon. Ni fydd paneli a thoriadau sydd wedi'u neilltuo i'r slot hwn yn cael eu dileu — dim ond yn colli eu lleoliad neilltuedig (bydd slot_id yn pwyntio at gofnod nad yw'n bodoli — cam glanhau yn y dyfodol os bydd angen).",
+  "fillDimensionsCorrectly": "Llenwch y dimensiynau yn gywir.",
+  "noDecorsInCatalog": "Dim addurniadau yn y catalog — ychwanegwch o leiaf un.",
+  "noOtherSlotInRack": "Dim slot arall yn y rac hwn.",
+  "noWarehousesYet": "Dim warysau eto. Ychwanegwch y cyntaf gyda'r botwm +.",
+  "nameLabel": "Enw",
+  "nameHintSlot": "Enw (e.e. A1)",
+  "nameHintRack": "Enw'r rac (e.e. A, WARWS-1)",
+  "addressOptional": "Cyfeiriad (dewisol)",
+  "decorLabel": "Addurn",
+  "lengthMm": "Hyd (mm)",
+  "widthMm": "Lled (mm)",
+  "thicknessMm": "Trwch (mm)",
+  "capacityLabel": "Capasiti",
+  "capacityPcsLabel": "Capasiti (darnau)",
+  "errorPrefix": "Gwall: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Rac {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Raciau — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} darn",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "mewn stoc",
+  "statusAvailable": "ar gael",
+  "statusArchived": "wedi'i archifo",
+  "newWarehouseTitle": "Warws newydd",
+  "noItemsInSlot": "Dim paneli na thoriadau yn y slot yma.",
+  "noRacksYet": "Dim raciau yn y warws yma.\nYchwanegwch yr un cyntaf i ddechrau trefnu lleoliadau.",
+  "noSlotsYet": "Dim slotiau yn y rac yma.\nYchwanegwch yr un cyntaf er mwyn gallu neilltuo paneli a thoriadau iddo.",
+  "boardsSectionLabel": "PANELI",
+  "offcutsSectionLabel": "TORIADAU",
+  "qrCodeNotFound": "Nid yw'r cod yma'n bodoli neu mae wedi'i dynnu.",
+  "delete": "Dileu",
+  "deleteSlotButton": "Dileu slot",
+  "cutFromBoardNote": "O'r panel ({decor}) — yn aros yn yr un slot.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Statws: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Argraffu labeli",
+  "eventCreated": "Wedi'i greu",
+  "eventMoved": "Wedi symud",
+  "eventArchived": "Wedi archifo",
+  "eventCut": "Wedi torri",
+  "eventQrRegenerated": "QR wedi'i aildyfu",
+  "ownerDashboardTitle": "Dangosfwrdd y perchennog",
+  "totalBoardsLabel": "Paneli",
+  "totalOffcutsLabel": "Toriadau",
+  "overallFillRateLabel": "Cyfradd llenwi",
+  "totalRacksSlotsLabel": "Raciau / Slotiau",
+  "staleItemsSectionTitle": "Deunyddiau segur",
+  "staleItemsSectionSubtitle": "Heb eu defnyddio ers dros flwyddyn",
+  "noStaleItems": "Dim deunyddiau segur.",
+  "locationUnknown": "Lleoliad anhysbys",
+  "daysAgo": "{days} diwrnod yn ôl",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

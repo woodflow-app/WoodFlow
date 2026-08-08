@@ -1,0 +1,257 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Latvian (`lv`).
+class AppLocalizationsLv extends AppLocalizations {
+  AppLocalizationsLv([String locale = 'lv']) : super(locale);
+
+  @override
+  String get warehousesTitle => 'Noliktavas';
+
+  @override
+  String get boardTitle => 'Plāksne';
+
+  @override
+  String get offcutTitle => 'Atgriezums';
+
+  @override
+  String get historyLabel => 'Vēsture';
+
+  @override
+  String get noEntries => 'Nav ierakstu.';
+
+  @override
+  String get cancel => 'Atcelt';
+
+  @override
+  String get save => 'Saglabāt';
+
+  @override
+  String get archive => 'Arhivēt';
+
+  @override
+  String get move => 'Pārvietot';
+
+  @override
+  String get moveToLabel => 'Pārvietot uz:';
+
+  @override
+  String get cut => 'Zāģēt';
+
+  @override
+  String get cutOffcut => 'Nozāģēt atgriezumu';
+
+  @override
+  String get retry => 'Atkārtot';
+
+  @override
+  String get searchManually => 'Meklēt manuāli';
+
+  @override
+  String get scanAgain => 'Skenēt atkārtoti';
+
+  @override
+  String get scanQrCode => 'Skenēt QR kodu';
+
+  @override
+  String get viewSourceBoard => 'Skatīt sākotnējo plāksni';
+
+  @override
+  String get addBoard => 'Pievienot plāksni';
+
+  @override
+  String get addRack => 'Pievienot plauktu';
+
+  @override
+  String get addSlot => 'Pievienot nišu';
+
+  @override
+  String get newBoardTitle => 'Jauna plāksne';
+
+  @override
+  String get newRackTitle => 'Jauns plaukts';
+
+  @override
+  String get newSlotTitle => 'Jauna niša';
+
+  @override
+  String get deleteSlotQuestion => 'Dzēst šo nišu?';
+
+  @override
+  String get archiveBoardQuestion => 'Arhivēt šo plāksni?';
+
+  @override
+  String get archiveOffcutQuestion => 'Arhivēt šo atgriezumu?';
+
+  @override
+  String get historyStaysVisible => 'Vēsture (Ledger) paliks redzama.';
+
+  @override
+  String get deleteSlotWarning =>
+      'Šo darbību nevar atsaukt. Plāksnes un atgriezumi, kas piešķirti šai nišai, netiks dzēsti — tie tikai zaudēs piešķirto atrašanās vietu (slot_id norādīs uz neesošu ierakstu — turpmāks sakopšanas solis, ja tas būs nepieciešams).';
+
+  @override
+  String get fillDimensionsCorrectly => 'Aizpildiet izmērus pareizi.';
+
+  @override
+  String get noDecorsInCatalog =>
+      'Katalogā nav dekoru — pievienojiet vismaz vienu.';
+
+  @override
+  String get noOtherSlotInRack => 'Šajā plauktā nav citas nišas.';
+
+  @override
+  String get noWarehousesYet =>
+      'Vēl nav noliktavu. Pievienojiet pirmo, izmantojot pogu +.';
+
+  @override
+  String get nameLabel => 'Nosaukums';
+
+  @override
+  String get nameHintSlot => 'Nosaukums (piem. A1)';
+
+  @override
+  String get nameHintRack => 'Plaukta nosaukums (piem. A, NOLIKTAVA-1)';
+
+  @override
+  String get addressOptional => 'Adrese (nav obligāta)';
+
+  @override
+  String get decorLabel => 'Dekors';
+
+  @override
+  String get lengthMm => 'Garums (mm)';
+
+  @override
+  String get widthMm => 'Platums (mm)';
+
+  @override
+  String get thicknessMm => 'Biezums (mm)';
+
+  @override
+  String get capacityLabel => 'Ietilpība';
+
+  @override
+  String get capacityPcsLabel => 'Ietilpība (gab.)';
+
+  @override
+  String errorPrefix(String message) {
+    return 'Kļūda: $message';
+  }
+
+  @override
+  String rackNameTitle(String name) {
+    return 'Plaukts $name';
+  }
+
+  @override
+  String racksForWarehouseTitle(String warehouseName) {
+    return 'Plaukti — $warehouseName';
+  }
+
+  @override
+  String slotFillCount(int used, int capacity) {
+    return '$used / $capacity gab.';
+  }
+
+  @override
+  String get statusInStock => 'noliktavā';
+
+  @override
+  String get statusAvailable => 'pieejams';
+
+  @override
+  String get statusArchived => 'arhivēts';
+
+  @override
+  String get newWarehouseTitle => 'Jauna noliktava';
+
+  @override
+  String get noItemsInSlot => 'Šajā nišā nav plāksņu vai atgriezumu.';
+
+  @override
+  String get noRacksYet =>
+      'Šajā noliktavā nav plauktu.\nPievienojiet pirmo, lai sāktu organizēt atrašanās vietas.';
+
+  @override
+  String get noSlotsYet =>
+      'Šajā plauktā nav nišu.\nPievienojiet pirmo, lai varētu piešķirt plāksnes un atgriezumus.';
+
+  @override
+  String get boardsSectionLabel => 'PLĀKSNES';
+
+  @override
+  String get offcutsSectionLabel => 'ATGRIEZUMI';
+
+  @override
+  String get qrCodeNotFound => 'Šis kods neeksistē vai ir noņemts.';
+
+  @override
+  String get delete => 'Dzēst';
+
+  @override
+  String get deleteSlotButton => 'Dzēst nišu';
+
+  @override
+  String cutFromBoardNote(String decor) {
+    return 'No plāksnes ($decor) — paliek tajā pašā nišā.';
+  }
+
+  @override
+  String statusLabel(String value) {
+    return 'Statuss: $value';
+  }
+
+  @override
+  String get printLabelsForSlot => 'Drukāt etiķetes';
+
+  @override
+  String get eventCreated => 'Izveidots';
+
+  @override
+  String get eventMoved => 'Pārvietots';
+
+  @override
+  String get eventArchived => 'Arhivēts';
+
+  @override
+  String get eventCut => 'Sazāģēts';
+
+  @override
+  String get eventQrRegenerated => 'QR atjaunots';
+
+  @override
+  String get ownerDashboardTitle => 'Īpašnieka panelis';
+
+  @override
+  String get totalBoardsLabel => 'Plāksnes';
+
+  @override
+  String get totalOffcutsLabel => 'Atgriezumi';
+
+  @override
+  String get overallFillRateLabel => 'Piepildījums';
+
+  @override
+  String get totalRacksSlotsLabel => 'Plaukti / Nišas';
+
+  @override
+  String get staleItemsSectionTitle => 'Ilgstoši neizmantoti materiāli';
+
+  @override
+  String get staleItemsSectionSubtitle => 'Neizmantots ilgāk par gadu';
+
+  @override
+  String get noStaleItems => 'Nav ilgstoši neizmantotu materiālu.';
+
+  @override
+  String get locationUnknown => 'Atrašanās vieta nezināma';
+
+  @override
+  String daysAgo(int days) {
+    return 'pirms $days dienām';
+  }
+}

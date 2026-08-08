@@ -1,0 +1,259 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Welsh (`cy`).
+class AppLocalizationsCy extends AppLocalizations {
+  AppLocalizationsCy([String locale = 'cy']) : super(locale);
+
+  @override
+  String get warehousesTitle => 'Warysau';
+
+  @override
+  String get boardTitle => 'Panel';
+
+  @override
+  String get offcutTitle => 'Toriad';
+
+  @override
+  String get historyLabel => 'Hanes';
+
+  @override
+  String get noEntries => 'Dim cofnodion.';
+
+  @override
+  String get cancel => 'Diddymu';
+
+  @override
+  String get save => 'Cadw';
+
+  @override
+  String get archive => 'Archifo';
+
+  @override
+  String get move => 'Symud';
+
+  @override
+  String get moveToLabel => 'Symud i:';
+
+  @override
+  String get cut => 'Torri';
+
+  @override
+  String get cutOffcut => 'Torri toriad';
+
+  @override
+  String get retry => 'Ceisio eto';
+
+  @override
+  String get searchManually => 'Chwilio â llaw';
+
+  @override
+  String get scanAgain => 'Sganio eto';
+
+  @override
+  String get scanQrCode => 'Sganio cod QR';
+
+  @override
+  String get viewSourceBoard => 'Gweld y panel gwreiddiol';
+
+  @override
+  String get addBoard => 'Ychwanegu panel';
+
+  @override
+  String get addRack => 'Ychwanegu rac';
+
+  @override
+  String get addSlot => 'Ychwanegu slot';
+
+  @override
+  String get newBoardTitle => 'Panel newydd';
+
+  @override
+  String get newRackTitle => 'Rac newydd';
+
+  @override
+  String get newSlotTitle => 'Slot newydd';
+
+  @override
+  String get deleteSlotQuestion => 'Dileu\'r slot yma?';
+
+  @override
+  String get archiveBoardQuestion => 'Archifo\'r panel yma?';
+
+  @override
+  String get archiveOffcutQuestion => 'Archifo\'r toriad yma?';
+
+  @override
+  String get historyStaysVisible =>
+      'Bydd yr hanes (Ledger) yn parhau i fod yn weladwy.';
+
+  @override
+  String get deleteSlotWarning =>
+      'Ni ellir dad-wneud y weithred hon. Ni fydd paneli a thoriadau sydd wedi\'u neilltuo i\'r slot hwn yn cael eu dileu — dim ond yn colli eu lleoliad neilltuedig (bydd slot_id yn pwyntio at gofnod nad yw\'n bodoli — cam glanhau yn y dyfodol os bydd angen).';
+
+  @override
+  String get fillDimensionsCorrectly => 'Llenwch y dimensiynau yn gywir.';
+
+  @override
+  String get noDecorsInCatalog =>
+      'Dim addurniadau yn y catalog — ychwanegwch o leiaf un.';
+
+  @override
+  String get noOtherSlotInRack => 'Dim slot arall yn y rac hwn.';
+
+  @override
+  String get noWarehousesYet =>
+      'Dim warysau eto. Ychwanegwch y cyntaf gyda\'r botwm +.';
+
+  @override
+  String get nameLabel => 'Enw';
+
+  @override
+  String get nameHintSlot => 'Enw (e.e. A1)';
+
+  @override
+  String get nameHintRack => 'Enw\'r rac (e.e. A, WARWS-1)';
+
+  @override
+  String get addressOptional => 'Cyfeiriad (dewisol)';
+
+  @override
+  String get decorLabel => 'Addurn';
+
+  @override
+  String get lengthMm => 'Hyd (mm)';
+
+  @override
+  String get widthMm => 'Lled (mm)';
+
+  @override
+  String get thicknessMm => 'Trwch (mm)';
+
+  @override
+  String get capacityLabel => 'Capasiti';
+
+  @override
+  String get capacityPcsLabel => 'Capasiti (darnau)';
+
+  @override
+  String errorPrefix(String message) {
+    return 'Gwall: $message';
+  }
+
+  @override
+  String rackNameTitle(String name) {
+    return 'Rac $name';
+  }
+
+  @override
+  String racksForWarehouseTitle(String warehouseName) {
+    return 'Raciau — $warehouseName';
+  }
+
+  @override
+  String slotFillCount(int used, int capacity) {
+    return '$used / $capacity darn';
+  }
+
+  @override
+  String get statusInStock => 'mewn stoc';
+
+  @override
+  String get statusAvailable => 'ar gael';
+
+  @override
+  String get statusArchived => 'wedi\'i archifo';
+
+  @override
+  String get newWarehouseTitle => 'Warws newydd';
+
+  @override
+  String get noItemsInSlot => 'Dim paneli na thoriadau yn y slot yma.';
+
+  @override
+  String get noRacksYet =>
+      'Dim raciau yn y warws yma.\nYchwanegwch yr un cyntaf i ddechrau trefnu lleoliadau.';
+
+  @override
+  String get noSlotsYet =>
+      'Dim slotiau yn y rac yma.\nYchwanegwch yr un cyntaf er mwyn gallu neilltuo paneli a thoriadau iddo.';
+
+  @override
+  String get boardsSectionLabel => 'PANELI';
+
+  @override
+  String get offcutsSectionLabel => 'TORIADAU';
+
+  @override
+  String get qrCodeNotFound =>
+      'Nid yw\'r cod yma\'n bodoli neu mae wedi\'i dynnu.';
+
+  @override
+  String get delete => 'Dileu';
+
+  @override
+  String get deleteSlotButton => 'Dileu slot';
+
+  @override
+  String cutFromBoardNote(String decor) {
+    return 'O\'r panel ($decor) — yn aros yn yr un slot.';
+  }
+
+  @override
+  String statusLabel(String value) {
+    return 'Statws: $value';
+  }
+
+  @override
+  String get printLabelsForSlot => 'Argraffu labeli';
+
+  @override
+  String get eventCreated => 'Wedi\'i greu';
+
+  @override
+  String get eventMoved => 'Wedi symud';
+
+  @override
+  String get eventArchived => 'Wedi archifo';
+
+  @override
+  String get eventCut => 'Wedi torri';
+
+  @override
+  String get eventQrRegenerated => 'QR wedi\'i aildyfu';
+
+  @override
+  String get ownerDashboardTitle => 'Dangosfwrdd y perchennog';
+
+  @override
+  String get totalBoardsLabel => 'Paneli';
+
+  @override
+  String get totalOffcutsLabel => 'Toriadau';
+
+  @override
+  String get overallFillRateLabel => 'Cyfradd llenwi';
+
+  @override
+  String get totalRacksSlotsLabel => 'Raciau / Slotiau';
+
+  @override
+  String get staleItemsSectionTitle => 'Deunyddiau segur';
+
+  @override
+  String get staleItemsSectionSubtitle => 'Heb eu defnyddio ers dros flwyddyn';
+
+  @override
+  String get noStaleItems => 'Dim deunyddiau segur.';
+
+  @override
+  String get locationUnknown => 'Lleoliad anhysbys';
+
+  @override
+  String daysAgo(int days) {
+    return '$days diwrnod yn ôl';
+  }
+}

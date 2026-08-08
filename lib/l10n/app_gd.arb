@@ -1,0 +1,131 @@
+{
+  "@@locale": "gd",
+  "warehousesTitle": "Taighean-stòir",
+  "boardTitle": "Bòrd",
+  "offcutTitle": "Criomag",
+  "historyLabel": "Eachdraidh",
+  "noEntries": "Chan eil clàran ann.",
+  "cancel": "Sguir dheth",
+  "save": "Sàbhail",
+  "archive": "Tasglannaich",
+  "move": "Gluais",
+  "moveToLabel": "Gluais gu:",
+  "cut": "Gearr",
+  "cutOffcut": "Gearr criomag",
+  "retry": "Feuch a-rithist",
+  "searchManually": "Lorg le làimh",
+  "scanAgain": "Sganaich a-rithist",
+  "scanQrCode": "Sganaich còd QR",
+  "viewSourceBoard": "Seall am bòrd tùsail",
+  "addBoard": "Cuir bòrd ris",
+  "addRack": "Cuir rac ris",
+  "addSlot": "Cuir slot ris",
+  "newBoardTitle": "Bòrd ùr",
+  "newRackTitle": "Rac ùr",
+  "newSlotTitle": "Slot ùr",
+  "deleteSlotQuestion": "A bheil thu airson an slot seo a sguabadh às?",
+  "archiveBoardQuestion": "A bheil thu airson am bòrd seo a thasglannachadh?",
+  "archiveOffcutQuestion": "A bheil thu airson a' chriomag seo a thasglannachadh?",
+  "historyStaysVisible": "Bidh an eachdraidh (Ledger) fhathast ri fhaicinn.",
+  "deleteSlotWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Cha tèid bùird is criomagan a chaidh a shònrachadh dhan slot seo a sguabadh às — chan ann ach gun caill iad an t-àite a chaidh a shònrachadh (bidh slot_id a' comharrachadh clàr nach eil ann — ceum glanaidh san àm ri teachd ma tha feum air).",
+  "fillDimensionsCorrectly": "Lìon a-steach na tomhasan mar bu chòir.",
+  "noDecorsInCatalog": "Chan eil sgeadachadh sam bith sa chatalog — cuir fear a-steach co-dhiù.",
+  "noOtherSlotInRack": "Chan eil slot eile san rac seo.",
+  "noWarehousesYet": "Chan eil taigh-stòir ann fhathast. Cuir a' chiad fhear ris leis a' phutan +.",
+  "nameLabel": "Ainm",
+  "nameHintSlot": "Ainm (m.e. A1)",
+  "nameHintRack": "Ainm an rac (m.e. A, TAIGH-STÒIR-1)",
+  "addressOptional": "Seòladh (roghainneil)",
+  "decorLabel": "Sgeadachadh",
+  "lengthMm": "Faid (mm)",
+  "widthMm": "Leud (mm)",
+  "thicknessMm": "Tighead (mm)",
+  "capacityLabel": "Tomhas-lìonaidh",
+  "capacityPcsLabel": "Tomhas-lìonaidh (pìosan)",
+  "errorPrefix": "Mearachd: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Rac {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Racaichean — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} pìos",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "san stòr",
+  "statusAvailable": "ri fhaighinn",
+  "statusArchived": "air a thasglannachadh",
+  "newWarehouseTitle": "Taigh-stòir ùr",
+  "noItemsInSlot": "Chan eil bòrd no criomag anns an t-slot seo.",
+  "noRacksYet": "Chan eil rac anns an taigh-stòir seo.\nCuir an rac an toiseach ris gus àiteachan a chur air dòigh.",
+  "noSlotsYet": "Chan eil slot anns an rac seo.\nCuir a' chiad fhear ris gus a bhith comasach air bùird is criomagan a shònrachadh dha.",
+  "boardsSectionLabel": "BÙIRD",
+  "offcutsSectionLabel": "CRIOMAGAN",
+  "qrCodeNotFound": "Chan eil an còd seo ann no chaidh a thoirt air falbh.",
+  "delete": "Sguab às",
+  "deleteSlotButton": "Sguab às an slot",
+  "cutFromBoardNote": "Bhon bhòrd ({decor}) — a' fuireach san aon slot.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Staid: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Clò-bhuail bileagan",
+  "eventCreated": "Air a chruthachadh",
+  "eventMoved": "Air a ghluasad",
+  "eventArchived": "Air a thasglannachadh",
+  "eventCut": "Air a ghearradh",
+  "eventQrRegenerated": "QR ath-ghinte",
+  "ownerDashboardTitle": "Panail an t-seilbheadair",
+  "totalBoardsLabel": "Bùird",
+  "totalOffcutsLabel": "Criomagan",
+  "overallFillRateLabel": "Ìre lìonaidh",
+  "totalRacksSlotsLabel": "Racaichean / Slotaichean",
+  "staleItemsSectionTitle": "Stuthan gun chleachdadh",
+  "staleItemsSectionSubtitle": "Gun chleachdadh airson còrr is bliadhna",
+  "noStaleItems": "Chan eil stuthan gun chleachdadh ann.",
+  "locationUnknown": "Àite neo-aithnichte",
+  "daysAgo": "{days} latha air ais",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

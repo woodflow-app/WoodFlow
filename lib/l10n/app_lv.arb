@@ -1,0 +1,131 @@
+{
+  "@@locale": "lv",
+  "warehousesTitle": "Noliktavas",
+  "boardTitle": "Plāksne",
+  "offcutTitle": "Atgriezums",
+  "historyLabel": "Vēsture",
+  "noEntries": "Nav ierakstu.",
+  "cancel": "Atcelt",
+  "save": "Saglabāt",
+  "archive": "Arhivēt",
+  "move": "Pārvietot",
+  "moveToLabel": "Pārvietot uz:",
+  "cut": "Zāģēt",
+  "cutOffcut": "Nozāģēt atgriezumu",
+  "retry": "Atkārtot",
+  "searchManually": "Meklēt manuāli",
+  "scanAgain": "Skenēt atkārtoti",
+  "scanQrCode": "Skenēt QR kodu",
+  "viewSourceBoard": "Skatīt sākotnējo plāksni",
+  "addBoard": "Pievienot plāksni",
+  "addRack": "Pievienot plauktu",
+  "addSlot": "Pievienot nišu",
+  "newBoardTitle": "Jauna plāksne",
+  "newRackTitle": "Jauns plaukts",
+  "newSlotTitle": "Jauna niša",
+  "deleteSlotQuestion": "Dzēst šo nišu?",
+  "archiveBoardQuestion": "Arhivēt šo plāksni?",
+  "archiveOffcutQuestion": "Arhivēt šo atgriezumu?",
+  "historyStaysVisible": "Vēsture (Ledger) paliks redzama.",
+  "deleteSlotWarning": "Šo darbību nevar atsaukt. Plāksnes un atgriezumi, kas piešķirti šai nišai, netiks dzēsti — tie tikai zaudēs piešķirto atrašanās vietu (slot_id norādīs uz neesošu ierakstu — turpmāks sakopšanas solis, ja tas būs nepieciešams).",
+  "fillDimensionsCorrectly": "Aizpildiet izmērus pareizi.",
+  "noDecorsInCatalog": "Katalogā nav dekoru — pievienojiet vismaz vienu.",
+  "noOtherSlotInRack": "Šajā plauktā nav citas nišas.",
+  "noWarehousesYet": "Vēl nav noliktavu. Pievienojiet pirmo, izmantojot pogu +.",
+  "nameLabel": "Nosaukums",
+  "nameHintSlot": "Nosaukums (piem. A1)",
+  "nameHintRack": "Plaukta nosaukums (piem. A, NOLIKTAVA-1)",
+  "addressOptional": "Adrese (nav obligāta)",
+  "decorLabel": "Dekors",
+  "lengthMm": "Garums (mm)",
+  "widthMm": "Platums (mm)",
+  "thicknessMm": "Biezums (mm)",
+  "capacityLabel": "Ietilpība",
+  "capacityPcsLabel": "Ietilpība (gab.)",
+  "errorPrefix": "Kļūda: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Plaukts {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Plaukti — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} gab.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "noliktavā",
+  "statusAvailable": "pieejams",
+  "statusArchived": "arhivēts",
+  "newWarehouseTitle": "Jauna noliktava",
+  "noItemsInSlot": "Šajā nišā nav plāksņu vai atgriezumu.",
+  "noRacksYet": "Šajā noliktavā nav plauktu.\nPievienojiet pirmo, lai sāktu organizēt atrašanās vietas.",
+  "noSlotsYet": "Šajā plauktā nav nišu.\nPievienojiet pirmo, lai varētu piešķirt plāksnes un atgriezumus.",
+  "boardsSectionLabel": "PLĀKSNES",
+  "offcutsSectionLabel": "ATGRIEZUMI",
+  "qrCodeNotFound": "Šis kods neeksistē vai ir noņemts.",
+  "delete": "Dzēst",
+  "deleteSlotButton": "Dzēst nišu",
+  "cutFromBoardNote": "No plāksnes ({decor}) — paliek tajā pašā nišā.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Statuss: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Drukāt etiķetes",
+  "eventCreated": "Izveidots",
+  "eventMoved": "Pārvietots",
+  "eventArchived": "Arhivēts",
+  "eventCut": "Sazāģēts",
+  "eventQrRegenerated": "QR atjaunots",
+  "ownerDashboardTitle": "Īpašnieka panelis",
+  "totalBoardsLabel": "Plāksnes",
+  "totalOffcutsLabel": "Atgriezumi",
+  "overallFillRateLabel": "Piepildījums",
+  "totalRacksSlotsLabel": "Plaukti / Nišas",
+  "staleItemsSectionTitle": "Ilgstoši neizmantoti materiāli",
+  "staleItemsSectionSubtitle": "Neizmantots ilgāk par gadu",
+  "noStaleItems": "Nav ilgstoši neizmantotu materiālu.",
+  "locationUnknown": "Atrašanās vieta nezināma",
+  "daysAgo": "pirms {days} dienām",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

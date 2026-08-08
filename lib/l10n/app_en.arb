@@ -1,0 +1,131 @@
+{
+  "@@locale": "en",
+  "warehousesTitle": "Warehouses",
+  "boardTitle": "Board",
+  "offcutTitle": "Offcut",
+  "historyLabel": "History",
+  "noEntries": "No entries.",
+  "cancel": "Cancel",
+  "save": "Save",
+  "archive": "Archive",
+  "move": "Move",
+  "moveToLabel": "Move to:",
+  "cut": "Cut",
+  "cutOffcut": "Cut offcut",
+  "retry": "Retry",
+  "searchManually": "Search manually",
+  "scanAgain": "Scan again",
+  "scanQrCode": "Scan QR code",
+  "viewSourceBoard": "View source board",
+  "addBoard": "Add board",
+  "addRack": "Add rack",
+  "addSlot": "Add slot",
+  "newBoardTitle": "New board",
+  "newRackTitle": "New rack",
+  "newSlotTitle": "New slot",
+  "deleteSlotQuestion": "Delete this slot?",
+  "archiveBoardQuestion": "Archive this board?",
+  "archiveOffcutQuestion": "Archive this offcut?",
+  "historyStaysVisible": "History (Ledger) will remain visible.",
+  "deleteSlotWarning": "This action cannot be undone. Boards and offcuts assigned to this slot will not be deleted — they will just lose their assigned location (slot_id will point to a non-existent record — a future cleanup step, if ever needed).",
+  "fillDimensionsCorrectly": "Please fill in the dimensions correctly.",
+  "noDecorsInCatalog": "No decors in the catalog — add at least one.",
+  "noOtherSlotInRack": "No other slot in this rack.",
+  "noWarehousesYet": "No warehouses yet. Add the first one with the + button.",
+  "nameLabel": "Name",
+  "nameHintSlot": "Name (e.g. A1)",
+  "nameHintRack": "Rack name (e.g. A, WAREHOUSE-1)",
+  "addressOptional": "Address (optional)",
+  "decorLabel": "Decor",
+  "lengthMm": "Length (mm)",
+  "widthMm": "Width (mm)",
+  "thicknessMm": "Thickness (mm)",
+  "capacityLabel": "Capacity",
+  "capacityPcsLabel": "Capacity (pcs)",
+  "errorPrefix": "Error: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Rack {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Racks — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} pcs",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "in stock",
+  "statusAvailable": "available",
+  "statusArchived": "archived",
+  "newWarehouseTitle": "New warehouse",
+  "noItemsInSlot": "No boards or offcuts in this slot.",
+  "noRacksYet": "No racks in this warehouse.\nAdd the first one to start organizing locations.",
+  "noSlotsYet": "No slots in this rack.\nAdd the first one to assign boards and offcuts to it.",
+  "boardsSectionLabel": "BOARDS",
+  "offcutsSectionLabel": "OFFCUTS",
+  "qrCodeNotFound": "This code doesn't exist or has been removed.",
+  "delete": "Delete",
+  "deleteSlotButton": "Delete slot",
+  "cutFromBoardNote": "From board ({decor}) — stays in the same slot.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Print labels",
+  "eventCreated": "Created",
+  "eventMoved": "Moved",
+  "eventArchived": "Archived",
+  "eventCut": "Cut",
+  "eventQrRegenerated": "QR regenerated",
+  "ownerDashboardTitle": "Owner dashboard",
+  "totalBoardsLabel": "Boards",
+  "totalOffcutsLabel": "Offcuts",
+  "overallFillRateLabel": "Fill rate",
+  "totalRacksSlotsLabel": "Racks / Slots",
+  "staleItemsSectionTitle": "Stale materials",
+  "staleItemsSectionSubtitle": "Unused for over a year",
+  "noStaleItems": "No stale materials.",
+  "locationUnknown": "Location unknown",
+  "daysAgo": "{days} days ago",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

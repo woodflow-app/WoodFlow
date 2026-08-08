@@ -1,0 +1,131 @@
+{
+  "@@locale": "cs",
+  "warehousesTitle": "Sklady",
+  "boardTitle": "Deska",
+  "offcutTitle": "Odřezek",
+  "historyLabel": "Historie",
+  "noEntries": "Žádné záznamy.",
+  "cancel": "Zrušit",
+  "save": "Uložit",
+  "archive": "Archivovat",
+  "move": "Přesunout",
+  "moveToLabel": "Přesunout do:",
+  "cut": "Nařezat",
+  "cutOffcut": "Nařezat odřezek",
+  "retry": "Zkusit znovu",
+  "searchManually": "Vyhledat manuálně",
+  "scanAgain": "Naskenovat znovu",
+  "scanQrCode": "Naskenovat QR kód",
+  "viewSourceBoard": "Zobrazit zdrojovou desku",
+  "addBoard": "Přidat desku",
+  "addRack": "Přidat regál",
+  "addSlot": "Přidat pozici",
+  "newBoardTitle": "Nová deska",
+  "newRackTitle": "Nový regál",
+  "newSlotTitle": "Nová pozice",
+  "deleteSlotQuestion": "Smazat tuto pozici?",
+  "archiveBoardQuestion": "Archivovat tuto desku?",
+  "archiveOffcutQuestion": "Archivovat tento odřezek?",
+  "historyStaysVisible": "Historie (Ledger) zůstane viditelná.",
+  "deleteSlotWarning": "Tuto akci nelze vrátit zpět. Desky a odřezky přiřazené k této pozici nebudou smazány — pouze ztratí přiřazené umístění (slot_id bude odkazovat na neexistující záznam — budoucí úklidový krok, pokud bude potřeba).",
+  "fillDimensionsCorrectly": "Vyplňte rozměry správně.",
+  "noDecorsInCatalog": "V katalogu nejsou žádné dekory — přidejte alespoň jeden.",
+  "noOtherSlotInRack": "V tomto regálu není žádná jiná pozice.",
+  "noWarehousesYet": "Zatím žádné sklady. Přidejte první tlačítkem +.",
+  "nameLabel": "Název",
+  "nameHintSlot": "Název (např. A1)",
+  "nameHintRack": "Název regálu (např. A, SKLAD-1)",
+  "addressOptional": "Adresa (nepovinné)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Délka (mm)",
+  "widthMm": "Šířka (mm)",
+  "thicknessMm": "Tloušťka (mm)",
+  "capacityLabel": "Kapacita",
+  "capacityPcsLabel": "Kapacita (ks)",
+  "errorPrefix": "Chyba: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Regál {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Regály — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} ks",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "na skladě",
+  "statusAvailable": "dostupný",
+  "statusArchived": "archivováno",
+  "newWarehouseTitle": "Nový sklad",
+  "noItemsInSlot": "V této pozici nejsou žádné desky ani odřezky.",
+  "noRacksYet": "V tomto skladu nejsou žádné regály.\nPřidejte první, abyste mohli organizovat umístění.",
+  "noSlotsYet": "V tomto regálu nejsou žádné pozice.\nPřidejte první, abyste mohli přiřazovat desky a odřezky.",
+  "boardsSectionLabel": "DESKY",
+  "offcutsSectionLabel": "ODŘEZKY",
+  "qrCodeNotFound": "Tento kód neexistuje nebo byl odstraněn.",
+  "delete": "Smazat",
+  "deleteSlotButton": "Smazat pozici",
+  "cutFromBoardNote": "Z desky ({decor}) — zůstává ve stejné pozici.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Stav: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Tisk štítků",
+  "eventCreated": "Vytvořeno",
+  "eventMoved": "Přesunuto",
+  "eventArchived": "Archivováno",
+  "eventCut": "Nařezáno",
+  "eventQrRegenerated": "QR obnoveno",
+  "ownerDashboardTitle": "Panel majitele",
+  "totalBoardsLabel": "Desky",
+  "totalOffcutsLabel": "Odřezky",
+  "overallFillRateLabel": "Naplněnost",
+  "totalRacksSlotsLabel": "Regály / Pozice",
+  "staleItemsSectionTitle": "Ležící materiály",
+  "staleItemsSectionSubtitle": "Nepoužité déle než rok",
+  "noStaleItems": "Žádné ležící materiály.",
+  "locationUnknown": "Umístění neznámé",
+  "daysAgo": "před {days} dny",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
+
+import '../../core/services/service_locator.dart';
+import '../../domain/entities/warehouse.dart';
+import '../../domain/entities/organization.dart';
+import '../../domain/repositories/warehouse_repository.dart';
+import '../../l10n/app_localizations.dart';
+import '../rack/rack_list_screen.dart';
+import '../dashboard/owner_dashboard_screen.dart';
+import '../scan/scan_screen.dart';
+
+/// Deliberately plain Material widgets — no WoodFlow Design Tokens
+/// applied here yet. This screen's job is to prove Warehouse can be
+/// listed/created end-to-end through the architecture, not to look
+/// finished. Restyle once Design Tokens exist; don't invent one-off
+/// colors/spacing here that the token system would otherwise define.
+class WarehouseListScreen extends StatefulWidget {
+  const WarehouseListScreen({super.key});
+
+  @override
+  State<WarehouseListScreen> createState() => _WarehouseListScreenState();
+}
+
+class _WarehouseListScreenState extends State<WarehouseListScreen> {
+  final WarehouseRepository _repository = sl<WarehouseRepository>();
+
+  List<Warehouse> _warehouses = [];
+  bool _isLoading = true;
+  String? _errorMessage;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
+
+    final result = await _repository.getAll();
+    result.when(
+      success: (warehouses) {
+        setState(() {
+          _warehouses = warehouses;
+          _isLoading = false;
+        });
+      },
+      failure: (f) {
+        setState(() {
+          _errorMessage = f.message;
+          _isLoading = false;
+        });
+      },
+    );
+  }
+
+  Future<void> _addWarehouse(String name, String? address) async {
+    final now = DateTime.now();
+    final warehouse = Warehouse(
+      id: const Uuid().v4(),
+      organizationId: defaultOrganizationId,
+      name: name,
+      address: address,
+      createdAt: now,
+      updatedAt: now,
+    );
+
+    final result = await _repository.create(warehouse);
+    result.when(
+      success: (_) => _load(),
+      failure: (f) => _showError(f.message),
+    );
+  }
+
+  void _showError(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(l10n.warehousesTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.dashboard_outlined),
+            tooltip: l10n.ownerDashboardTitle,
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const OwnerDashboardScreen(),
+              ));
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.qr_code_scanner),
+            tooltip: l10n.scanQrCode,
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const ScanScreen(),
+              ));
+            },
+          ),
+        ],
+      ),
+      body: _buildBody(l10n),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _openAddWarehouseSheet(l10n),
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  Widget _buildBody(AppLocalizations l10n) {
+    if (_isLoading) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    if (_errorMessage != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(l10n.errorPrefix(_errorMessage!)),
+              const SizedBox(height: 8),
+              ElevatedButton(onPressed: _load, child: Text(l10n.retry)),
+            ],
+          ),
+        ),
+      );
+    }
+
+    if (_warehouses.isEmpty) {
+      return Center(
+        child: Text(l10n.noWarehousesYet),
+      );
+    }
+
+    return RefreshIndicator(
+      onRefresh: _load,
+      child: ListView.builder(
+        itemCount: _warehouses.length,
+        itemBuilder: (context, index) {
+          final w = _warehouses[index];
+          return ListTile(
+            leading: const Icon(Icons.warehouse_outlined),
+            title: Text(w.name),
+            subtitle: w.address != null ? Text(w.address!) : null,
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => RackListScreen(
+                  warehouseId: w.id,
+                  warehouseName: w.name,
+                ),
+              ));
+            },
+          );
+        },
+      ),
+    );
+  }
+
+  void _openAddWarehouseSheet(AppLocalizations l10n) {
+    final nameController = TextEditingController();
+    final addressController = TextEditingController();
+
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) => Padding(
+        padding: EdgeInsets.only(
+          left: 16,
+          right: 16,
+          top: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom + 16,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(l10n.newWarehouseTitle, style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 12),
+            TextField(
+              controller: nameController,
+              decoration: InputDecoration(labelText: l10n.nameLabel),
+              autofocus: true,
+            ),
+            const SizedBox(height: 8),
+            TextField(
+              controller: addressController,
+              decoration: InputDecoration(labelText: l10n.addressOptional),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                final name = nameController.text.trim();
+                if (name.isEmpty) return;
+                Navigator.of(context).pop();
+                _addWarehouse(
+                  name,
+                  addressController.text.trim().isEmpty
+                      ? null
+                      : addressController.text.trim(),
+                );
+              },
+              child: Text(l10n.save),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

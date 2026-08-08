@@ -1,0 +1,131 @@
+{
+  "@@locale": "pl",
+  "warehousesTitle": "Magazyny",
+  "boardTitle": "Płyta",
+  "offcutTitle": "Ścinek",
+  "historyLabel": "Historia",
+  "noEntries": "Brak wpisów.",
+  "cancel": "Anuluj",
+  "save": "Zapisz",
+  "archive": "Archiwizuj",
+  "move": "Przenieś",
+  "moveToLabel": "Przenieś do:",
+  "cut": "Wytnij",
+  "cutOffcut": "Wytnij ścinek",
+  "retry": "Ponów",
+  "searchManually": "Wyszukaj ręcznie",
+  "scanAgain": "Skanuj ponownie",
+  "scanQrCode": "Skanuj kod QR",
+  "viewSourceBoard": "Zobacz płytę źródłową",
+  "addBoard": "Dodaj płytę",
+  "addRack": "Dodaj regał",
+  "addSlot": "Dodaj półkę",
+  "newBoardTitle": "Nowa płyta",
+  "newRackTitle": "Nowy regał",
+  "newSlotTitle": "Nowa półka",
+  "deleteSlotQuestion": "Usunąć półkę?",
+  "archiveBoardQuestion": "Zarchiwizować płytę?",
+  "archiveOffcutQuestion": "Zarchiwizować ścinek?",
+  "historyStaysVisible": "Historia (Ledger) pozostanie widoczna.",
+  "deleteSlotWarning": "Ta operacja jest nieodwracalna. Płyty i ścinki przypisane do tej półki nie zostaną usunięte, tylko stracą przypisaną lokalizację (slot_id wskaże na nieistniejący rekord — kolejny krok porządkowy, gdy zajdzie taka potrzeba).",
+  "fillDimensionsCorrectly": "Uzupełnij wymiary poprawnie.",
+  "noDecorsInCatalog": "Brak dekorów w katalogu — dodaj przynajmniej jeden.",
+  "noOtherSlotInRack": "Brak innej półki w tym regale.",
+  "noWarehousesYet": "Brak magazynów. Dodaj pierwszy przyciskiem +.",
+  "nameLabel": "Nazwa",
+  "nameHintSlot": "Nazwa (np. A1)",
+  "nameHintRack": "Nazwa regału (np. A, MAGAZYN-1)",
+  "addressOptional": "Adres (opcjonalnie)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Dł. (mm)",
+  "widthMm": "Szer. (mm)",
+  "thicknessMm": "Grub. (mm)",
+  "capacityLabel": "Pojemność",
+  "capacityPcsLabel": "Pojemność (szt.)",
+  "errorPrefix": "Błąd: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Regał {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Regały — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} szt.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "w magazynie",
+  "statusAvailable": "dostępny",
+  "statusArchived": "zarchiwizowany",
+  "newWarehouseTitle": "Nowy magazyn",
+  "noItemsInSlot": "Brak płyt ani ścinków w tej półce.",
+  "noRacksYet": "Brak regałów w tym magazynie.\nDodaj pierwszy, żeby zacząć organizować lokalizacje.",
+  "noSlotsYet": "Brak półek w tym regale.\nDodaj pierwszą, żeby móc przypisywać do niej płyty i ścinki.",
+  "boardsSectionLabel": "PŁYTY",
+  "offcutsSectionLabel": "ŚCINKI",
+  "qrCodeNotFound": "Ten kod nie istnieje lub został usunięty.",
+  "delete": "Usuń",
+  "deleteSlotButton": "Usuń półkę",
+  "cutFromBoardNote": "Ze płyty ({decor}) — zostaje w tej samej półce.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Drukuj etykiety",
+  "eventCreated": "Utworzono",
+  "eventMoved": "Przeniesiono",
+  "eventArchived": "Zarchiwizowano",
+  "eventCut": "Wycięto",
+  "eventQrRegenerated": "Zregenerowano QR",
+  "ownerDashboardTitle": "Panel właściciela",
+  "totalBoardsLabel": "Płyty",
+  "totalOffcutsLabel": "Ścinki",
+  "overallFillRateLabel": "Zapełnienie",
+  "totalRacksSlotsLabel": "Regały / Sloty",
+  "staleItemsSectionTitle": "Materiały zalegające",
+  "staleItemsSectionSubtitle": "Nieużywane dłużej niż rok",
+  "noStaleItems": "Brak materiałów zalegających.",
+  "locationUnknown": "Lokalizacja nieznana",
+  "daysAgo": "{days} dni temu",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

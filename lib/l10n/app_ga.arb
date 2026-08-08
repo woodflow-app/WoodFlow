@@ -1,0 +1,131 @@
+{
+  "@@locale": "ga",
+  "warehousesTitle": "Stórais",
+  "boardTitle": "Painéal",
+  "offcutTitle": "Fuílleach",
+  "historyLabel": "Stair",
+  "noEntries": "Gan iontrálacha.",
+  "cancel": "Cealaigh",
+  "save": "Sábháil",
+  "archive": "Cartlannaigh",
+  "move": "Bog",
+  "moveToLabel": "Bog chuig:",
+  "cut": "Gearr",
+  "cutOffcut": "Gearr fuílleach",
+  "retry": "Bain triail eile as",
+  "searchManually": "Cuardaigh de láimh",
+  "scanAgain": "Scan arís",
+  "scanQrCode": "Scan cód QR",
+  "viewSourceBoard": "Féach ar an bpainéal foinseach",
+  "addBoard": "Cuir painéal leis",
+  "addRack": "Cuir raca leis",
+  "addSlot": "Cuir sliotán leis",
+  "newBoardTitle": "Painéal nua",
+  "newRackTitle": "Raca nua",
+  "newSlotTitle": "Sliotán nua",
+  "deleteSlotQuestion": "Scrios an sliotán seo?",
+  "archiveBoardQuestion": "Cartlannaigh an painéal seo?",
+  "archiveOffcutQuestion": "Cartlannaigh an fuílleach seo?",
+  "historyStaysVisible": "Fanfaidh an stair (Ledger) le feiceáil.",
+  "deleteSlotWarning": "Ní féidir an gníomh seo a chealú. Ní scriosfar na painéil agus na fuíollaigh atá sannta don sliotán seo — ach caillfidh siad a suíomh sannta (léireoidh slot_id taifead nach ann dó — céim ghlanta amach anseo más gá).",
+  "fillDimensionsCorrectly": "Líon isteach na toisí i gceart.",
+  "noDecorsInCatalog": "Níl aon mhaisiú sa chatalóg — cuir ceann amháin ar a laghad leis.",
+  "noOtherSlotInRack": "Níl aon sliotán eile sa raca seo.",
+  "noWarehousesYet": "Níl aon stóras ann fós. Cuir an ceann is túisce leis leis an gcnaipe +.",
+  "nameLabel": "Ainm",
+  "nameHintSlot": "Ainm (m.sh. A1)",
+  "nameHintRack": "Ainm an raca (m.sh. A, STÓRAS-1)",
+  "addressOptional": "Seoladh (roghnach)",
+  "decorLabel": "Maisiú",
+  "lengthMm": "Fad (mm)",
+  "widthMm": "Leithead (mm)",
+  "thicknessMm": "Tiús (mm)",
+  "capacityLabel": "Toilleadh",
+  "capacityPcsLabel": "Toilleadh (píosaí)",
+  "errorPrefix": "Earráid: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Raca {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Racaí — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} píosaí",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "ar stoc",
+  "statusAvailable": "ar fáil",
+  "statusArchived": "cartlannaithe",
+  "newWarehouseTitle": "Stóras nua",
+  "noItemsInSlot": "Níl aon phainéal ná fuílleach sa sliotán seo.",
+  "noRacksYet": "Níl aon raca sa stóras seo.\nCuir an chéad cheann leis chun suíomhanna a eagrú.",
+  "noSlotsYet": "Níl aon sliotán sa raca seo.\nCuir an chéad cheann leis chun painéil agus fuíollaigh a shannadh dó.",
+  "boardsSectionLabel": "PAINÉIL",
+  "offcutsSectionLabel": "FUÍOLLAIGH",
+  "qrCodeNotFound": "Níl an cód seo ann nó baineadh é.",
+  "delete": "Scrios",
+  "deleteSlotButton": "Scrios sliotán",
+  "cutFromBoardNote": "Ón bpainéal ({decor}) — fanann sa sliotán céanna.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Stádas: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Priontáil lipéid",
+  "eventCreated": "Cruthaithe",
+  "eventMoved": "Bogtha",
+  "eventArchived": "Cartlannaithe",
+  "eventCut": "Gearrtha",
+  "eventQrRegenerated": "QR athghinte",
+  "ownerDashboardTitle": "Painéal an úinéara",
+  "totalBoardsLabel": "Painéil",
+  "totalOffcutsLabel": "Fuíollaigh",
+  "overallFillRateLabel": "Ráta líonta",
+  "totalRacksSlotsLabel": "Racaí / Sliotáin",
+  "staleItemsSectionTitle": "Ábhair mharbhánta",
+  "staleItemsSectionSubtitle": "Gan úsáid le breis is bliain",
+  "noStaleItems": "Níl aon ábhar marbhánta ann.",
+  "locationUnknown": "Suíomh anaithnid",
+  "daysAgo": "{days} lá ó shin",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

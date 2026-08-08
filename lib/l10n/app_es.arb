@@ -1,0 +1,131 @@
+{
+  "@@locale": "es",
+  "warehousesTitle": "Almacenes",
+  "boardTitle": "Tablero",
+  "offcutTitle": "Recorte",
+  "historyLabel": "Historial",
+  "noEntries": "Sin registros.",
+  "cancel": "Cancelar",
+  "save": "Guardar",
+  "archive": "Archivar",
+  "move": "Mover",
+  "moveToLabel": "Mover a:",
+  "cut": "Cortar",
+  "cutOffcut": "Cortar recorte",
+  "retry": "Reintentar",
+  "searchManually": "Buscar manualmente",
+  "scanAgain": "Escanear de nuevo",
+  "scanQrCode": "Escanear código QR",
+  "viewSourceBoard": "Ver tablero de origen",
+  "addBoard": "Añadir tablero",
+  "addRack": "Añadir estantería",
+  "addSlot": "Añadir hueco",
+  "newBoardTitle": "Nuevo tablero",
+  "newRackTitle": "Nueva estantería",
+  "newSlotTitle": "Nuevo hueco",
+  "deleteSlotQuestion": "¿Eliminar este hueco?",
+  "archiveBoardQuestion": "¿Archivar este tablero?",
+  "archiveOffcutQuestion": "¿Archivar este recorte?",
+  "historyStaysVisible": "El historial (Ledger) seguirá visible.",
+  "deleteSlotWarning": "Esta acción no se puede deshacer. Los tableros y recortes asignados a este hueco no se eliminarán — solo perderán su ubicación asignada (slot_id apuntará a un registro inexistente — un futuro paso de limpieza, si es necesario).",
+  "fillDimensionsCorrectly": "Completa las dimensiones correctamente.",
+  "noDecorsInCatalog": "No hay decorados en el catálogo — añade al menos uno.",
+  "noOtherSlotInRack": "No hay otro hueco en esta estantería.",
+  "noWarehousesYet": "Aún no hay almacenes. Añade el primero con el botón +.",
+  "nameLabel": "Nombre",
+  "nameHintSlot": "Nombre (p. ej. A1)",
+  "nameHintRack": "Nombre de la estantería (p. ej. A, ALMACÉN-1)",
+  "addressOptional": "Dirección (opcional)",
+  "decorLabel": "Decorado",
+  "lengthMm": "Largo (mm)",
+  "widthMm": "Ancho (mm)",
+  "thicknessMm": "Espesor (mm)",
+  "capacityLabel": "Capacidad",
+  "capacityPcsLabel": "Capacidad (uds.)",
+  "errorPrefix": "Error: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Estantería {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Estanterías — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} uds.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "en stock",
+  "statusAvailable": "disponible",
+  "statusArchived": "archivado",
+  "newWarehouseTitle": "Nuevo almacén",
+  "noItemsInSlot": "No hay tableros ni recortes en este hueco.",
+  "noRacksYet": "No hay estanterías en este almacén.\nAñade la primera para empezar a organizar ubicaciones.",
+  "noSlotsYet": "No hay huecos en esta estantería.\nAñade el primero para poder asignarle tableros y recortes.",
+  "boardsSectionLabel": "TABLEROS",
+  "offcutsSectionLabel": "RECORTES",
+  "qrCodeNotFound": "Este código no existe o ha sido eliminado.",
+  "delete": "Eliminar",
+  "deleteSlotButton": "Eliminar hueco",
+  "cutFromBoardNote": "Del tablero ({decor}) — permanece en el mismo hueco.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Estado: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Imprimir etiquetas",
+  "eventCreated": "Creado",
+  "eventMoved": "Movido",
+  "eventArchived": "Archivado",
+  "eventCut": "Cortado",
+  "eventQrRegenerated": "QR regenerado",
+  "ownerDashboardTitle": "Panel del propietario",
+  "totalBoardsLabel": "Tableros",
+  "totalOffcutsLabel": "Recortes",
+  "overallFillRateLabel": "Ocupación",
+  "totalRacksSlotsLabel": "Estanterías / Huecos",
+  "staleItemsSectionTitle": "Materiales estancados",
+  "staleItemsSectionSubtitle": "Sin usar hace más de un año",
+  "noStaleItems": "No hay materiales estancados.",
+  "locationUnknown": "Ubicación desconocida",
+  "daysAgo": "hace {days} días",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

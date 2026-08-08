@@ -1,0 +1,131 @@
+{
+  "@@locale": "sv",
+  "warehousesTitle": "Lager",
+  "boardTitle": "Skiva",
+  "offcutTitle": "Kapbit",
+  "historyLabel": "Historik",
+  "noEntries": "Inga poster.",
+  "cancel": "Avbryt",
+  "save": "Spara",
+  "archive": "Arkivera",
+  "move": "Flytta",
+  "moveToLabel": "Flytta till:",
+  "cut": "Kapa",
+  "cutOffcut": "Kapa en bit",
+  "retry": "Försök igen",
+  "searchManually": "Sök manuellt",
+  "scanAgain": "Skanna igen",
+  "scanQrCode": "Skanna QR-kod",
+  "viewSourceBoard": "Visa ursprunglig skiva",
+  "addBoard": "Lägg till skiva",
+  "addRack": "Lägg till hyllställ",
+  "addSlot": "Lägg till fack",
+  "newBoardTitle": "Ny skiva",
+  "newRackTitle": "Nytt hyllställ",
+  "newSlotTitle": "Nytt fack",
+  "deleteSlotQuestion": "Ta bort detta fack?",
+  "archiveBoardQuestion": "Arkivera denna skiva?",
+  "archiveOffcutQuestion": "Arkivera denna kapbit?",
+  "historyStaysVisible": "Historiken (Ledger) förblir synlig.",
+  "deleteSlotWarning": "Denna åtgärd kan inte ångras. Skivor och kapbitar i detta fack tas inte bort — de förlorar bara sin tilldelade plats (slot_id kommer att peka på en post som inte finns — ett framtida rensningssteg om det behövs).",
+  "fillDimensionsCorrectly": "Fyll i måtten korrekt.",
+  "noDecorsInCatalog": "Inga dekorer i katalogen — lägg till minst en.",
+  "noOtherSlotInRack": "Inget annat fack i detta hyllställ.",
+  "noWarehousesYet": "Inga lager ännu. Lägg till det första med +-knappen.",
+  "nameLabel": "Namn",
+  "nameHintSlot": "Namn (t.ex. A1)",
+  "nameHintRack": "Hyllställnamn (t.ex. A, LAGER-1)",
+  "addressOptional": "Adress (valfritt)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Längd (mm)",
+  "widthMm": "Bredd (mm)",
+  "thicknessMm": "Tjocklek (mm)",
+  "capacityLabel": "Kapacitet",
+  "capacityPcsLabel": "Kapacitet (st)",
+  "errorPrefix": "Fel: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Hyllställ {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Hyllställ — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} st",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "i lager",
+  "statusAvailable": "tillgänglig",
+  "statusArchived": "arkiverad",
+  "newWarehouseTitle": "Nytt lager",
+  "noItemsInSlot": "Inga skivor eller kapbitar i detta fack.",
+  "noRacksYet": "Inga hyllställ i detta lager.\nLägg till det första för att börja organisera platser.",
+  "noSlotsYet": "Inga fack i detta hyllställ.\nLägg till det första för att kunna tilldela skivor och kapbitar.",
+  "boardsSectionLabel": "SKIVOR",
+  "offcutsSectionLabel": "KAPBITAR",
+  "qrCodeNotFound": "Denna kod finns inte eller har tagits bort.",
+  "delete": "Ta bort",
+  "deleteSlotButton": "Ta bort fack",
+  "cutFromBoardNote": "Från skiva ({decor}) — stannar i samma fack.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Skriv ut etiketter",
+  "eventCreated": "Skapad",
+  "eventMoved": "Flyttad",
+  "eventArchived": "Arkiverad",
+  "eventCut": "Kapad",
+  "eventQrRegenerated": "QR återgenererad",
+  "ownerDashboardTitle": "Ägarpanel",
+  "totalBoardsLabel": "Skivor",
+  "totalOffcutsLabel": "Kapbitar",
+  "overallFillRateLabel": "Fyllnadsgrad",
+  "totalRacksSlotsLabel": "Hyllställ / Fack",
+  "staleItemsSectionTitle": "Liggande material",
+  "staleItemsSectionSubtitle": "Oanvänt i över ett år",
+  "noStaleItems": "Inget liggande material.",
+  "locationUnknown": "Plats okänd",
+  "daysAgo": "{days} dagar sedan",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

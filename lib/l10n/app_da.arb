@@ -1,0 +1,131 @@
+{
+  "@@locale": "da",
+  "warehousesTitle": "Lagre",
+  "boardTitle": "Plade",
+  "offcutTitle": "Afskær",
+  "historyLabel": "Historik",
+  "noEntries": "Ingen poster.",
+  "cancel": "Annuller",
+  "save": "Gem",
+  "archive": "Arkiver",
+  "move": "Flyt",
+  "moveToLabel": "Flyt til:",
+  "cut": "Skær",
+  "cutOffcut": "Skær et afskær",
+  "retry": "Forsøg igen",
+  "searchManually": "Søg manuelt",
+  "scanAgain": "Scan igen",
+  "scanQrCode": "Scan QR-kode",
+  "viewSourceBoard": "Vis oprindelig plade",
+  "addBoard": "Tilføj plade",
+  "addRack": "Tilføj reol",
+  "addSlot": "Tilføj hylde",
+  "newBoardTitle": "Ny plade",
+  "newRackTitle": "Ny reol",
+  "newSlotTitle": "Ny hylde",
+  "deleteSlotQuestion": "Slet denne hylde?",
+  "archiveBoardQuestion": "Arkiver denne plade?",
+  "archiveOffcutQuestion": "Arkiver dette afskær?",
+  "historyStaysVisible": "Historikken (Ledger) forbliver synlig.",
+  "deleteSlotWarning": "Denne handling kan ikke fortrydes. Plader og afskær tildelt denne hylde bliver ikke slettet — de mister blot deres tildelte placering (slot_id vil pege på en post, der ikke findes — et fremtidigt oprydningsskridt hvis nødvendigt).",
+  "fillDimensionsCorrectly": "Udfyld målene korrekt.",
+  "noDecorsInCatalog": "Ingen dekorer i kataloget — tilføj mindst én.",
+  "noOtherSlotInRack": "Ingen anden hylde i denne reol.",
+  "noWarehousesYet": "Endnu ingen lagre. Tilføj det første med +-knappen.",
+  "nameLabel": "Navn",
+  "nameHintSlot": "Navn (f.eks. A1)",
+  "nameHintRack": "Reolnavn (f.eks. A, LAGER-1)",
+  "addressOptional": "Adresse (valgfrit)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Længde (mm)",
+  "widthMm": "Bredde (mm)",
+  "thicknessMm": "Tykkelse (mm)",
+  "capacityLabel": "Kapacitet",
+  "capacityPcsLabel": "Kapacitet (stk.)",
+  "errorPrefix": "Fejl: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Reol {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Reoler — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} stk.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "på lager",
+  "statusAvailable": "tilgængelig",
+  "statusArchived": "arkiveret",
+  "newWarehouseTitle": "Nyt lager",
+  "noItemsInSlot": "Ingen plader eller afskær i denne hylde.",
+  "noRacksYet": "Ingen reoler i dette lager.\nTilføj den første for at begynde at organisere placeringer.",
+  "noSlotsYet": "Ingen hylder i denne reol.\nTilføj den første for at kunne tildele plader og afskær.",
+  "boardsSectionLabel": "PLADER",
+  "offcutsSectionLabel": "AFSKÆR",
+  "qrCodeNotFound": "Denne kode findes ikke eller er blevet fjernet.",
+  "delete": "Slet",
+  "deleteSlotButton": "Slet hylde",
+  "cutFromBoardNote": "Fra plade ({decor}) — forbliver i samme hylde.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Udskriv etiketter",
+  "eventCreated": "Oprettet",
+  "eventMoved": "Flyttet",
+  "eventArchived": "Arkiveret",
+  "eventCut": "Skåret",
+  "eventQrRegenerated": "QR gendannet",
+  "ownerDashboardTitle": "Ejerpanel",
+  "totalBoardsLabel": "Plader",
+  "totalOffcutsLabel": "Afskær",
+  "overallFillRateLabel": "Fyldningsgrad",
+  "totalRacksSlotsLabel": "Reoler / Hylder",
+  "staleItemsSectionTitle": "Hvilende materialer",
+  "staleItemsSectionSubtitle": "Ubrugt i over et år",
+  "noStaleItems": "Ingen hvilende materialer.",
+  "locationUnknown": "Placering ukendt",
+  "daysAgo": "{days} dage siden",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

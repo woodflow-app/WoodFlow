@@ -1,0 +1,131 @@
+{
+  "@@locale": "ru",
+  "warehousesTitle": "Склады",
+  "boardTitle": "Плита",
+  "offcutTitle": "Обрезок",
+  "historyLabel": "История",
+  "noEntries": "Нет записей.",
+  "cancel": "Отмена",
+  "save": "Сохранить",
+  "archive": "Архивировать",
+  "move": "Переместить",
+  "moveToLabel": "Переместить в:",
+  "cut": "Отрезать",
+  "cutOffcut": "Отрезать обрезок",
+  "retry": "Повторить",
+  "searchManually": "Искать вручную",
+  "scanAgain": "Сканировать снова",
+  "scanQrCode": "Сканировать QR-код",
+  "viewSourceBoard": "Посмотреть исходную плиту",
+  "addBoard": "Добавить плиту",
+  "addRack": "Добавить стеллаж",
+  "addSlot": "Добавить ячейку",
+  "newBoardTitle": "Новая плита",
+  "newRackTitle": "Новый стеллаж",
+  "newSlotTitle": "Новая ячейка",
+  "deleteSlotQuestion": "Удалить эту ячейку?",
+  "archiveBoardQuestion": "Архивировать эту плиту?",
+  "archiveOffcutQuestion": "Архивировать этот обрезок?",
+  "historyStaysVisible": "История (Ledger) останется видимой.",
+  "deleteSlotWarning": "Это действие невозможно отменить. Плиты и обрезки, привязанные к этой ячейке, не будут удалены — они просто потеряют привязанное местоположение (slot_id будет указывать на несуществующую запись — шаг очистки в будущем, если понадобится).",
+  "fillDimensionsCorrectly": "Заполните размеры правильно.",
+  "noDecorsInCatalog": "В каталоге нет декоров — добавьте хотя бы один.",
+  "noOtherSlotInRack": "В этом стеллаже нет другой ячейки.",
+  "noWarehousesYet": "Складов пока нет. Добавьте первый кнопкой +.",
+  "nameLabel": "Название",
+  "nameHintSlot": "Название (напр. A1)",
+  "nameHintRack": "Название стеллажа (напр. A, СКЛАД-1)",
+  "addressOptional": "Адрес (необязательно)",
+  "decorLabel": "Декор",
+  "lengthMm": "Длина (мм)",
+  "widthMm": "Ширина (мм)",
+  "thicknessMm": "Толщина (мм)",
+  "capacityLabel": "Вместимость",
+  "capacityPcsLabel": "Вместимость (шт.)",
+  "errorPrefix": "Ошибка: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Стеллаж {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Стеллажи — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} шт.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "на складе",
+  "statusAvailable": "доступен",
+  "statusArchived": "архивирован",
+  "newWarehouseTitle": "Новый склад",
+  "noItemsInSlot": "В этой ячейке нет плит или обрезков.",
+  "noRacksYet": "В этом складе нет стеллажей.\nДобавьте первый, чтобы начать организацию мест хранения.",
+  "noSlotsYet": "В этом стеллаже нет ячеек.\nДобавьте первую, чтобы можно было привязывать плиты и обрезки.",
+  "boardsSectionLabel": "ПЛИТЫ",
+  "offcutsSectionLabel": "ОБРЕЗКИ",
+  "qrCodeNotFound": "Этот код не существует или был удалён.",
+  "delete": "Удалить",
+  "deleteSlotButton": "Удалить ячейку",
+  "cutFromBoardNote": "Из плиты ({decor}) — остаётся в той же ячейке.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Статус: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Печать этикеток",
+  "eventCreated": "Создано",
+  "eventMoved": "Перемещено",
+  "eventArchived": "Архивировано",
+  "eventCut": "Отрезано",
+  "eventQrRegenerated": "QR перегенерирован",
+  "ownerDashboardTitle": "Панель владельца",
+  "totalBoardsLabel": "Плиты",
+  "totalOffcutsLabel": "Обрезки",
+  "overallFillRateLabel": "Заполненность",
+  "totalRacksSlotsLabel": "Стеллажи / Ячейки",
+  "staleItemsSectionTitle": "Залежавшиеся материалы",
+  "staleItemsSectionSubtitle": "Не используются более года",
+  "noStaleItems": "Нет залежавшихся материалов.",
+  "locationUnknown": "Местоположение неизвестно",
+  "daysAgo": "{days} дн. назад",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "@@locale": "it",
+  "warehousesTitle": "Magazzini",
+  "boardTitle": "Pannello",
+  "offcutTitle": "Ritaglio",
+  "historyLabel": "Cronologia",
+  "noEntries": "Nessuna voce.",
+  "cancel": "Annulla",
+  "save": "Salva",
+  "archive": "Archivia",
+  "move": "Sposta",
+  "moveToLabel": "Sposta in:",
+  "cut": "Taglia",
+  "cutOffcut": "Taglia ritaglio",
+  "retry": "Riprova",
+  "searchManually": "Cerca manualmente",
+  "scanAgain": "Scansiona di nuovo",
+  "scanQrCode": "Scansiona codice QR",
+  "viewSourceBoard": "Vedi pannello di origine",
+  "addBoard": "Aggiungi pannello",
+  "addRack": "Aggiungi scaffale",
+  "addSlot": "Aggiungi vano",
+  "newBoardTitle": "Nuovo pannello",
+  "newRackTitle": "Nuovo scaffale",
+  "newSlotTitle": "Nuovo vano",
+  "deleteSlotQuestion": "Eliminare questo vano?",
+  "archiveBoardQuestion": "Archiviare questo pannello?",
+  "archiveOffcutQuestion": "Archiviare questo ritaglio?",
+  "historyStaysVisible": "La cronologia (Ledger) resterà visibile.",
+  "deleteSlotWarning": "Questa azione è irreversibile. I pannelli e i ritagli assegnati a questo vano non verranno eliminati — perderanno solo la posizione assegnata (slot_id punterà a un record inesistente — un futuro passaggio di pulizia, se necessario).",
+  "fillDimensionsCorrectly": "Inserisci correttamente le dimensioni.",
+  "noDecorsInCatalog": "Nessun decoro nel catalogo — aggiungine almeno uno.",
+  "noOtherSlotInRack": "Nessun altro vano in questo scaffale.",
+  "noWarehousesYet": "Nessun magazzino ancora. Aggiungi il primo con il pulsante +.",
+  "nameLabel": "Nome",
+  "nameHintSlot": "Nome (es. A1)",
+  "nameHintRack": "Nome scaffale (es. A, MAGAZZINO-1)",
+  "addressOptional": "Indirizzo (opzionale)",
+  "decorLabel": "Decoro",
+  "lengthMm": "Lunghezza (mm)",
+  "widthMm": "Larghezza (mm)",
+  "thicknessMm": "Spessore (mm)",
+  "capacityLabel": "Capacità",
+  "capacityPcsLabel": "Capacità (pz)",
+  "errorPrefix": "Errore: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Scaffale {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Scaffali — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} pz",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "in magazzino",
+  "statusAvailable": "disponibile",
+  "statusArchived": "archiviato",
+  "newWarehouseTitle": "Nuovo magazzino",
+  "noItemsInSlot": "Nessun pannello o ritaglio in questo vano.",
+  "noRacksYet": "Nessuno scaffale in questo magazzino.\nAggiungine uno per iniziare a organizzare le posizioni.",
+  "noSlotsYet": "Nessun vano in questo scaffale.\nAggiungine uno per poter assegnare pannelli e ritagli.",
+  "boardsSectionLabel": "PANNELLI",
+  "offcutsSectionLabel": "RITAGLI",
+  "qrCodeNotFound": "Questo codice non esiste o è stato rimosso.",
+  "delete": "Elimina",
+  "deleteSlotButton": "Elimina vano",
+  "cutFromBoardNote": "Dal pannello ({decor}) — rimane nello stesso vano.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Stato: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Stampa etichette",
+  "eventCreated": "Creato",
+  "eventMoved": "Spostato",
+  "eventArchived": "Archiviato",
+  "eventCut": "Tagliato",
+  "eventQrRegenerated": "QR rigenerato",
+  "ownerDashboardTitle": "Dashboard proprietario",
+  "totalBoardsLabel": "Pannelli",
+  "totalOffcutsLabel": "Ritagli",
+  "overallFillRateLabel": "Riempimento",
+  "totalRacksSlotsLabel": "Scaffali / Vani",
+  "staleItemsSectionTitle": "Materiali inutilizzati",
+  "staleItemsSectionSubtitle": "Fermi da oltre un anno",
+  "noStaleItems": "Nessun materiale inutilizzato.",
+  "locationUnknown": "Posizione sconosciuta",
+  "daysAgo": "{days} giorni fa",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "@@locale": "hu",
+  "warehousesTitle": "Raktárak",
+  "boardTitle": "Lap",
+  "offcutTitle": "Hulladékdarab",
+  "historyLabel": "Előzmények",
+  "noEntries": "Nincs bejegyzés.",
+  "cancel": "Mégse",
+  "save": "Mentés",
+  "archive": "Archiválás",
+  "move": "Áthelyezés",
+  "moveToLabel": "Áthelyezés ide:",
+  "cut": "Vágás",
+  "cutOffcut": "Hulladékdarab levágása",
+  "retry": "Újra próbálom",
+  "searchManually": "Kézi keresés",
+  "scanAgain": "Újra szkennelés",
+  "scanQrCode": "QR-kód szkennelése",
+  "viewSourceBoard": "Forráslap megtekintése",
+  "addBoard": "Lap hozzáadása",
+  "addRack": "Állvány hozzáadása",
+  "addSlot": "Rekesz hozzáadása",
+  "newBoardTitle": "Új lap",
+  "newRackTitle": "Új állvány",
+  "newSlotTitle": "Új rekesz",
+  "deleteSlotQuestion": "Törli ezt a rekeszt?",
+  "archiveBoardQuestion": "Archiválja ezt a lapot?",
+  "archiveOffcutQuestion": "Archiválja ezt a hulladékdarabot?",
+  "historyStaysVisible": "Az előzmények (Ledger) láthatók maradnak.",
+  "deleteSlotWarning": "Ez a művelet nem vonható vissza. Az ehhez a rekeszhez rendelt lapok és hulladékdarabok nem törlődnek — csak elvesztik a hozzárendelt helyüket (a slot_id egy nem létező rekordra fog mutatni — jövőbeli takarítási lépés, ha szükséges).",
+  "fillDimensionsCorrectly": "Töltse ki helyesen a méreteket.",
+  "noDecorsInCatalog": "Nincs dekor a katalógusban — adjon hozzá legalább egyet.",
+  "noOtherSlotInRack": "Nincs másik rekesz ezen az állványon.",
+  "noWarehousesYet": "Még nincs raktár. Adja hozzá az elsőt a + gombbal.",
+  "nameLabel": "Név",
+  "nameHintSlot": "Név (pl. A1)",
+  "nameHintRack": "Állvány neve (pl. A, RAKTÁR-1)",
+  "addressOptional": "Cím (opcionális)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Hossz (mm)",
+  "widthMm": "Szélesség (mm)",
+  "thicknessMm": "Vastagság (mm)",
+  "capacityLabel": "Kapacitás",
+  "capacityPcsLabel": "Kapacitás (db)",
+  "errorPrefix": "Hiba: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Állvány {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Állványok — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} db",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "készleten",
+  "statusAvailable": "elérhető",
+  "statusArchived": "archiválva",
+  "newWarehouseTitle": "Új raktár",
+  "noItemsInSlot": "Ebben a rekeszben nincs lap vagy hulladékdarab.",
+  "noRacksYet": "Ebben a raktárban nincs állvány.\nAdja hozzá az elsőt a helyek rendszerezéséhez.",
+  "noSlotsYet": "Ebben az állványban nincs rekesz.\nAdja hozzá az elsőt, hogy hozzárendelhessen lapokat és hulladékdarabokat.",
+  "boardsSectionLabel": "LAPOK",
+  "offcutsSectionLabel": "HULLADÉKDARABOK",
+  "qrCodeNotFound": "Ez a kód nem létezik, vagy eltávolították.",
+  "delete": "Törlés",
+  "deleteSlotButton": "Rekesz törlése",
+  "cutFromBoardNote": "Lapból ({decor}) — ugyanabban a rekeszben marad.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Állapot: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Címkék nyomtatása",
+  "eventCreated": "Létrehozva",
+  "eventMoved": "Áthelyezve",
+  "eventArchived": "Archiválva",
+  "eventCut": "Levágva",
+  "eventQrRegenerated": "QR újragenerálva",
+  "ownerDashboardTitle": "Tulajdonosi irányítópult",
+  "totalBoardsLabel": "Lapok",
+  "totalOffcutsLabel": "Hulladékdarabok",
+  "overallFillRateLabel": "Telítettség",
+  "totalRacksSlotsLabel": "Állványok / Rekeszek",
+  "staleItemsSectionTitle": "Heverő anyagok",
+  "staleItemsSectionSubtitle": "Egy éve felhasználatlan",
+  "noStaleItems": "Nincs heverő anyag.",
+  "locationUnknown": "Ismeretlen hely",
+  "daysAgo": "{days} napja",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

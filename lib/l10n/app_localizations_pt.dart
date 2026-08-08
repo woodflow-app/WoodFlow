@@ -1,0 +1,256 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Portuguese (`pt`).
+class AppLocalizationsPt extends AppLocalizations {
+  AppLocalizationsPt([String locale = 'pt']) : super(locale);
+
+  @override
+  String get warehousesTitle => 'Magazyny';
+
+  @override
+  String get boardTitle => 'Płyta';
+
+  @override
+  String get offcutTitle => 'Ścinek';
+
+  @override
+  String get historyLabel => 'Historia';
+
+  @override
+  String get noEntries => 'Brak wpisów.';
+
+  @override
+  String get cancel => 'Anuluj';
+
+  @override
+  String get save => 'Zapisz';
+
+  @override
+  String get archive => 'Archiwizuj';
+
+  @override
+  String get move => 'Przenieś';
+
+  @override
+  String get moveToLabel => 'Przenieś do:';
+
+  @override
+  String get cut => 'Wytnij';
+
+  @override
+  String get cutOffcut => 'Wytnij ścinek';
+
+  @override
+  String get retry => 'Ponów';
+
+  @override
+  String get searchManually => 'Wyszukaj ręcznie';
+
+  @override
+  String get scanAgain => 'Skanuj ponownie';
+
+  @override
+  String get scanQrCode => 'Skanuj kod QR';
+
+  @override
+  String get viewSourceBoard => 'Zobacz płytę źródłową';
+
+  @override
+  String get addBoard => 'Dodaj płytę';
+
+  @override
+  String get addRack => 'Dodaj regał';
+
+  @override
+  String get addSlot => 'Dodaj półkę';
+
+  @override
+  String get newBoardTitle => 'Nowa płyta';
+
+  @override
+  String get newRackTitle => 'Nowy regał';
+
+  @override
+  String get newSlotTitle => 'Nowa półka';
+
+  @override
+  String get deleteSlotQuestion => 'Usunąć półkę?';
+
+  @override
+  String get archiveBoardQuestion => 'Zarchiwizować płytę?';
+
+  @override
+  String get archiveOffcutQuestion => 'Zarchiwizować ścinek?';
+
+  @override
+  String get historyStaysVisible => 'Historia (Ledger) pozostanie widoczna.';
+
+  @override
+  String get deleteSlotWarning =>
+      'Ta operacja jest nieodwracalna. Płyty i ścinki przypisane do tej półki nie zostaną usunięte, tylko stracą przypisaną lokalizację (slot_id wskaże na nieistniejący rekord — kolejny krok porządkowy, gdy zajdzie taka potrzeba).';
+
+  @override
+  String get fillDimensionsCorrectly => 'Uzupełnij wymiary poprawnie.';
+
+  @override
+  String get noDecorsInCatalog =>
+      'Brak dekorów w katalogu — dodaj przynajmniej jeden.';
+
+  @override
+  String get noOtherSlotInRack => 'Brak innej półki w tym regale.';
+
+  @override
+  String get noWarehousesYet => 'Brak magazynów. Dodaj pierwszy przyciskiem +.';
+
+  @override
+  String get nameLabel => 'Nazwa';
+
+  @override
+  String get nameHintSlot => 'Nazwa (np. A1)';
+
+  @override
+  String get nameHintRack => 'Nazwa regału (np. A, MAGAZYN-1)';
+
+  @override
+  String get addressOptional => 'Adres (opcjonalnie)';
+
+  @override
+  String get decorLabel => 'Dekor';
+
+  @override
+  String get lengthMm => 'Dł. (mm)';
+
+  @override
+  String get widthMm => 'Szer. (mm)';
+
+  @override
+  String get thicknessMm => 'Grub. (mm)';
+
+  @override
+  String get capacityLabel => 'Pojemność';
+
+  @override
+  String get capacityPcsLabel => 'Pojemność (szt.)';
+
+  @override
+  String errorPrefix(String message) {
+    return 'Błąd: $message';
+  }
+
+  @override
+  String rackNameTitle(String name) {
+    return 'Regał $name';
+  }
+
+  @override
+  String racksForWarehouseTitle(String warehouseName) {
+    return 'Regały — $warehouseName';
+  }
+
+  @override
+  String slotFillCount(int used, int capacity) {
+    return '$used / $capacity szt.';
+  }
+
+  @override
+  String get statusInStock => 'w magazynie';
+
+  @override
+  String get statusAvailable => 'Disponível';
+
+  @override
+  String get statusArchived => 'zarchiwizowany';
+
+  @override
+  String get newWarehouseTitle => 'Nowy magazyn';
+
+  @override
+  String get noItemsInSlot => 'Brak płyt ani ścinków w tej półce.';
+
+  @override
+  String get noRacksYet =>
+      'Brak regałów w tym magazynie.\nDodaj pierwszy, żeby zacząć organizować lokalizacje.';
+
+  @override
+  String get noSlotsYet =>
+      'Brak półek w tym regale.\nDodaj pierwszą, żeby móc przypisywać do niej płyty i ścinki.';
+
+  @override
+  String get boardsSectionLabel => 'PŁYTY';
+
+  @override
+  String get offcutsSectionLabel => 'ŚCINKI';
+
+  @override
+  String get qrCodeNotFound => 'Ten kod nie istnieje lub został usunięty.';
+
+  @override
+  String get delete => 'Usuń';
+
+  @override
+  String get deleteSlotButton => 'Usuń półkę';
+
+  @override
+  String cutFromBoardNote(String decor) {
+    return 'Ze płyty ($decor) — zostaje w tej samej półce.';
+  }
+
+  @override
+  String statusLabel(String value) {
+    return 'Estado';
+  }
+
+  @override
+  String get printLabelsForSlot => 'Drukuj etykiety';
+
+  @override
+  String get eventCreated => 'Utworzono';
+
+  @override
+  String get eventMoved => 'Przeniesiono';
+
+  @override
+  String get eventArchived => 'Zarchiwizowano';
+
+  @override
+  String get eventCut => 'Wycięto';
+
+  @override
+  String get eventQrRegenerated => 'Zregenerowano QR';
+
+  @override
+  String get ownerDashboardTitle => 'Panel właściciela';
+
+  @override
+  String get totalBoardsLabel => 'Płyty';
+
+  @override
+  String get totalOffcutsLabel => 'Ścinki';
+
+  @override
+  String get overallFillRateLabel => 'Zapełnienie';
+
+  @override
+  String get totalRacksSlotsLabel => 'Regały / Sloty';
+
+  @override
+  String get staleItemsSectionTitle => 'Materiały zalegające';
+
+  @override
+  String get staleItemsSectionSubtitle => 'Nieużywane dłużej niż rok';
+
+  @override
+  String get noStaleItems => 'Brak materiałów zalegających.';
+
+  @override
+  String get locationUnknown => 'Lokalizacja nieznana';
+
+  @override
+  String daysAgo(int days) {
+    return '$days dni temu';
+  }
+}

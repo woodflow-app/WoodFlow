@@ -1,0 +1,131 @@
+{
+  "@@locale": "hr",
+  "warehousesTitle": "Skladišta",
+  "boardTitle": "Ploča",
+  "offcutTitle": "Otpadak",
+  "historyLabel": "Povijest",
+  "noEntries": "Nema unosa.",
+  "cancel": "Odustani",
+  "save": "Spremi",
+  "archive": "Arhiviraj",
+  "move": "Premjesti",
+  "moveToLabel": "Premjesti u:",
+  "cut": "Izreži",
+  "cutOffcut": "Izreži otpadak",
+  "retry": "Pokušaj ponovno",
+  "searchManually": "Pretraži ručno",
+  "scanAgain": "Skeniraj ponovno",
+  "scanQrCode": "Skeniraj QR kod",
+  "viewSourceBoard": "Pogledaj izvornu ploču",
+  "addBoard": "Dodaj ploču",
+  "addRack": "Dodaj regal",
+  "addSlot": "Dodaj pretinac",
+  "newBoardTitle": "Nova ploča",
+  "newRackTitle": "Novi regal",
+  "newSlotTitle": "Novi pretinac",
+  "deleteSlotQuestion": "Izbrisati ovaj pretinac?",
+  "archiveBoardQuestion": "Arhivirati ovu ploču?",
+  "archiveOffcutQuestion": "Arhivirati ovaj otpadak?",
+  "historyStaysVisible": "Povijest (Ledger) ostaje vidljiva.",
+  "deleteSlotWarning": "Ova radnja se ne može poništiti. Ploče i otpaci dodijeljeni ovom pretincu neće biti izbrisani — samo će izgubiti dodijeljenu lokaciju (slot_id će upućivati na nepostojeći zapis — budući korak čišćenja ako bude potrebno).",
+  "fillDimensionsCorrectly": "Ispravno popunite dimenzije.",
+  "noDecorsInCatalog": "Nema dekora u katalogu — dodajte barem jedan.",
+  "noOtherSlotInRack": "Nema drugog pretinca u ovom regalu.",
+  "noWarehousesYet": "Još nema skladišta. Dodajte prvo pomoću gumba +.",
+  "nameLabel": "Naziv",
+  "nameHintSlot": "Naziv (npr. A1)",
+  "nameHintRack": "Naziv regala (npr. A, SKLADIŠTE-1)",
+  "addressOptional": "Adresa (neobavezno)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Dužina (mm)",
+  "widthMm": "Širina (mm)",
+  "thicknessMm": "Debljina (mm)",
+  "capacityLabel": "Kapacitet",
+  "capacityPcsLabel": "Kapacitet (kom.)",
+  "errorPrefix": "Greška: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Regal {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Regali — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} kom.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "na skladištu",
+  "statusAvailable": "dostupan",
+  "statusArchived": "arhivirano",
+  "newWarehouseTitle": "Novo skladište",
+  "noItemsInSlot": "Nema ploča ni otpadaka u ovom pretincu.",
+  "noRacksYet": "Nema regala u ovom skladištu.\nDodajte prvi da biste počeli organizirati lokacije.",
+  "noSlotsYet": "Nema pretinaca u ovom regalu.\nDodajte prvi kako biste mogli dodijeliti ploče i otpatke.",
+  "boardsSectionLabel": "PLOČE",
+  "offcutsSectionLabel": "OTPACI",
+  "qrCodeNotFound": "Ovaj kod ne postoji ili je uklonjen.",
+  "delete": "Izbriši",
+  "deleteSlotButton": "Izbriši pretinac",
+  "cutFromBoardNote": "S ploče ({decor}) — ostaje u istom pretincu.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Ispis naljepnica",
+  "eventCreated": "Stvoreno",
+  "eventMoved": "Premješteno",
+  "eventArchived": "Arhivirano",
+  "eventCut": "Izrezano",
+  "eventQrRegenerated": "QR ponovno generiran",
+  "ownerDashboardTitle": "Vlasnička nadzorna ploča",
+  "totalBoardsLabel": "Ploče",
+  "totalOffcutsLabel": "Otpaci",
+  "overallFillRateLabel": "Popunjenost",
+  "totalRacksSlotsLabel": "Regali / Pretinci",
+  "staleItemsSectionTitle": "Zaostali materijali",
+  "staleItemsSectionSubtitle": "Nekorišteno više od godinu dana",
+  "noStaleItems": "Nema zaostalih materijala.",
+  "locationUnknown": "Lokacija nepoznata",
+  "daysAgo": "prije {days} dana",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

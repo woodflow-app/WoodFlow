@@ -1,0 +1,131 @@
+{
+  "@@locale": "fr",
+  "warehousesTitle": "Entrepôts",
+  "boardTitle": "Panneau",
+  "offcutTitle": "Chute",
+  "historyLabel": "Historique",
+  "noEntries": "Aucune entrée.",
+  "cancel": "Annuler",
+  "save": "Enregistrer",
+  "archive": "Archiver",
+  "move": "Déplacer",
+  "moveToLabel": "Déplacer vers :",
+  "cut": "Découper",
+  "cutOffcut": "Découper une chute",
+  "retry": "Réessayer",
+  "searchManually": "Rechercher manuellement",
+  "scanAgain": "Scanner à nouveau",
+  "scanQrCode": "Scanner le code QR",
+  "viewSourceBoard": "Voir le panneau d'origine",
+  "addBoard": "Ajouter un panneau",
+  "addRack": "Ajouter un rayonnage",
+  "addSlot": "Ajouter un emplacement",
+  "newBoardTitle": "Nouveau panneau",
+  "newRackTitle": "Nouveau rayonnage",
+  "newSlotTitle": "Nouvel emplacement",
+  "deleteSlotQuestion": "Supprimer cet emplacement ?",
+  "archiveBoardQuestion": "Archiver ce panneau ?",
+  "archiveOffcutQuestion": "Archiver cette chute ?",
+  "historyStaysVisible": "L'historique (Ledger) restera visible.",
+  "deleteSlotWarning": "Cette action est irréversible. Les panneaux et chutes affectés à cet emplacement ne seront pas supprimés — ils perdront simplement leur emplacement assigné (slot_id pointera vers un enregistrement inexistant — une étape de nettoyage future si nécessaire).",
+  "fillDimensionsCorrectly": "Veuillez renseigner correctement les dimensions.",
+  "noDecorsInCatalog": "Aucun décor dans le catalogue — ajoutez-en au moins un.",
+  "noOtherSlotInRack": "Aucun autre emplacement dans ce rayonnage.",
+  "noWarehousesYet": "Aucun entrepôt pour le moment. Ajoutez le premier avec le bouton +.",
+  "nameLabel": "Nom",
+  "nameHintSlot": "Nom (ex. A1)",
+  "nameHintRack": "Nom du rayonnage (ex. A, ENTREPÔT-1)",
+  "addressOptional": "Adresse (facultatif)",
+  "decorLabel": "Décor",
+  "lengthMm": "Longueur (mm)",
+  "widthMm": "Largeur (mm)",
+  "thicknessMm": "Épaisseur (mm)",
+  "capacityLabel": "Capacité",
+  "capacityPcsLabel": "Capacité (pièces)",
+  "errorPrefix": "Erreur : {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Rayonnage {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Rayonnages — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} pièces",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "en stock",
+  "statusAvailable": "disponible",
+  "statusArchived": "archivé",
+  "newWarehouseTitle": "Nouvel entrepôt",
+  "noItemsInSlot": "Aucun panneau ni chute dans cet emplacement.",
+  "noRacksYet": "Aucun rayonnage dans cet entrepôt.\nAjoutez le premier pour commencer à organiser les emplacements.",
+  "noSlotsYet": "Aucun emplacement dans ce rayonnage.\nAjoutez le premier pour pouvoir y affecter des panneaux et des chutes.",
+  "boardsSectionLabel": "PANNEAUX",
+  "offcutsSectionLabel": "CHUTES",
+  "qrCodeNotFound": "Ce code n'existe pas ou a été supprimé.",
+  "delete": "Supprimer",
+  "deleteSlotButton": "Supprimer l'emplacement",
+  "cutFromBoardNote": "Depuis le panneau ({decor}) — reste dans le même emplacement.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Statut : {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Imprimer les étiquettes",
+  "eventCreated": "Créé",
+  "eventMoved": "Déplacé",
+  "eventArchived": "Archivé",
+  "eventCut": "Découpé",
+  "eventQrRegenerated": "QR régénéré",
+  "ownerDashboardTitle": "Tableau de bord propriétaire",
+  "totalBoardsLabel": "Panneaux",
+  "totalOffcutsLabel": "Chutes",
+  "overallFillRateLabel": "Taux de remplissage",
+  "totalRacksSlotsLabel": "Rayonnages / Emplacements",
+  "staleItemsSectionTitle": "Matériaux dormants",
+  "staleItemsSectionSubtitle": "Inutilisés depuis plus d'un an",
+  "noStaleItems": "Aucun matériau dormant.",
+  "locationUnknown": "Emplacement inconnu",
+  "daysAgo": "il y a {days} jours",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

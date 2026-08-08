@@ -1,0 +1,131 @@
+{
+  "@@locale": "lt",
+  "warehousesTitle": "Sandėliai",
+  "boardTitle": "Plokštė",
+  "offcutTitle": "Atraiža",
+  "historyLabel": "Istorija",
+  "noEntries": "Nėra įrašų.",
+  "cancel": "Atšaukti",
+  "save": "Išsaugoti",
+  "archive": "Archyvuoti",
+  "move": "Perkelti",
+  "moveToLabel": "Perkelti į:",
+  "cut": "Pjauti",
+  "cutOffcut": "Atpjauti atraižą",
+  "retry": "Bandyti dar kartą",
+  "searchManually": "Ieškoti rankiniu būdu",
+  "scanAgain": "Skenuoti iš naujo",
+  "scanQrCode": "Skenuoti QR kodą",
+  "viewSourceBoard": "Žiūrėti šaltinio plokštę",
+  "addBoard": "Pridėti plokštę",
+  "addRack": "Pridėti stelažą",
+  "addSlot": "Pridėti ląstelę",
+  "newBoardTitle": "Nauja plokštė",
+  "newRackTitle": "Naujas stelažas",
+  "newSlotTitle": "Nauja ląstelė",
+  "deleteSlotQuestion": "Ištrinti šią ląstelę?",
+  "archiveBoardQuestion": "Archyvuoti šią plokštę?",
+  "archiveOffcutQuestion": "Archyvuoti šią atraižą?",
+  "historyStaysVisible": "Istorija (Ledger) išliks matoma.",
+  "deleteSlotWarning": "Šio veiksmo negalima anuliuoti. Šiai ląstelei priskirtos plokštės ir atraižos nebus ištrintos — jos tik prarasite priskirtą vietą (slot_id nurodys į neegzistuojantį įrašą — būsimas sutvarkymo žingsnis, jei reikės).",
+  "fillDimensionsCorrectly": "Užpildykite matmenis teisingai.",
+  "noDecorsInCatalog": "Kataloge nėra dekorų — pridėkite bent vieną.",
+  "noOtherSlotInRack": "Šiame stelaže nėra kitos ląstelės.",
+  "noWarehousesYet": "Kol kas nėra sandėlių. Pridėkite pirmąjį mygtuku +.",
+  "nameLabel": "Pavadinimas",
+  "nameHintSlot": "Pavadinimas (pvz. A1)",
+  "nameHintRack": "Stelažo pavadinimas (pvz. A, SANDĖLIS-1)",
+  "addressOptional": "Adresas (nebūtinas)",
+  "decorLabel": "Dekoras",
+  "lengthMm": "Ilgis (mm)",
+  "widthMm": "Plotis (mm)",
+  "thicknessMm": "Storis (mm)",
+  "capacityLabel": "Talpa",
+  "capacityPcsLabel": "Talpa (vnt.)",
+  "errorPrefix": "Klaida: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Stelažas {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Stelažai — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} vnt.",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "sandėlyje",
+  "statusAvailable": "pasiekiama",
+  "statusArchived": "archyvuota",
+  "newWarehouseTitle": "Naujas sandėlis",
+  "noItemsInSlot": "Šioje ląstelėje nėra plokščių ar atraižų.",
+  "noRacksYet": "Šiame sandėlyje nėra stelažų.\nPridėkite pirmąjį, kad pradėtumėte organizuoti vietas.",
+  "noSlotsYet": "Šiame stelaže nėra ląstelių.\nPridėkite pirmąją, kad galėtumėte priskirti plokštes ir atraižas.",
+  "boardsSectionLabel": "PLOKŠTĖS",
+  "offcutsSectionLabel": "ATRAIŽOS",
+  "qrCodeNotFound": "Šio kodo nėra arba jis buvo pašalintas.",
+  "delete": "Ištrinti",
+  "deleteSlotButton": "Ištrinti ląstelę",
+  "cutFromBoardNote": "Iš plokštės ({decor}) — lieka toje pačioje ląstelėje.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Būsena: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Spausdinti etiketes",
+  "eventCreated": "Sukurta",
+  "eventMoved": "Perkelta",
+  "eventArchived": "Archyvuota",
+  "eventCut": "Supjaustyta",
+  "eventQrRegenerated": "QR sugeneruotas iš naujo",
+  "ownerDashboardTitle": "Savininko skydelis",
+  "totalBoardsLabel": "Plokštės",
+  "totalOffcutsLabel": "Atraižos",
+  "overallFillRateLabel": "Užpildymas",
+  "totalRacksSlotsLabel": "Stelažai / Ląstelės",
+  "staleItemsSectionTitle": "Ilgai gulinčios medžiagos",
+  "staleItemsSectionSubtitle": "Nenaudota daugiau nei metus",
+  "noStaleItems": "Nėra ilgai gulinčių medžiagų.",
+  "locationUnknown": "Vieta nežinoma",
+  "daysAgo": "prieš {days} d.",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

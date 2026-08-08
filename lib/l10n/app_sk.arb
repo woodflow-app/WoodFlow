@@ -1,0 +1,131 @@
+{
+  "@@locale": "sk",
+  "warehousesTitle": "Sklady",
+  "boardTitle": "Deska",
+  "offcutTitle": "Odrezok",
+  "historyLabel": "História",
+  "noEntries": "Žiadne záznamy.",
+  "cancel": "Zrušiť",
+  "save": "Uložiť",
+  "archive": "Archivovať",
+  "move": "Presunúť",
+  "moveToLabel": "Presunúť do:",
+  "cut": "Rezať",
+  "cutOffcut": "Odrezať odrezok",
+  "retry": "Skúsiť znova",
+  "searchManually": "Vyhľadať manuálne",
+  "scanAgain": "Naskenovať znova",
+  "scanQrCode": "Naskenovať QR kód",
+  "viewSourceBoard": "Zobraziť zdrojovú desku",
+  "addBoard": "Pridať desku",
+  "addRack": "Pridať regál",
+  "addSlot": "Pridať priehradku",
+  "newBoardTitle": "Nová deska",
+  "newRackTitle": "Nový regál",
+  "newSlotTitle": "Nová priehradka",
+  "deleteSlotQuestion": "Odstrániť túto priehradku?",
+  "archiveBoardQuestion": "Archivovať túto desku?",
+  "archiveOffcutQuestion": "Archivovať tento odrezok?",
+  "historyStaysVisible": "História (Ledger) zostane viditeľná.",
+  "deleteSlotWarning": "Túto akciu nie je možné vrátiť späť. Dosky a odrezky priradené k tejto priehradke sa nezmažú — iba stratia priradené umiestnenie (slot_id bude odkazovať na neexistujúci záznam — budúci krok upratovania, ak bude potrebný).",
+  "fillDimensionsCorrectly": "Vyplňte rozmery správne.",
+  "noDecorsInCatalog": "V katalógu nie sú žiadne dekory — pridajte aspoň jeden.",
+  "noOtherSlotInRack": "V tomto regáli nie je žiadna iná priehradka.",
+  "noWarehousesYet": "Zatiaľ žiadne sklady. Pridajte prvý tlačidlom +.",
+  "nameLabel": "Názov",
+  "nameHintSlot": "Názov (napr. A1)",
+  "nameHintRack": "Názov regálu (napr. A, SKLAD-1)",
+  "addressOptional": "Adresa (nepovinné)",
+  "decorLabel": "Dekor",
+  "lengthMm": "Dĺžka (mm)",
+  "widthMm": "Šírka (mm)",
+  "thicknessMm": "Hrúbka (mm)",
+  "capacityLabel": "Kapacita",
+  "capacityPcsLabel": "Kapacita (ks)",
+  "errorPrefix": "Chyba: {message}",
+  "@errorPrefix": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "rackNameTitle": "Regál {name}",
+  "@rackNameTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "racksForWarehouseTitle": "Regály — {warehouseName}",
+  "@racksForWarehouseTitle": {
+    "placeholders": {
+      "warehouseName": {
+        "type": "String"
+      }
+    }
+  },
+  "slotFillCount": "{used} / {capacity} ks",
+  "@slotFillCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "capacity": {
+        "type": "int"
+      }
+    }
+  },
+  "statusInStock": "na sklade",
+  "statusAvailable": "dostupný",
+  "statusArchived": "archivované",
+  "newWarehouseTitle": "Nový sklad",
+  "noItemsInSlot": "V tejto priehradke nie sú žiadne dosky ani odrezky.",
+  "noRacksYet": "V tomto sklade nie sú žiadne regály.\nPridajte prvý, aby ste mohli organizovať umiestnenia.",
+  "noSlotsYet": "V tomto regáli nie sú žiadne priehradky.\nPridajte prvú, aby ste mohli priraďovať dosky a odrezky.",
+  "boardsSectionLabel": "DOSKY",
+  "offcutsSectionLabel": "ODREZKY",
+  "qrCodeNotFound": "Tento kód neexistuje alebo bol odstránený.",
+  "delete": "Odstrániť",
+  "deleteSlotButton": "Odstrániť priehradku",
+  "cutFromBoardNote": "Z dosky ({decor}) — zostáva v tej istej priehradke.",
+  "@cutFromBoardNote": {
+    "placeholders": {
+      "decor": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Stav: {value}",
+  "@statusLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "printLabelsForSlot": "Tlač štítkov",
+  "eventCreated": "Vytvorené",
+  "eventMoved": "Presunuté",
+  "eventArchived": "Archivované",
+  "eventCut": "Narezané",
+  "eventQrRegenerated": "QR obnovené",
+  "ownerDashboardTitle": "Panel majiteľa",
+  "totalBoardsLabel": "Dosky",
+  "totalOffcutsLabel": "Odrezky",
+  "overallFillRateLabel": "Naplnenosť",
+  "totalRacksSlotsLabel": "Regály / Priehradky",
+  "staleItemsSectionTitle": "Ležiace materiály",
+  "staleItemsSectionSubtitle": "Nepoužité viac ako rok",
+  "noStaleItems": "Žiadne ležiace materiály.",
+  "locationUnknown": "Umiestnenie neznáme",
+  "daysAgo": "pred {days} dňami",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

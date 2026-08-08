@@ -1,0 +1,256 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Russian (`ru`).
+class AppLocalizationsRu extends AppLocalizations {
+  AppLocalizationsRu([String locale = 'ru']) : super(locale);
+
+  @override
+  String get warehousesTitle => 'Склады';
+
+  @override
+  String get boardTitle => 'Плита';
+
+  @override
+  String get offcutTitle => 'Обрезок';
+
+  @override
+  String get historyLabel => 'История';
+
+  @override
+  String get noEntries => 'Нет записей.';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get save => 'Сохранить';
+
+  @override
+  String get archive => 'Архивировать';
+
+  @override
+  String get move => 'Переместить';
+
+  @override
+  String get moveToLabel => 'Переместить в:';
+
+  @override
+  String get cut => 'Отрезать';
+
+  @override
+  String get cutOffcut => 'Отрезать обрезок';
+
+  @override
+  String get retry => 'Повторить';
+
+  @override
+  String get searchManually => 'Искать вручную';
+
+  @override
+  String get scanAgain => 'Сканировать снова';
+
+  @override
+  String get scanQrCode => 'Сканировать QR-код';
+
+  @override
+  String get viewSourceBoard => 'Посмотреть исходную плиту';
+
+  @override
+  String get addBoard => 'Добавить плиту';
+
+  @override
+  String get addRack => 'Добавить стеллаж';
+
+  @override
+  String get addSlot => 'Добавить ячейку';
+
+  @override
+  String get newBoardTitle => 'Новая плита';
+
+  @override
+  String get newRackTitle => 'Новый стеллаж';
+
+  @override
+  String get newSlotTitle => 'Новая ячейка';
+
+  @override
+  String get deleteSlotQuestion => 'Удалить эту ячейку?';
+
+  @override
+  String get archiveBoardQuestion => 'Архивировать эту плиту?';
+
+  @override
+  String get archiveOffcutQuestion => 'Архивировать этот обрезок?';
+
+  @override
+  String get historyStaysVisible => 'История (Ledger) останется видимой.';
+
+  @override
+  String get deleteSlotWarning =>
+      'Это действие невозможно отменить. Плиты и обрезки, привязанные к этой ячейке, не будут удалены — они просто потеряют привязанное местоположение (slot_id будет указывать на несуществующую запись — шаг очистки в будущем, если понадобится).';
+
+  @override
+  String get fillDimensionsCorrectly => 'Заполните размеры правильно.';
+
+  @override
+  String get noDecorsInCatalog =>
+      'В каталоге нет декоров — добавьте хотя бы один.';
+
+  @override
+  String get noOtherSlotInRack => 'В этом стеллаже нет другой ячейки.';
+
+  @override
+  String get noWarehousesYet => 'Складов пока нет. Добавьте первый кнопкой +.';
+
+  @override
+  String get nameLabel => 'Название';
+
+  @override
+  String get nameHintSlot => 'Название (напр. A1)';
+
+  @override
+  String get nameHintRack => 'Название стеллажа (напр. A, СКЛАД-1)';
+
+  @override
+  String get addressOptional => 'Адрес (необязательно)';
+
+  @override
+  String get decorLabel => 'Декор';
+
+  @override
+  String get lengthMm => 'Длина (мм)';
+
+  @override
+  String get widthMm => 'Ширина (мм)';
+
+  @override
+  String get thicknessMm => 'Толщина (мм)';
+
+  @override
+  String get capacityLabel => 'Вместимость';
+
+  @override
+  String get capacityPcsLabel => 'Вместимость (шт.)';
+
+  @override
+  String errorPrefix(String message) {
+    return 'Ошибка: $message';
+  }
+
+  @override
+  String rackNameTitle(String name) {
+    return 'Стеллаж $name';
+  }
+
+  @override
+  String racksForWarehouseTitle(String warehouseName) {
+    return 'Стеллажи — $warehouseName';
+  }
+
+  @override
+  String slotFillCount(int used, int capacity) {
+    return '$used / $capacity шт.';
+  }
+
+  @override
+  String get statusInStock => 'на складе';
+
+  @override
+  String get statusAvailable => 'доступен';
+
+  @override
+  String get statusArchived => 'архивирован';
+
+  @override
+  String get newWarehouseTitle => 'Новый склад';
+
+  @override
+  String get noItemsInSlot => 'В этой ячейке нет плит или обрезков.';
+
+  @override
+  String get noRacksYet =>
+      'В этом складе нет стеллажей.\nДобавьте первый, чтобы начать организацию мест хранения.';
+
+  @override
+  String get noSlotsYet =>
+      'В этом стеллаже нет ячеек.\nДобавьте первую, чтобы можно было привязывать плиты и обрезки.';
+
+  @override
+  String get boardsSectionLabel => 'ПЛИТЫ';
+
+  @override
+  String get offcutsSectionLabel => 'ОБРЕЗКИ';
+
+  @override
+  String get qrCodeNotFound => 'Этот код не существует или был удалён.';
+
+  @override
+  String get delete => 'Удалить';
+
+  @override
+  String get deleteSlotButton => 'Удалить ячейку';
+
+  @override
+  String cutFromBoardNote(String decor) {
+    return 'Из плиты ($decor) — остаётся в той же ячейке.';
+  }
+
+  @override
+  String statusLabel(String value) {
+    return 'Статус: $value';
+  }
+
+  @override
+  String get printLabelsForSlot => 'Печать этикеток';
+
+  @override
+  String get eventCreated => 'Создано';
+
+  @override
+  String get eventMoved => 'Перемещено';
+
+  @override
+  String get eventArchived => 'Архивировано';
+
+  @override
+  String get eventCut => 'Отрезано';
+
+  @override
+  String get eventQrRegenerated => 'QR перегенерирован';
+
+  @override
+  String get ownerDashboardTitle => 'Панель владельца';
+
+  @override
+  String get totalBoardsLabel => 'Плиты';
+
+  @override
+  String get totalOffcutsLabel => 'Обрезки';
+
+  @override
+  String get overallFillRateLabel => 'Заполненность';
+
+  @override
+  String get totalRacksSlotsLabel => 'Стеллажи / Ячейки';
+
+  @override
+  String get staleItemsSectionTitle => 'Залежавшиеся материалы';
+
+  @override
+  String get staleItemsSectionSubtitle => 'Не используются более года';
+
+  @override
+  String get noStaleItems => 'Нет залежавшихся материалов.';
+
+  @override
+  String get locationUnknown => 'Местоположение неизвестно';
+
+  @override
+  String daysAgo(int days) {
+    return '$days дн. назад';
+  }
+}
