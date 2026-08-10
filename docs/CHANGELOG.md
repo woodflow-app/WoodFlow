@@ -25,7 +25,7 @@ to jest odniesienie do statusu, nie log zmian dla 1–9.
 9. Dashboard właściciela ✅
 10. Eksport PDF/CSV/RTF ✅
 11. Kalkulatory ✅
-12. Baza dekorów ⬜
+12. Baza dekorów ✅
 13. Lista zakupów + niski stan ⬜
 14. AI v1 ⬜
 15. Cut Optimizer ⬜
@@ -90,6 +90,47 @@ to jest odniesienie do statusu, nie log zmian dla 1–9.
 - 10 nowych kluczy l10n przetłumaczonych we wszystkich 21 językach.
 - Testy: `board_measurement_calculator_test.dart`,
   `edge_banding_calculator_test.dart` (razem 87 testów w projekcie).
+
+## [Krok 12] — 2026-08-10
+
+### Dodano — Baza dekorów (EGGER, 421 pozycji)
+- **Research rynku przed implementacją**: sprawdzono 11 znaczących
+  producentów płyt (EGGER, Kronospan, Pfleiderer, SWISS KRONO, Kaindl,
+  Cleaf, Finsa, Kastamonu, Sonae Arauco, Unilin, Alvic) — żaden nie
+  udostępnia publicznego API/pliku do automatycznego importu; jedyne
+  realnie zweryfikowane dane w repo to istniejący, ręcznie
+  przepisany z oficjalnego PDF-u katalog EGGER (421 pozycji, po
+  usunięciu 78 duplikatów z 501 wpisów źródłowych). Zdecydowano:
+  zaimportować tylko EGGER, nie tworzyć niezweryfikowanych danych dla
+  innych producentów.
+- `lib/data/decor_seeds/egger_decor_seed.dart` — dane przeniesione z
+  dawnego `lib/data/egger_decors_seed.dart` (ta sama weryfikacja, ten
+  sam zestaw 421 pozycji), przebudowane z `List<List<String>>` na
+  `List<(String code, String name)>` + stała `eggerManufacturer`.
+  Stary plik usunięty (zastąpiony, nie duplikat).
+- `lib/data/database/migrations/v7_seed_egger_decors.dart` — migracja
+  bez zmiany schematu, batch-insert 421 wierszy do żywej tabeli
+  `decors` (`AppConstants.dbVersion`: 6 → 7). Nie dotyka 4 testowych
+  wierszy z v4 (bare kody typu 'H3303' nigdy nie kolidują z pełnymi
+  kodami z teksturą typu 'H3303 ST10').
+- **Architektura rozszerzalna** (cel tego kroku): dodanie kolejnego
+  producenta w przyszłości = nowy plik `*_decor_seed.dart` + nowa
+  migracja `v8_seed_<producent>_decors.dart` (skopiowany szablon v7)
+  + dwie linijki rejestracji w `migration_runner.dart` + bump
+  `dbVersion` — bez zmian w `Decor`, `DecorRepository`,
+  `DecorRepositoryImpl` ani żadnym istniejącym pliku migracji.
+  Instrukcja krok po kroku w doc-comment `v7_seed_egger_decors.dart`.
+- Testy: `test/egger_decor_catalog_test.dart` (integralność danych +
+  weryfikacja żywego importu), zaktualizowany opis testu w
+  `test/organization_and_decor_test.dart` (nieaktualny odnośnik do
+  "future data-import task").
+
+### Znane ograniczenie
+- UI wyboru dekoru (`slot_detail_screen.dart`, dodawanie Board/Offcut)
+  to wciąż zwykły `DropdownButtonFormField` — działa z 425 pozycjami,
+  ale nie jest to dobry UX na taką skalę. Świadomie poza zakresem tego
+  kroku (użytkownik zawężył zakres do bazy danych + architektury);
+  `Autocomplete<Decor>` to oczywisty następny krok, nie zrobiony teraz.
 
 ## [Poprawka iOS] — 2026-08-10
 

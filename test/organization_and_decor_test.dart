@@ -51,8 +51,9 @@ void main() {
   });
 
   group('v4 — Decor', () {
-    test('creates decors table seeded with common codes (not the full'
-        ' 421 — that is a future data-import task)', () async {
+    test('creates decors table seeded with common codes (v4) — the full'
+        ' 421-entry EGGER catalog is imported separately by v7, see'
+        ' egger_decor_catalog_test.dart', () async {
       final db = await dbService.open();
       final rows = await db.query('decors');
       expect(rows.length, greaterThanOrEqualTo(4));
