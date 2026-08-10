@@ -295,4 +295,34 @@ class AppLocalizationsCy extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Methodd yr allforio: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Cyfrifianellau';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Arwynebedd / cyfaint';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Stribed ymyl';
+
+  @override
+  String get areaM2Label => 'Arwynebedd (m²)';
+
+  @override
+  String get volumeM3Label => 'Cyfaint (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Diamedr allanol (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Diamedr craidd (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Trwch y stribed (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Hyd y stribed (m)';
+
+  @override
+  String get calculateButton => 'Cyfrifo';
 }

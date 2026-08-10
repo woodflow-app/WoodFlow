@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkylatorer",
+  "calculatorAreaVolumeTab": "Yta / volym",
+  "calculatorEdgeBandingTab": "Kantband",
+  "areaM2Label": "Yta (m²)",
+  "volumeM3Label": "Volym (m³)",
+  "outerDiameterMmLabel": "Ytterdiameter (mm)",
+  "coreDiameterMmLabel": "Kärndiameter (mm)",
+  "tapeThicknessMmLabel": "Tjocklek kantband (mm)",
+  "edgeBandingLengthResultLabel": "Längd kantband (m)",
+  "calculateButton": "Beräkna"
 }

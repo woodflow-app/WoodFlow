@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Calculadoras",
+  "calculatorAreaVolumeTab": "Superficie / volumen",
+  "calculatorEdgeBandingTab": "Tapacantos",
+  "areaM2Label": "Superficie (m²)",
+  "volumeM3Label": "Volumen (m³)",
+  "outerDiameterMmLabel": "Diámetro exterior (mm)",
+  "coreDiameterMmLabel": "Diámetro del núcleo (mm)",
+  "tapeThicknessMmLabel": "Espesor del tapacantos (mm)",
+  "edgeBandingLengthResultLabel": "Longitud de tapacantos (m)",
+  "calculateButton": "Calcular"
 }

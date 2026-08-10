@@ -300,4 +300,34 @@ class AppLocalizationsGd extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Dh\'fhàillig an às-phortadh: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Àireamhairean';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Farsaingeachd / tomhas-lìonaidh';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Stiall oire';
+
+  @override
+  String get areaM2Label => 'Farsaingeachd (m²)';
+
+  @override
+  String get volumeM3Label => 'Tomhas-lìonaidh (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Trast-thomhas a-muigh (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Trast-thomhas a\' chridhe (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Tighead na stiall (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Faid na stiall (m)';
+
+  @override
+  String get calculateButton => 'Àireamhaich';
 }

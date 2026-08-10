@@ -10,27 +10,31 @@ flutter pub get
 flutter run
 ```
 
-## Zbudowane (Etap 1 / FREE, kroki 1-7.2 z 15)
+## Roadmapa Etapu 1 / FREE (15 kroków, potwierdzona przez Piotra)
 
-**⚠️ Status ✅ poniżej oznacza "implementacja kompletna", nie
-"zweryfikowane uruchomieniem".** Żaden z tych kroków nie przeszedł
-jeszcze realnego `flutter pub get && flutter test && flutter run` —
-architektura i logika są sprawdzone (testy jednostkowe, symulacje
-kluczowej logiki w Pythonie, ręczne sweep'y kodu), ale kompilacja i
-uruchomienie na prawdziwym Flutterze to osobny, nadal otwarty krok.
+**⚠️ Status ✅ dla kroków 1-11 oznacza dziś: zaimplementowane I
+zweryfikowane** — `flutter analyze` (0 błędów), `flutter test` (87
+testów, w tym `arb_consistency_test.dart`), build APK na Androidzie
+(fizyczne urządzenie). iOS nie był budowany na tej maszynie — wymaga
+macOS/Xcode (patrz `docs/CHANGELOG.md`, sekcja "Poprawka iOS", i brak
+`ios/Podfile`).
 
 ```
-1. Backend Foundation  ✅  Result<T>, get_it, Logger, MigrationRunner
-2. Warehouse            ✅
-3. Rack                 ✅
-4. Slot                 ✅
-5. Board                ✅  slotId jako jedyny klucz lokalizacji
-6. Offcut                ✅  decorId denormalizowane z Board przy cięciu
-7.1 QR — generowanie     ✅  WF-{TYP}-{8 hex z id}, case-insensitive
-7.2 QR — skanowanie      ✅  ScanScreen → QrResolver → ekran
-7.3 QR — etykiety PDF     ✅  LabelData → LabelGenerator → PdfLabelGenerator
-8. Historia              ✅  LedgerEntryFormatter — czytelne opisy z payload
-9. Dashboard właściciela ✅  DashboardService (agreguje) → DashboardSnapshot → ekran tylko renderuje. Wycena i oszczędności odłożone — brak pola ceny w schemacie.
+1. Organization                     ✅
+2. Warehouse                        ✅
+3. Rack                             ✅
+4. Slot                             ✅
+5. Board                            ✅  slotId jako jedyny klucz lokalizacji
+6. Offcut                           ✅  decorId denormalizowane z Board przy cięciu
+7. QR                               ✅  7.1 generowanie, 7.2 skanowanie, 7.3 etykiety PDF
+8. Historia/Ledger                  ✅  LedgerEntryFormatter — czytelne opisy z payload
+9. Dashboard właściciela            ✅  DashboardService (agreguje) → DashboardSnapshot → ekran tylko renderuje. Wycena i oszczędności odłożone — brak pola ceny w schemacie.
+10. Eksport PDF/CSV/RTF             ✅  ExportRow/ExportGenerator (PDF/CSV/RTF)/ExportDataBuilder/ExportScreen
+11. Kalkulatory                     ✅  BoardMeasurementCalculator (pow./obj.) + EdgeBandingCalculator (wzór przekroju pierścieniowego), CalculatorsScreen (2 zakładki), skrót z detali Board/Offcut z gotowymi wymiarami. Tylko przeliczenie — bez śledzenia stanu rolki (świadomie odłożone, patrz komentarz w edge_banding_calculator.dart)
+12. Baza dekorów                    ⬜  encja/repozytorium już istnieją (katalog EGGER częściowy, bez autouzupełniania w dedykowanym ekranie); pełny katalog 421 kodów + UI zarządzania jeszcze nie
+13. Lista zakupów + niski stan      ⬜
+14. AI v1                           ⬜
+15. Cut Optimizer                   ⬜
 ```
 
 **Znane ograniczenie Kroku 9:** lokalizacja pokazuje się w liście

@@ -17,6 +17,7 @@ import '../../domain/repositories/warehouse_repository.dart';
 import '../../domain/services/ledger_entry_formatter.dart';
 import '../../l10n/app_localizations.dart';
 import '../board/board_detail_screen.dart';
+import '../calculators/calculators_screen.dart';
 
 /// Reached two ways, same as BoardDetailScreen: normal navigation,
 /// or as a `WF-O-...` QR-scan destination (Krok 7.2).
@@ -149,7 +150,16 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.offcutTitle)),
+      appBar: AppBar(
+        title: Text(l10n.offcutTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.calculate_outlined),
+            tooltip: l10n.calculatorsTitle,
+            onPressed: _offcut == null ? null : () => _openCalculators(_offcut!),
+          ),
+        ],
+      ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _error != null
@@ -263,6 +273,16 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
 
   String _formatDate(DateTime dt) =>
       '${dt.day.toString().padLeft(2, '0')}.${dt.month.toString().padLeft(2, '0')} ${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
+
+  void _openCalculators(Offcut offcut) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => CalculatorsScreen(
+        initialLengthMm: offcut.length,
+        initialWidthMm: offcut.width,
+        initialThicknessMm: offcut.thickness,
+      ),
+    ));
+  }
 
   Future<void> _confirmArchive(Offcut offcut, AppLocalizations l10n) async {
     final confirmed = await showDialog<bool>(

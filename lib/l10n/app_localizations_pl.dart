@@ -292,4 +292,34 @@ class AppLocalizationsPl extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Eksport nie powiódł się: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Kalkulatory';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Powierzchnia / objętość';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Okleina';
+
+  @override
+  String get areaM2Label => 'Powierzchnia (m²)';
+
+  @override
+  String get volumeM3Label => 'Objętość (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Średnica zewnętrzna (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Średnica rdzenia (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Grubość tasiemki (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Długość okleiny (m)';
+
+  @override
+  String get calculateButton => 'Przelicz';
 }

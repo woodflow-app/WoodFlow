@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Lommeregnere",
+  "calculatorAreaVolumeTab": "Areal / volumen",
+  "calculatorEdgeBandingTab": "Kantbånd",
+  "areaM2Label": "Areal (m²)",
+  "volumeM3Label": "Volumen (m³)",
+  "outerDiameterMmLabel": "Yderdiameter (mm)",
+  "coreDiameterMmLabel": "Kernediameter (mm)",
+  "tapeThicknessMmLabel": "Tykkelse kantbånd (mm)",
+  "edgeBandingLengthResultLabel": "Længde kantbånd (m)",
+  "calculateButton": "Beregn"
 }

@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Калькуляторы",
+  "calculatorAreaVolumeTab": "Площадь / объём",
+  "calculatorEdgeBandingTab": "Кромка",
+  "areaM2Label": "Площадь (м²)",
+  "volumeM3Label": "Объём (м³)",
+  "outerDiameterMmLabel": "Внешний диаметр (мм)",
+  "coreDiameterMmLabel": "Диаметр втулки (мм)",
+  "tapeThicknessMmLabel": "Толщина кромки (мм)",
+  "edgeBandingLengthResultLabel": "Длина кромки (м)",
+  "calculateButton": "Рассчитать"
 }

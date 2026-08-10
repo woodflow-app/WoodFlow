@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkulátorok",
+  "calculatorAreaVolumeTab": "Terület / térfogat",
+  "calculatorEdgeBandingTab": "Élzáró szalag",
+  "areaM2Label": "Terület (m²)",
+  "volumeM3Label": "Térfogat (m³)",
+  "outerDiameterMmLabel": "Külső átmérő (mm)",
+  "coreDiameterMmLabel": "Mag átmérője (mm)",
+  "tapeThicknessMmLabel": "Szalag vastagsága (mm)",
+  "edgeBandingLengthResultLabel": "Szalag hossza (m)",
+  "calculateButton": "Számítás"
 }

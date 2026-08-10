@@ -293,4 +293,34 @@ class AppLocalizationsHr extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Izvoz nije uspio: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Kalkulatori';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Površina / volumen';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Rubna traka';
+
+  @override
+  String get areaM2Label => 'Površina (m²)';
+
+  @override
+  String get volumeM3Label => 'Volumen (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Vanjski promjer (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Promjer jezgre (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Debljina trake (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Duljina trake (m)';
+
+  @override
+  String get calculateButton => 'Izračunaj';
 }

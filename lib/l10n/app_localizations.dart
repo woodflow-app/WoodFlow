@@ -663,6 +663,66 @@ abstract class AppLocalizations {
   /// In pl, this message translates to:
   /// **'Eksport nie powiódł się: {message}'**
   String exportFailedMessage(String message);
+
+  /// No description provided for @calculatorsTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Kalkulatory'**
+  String get calculatorsTitle;
+
+  /// No description provided for @calculatorAreaVolumeTab.
+  ///
+  /// In pl, this message translates to:
+  /// **'Powierzchnia / objętość'**
+  String get calculatorAreaVolumeTab;
+
+  /// No description provided for @calculatorEdgeBandingTab.
+  ///
+  /// In pl, this message translates to:
+  /// **'Okleina'**
+  String get calculatorEdgeBandingTab;
+
+  /// No description provided for @areaM2Label.
+  ///
+  /// In pl, this message translates to:
+  /// **'Powierzchnia (m²)'**
+  String get areaM2Label;
+
+  /// No description provided for @volumeM3Label.
+  ///
+  /// In pl, this message translates to:
+  /// **'Objętość (m³)'**
+  String get volumeM3Label;
+
+  /// No description provided for @outerDiameterMmLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Średnica zewnętrzna (mm)'**
+  String get outerDiameterMmLabel;
+
+  /// No description provided for @coreDiameterMmLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Średnica rdzenia (mm)'**
+  String get coreDiameterMmLabel;
+
+  /// No description provided for @tapeThicknessMmLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Grubość tasiemki (mm)'**
+  String get tapeThicknessMmLabel;
+
+  /// No description provided for @edgeBandingLengthResultLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Długość okleiny (m)'**
+  String get edgeBandingLengthResultLabel;
+
+  /// No description provided for @calculateButton.
+  ///
+  /// In pl, this message translates to:
+  /// **'Przelicz'**
+  String get calculateButton;
 }
 
 class _AppLocalizationsDelegate

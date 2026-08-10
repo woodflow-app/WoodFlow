@@ -13,6 +13,7 @@ import '../../domain/repositories/decor_repository.dart';
 import '../../domain/repositories/slot_repository.dart';
 import '../../domain/services/ledger_entry_formatter.dart';
 import '../../l10n/app_localizations.dart';
+import '../calculators/calculators_screen.dart';
 
 /// Reached two ways: normal navigation from a slot's board list, OR
 /// as a QR-scan destination (Krok 7.2) — `QrResolver` resolves
@@ -120,7 +121,16 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.boardTitle)),
+      appBar: AppBar(
+        title: Text(l10n.boardTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.calculate_outlined),
+            tooltip: l10n.calculatorsTitle,
+            onPressed: _board == null ? null : () => _openCalculators(_board!),
+          ),
+        ],
+      ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _error != null
@@ -233,6 +243,16 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
 
   String _formatDate(DateTime dt) =>
       '${dt.day.toString().padLeft(2, '0')}.${dt.month.toString().padLeft(2, '0')} ${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
+
+  void _openCalculators(Board board) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => CalculatorsScreen(
+        initialLengthMm: board.length,
+        initialWidthMm: board.width,
+        initialThicknessMm: board.thickness,
+      ),
+    ));
+  }
 
   Future<void> _openMoveDialog(Board board, AppLocalizations l10n) async {
     // Minimal slot picker: all slots in the same rack as the current

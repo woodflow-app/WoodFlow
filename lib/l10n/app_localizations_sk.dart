@@ -295,4 +295,34 @@ class AppLocalizationsSk extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Export sa nepodaril: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Kalkulátory';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Plocha / objem';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Olepovacia páska';
+
+  @override
+  String get areaM2Label => 'Plocha (m²)';
+
+  @override
+  String get volumeM3Label => 'Objem (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Vonkajší priemer (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Priemer jadra (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Hrúbka pásky (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Dĺžka pásky (m)';
+
+  @override
+  String get calculateButton => 'Prepočítať';
 }

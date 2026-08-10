@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkulatori",
+  "calculatorAreaVolumeTab": "Laukums / tilpums",
+  "calculatorEdgeBandingTab": "Apmales lente",
+  "areaM2Label": "Laukums (m²)",
+  "volumeM3Label": "Tilpums (m³)",
+  "outerDiameterMmLabel": "Ārējais diametrs (mm)",
+  "coreDiameterMmLabel": "Serdes diametrs (mm)",
+  "tapeThicknessMmLabel": "Lentes biezums (mm)",
+  "edgeBandingLengthResultLabel": "Lentes garums (m)",
+  "calculateButton": "Aprēķināt"
 }

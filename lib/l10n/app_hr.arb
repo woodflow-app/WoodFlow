@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkulatori",
+  "calculatorAreaVolumeTab": "Površina / volumen",
+  "calculatorEdgeBandingTab": "Rubna traka",
+  "areaM2Label": "Površina (m²)",
+  "volumeM3Label": "Volumen (m³)",
+  "outerDiameterMmLabel": "Vanjski promjer (mm)",
+  "coreDiameterMmLabel": "Promjer jezgre (mm)",
+  "tapeThicknessMmLabel": "Debljina trake (mm)",
+  "edgeBandingLengthResultLabel": "Duljina trake (m)",
+  "calculateButton": "Izračunaj"
 }

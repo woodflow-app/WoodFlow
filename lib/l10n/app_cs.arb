@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkulátory",
+  "calculatorAreaVolumeTab": "Plocha / objem",
+  "calculatorEdgeBandingTab": "Olepovací páska",
+  "areaM2Label": "Plocha (m²)",
+  "volumeM3Label": "Objem (m³)",
+  "outerDiameterMmLabel": "Vnější průměr (mm)",
+  "coreDiameterMmLabel": "Průměr jádra (mm)",
+  "tapeThicknessMmLabel": "Tloušťka pásky (mm)",
+  "edgeBandingLengthResultLabel": "Délka pásky (m)",
+  "calculateButton": "Přepočítat"
 }

@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Rekenmodules",
+  "calculatorAreaVolumeTab": "Oppervlakte / volume",
+  "calculatorEdgeBandingTab": "Kantenband",
+  "areaM2Label": "Oppervlakte (m²)",
+  "volumeM3Label": "Volume (m³)",
+  "outerDiameterMmLabel": "Buitendiameter (mm)",
+  "coreDiameterMmLabel": "Kerndiameter (mm)",
+  "tapeThicknessMmLabel": "Dikte kantenband (mm)",
+  "edgeBandingLengthResultLabel": "Lengte kantenband (m)",
+  "calculateButton": "Berekenen"
 }

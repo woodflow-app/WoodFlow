@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Áireamháin",
+  "calculatorAreaVolumeTab": "Achar / toirt",
+  "calculatorEdgeBandingTab": "Stiall imill",
+  "areaM2Label": "Achar (m²)",
+  "volumeM3Label": "Toirt (m³)",
+  "outerDiameterMmLabel": "Trastomhas seachtrach (mm)",
+  "coreDiameterMmLabel": "Trastomhas an lárnaigh (mm)",
+  "tapeThicknessMmLabel": "Tiús na stialla (mm)",
+  "edgeBandingLengthResultLabel": "Fad na stialla (m)",
+  "calculateButton": "Ríomh"
 }

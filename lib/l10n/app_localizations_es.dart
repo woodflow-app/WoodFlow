@@ -294,4 +294,34 @@ class AppLocalizationsEs extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Error al exportar: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Calculadoras';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Superficie / volumen';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Tapacantos';
+
+  @override
+  String get areaM2Label => 'Superficie (m²)';
+
+  @override
+  String get volumeM3Label => 'Volumen (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Diámetro exterior (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Diámetro del núcleo (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Espesor del tapacantos (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Longitud de tapacantos (m)';
+
+  @override
+  String get calculateButton => 'Calcular';
 }

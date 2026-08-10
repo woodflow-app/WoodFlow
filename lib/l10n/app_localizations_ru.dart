@@ -292,4 +292,34 @@ class AppLocalizationsRu extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Ошибка экспорта: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Калькуляторы';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Площадь / объём';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Кромка';
+
+  @override
+  String get areaM2Label => 'Площадь (м²)';
+
+  @override
+  String get volumeM3Label => 'Объём (м³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Внешний диаметр (мм)';
+
+  @override
+  String get coreDiameterMmLabel => 'Диаметр втулки (мм)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Толщина кромки (мм)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Длина кромки (м)';
+
+  @override
+  String get calculateButton => 'Рассчитать';
 }

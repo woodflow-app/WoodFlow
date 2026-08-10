@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Skaičiuoklės",
+  "calculatorAreaVolumeTab": "Plotas / tūris",
+  "calculatorEdgeBandingTab": "Briaunų juostelė",
+  "areaM2Label": "Plotas (m²)",
+  "volumeM3Label": "Tūris (m³)",
+  "outerDiameterMmLabel": "Išorinis skersmuo (mm)",
+  "coreDiameterMmLabel": "Šerdies skersmuo (mm)",
+  "tapeThicknessMmLabel": "Juostelės storis (mm)",
+  "edgeBandingLengthResultLabel": "Juostelės ilgis (m)",
+  "calculateButton": "Apskaičiuoti"
 }

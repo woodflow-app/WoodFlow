@@ -294,4 +294,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Export failed: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Calculators';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Area / volume';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Edge banding';
+
+  @override
+  String get areaM2Label => 'Area (m²)';
+
+  @override
+  String get volumeM3Label => 'Volume (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Outer diameter (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Core diameter (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Tape thickness (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Edge banding length (m)';
+
+  @override
+  String get calculateButton => 'Calculate';
 }

@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Calculators",
+  "calculatorAreaVolumeTab": "Area / volume",
+  "calculatorEdgeBandingTab": "Edge banding",
+  "areaM2Label": "Area (m²)",
+  "volumeM3Label": "Volume (m³)",
+  "outerDiameterMmLabel": "Outer diameter (mm)",
+  "coreDiameterMmLabel": "Core diameter (mm)",
+  "tapeThicknessMmLabel": "Tape thickness (mm)",
+  "edgeBandingLengthResultLabel": "Edge banding length (m)",
+  "calculateButton": "Calculate"
 }

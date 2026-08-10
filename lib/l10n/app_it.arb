@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Calcolatrici",
+  "calculatorAreaVolumeTab": "Superficie / volume",
+  "calculatorEdgeBandingTab": "Bordo",
+  "areaM2Label": "Superficie (m²)",
+  "volumeM3Label": "Volume (m³)",
+  "outerDiameterMmLabel": "Diametro esterno (mm)",
+  "coreDiameterMmLabel": "Diametro anima (mm)",
+  "tapeThicknessMmLabel": "Spessore bordo (mm)",
+  "edgeBandingLengthResultLabel": "Lunghezza bordo (m)",
+  "calculateButton": "Calcola"
 }

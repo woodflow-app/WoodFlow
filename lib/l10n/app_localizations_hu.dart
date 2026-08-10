@@ -293,4 +293,34 @@ class AppLocalizationsHu extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Az exportálás nem sikerült: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Kalkulátorok';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Terület / térfogat';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Élzáró szalag';
+
+  @override
+  String get areaM2Label => 'Terület (m²)';
+
+  @override
+  String get volumeM3Label => 'Térfogat (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Külső átmérő (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Mag átmérője (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Szalag vastagsága (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Szalag hossza (m)';
+
+  @override
+  String get calculateButton => 'Számítás';
 }

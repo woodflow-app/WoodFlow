@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Calculatrices",
+  "calculatorAreaVolumeTab": "Surface / volume",
+  "calculatorEdgeBandingTab": "Chant",
+  "areaM2Label": "Surface (m²)",
+  "volumeM3Label": "Volume (m³)",
+  "outerDiameterMmLabel": "Diamètre extérieur (mm)",
+  "coreDiameterMmLabel": "Diamètre du mandrin (mm)",
+  "tapeThicknessMmLabel": "Épaisseur du chant (mm)",
+  "edgeBandingLengthResultLabel": "Longueur de chant (m)",
+  "calculateButton": "Calculer"
 }

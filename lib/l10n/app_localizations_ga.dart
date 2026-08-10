@@ -293,4 +293,34 @@ class AppLocalizationsGa extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Theip ar an easpórtáil: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Áireamháin';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Achar / toirt';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Stiall imill';
+
+  @override
+  String get areaM2Label => 'Achar (m²)';
+
+  @override
+  String get volumeM3Label => 'Toirt (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Trastomhas seachtrach (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Trastomhas an lárnaigh (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Tiús na stialla (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Fad na stialla (m)';
+
+  @override
+  String get calculateButton => 'Ríomh';
 }

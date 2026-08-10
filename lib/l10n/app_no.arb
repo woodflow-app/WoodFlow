@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkulatorer",
+  "calculatorAreaVolumeTab": "Areal / volum",
+  "calculatorEdgeBandingTab": "Kantbånd",
+  "areaM2Label": "Areal (m²)",
+  "volumeM3Label": "Volum (m³)",
+  "outerDiameterMmLabel": "Ytre diameter (mm)",
+  "coreDiameterMmLabel": "Kjernediameter (mm)",
+  "tapeThicknessMmLabel": "Tykkelse kantbånd (mm)",
+  "edgeBandingLengthResultLabel": "Lengde kantbånd (m)",
+  "calculateButton": "Beregn"
 }

@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Àireamhairean",
+  "calculatorAreaVolumeTab": "Farsaingeachd / tomhas-lìonaidh",
+  "calculatorEdgeBandingTab": "Stiall oire",
+  "areaM2Label": "Farsaingeachd (m²)",
+  "volumeM3Label": "Tomhas-lìonaidh (m³)",
+  "outerDiameterMmLabel": "Trast-thomhas a-muigh (mm)",
+  "coreDiameterMmLabel": "Trast-thomhas a' chridhe (mm)",
+  "tapeThicknessMmLabel": "Tighead na stiall (mm)",
+  "edgeBandingLengthResultLabel": "Faid na stiall (m)",
+  "calculateButton": "Àireamhaich"
 }

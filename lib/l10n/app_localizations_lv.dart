@@ -293,4 +293,34 @@ class AppLocalizationsLv extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Eksportēšana neizdevās: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Kalkulatori';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Laukums / tilpums';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Apmales lente';
+
+  @override
+  String get areaM2Label => 'Laukums (m²)';
+
+  @override
+  String get volumeM3Label => 'Tilpums (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Ārējais diametrs (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Serdes diametrs (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Lentes biezums (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Lentes garums (m)';
+
+  @override
+  String get calculateButton => 'Aprēķināt';
 }

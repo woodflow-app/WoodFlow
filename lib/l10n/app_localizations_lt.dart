@@ -293,4 +293,34 @@ class AppLocalizationsLt extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Eksportavimas nepavyko: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Skaičiuoklės';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Plotas / tūris';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Briaunų juostelė';
+
+  @override
+  String get areaM2Label => 'Plotas (m²)';
+
+  @override
+  String get volumeM3Label => 'Tūris (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Išorinis skersmuo (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Šerdies skersmuo (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Juostelės storis (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Juostelės ilgis (m)';
+
+  @override
+  String get calculateButton => 'Apskaičiuoti';
 }

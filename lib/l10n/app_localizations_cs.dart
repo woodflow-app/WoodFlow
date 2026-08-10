@@ -293,4 +293,34 @@ class AppLocalizationsCs extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Export se nezdařil: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Kalkulátory';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Plocha / objem';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Olepovací páska';
+
+  @override
+  String get areaM2Label => 'Plocha (m²)';
+
+  @override
+  String get volumeM3Label => 'Objem (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Vnější průměr (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Průměr jádra (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Tloušťka pásky (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Délka pásky (m)';
+
+  @override
+  String get calculateButton => 'Přepočítat';
 }

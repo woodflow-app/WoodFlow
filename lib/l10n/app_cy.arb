@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Cyfrifianellau",
+  "calculatorAreaVolumeTab": "Arwynebedd / cyfaint",
+  "calculatorEdgeBandingTab": "Stribed ymyl",
+  "areaM2Label": "Arwynebedd (m²)",
+  "volumeM3Label": "Cyfaint (m³)",
+  "outerDiameterMmLabel": "Diamedr allanol (mm)",
+  "coreDiameterMmLabel": "Diamedr craidd (mm)",
+  "tapeThicknessMmLabel": "Trwch y stribed (mm)",
+  "edgeBandingLengthResultLabel": "Hyd y stribed (m)",
+  "calculateButton": "Cyfrifo"
 }

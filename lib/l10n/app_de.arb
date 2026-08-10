@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkulatoren",
+  "calculatorAreaVolumeTab": "Fläche / Volumen",
+  "calculatorEdgeBandingTab": "Kantenband",
+  "areaM2Label": "Fläche (m²)",
+  "volumeM3Label": "Volumen (m³)",
+  "outerDiameterMmLabel": "Außendurchmesser (mm)",
+  "coreDiameterMmLabel": "Kerndurchmesser (mm)",
+  "tapeThicknessMmLabel": "Banddicke (mm)",
+  "edgeBandingLengthResultLabel": "Kantenbandlänge (m)",
+  "calculateButton": "Berechnen"
 }

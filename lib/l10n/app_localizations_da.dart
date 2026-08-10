@@ -294,4 +294,34 @@ class AppLocalizationsDa extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Eksport mislykkedes: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Lommeregnere';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Areal / volumen';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Kantbånd';
+
+  @override
+  String get areaM2Label => 'Areal (m²)';
+
+  @override
+  String get volumeM3Label => 'Volumen (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Yderdiameter (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Kernediameter (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Tykkelse kantbånd (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Længde kantbånd (m)';
+
+  @override
+  String get calculateButton => 'Beregn';
 }

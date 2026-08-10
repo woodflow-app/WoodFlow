@@ -6,9 +6,29 @@ mylić z `/CHANGELOG.md` w katalogu głównym, który jest **zamrożonym
 dokumentem v1.0** opisującym poprzednią, przed-przebudową wersję
 aplikacji ("Offcut Manager") i nie jest już aktualizowany.
 
-Ten plik zaczyna się od Kroku 10 — wcześniejsze kroki (7.1–9) nie są
-tu retroaktywnie odtwarzane, żeby nie zgadywać/nie fabrykować treści,
-której nie mam potwierdzonej.
+Ten plik zaczyna się od Kroku 10 — wcześniejsze kroki (1–9) nie są tu
+retroaktywnie odtwarzane w formie wpisów zmian, żeby nie
+zgadywać/nie fabrykować treści, której nie mam potwierdzonej. Pełna
+lista wszystkich 15 kroków (potwierdzona przez Piotra) jest poniżej —
+to jest odniesienie do statusu, nie log zmian dla 1–9.
+
+## Roadmapa Etapu 1 / FREE (15 kroków)
+
+1. Organization ✅
+2. Warehouse ✅
+3. Rack ✅
+4. Slot ✅
+5. Board ✅
+6. Offcut ✅
+7. QR (7.1 generowanie, 7.2 skanowanie, 7.3 etykiety PDF) ✅
+8. Historia/Ledger ✅
+9. Dashboard właściciela ✅
+10. Eksport PDF/CSV/RTF ✅
+11. Kalkulatory ✅
+12. Baza dekorów ⬜
+13. Lista zakupów + niski stan ⬜
+14. AI v1 ⬜
+15. Cut Optimizer ⬜
 
 ## [Krok 10] — 2026-08-09
 
@@ -42,6 +62,34 @@ której nie mam potwierdzonej.
   magazynu (2 płyty + 1 zarchiwizowany ścinek) — PDF odczytany
   wizualnie, CSV sprawdzony bajt-po-bajcie (BOM + separator `;`), RTF
   wczytany przez rzeczywisty parser (.NET `RichTextBox`).
+
+## [Krok 11] — 2026-08-10
+
+### Dodano — Kalkulatory
+- `BoardMeasurementCalculator` (`domain/services/`) — powierzchnia
+  (m²) i objętość (m³) z długości/szerokości/grubości (mm), ten sam
+  wzorzec czystej, bezstanowej klasy co `LedgerEntryFormatter`.
+- `EdgeBandingCalculator` (`domain/services/`) — długość okleiny z
+  rolki (metry) ze średnicy zewnętrznej/rdzenia i grubości tasiemki,
+  wzór przekroju pierścieniowego. **Tylko przeliczenie** — bez
+  śledzenia stanu rolki jako pozycji magazynowej (świadoma decyzja
+  zakresu na Krok 11; matematyka wydzielona jako samodzielna funkcja
+  celowo, żeby przyszła encja `EdgeBandingRoll` — pełne śledzenie
+  stanu, porównywalne rozmiarem do Board/Offcut — mogła jej użyć bez
+  zmiany kształtu kalkulatora).
+- `BoardMeasurement`, `EdgeBandingLength` (`domain/entities/`) —
+  proste nośniki wyniku, jak `BoardLocation`/`LedgerEntryDescription`.
+- `CalculatorsScreen` (`presentation/calculators/`) — dwie zakładki
+  (Powierzchnia/objętość, Okleina), dostępny samodzielnie z ikony w
+  `WarehouseListScreen` ORAZ jako skrót z `BoardDetailScreen`/
+  `OffcutDetailScreen` z gotowo wypełnionymi wymiarami danej
+  płyty/ścinka.
+- Brak get_it/interfejsu — w odróżnieniu od `ExportGenerator`/
+  `LabelGenerator`, nie ma tu realnej potrzeby wymienności w runtime;
+  ten sam wybór co przy `DashboardService`.
+- 10 nowych kluczy l10n przetłumaczonych we wszystkich 21 językach.
+- Testy: `board_measurement_calculator_test.dart`,
+  `edge_banding_calculator_test.dart` (razem 87 testów w projekcie).
 
 ## [Poprawka iOS] — 2026-08-10
 

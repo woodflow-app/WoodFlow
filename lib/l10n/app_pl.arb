@@ -146,5 +146,15 @@
         "type": "String"
       }
     }
-  }
+  },
+  "calculatorsTitle": "Kalkulatory",
+  "calculatorAreaVolumeTab": "Powierzchnia / objętość",
+  "calculatorEdgeBandingTab": "Okleina",
+  "areaM2Label": "Powierzchnia (m²)",
+  "volumeM3Label": "Objętość (m³)",
+  "outerDiameterMmLabel": "Średnica zewnętrzna (mm)",
+  "coreDiameterMmLabel": "Średnica rdzenia (mm)",
+  "tapeThicknessMmLabel": "Grubość tasiemki (mm)",
+  "edgeBandingLengthResultLabel": "Długość okleiny (m)",
+  "calculateButton": "Przelicz"
 }

@@ -293,4 +293,34 @@ class AppLocalizationsSv extends AppLocalizations {
   String exportFailedMessage(String message) {
     return 'Export misslyckades: $message';
   }
+
+  @override
+  String get calculatorsTitle => 'Kalkylatorer';
+
+  @override
+  String get calculatorAreaVolumeTab => 'Yta / volym';
+
+  @override
+  String get calculatorEdgeBandingTab => 'Kantband';
+
+  @override
+  String get areaM2Label => 'Yta (m²)';
+
+  @override
+  String get volumeM3Label => 'Volym (m³)';
+
+  @override
+  String get outerDiameterMmLabel => 'Ytterdiameter (mm)';
+
+  @override
+  String get coreDiameterMmLabel => 'Kärndiameter (mm)';
+
+  @override
+  String get tapeThicknessMmLabel => 'Tjocklek kantband (mm)';
+
+  @override
+  String get edgeBandingLengthResultLabel => 'Längd kantband (m)';
+
+  @override
+  String get calculateButton => 'Beräkna';
 }
