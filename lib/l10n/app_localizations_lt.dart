@@ -323,4 +323,37 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get calculateButton => 'Apskaičiuoti';
+
+  @override
+  String get shoppingListTitle => 'Pirkinių sąrašas';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Kol kas nenustatyta jokių minimalaus atsargų kiekio ribų. Palieskite +, kad nustatytumėte pirmąją.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Visos nustatytos ribos yra išlaikytos — nėra žemų atsargų.';
+
+  @override
+  String get currentStockLabel => 'Sandėlyje';
+
+  @override
+  String get minimumStockLabel => 'Minimali riba';
+
+  @override
+  String get setThresholdTitle => 'Nustatyti minimalaus atsargų kiekio ribą';
+
+  @override
+  String get searchDecorHint => 'Ieškoti dekoro (kodas arba pavadinimas)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimalus kiekis (vnt.)';
+
+  @override
+  String get clearThresholdButton => 'Pašalinti ribą';
+
+  @override
+  String get invalidQuantityMessage =>
+      'Įveskite sveiką skaičių, 0 arba daugiau.';
 }

@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Kerndiameter (mm)",
   "tapeThicknessMmLabel": "Dikte kantenband (mm)",
   "edgeBandingLengthResultLabel": "Lengte kantenband (m)",
-  "calculateButton": "Berekenen"
+  "calculateButton": "Berekenen",
+  "shoppingListTitle": "Boodschappenlijst",
+  "shoppingListNoThresholds": "Nog geen minimumvoorraaddrempels ingesteld. Tik op + om de eerste in te stellen.",
+  "shoppingListAllSufficient": "Alle ingestelde drempels zijn in orde — niets heeft een lage voorraad.",
+  "currentStockLabel": "Op voorraad",
+  "minimumStockLabel": "Minimumdrempel",
+  "setThresholdTitle": "Minimumvoorraaddrempel instellen",
+  "searchDecorHint": "Decor zoeken (code of naam)",
+  "minimumStockQuantityLabel": "Minimumvoorraad (stuks)",
+  "clearThresholdButton": "Drempel verwijderen",
+  "invalidQuantityMessage": "Voer een geheel getal in, 0 of hoger."
 }

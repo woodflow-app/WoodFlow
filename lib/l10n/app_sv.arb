@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Kärndiameter (mm)",
   "tapeThicknessMmLabel": "Tjocklek kantband (mm)",
   "edgeBandingLengthResultLabel": "Längd kantband (m)",
-  "calculateButton": "Beräkna"
+  "calculateButton": "Beräkna",
+  "shoppingListTitle": "Inköpslista",
+  "shoppingListNoThresholds": "Inga minimilagernivåer inställda än. Tryck på + för att ställa in den första.",
+  "shoppingListAllSufficient": "Alla inställda nivåer är uppfyllda — inget lager är lågt.",
+  "currentStockLabel": "I lager",
+  "minimumStockLabel": "Minimigräns",
+  "setThresholdTitle": "Ställ in minimilagernivå",
+  "searchDecorHint": "Sök dekor (kod eller namn)",
+  "minimumStockQuantityLabel": "Minimilager (st)",
+  "clearThresholdButton": "Ta bort gräns",
+  "invalidQuantityMessage": "Ange ett heltal, 0 eller mer."
 }

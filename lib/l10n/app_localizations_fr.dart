@@ -324,4 +324,36 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get calculateButton => 'Calculer';
+
+  @override
+  String get shoppingListTitle => 'Liste de courses';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Aucun seuil de stock minimum défini. Touchez + pour définir le premier.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Tous les seuils définis sont respectés — aucun stock n\'est bas.';
+
+  @override
+  String get currentStockLabel => 'En stock';
+
+  @override
+  String get minimumStockLabel => 'Seuil minimum';
+
+  @override
+  String get setThresholdTitle => 'Définir le seuil de stock minimum';
+
+  @override
+  String get searchDecorHint => 'Rechercher un décor (code ou nom)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Stock minimum (pièces)';
+
+  @override
+  String get clearThresholdButton => 'Supprimer le seuil';
+
+  @override
+  String get invalidQuantityMessage => 'Indiquez un nombre entier, 0 ou plus.';
 }

@@ -324,4 +324,36 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get calculateButton => 'Berekenen';
+
+  @override
+  String get shoppingListTitle => 'Boodschappenlijst';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Nog geen minimumvoorraaddrempels ingesteld. Tik op + om de eerste in te stellen.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Alle ingestelde drempels zijn in orde — niets heeft een lage voorraad.';
+
+  @override
+  String get currentStockLabel => 'Op voorraad';
+
+  @override
+  String get minimumStockLabel => 'Minimumdrempel';
+
+  @override
+  String get setThresholdTitle => 'Minimumvoorraaddrempel instellen';
+
+  @override
+  String get searchDecorHint => 'Decor zoeken (code of naam)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimumvoorraad (stuks)';
+
+  @override
+  String get clearThresholdButton => 'Drempel verwijderen';
+
+  @override
+  String get invalidQuantityMessage => 'Voer een geheel getal in, 0 of hoger.';
 }

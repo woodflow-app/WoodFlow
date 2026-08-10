@@ -26,7 +26,7 @@ to jest odniesienie do statusu, nie log zmian dla 1–9.
 10. Eksport PDF/CSV/RTF ✅
 11. Kalkulatory ✅
 12. Baza dekorów ✅
-13. Lista zakupów + niski stan ⬜
+13. Lista zakupów + niski stan ✅
 14. AI v1 ⬜
 15. Cut Optimizer ⬜
 
@@ -131,6 +131,37 @@ to jest odniesienie do statusu, nie log zmian dla 1–9.
   ale nie jest to dobry UX na taką skalę. Świadomie poza zakresem tego
   kroku (użytkownik zawężył zakres do bazy danych + architektury);
   `Autocomplete<Decor>` to oczywisty następny krok, nie zrobiony teraz.
+
+## [Krok 13] — 2026-08-10
+
+### Dodano — Lista zakupów + niski stan
+- `Decor.minimumStockQuantity` (nullable `int`) — próg poniżej
+  którego dekor trafia na listę zakupów. `null` = brak progu, nigdy
+  nie alarmuje. Globalny per dekor (nie per magazyn) — świadoma
+  decyzja zakresu, udokumentowana w doc-comment `Decor` jako punkt
+  rozszerzenia na przyszłość (próg per (decorId, warehouseId) byłby
+  nową encją, nie zmianą tego pola).
+- `lib/data/database/migrations/v8_add_decor_minimum_stock.dart` —
+  `ALTER TABLE decors ADD COLUMN minimum_stock_quantity INTEGER`
+  (`AppConstants.dbVersion`: 7 → 8), bez wartości domyślnej innej niż
+  NULL — migracja świadomie nie wymyśla progów, których nikt nie
+  ustawił.
+- `ShoppingListService` (`domain/services/`) — agreguje stan
+  (Board+Offcut, bez zarchiwizowanych) per `decorId`, porównuje z
+  progiem, zwraca posortowaną (najpilniejsze pierwsze) listę
+  `ShoppingListItem`. Konkretna klasa, nie interfejs+impl — ta sama
+  logika co `DashboardService` (jeden sensowny sposób liczenia,
+  nic do podmiany w runtime).
+- `ShoppingListScreen` (`presentation/shopping_list/`) — lista
+  dekorów poniżej progu (ikona w `WarehouseListScreen`); FAB otwiera
+  wyszukiwarkę dekoru (filtr po kodzie/nazwie w pamięci, wzorem
+  `egger_colours.dart`'s `searchEggerColours()`) i dialog do
+  ustawienia/wyczyszczenia progu — jedyne miejsce w aplikacji, gdzie
+  próg jest edytowalny (nie ma osobnego ekranu zarządzania dekorami).
+- 10 nowych kluczy l10n przetłumaczonych we wszystkich 21 językach.
+- Testy: `test/shopping_list_service_test.dart` (7 przypadków: brak
+  progu, poniżej/na poziomie progu, board+offcut liczone razem,
+  zarchiwizowane wykluczone, sortowanie, czyszczenie progu).
 
 ## [Poprawka iOS] — 2026-08-10
 

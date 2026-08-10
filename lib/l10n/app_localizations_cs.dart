@@ -323,4 +323,36 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get calculateButton => 'Přepočítat';
+
+  @override
+  String get shoppingListTitle => 'Nákupní seznam';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Zatím nejsou nastaveny žádné prahy minimálního stavu. Klepnutím na + nastavte první.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Všechny nastavené prahy jsou dodrženy — žádný stav není nízký.';
+
+  @override
+  String get currentStockLabel => 'Na skladě';
+
+  @override
+  String get minimumStockLabel => 'Minimální práh';
+
+  @override
+  String get setThresholdTitle => 'Nastavit práh minimálního stavu';
+
+  @override
+  String get searchDecorHint => 'Hledat dekor (kód nebo název)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimální stav (ks)';
+
+  @override
+  String get clearThresholdButton => 'Odstranit práh';
+
+  @override
+  String get invalidQuantityMessage => 'Zadejte celé číslo, 0 nebo více.';
 }

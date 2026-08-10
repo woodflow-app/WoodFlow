@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Kerndurchmesser (mm)",
   "tapeThicknessMmLabel": "Banddicke (mm)",
   "edgeBandingLengthResultLabel": "Kantenbandlänge (m)",
-  "calculateButton": "Berechnen"
+  "calculateButton": "Berechnen",
+  "shoppingListTitle": "Einkaufsliste",
+  "shoppingListNoThresholds": "Noch keine Mindestbestandsgrenzen festgelegt. Tippen Sie auf +, um die erste festzulegen.",
+  "shoppingListAllSufficient": "Alle festgelegten Grenzen sind eingehalten — kein Bestand ist knapp.",
+  "currentStockLabel": "Vorhanden",
+  "minimumStockLabel": "Mindestbestand",
+  "setThresholdTitle": "Mindestbestandsgrenze festlegen",
+  "searchDecorHint": "Dekor suchen (Code oder Name)",
+  "minimumStockQuantityLabel": "Mindestbestand (Stk.)",
+  "clearThresholdButton": "Grenze entfernen",
+  "invalidQuantityMessage": "Geben Sie eine ganze Zahl, 0 oder größer, ein."
 }

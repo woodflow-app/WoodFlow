@@ -108,6 +108,7 @@ class DecorRepositoryImpl implements DecorRepository {
         code: row['code'] as String,
         name: row['name'] as String,
         manufacturer: row['manufacturer'] as String,
+        minimumStockQuantity: row['minimum_stock_quantity'] as int?,
         createdAt: DateTime.fromMillisecondsSinceEpoch(row['created_at'] as int),
         updatedAt: DateTime.fromMillisecondsSinceEpoch(row['updated_at'] as int),
       );
@@ -117,6 +118,7 @@ class DecorRepositoryImpl implements DecorRepository {
         'code': d.code,
         'name': d.name,
         'manufacturer': d.manufacturer,
+        'minimum_stock_quantity': d.minimumStockQuantity,
         'created_at': d.createdAt.millisecondsSinceEpoch,
         'updated_at': d.updatedAt.millisecondsSinceEpoch,
       };

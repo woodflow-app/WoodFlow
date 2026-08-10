@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Premer jedra (mm)",
   "tapeThicknessMmLabel": "Debelina traku (mm)",
   "edgeBandingLengthResultLabel": "Dolžina traku (m)",
-  "calculateButton": "Izračunaj"
+  "calculateButton": "Izračunaj",
+  "shoppingListTitle": "Nakupovalni seznam",
+  "shoppingListNoThresholds": "Še ni nastavljenih pragov minimalne zaloge. Dotaknite se +, da nastavite prvega.",
+  "shoppingListAllSufficient": "Vsi nastavljeni pragovi so izpolnjeni — nobena zaloga ni nizka.",
+  "currentStockLabel": "Na zalogi",
+  "minimumStockLabel": "Minimalni prag",
+  "setThresholdTitle": "Nastavi prag minimalne zaloge",
+  "searchDecorHint": "Iskanje dekorja (koda ali ime)",
+  "minimumStockQuantityLabel": "Minimalna zaloga (kos)",
+  "clearThresholdButton": "Odstrani prag",
+  "invalidQuantityMessage": "Vnesite celo število, 0 ali več."
 }

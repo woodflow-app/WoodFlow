@@ -324,4 +324,37 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get calculateButton => 'Calcola';
+
+  @override
+  String get shoppingListTitle => 'Lista della spesa';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Nessuna soglia di scorta minima impostata. Tocca + per impostarne una.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Tutte le soglie impostate sono rispettate — nessuna scorta è bassa.';
+
+  @override
+  String get currentStockLabel => 'In magazzino';
+
+  @override
+  String get minimumStockLabel => 'Soglia minima';
+
+  @override
+  String get setThresholdTitle => 'Imposta soglia di scorta minima';
+
+  @override
+  String get searchDecorHint => 'Cerca decoro (codice o nome)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Scorta minima (pz)';
+
+  @override
+  String get clearThresholdButton => 'Rimuovi soglia';
+
+  @override
+  String get invalidQuantityMessage =>
+      'Inserisci un numero intero, 0 o superiore.';
 }

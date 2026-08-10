@@ -325,4 +325,36 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get calculateButton => 'Prepočítať';
+
+  @override
+  String get shoppingListTitle => 'Nákupný zoznam';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Zatiaľ nie sú nastavené žiadne prahy minimálneho stavu. Klepnutím na + nastavte prvý.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Všetky nastavené prahy sú dodržané — žiadny stav nie je nízky.';
+
+  @override
+  String get currentStockLabel => 'Na sklade';
+
+  @override
+  String get minimumStockLabel => 'Minimálny prah';
+
+  @override
+  String get setThresholdTitle => 'Nastaviť prah minimálneho stavu';
+
+  @override
+  String get searchDecorHint => 'Hľadať dekor (kód alebo názov)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimálny stav (ks)';
+
+  @override
+  String get clearThresholdButton => 'Odstrániť prah';
+
+  @override
+  String get invalidQuantityMessage => 'Zadajte celé číslo, 0 alebo viac.';
 }

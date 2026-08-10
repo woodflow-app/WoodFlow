@@ -323,4 +323,37 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get calculateButton => 'Számítás';
+
+  @override
+  String get shoppingListTitle => 'Bevásárlólista';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Még nincs beállítva minimális készletszint. Koppintson a + gombra az első beállításához.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Minden beállított szint teljesül — semmi nincs alacsony készleten.';
+
+  @override
+  String get currentStockLabel => 'Készleten';
+
+  @override
+  String get minimumStockLabel => 'Minimális szint';
+
+  @override
+  String get setThresholdTitle => 'Minimális készletszint beállítása';
+
+  @override
+  String get searchDecorHint => 'Dekor keresése (kód vagy név)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimális készlet (db)';
+
+  @override
+  String get clearThresholdButton => 'Szint törlése';
+
+  @override
+  String get invalidQuantityMessage =>
+      'Adjon meg egy egész számot, 0 vagy nagyobb.';
 }

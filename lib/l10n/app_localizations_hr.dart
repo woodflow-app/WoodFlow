@@ -323,4 +323,36 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get calculateButton => 'Izračunaj';
+
+  @override
+  String get shoppingListTitle => 'Popis za kupnju';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Još nisu postavljeni pragovi minimalne zalihe. Dodirnite + za postavljanje prvog.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Svi postavljeni pragovi su zadovoljeni — nijedna zaliha nije niska.';
+
+  @override
+  String get currentStockLabel => 'Na skladištu';
+
+  @override
+  String get minimumStockLabel => 'Minimalni prag';
+
+  @override
+  String get setThresholdTitle => 'Postavi prag minimalne zalihe';
+
+  @override
+  String get searchDecorHint => 'Pretraži dekor (kod ili naziv)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimalna zaliha (kom.)';
+
+  @override
+  String get clearThresholdButton => 'Ukloni prag';
+
+  @override
+  String get invalidQuantityMessage => 'Unesite cijeli broj, 0 ili više.';
 }

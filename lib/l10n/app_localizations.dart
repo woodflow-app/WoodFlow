@@ -723,6 +723,66 @@ abstract class AppLocalizations {
   /// In pl, this message translates to:
   /// **'Przelicz'**
   String get calculateButton;
+
+  /// No description provided for @shoppingListTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Lista zakupów'**
+  String get shoppingListTitle;
+
+  /// No description provided for @shoppingListNoThresholds.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nie ustawiono jeszcze żadnych progów minimalnego stanu. Dotknij +, aby ustawić pierwszy.'**
+  String get shoppingListNoThresholds;
+
+  /// No description provided for @shoppingListAllSufficient.
+  ///
+  /// In pl, this message translates to:
+  /// **'Wszystkie ustawione progi są zachowane — brak niskich stanów.'**
+  String get shoppingListAllSufficient;
+
+  /// No description provided for @currentStockLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'W magazynie'**
+  String get currentStockLabel;
+
+  /// No description provided for @minimumStockLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Próg minimalny'**
+  String get minimumStockLabel;
+
+  /// No description provided for @setThresholdTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Ustaw próg minimalnego stanu'**
+  String get setThresholdTitle;
+
+  /// No description provided for @searchDecorHint.
+  ///
+  /// In pl, this message translates to:
+  /// **'Szukaj dekoru (kod lub nazwa)'**
+  String get searchDecorHint;
+
+  /// No description provided for @minimumStockQuantityLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Minimalny stan (szt.)'**
+  String get minimumStockQuantityLabel;
+
+  /// No description provided for @clearThresholdButton.
+  ///
+  /// In pl, this message translates to:
+  /// **'Usuń próg'**
+  String get clearThresholdButton;
+
+  /// No description provided for @invalidQuantityMessage.
+  ///
+  /// In pl, this message translates to:
+  /// **'Podaj liczbę całkowitą, 0 lub więcej.'**
+  String get invalidQuantityMessage;
 }
 
 class _AppLocalizationsDelegate

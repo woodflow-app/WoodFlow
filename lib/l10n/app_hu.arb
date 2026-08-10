@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Mag átmérője (mm)",
   "tapeThicknessMmLabel": "Szalag vastagsága (mm)",
   "edgeBandingLengthResultLabel": "Szalag hossza (m)",
-  "calculateButton": "Számítás"
+  "calculateButton": "Számítás",
+  "shoppingListTitle": "Bevásárlólista",
+  "shoppingListNoThresholds": "Még nincs beállítva minimális készletszint. Koppintson a + gombra az első beállításához.",
+  "shoppingListAllSufficient": "Minden beállított szint teljesül — semmi nincs alacsony készleten.",
+  "currentStockLabel": "Készleten",
+  "minimumStockLabel": "Minimális szint",
+  "setThresholdTitle": "Minimális készletszint beállítása",
+  "searchDecorHint": "Dekor keresése (kód vagy név)",
+  "minimumStockQuantityLabel": "Minimális készlet (db)",
+  "clearThresholdButton": "Szint törlése",
+  "invalidQuantityMessage": "Adjon meg egy egész számot, 0 vagy nagyobb."
 }

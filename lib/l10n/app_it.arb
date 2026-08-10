@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Diametro anima (mm)",
   "tapeThicknessMmLabel": "Spessore bordo (mm)",
   "edgeBandingLengthResultLabel": "Lunghezza bordo (m)",
-  "calculateButton": "Calcola"
+  "calculateButton": "Calcola",
+  "shoppingListTitle": "Lista della spesa",
+  "shoppingListNoThresholds": "Nessuna soglia di scorta minima impostata. Tocca + per impostarne una.",
+  "shoppingListAllSufficient": "Tutte le soglie impostate sono rispettate — nessuna scorta è bassa.",
+  "currentStockLabel": "In magazzino",
+  "minimumStockLabel": "Soglia minima",
+  "setThresholdTitle": "Imposta soglia di scorta minima",
+  "searchDecorHint": "Cerca decoro (codice o nome)",
+  "minimumStockQuantityLabel": "Scorta minima (pz)",
+  "clearThresholdButton": "Rimuovi soglia",
+  "invalidQuantityMessage": "Inserisci un numero intero, 0 o superiore."
 }

@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Diamètre du mandrin (mm)",
   "tapeThicknessMmLabel": "Épaisseur du chant (mm)",
   "edgeBandingLengthResultLabel": "Longueur de chant (m)",
-  "calculateButton": "Calculer"
+  "calculateButton": "Calculer",
+  "shoppingListTitle": "Liste de courses",
+  "shoppingListNoThresholds": "Aucun seuil de stock minimum défini. Touchez + pour définir le premier.",
+  "shoppingListAllSufficient": "Tous les seuils définis sont respectés — aucun stock n'est bas.",
+  "currentStockLabel": "En stock",
+  "minimumStockLabel": "Seuil minimum",
+  "setThresholdTitle": "Définir le seuil de stock minimum",
+  "searchDecorHint": "Rechercher un décor (code ou nom)",
+  "minimumStockQuantityLabel": "Stock minimum (pièces)",
+  "clearThresholdButton": "Supprimer le seuil",
+  "invalidQuantityMessage": "Indiquez un nombre entier, 0 ou plus."
 }

@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Core diameter (mm)",
   "tapeThicknessMmLabel": "Tape thickness (mm)",
   "edgeBandingLengthResultLabel": "Edge banding length (m)",
-  "calculateButton": "Calculate"
+  "calculateButton": "Calculate",
+  "shoppingListTitle": "Shopping list",
+  "shoppingListNoThresholds": "No minimum stock thresholds set yet. Tap + to set the first one.",
+  "shoppingListAllSufficient": "Every set threshold is satisfied — nothing is low on stock.",
+  "currentStockLabel": "In stock",
+  "minimumStockLabel": "Minimum threshold",
+  "setThresholdTitle": "Set minimum stock threshold",
+  "searchDecorHint": "Search decor (code or name)",
+  "minimumStockQuantityLabel": "Minimum stock (pcs)",
+  "clearThresholdButton": "Clear threshold",
+  "invalidQuantityMessage": "Enter a whole number, 0 or greater."
 }

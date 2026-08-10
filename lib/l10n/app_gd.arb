@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Trast-thomhas a' chridhe (mm)",
   "tapeThicknessMmLabel": "Tighead na stiall (mm)",
   "edgeBandingLengthResultLabel": "Faid na stiall (m)",
-  "calculateButton": "Àireamhaich"
+  "calculateButton": "Àireamhaich",
+  "shoppingListTitle": "Liosta bhathaidh",
+  "shoppingListNoThresholds": "Chan eil stairsneach stoca as ìsle air a shuidheachadh fhathast. Thoir gnogag air + gus a' chiad tè a shuidheachadh.",
+  "shoppingListAllSufficient": "Tha a h-uile stairsneach a chaidh a shuidheachadh air a choileanadh — chan eil stoc sam bith ìosal.",
+  "currentStockLabel": "San stòr",
+  "minimumStockLabel": "Stairsneach as ìsle",
+  "setThresholdTitle": "Suidhich stairsneach stoca as ìsle",
+  "searchDecorHint": "Lorg sgeadachadh (còd no ainm)",
+  "minimumStockQuantityLabel": "Stoc as ìsle (pìosan)",
+  "clearThresholdButton": "Thoir air falbh an stairsneach",
+  "invalidQuantityMessage": "Cuir a-steach àireamh shlàn, 0 no barrachd."
 }

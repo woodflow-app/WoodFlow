@@ -323,4 +323,37 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get calculateButton => 'Aprēķināt';
+
+  @override
+  String get shoppingListTitle => 'Iepirkumu saraksts';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Vēl nav iestatīts neviens minimālā krājuma slieksnis. Pieskarieties +, lai iestatītu pirmo.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Visi iestatītie sliekšņi ir ievēroti — neviens krājums nav zems.';
+
+  @override
+  String get currentStockLabel => 'Noliktavā';
+
+  @override
+  String get minimumStockLabel => 'Minimālais slieksnis';
+
+  @override
+  String get setThresholdTitle => 'Iestatīt minimālā krājuma slieksni';
+
+  @override
+  String get searchDecorHint => 'Meklēt dekoru (kods vai nosaukums)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimālais krājums (gab.)';
+
+  @override
+  String get clearThresholdButton => 'Noņemt slieksni';
+
+  @override
+  String get invalidQuantityMessage =>
+      'Ievadiet veselu skaitli, 0 vai lielāku.';
 }

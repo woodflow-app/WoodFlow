@@ -322,4 +322,36 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get calculateButton => 'Izračunaj';
+
+  @override
+  String get shoppingListTitle => 'Nakupovalni seznam';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Še ni nastavljenih pragov minimalne zaloge. Dotaknite se +, da nastavite prvega.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Vsi nastavljeni pragovi so izpolnjeni — nobena zaloga ni nizka.';
+
+  @override
+  String get currentStockLabel => 'Na zalogi';
+
+  @override
+  String get minimumStockLabel => 'Minimalni prag';
+
+  @override
+  String get setThresholdTitle => 'Nastavi prag minimalne zaloge';
+
+  @override
+  String get searchDecorHint => 'Iskanje dekorja (koda ali ime)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimalna zaloga (kos)';
+
+  @override
+  String get clearThresholdButton => 'Odstrani prag';
+
+  @override
+  String get invalidQuantityMessage => 'Vnesite celo število, 0 ali več.';
 }

@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Диаметр втулки (мм)",
   "tapeThicknessMmLabel": "Толщина кромки (мм)",
   "edgeBandingLengthResultLabel": "Длина кромки (м)",
-  "calculateButton": "Рассчитать"
+  "calculateButton": "Рассчитать",
+  "shoppingListTitle": "Список покупок",
+  "shoppingListNoThresholds": "Пороги минимального запаса ещё не заданы. Нажмите +, чтобы задать первый.",
+  "shoppingListAllSufficient": "Все заданные пороги соблюдены — низких запасов нет.",
+  "currentStockLabel": "На складе",
+  "minimumStockLabel": "Минимальный порог",
+  "setThresholdTitle": "Задать порог минимального запаса",
+  "searchDecorHint": "Поиск декора (код или название)",
+  "minimumStockQuantityLabel": "Минимальный запас (шт.)",
+  "clearThresholdButton": "Удалить порог",
+  "invalidQuantityMessage": "Введите целое число, 0 или больше."
 }

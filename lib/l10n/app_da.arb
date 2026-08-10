@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Kernediameter (mm)",
   "tapeThicknessMmLabel": "Tykkelse kantbånd (mm)",
   "edgeBandingLengthResultLabel": "Længde kantbånd (m)",
-  "calculateButton": "Beregn"
+  "calculateButton": "Beregn",
+  "shoppingListTitle": "Indkøbsliste",
+  "shoppingListNoThresholds": "Ingen minimumslagerniveauer angivet endnu. Tryk på + for at angive det første.",
+  "shoppingListAllSufficient": "Alle angivne niveauer er opfyldt — intet lager er lavt.",
+  "currentStockLabel": "På lager",
+  "minimumStockLabel": "Minimumsgrænse",
+  "setThresholdTitle": "Angiv minimumslagerniveau",
+  "searchDecorHint": "Søg dekor (kode eller navn)",
+  "minimumStockQuantityLabel": "Minimumslager (stk.)",
+  "clearThresholdButton": "Fjern grænse",
+  "invalidQuantityMessage": "Angiv et helt tal, 0 eller mere."
 }

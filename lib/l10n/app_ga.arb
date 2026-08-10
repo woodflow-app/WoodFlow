@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Trastomhas an lárnaigh (mm)",
   "tapeThicknessMmLabel": "Tiús na stialla (mm)",
   "edgeBandingLengthResultLabel": "Fad na stialla (m)",
-  "calculateButton": "Ríomh"
+  "calculateButton": "Ríomh",
+  "shoppingListTitle": "Liosta siopadóireachta",
+  "shoppingListNoThresholds": "Níl aon tairseach stoic íosta socraithe fós. Tapáil + chun an chéad cheann a shocrú.",
+  "shoppingListAllSufficient": "Comhlíontar gach tairseach socraithe — níl aon stoc íseal.",
+  "currentStockLabel": "Ar stoc",
+  "minimumStockLabel": "Tairseach íosta",
+  "setThresholdTitle": "Socraigh tairseach stoic íosta",
+  "searchDecorHint": "Cuardaigh maisiú (cód nó ainm)",
+  "minimumStockQuantityLabel": "Stoc íosta (píosaí)",
+  "clearThresholdButton": "Bain an tairseach",
+  "invalidQuantityMessage": "Cuir isteach slánuimhir, 0 nó níos mó."
 }

@@ -325,4 +325,36 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String get calculateButton => 'Cyfrifo';
+
+  @override
+  String get shoppingListTitle => 'Rhestr siopa';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Dim trothwyon stoc lleiaf wedi\'u gosod eto. Tapiwch + i osod y cyntaf.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Cyflawnir pob trothwy a osodwyd — nid oes unrhyw stoc yn isel.';
+
+  @override
+  String get currentStockLabel => 'Mewn stoc';
+
+  @override
+  String get minimumStockLabel => 'Trothwy lleiaf';
+
+  @override
+  String get setThresholdTitle => 'Gosod trothwy stoc lleiaf';
+
+  @override
+  String get searchDecorHint => 'Chwilio am addurn (cod neu enw)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Stoc lleiaf (darnau)';
+
+  @override
+  String get clearThresholdButton => 'Clirio\'r trothwy';
+
+  @override
+  String get invalidQuantityMessage => 'Rhowch rif cyfan, 0 neu fwy.';
 }

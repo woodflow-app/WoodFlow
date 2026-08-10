@@ -11,6 +11,7 @@ import '../dashboard/owner_dashboard_screen.dart';
 import '../scan/scan_screen.dart';
 import '../export/export_screen.dart';
 import '../calculators/calculators_screen.dart';
+import '../shopping_list/shopping_list_screen.dart';
 
 /// Deliberately plain Material widgets — no WoodFlow Design Tokens
 /// applied here yet. This screen's job is to prove Warehouse can be
@@ -91,6 +92,15 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
       appBar: AppBar(
         title: Text(l10n.warehousesTitle),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart_outlined),
+            tooltip: l10n.shoppingListTitle,
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const ShoppingListScreen(),
+              ));
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.calculate_outlined),
             tooltip: l10n.calculatorsTitle,

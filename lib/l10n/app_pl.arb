@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Średnica rdzenia (mm)",
   "tapeThicknessMmLabel": "Grubość tasiemki (mm)",
   "edgeBandingLengthResultLabel": "Długość okleiny (m)",
-  "calculateButton": "Przelicz"
+  "calculateButton": "Przelicz",
+  "shoppingListTitle": "Lista zakupów",
+  "shoppingListNoThresholds": "Nie ustawiono jeszcze żadnych progów minimalnego stanu. Dotknij +, aby ustawić pierwszy.",
+  "shoppingListAllSufficient": "Wszystkie ustawione progi są zachowane — brak niskich stanów.",
+  "currentStockLabel": "W magazynie",
+  "minimumStockLabel": "Próg minimalny",
+  "setThresholdTitle": "Ustaw próg minimalnego stanu",
+  "searchDecorHint": "Szukaj dekoru (kod lub nazwa)",
+  "minimumStockQuantityLabel": "Minimalny stan (szt.)",
+  "clearThresholdButton": "Usuń próg",
+  "invalidQuantityMessage": "Podaj liczbę całkowitą, 0 lub więcej."
 }

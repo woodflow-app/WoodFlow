@@ -323,4 +323,36 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String get calculateButton => 'Ríomh';
+
+  @override
+  String get shoppingListTitle => 'Liosta siopadóireachta';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Níl aon tairseach stoic íosta socraithe fós. Tapáil + chun an chéad cheann a shocrú.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Comhlíontar gach tairseach socraithe — níl aon stoc íseal.';
+
+  @override
+  String get currentStockLabel => 'Ar stoc';
+
+  @override
+  String get minimumStockLabel => 'Tairseach íosta';
+
+  @override
+  String get setThresholdTitle => 'Socraigh tairseach stoic íosta';
+
+  @override
+  String get searchDecorHint => 'Cuardaigh maisiú (cód nó ainm)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Stoc íosta (píosaí)';
+
+  @override
+  String get clearThresholdButton => 'Bain an tairseach';
+
+  @override
+  String get invalidQuantityMessage => 'Cuir isteach slánuimhir, 0 nó níos mó.';
 }

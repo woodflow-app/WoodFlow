@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Diámetro del núcleo (mm)",
   "tapeThicknessMmLabel": "Espesor del tapacantos (mm)",
   "edgeBandingLengthResultLabel": "Longitud de tapacantos (m)",
-  "calculateButton": "Calcular"
+  "calculateButton": "Calcular",
+  "shoppingListTitle": "Lista de la compra",
+  "shoppingListNoThresholds": "Aún no se ha establecido ningún umbral de stock mínimo. Toca + para establecer el primero.",
+  "shoppingListAllSufficient": "Todos los umbrales establecidos se cumplen — no hay stock bajo.",
+  "currentStockLabel": "En stock",
+  "minimumStockLabel": "Umbral mínimo",
+  "setThresholdTitle": "Establecer umbral de stock mínimo",
+  "searchDecorHint": "Buscar decorado (código o nombre)",
+  "minimumStockQuantityLabel": "Stock mínimo (uds.)",
+  "clearThresholdButton": "Eliminar umbral",
+  "invalidQuantityMessage": "Introduce un número entero, 0 o mayor."
 }

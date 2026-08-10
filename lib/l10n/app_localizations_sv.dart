@@ -323,4 +323,36 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get calculateButton => 'Beräkna';
+
+  @override
+  String get shoppingListTitle => 'Inköpslista';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Inga minimilagernivåer inställda än. Tryck på + för att ställa in den första.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Alla inställda nivåer är uppfyllda — inget lager är lågt.';
+
+  @override
+  String get currentStockLabel => 'I lager';
+
+  @override
+  String get minimumStockLabel => 'Minimigräns';
+
+  @override
+  String get setThresholdTitle => 'Ställ in minimilagernivå';
+
+  @override
+  String get searchDecorHint => 'Sök dekor (kod eller namn)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimilager (st)';
+
+  @override
+  String get clearThresholdButton => 'Ta bort gräns';
+
+  @override
+  String get invalidQuantityMessage => 'Ange ett heltal, 0 eller mer.';
 }

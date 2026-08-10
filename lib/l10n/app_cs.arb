@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Průměr jádra (mm)",
   "tapeThicknessMmLabel": "Tloušťka pásky (mm)",
   "edgeBandingLengthResultLabel": "Délka pásky (m)",
-  "calculateButton": "Přepočítat"
+  "calculateButton": "Přepočítat",
+  "shoppingListTitle": "Nákupní seznam",
+  "shoppingListNoThresholds": "Zatím nejsou nastaveny žádné prahy minimálního stavu. Klepnutím na + nastavte první.",
+  "shoppingListAllSufficient": "Všechny nastavené prahy jsou dodrženy — žádný stav není nízký.",
+  "currentStockLabel": "Na skladě",
+  "minimumStockLabel": "Minimální práh",
+  "setThresholdTitle": "Nastavit práh minimálního stavu",
+  "searchDecorHint": "Hledat dekor (kód nebo název)",
+  "minimumStockQuantityLabel": "Minimální stav (ks)",
+  "clearThresholdButton": "Odstranit práh",
+  "invalidQuantityMessage": "Zadejte celé číslo, 0 nebo více."
 }

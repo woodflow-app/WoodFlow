@@ -322,4 +322,36 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get calculateButton => 'Рассчитать';
+
+  @override
+  String get shoppingListTitle => 'Список покупок';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Пороги минимального запаса ещё не заданы. Нажмите +, чтобы задать первый.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Все заданные пороги соблюдены — низких запасов нет.';
+
+  @override
+  String get currentStockLabel => 'На складе';
+
+  @override
+  String get minimumStockLabel => 'Минимальный порог';
+
+  @override
+  String get setThresholdTitle => 'Задать порог минимального запаса';
+
+  @override
+  String get searchDecorHint => 'Поиск декора (код или название)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Минимальный запас (шт.)';
+
+  @override
+  String get clearThresholdButton => 'Удалить порог';
+
+  @override
+  String get invalidQuantityMessage => 'Введите целое число, 0 или больше.';
 }

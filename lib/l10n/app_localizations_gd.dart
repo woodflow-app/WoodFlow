@@ -330,4 +330,37 @@ class AppLocalizationsGd extends AppLocalizations {
 
   @override
   String get calculateButton => 'Àireamhaich';
+
+  @override
+  String get shoppingListTitle => 'Liosta bhathaidh';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Chan eil stairsneach stoca as ìsle air a shuidheachadh fhathast. Thoir gnogag air + gus a\' chiad tè a shuidheachadh.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Tha a h-uile stairsneach a chaidh a shuidheachadh air a choileanadh — chan eil stoc sam bith ìosal.';
+
+  @override
+  String get currentStockLabel => 'San stòr';
+
+  @override
+  String get minimumStockLabel => 'Stairsneach as ìsle';
+
+  @override
+  String get setThresholdTitle => 'Suidhich stairsneach stoca as ìsle';
+
+  @override
+  String get searchDecorHint => 'Lorg sgeadachadh (còd no ainm)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Stoc as ìsle (pìosan)';
+
+  @override
+  String get clearThresholdButton => 'Thoir air falbh an stairsneach';
+
+  @override
+  String get invalidQuantityMessage =>
+      'Cuir a-steach àireamh shlàn, 0 no barrachd.';
 }

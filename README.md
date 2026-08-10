@@ -12,9 +12,9 @@ flutter run
 
 ## Roadmapa Etapu 1 / FREE (15 kroków, potwierdzona przez Piotra)
 
-**⚠️ Status ✅ dla kroków 1-12 oznacza dziś: zaimplementowane I
-zweryfikowane** — `flutter analyze` (0 błędów), `flutter test` (93
-testy, w tym `arb_consistency_test.dart`), build APK na Androidzie
+**⚠️ Status ✅ dla kroków 1-13 oznacza dziś: zaimplementowane I
+zweryfikowane** — `flutter analyze` (0 błędów), `flutter test` (100
+testów, w tym `arb_consistency_test.dart`), build APK na Androidzie
 (fizyczne urządzenie). iOS nie był budowany na tej maszynie — wymaga
 macOS/Xcode (patrz `docs/CHANGELOG.md`, sekcja "Poprawka iOS", i brak
 `ios/Podfile`).
@@ -32,7 +32,7 @@ macOS/Xcode (patrz `docs/CHANGELOG.md`, sekcja "Poprawka iOS", i brak
 10. Eksport PDF/CSV/RTF             ✅  ExportRow/ExportGenerator (PDF/CSV/RTF)/ExportDataBuilder/ExportScreen
 11. Kalkulatory                     ✅  BoardMeasurementCalculator (pow./obj.) + EdgeBandingCalculator (wzór przekroju pierścieniowego), CalculatorsScreen (2 zakładki), skrót z detali Board/Offcut z gotowymi wymiarami. Tylko przeliczenie — bez śledzenia stanu rolki (świadomie odłożone, patrz komentarz w edge_banding_calculator.dart)
 12. Baza dekorów                    ✅  Pełny, zweryfikowany katalog EGGER (421 pozycji, migracja v7) zaimportowany do żywej tabeli `decors`. Architektura rozszerzalna: kolejny producent = nowy plik danych (`lib/data/decor_seeds/`) + nowa migracja, bez zmian w `Decor`/`DecorRepository`/istniejących migracjach. ⚠️ UI wyboru dekoru w `slot_detail_screen.dart` to wciąż zwykły `DropdownButtonFormField` — z 425 pozycjami działa, ale nie jest to dobry UX; autocomplete odłożone jako osobna decyzja, nie część tego kroku.
-13. Lista zakupów + niski stan      ⬜
+13. Lista zakupów + niski stan      ✅  `Decor.minimumStockQuantity` (nullable, migracja v8) + `ShoppingListService` (agreguje Board+Offcut per dekor, porównuje z progiem) + `ShoppingListScreen` (lista niskich stanów + wyszukiwarka dekoru + edycja/usuwanie progu). Próg per dekor, globalny (nie per magazyn) — architektura opisuje punkt rozszerzenia w doc-comment `ShoppingListService`/`Decor`
 14. AI v1                           ⬜
 15. Cut Optimizer                   ⬜
 ```

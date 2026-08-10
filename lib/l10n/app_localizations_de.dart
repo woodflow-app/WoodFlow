@@ -325,4 +325,37 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get calculateButton => 'Berechnen';
+
+  @override
+  String get shoppingListTitle => 'Einkaufsliste';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Noch keine Mindestbestandsgrenzen festgelegt. Tippen Sie auf +, um die erste festzulegen.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Alle festgelegten Grenzen sind eingehalten — kein Bestand ist knapp.';
+
+  @override
+  String get currentStockLabel => 'Vorhanden';
+
+  @override
+  String get minimumStockLabel => 'Mindestbestand';
+
+  @override
+  String get setThresholdTitle => 'Mindestbestandsgrenze festlegen';
+
+  @override
+  String get searchDecorHint => 'Dekor suchen (Code oder Name)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Mindestbestand (Stk.)';
+
+  @override
+  String get clearThresholdButton => 'Grenze entfernen';
+
+  @override
+  String get invalidQuantityMessage =>
+      'Geben Sie eine ganze Zahl, 0 oder größer, ein.';
 }

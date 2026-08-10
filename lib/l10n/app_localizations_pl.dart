@@ -322,4 +322,36 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get calculateButton => 'Przelicz';
+
+  @override
+  String get shoppingListTitle => 'Lista zakupów';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Nie ustawiono jeszcze żadnych progów minimalnego stanu. Dotknij +, aby ustawić pierwszy.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Wszystkie ustawione progi są zachowane — brak niskich stanów.';
+
+  @override
+  String get currentStockLabel => 'W magazynie';
+
+  @override
+  String get minimumStockLabel => 'Próg minimalny';
+
+  @override
+  String get setThresholdTitle => 'Ustaw próg minimalnego stanu';
+
+  @override
+  String get searchDecorHint => 'Szukaj dekoru (kod lub nazwa)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimalny stan (szt.)';
+
+  @override
+  String get clearThresholdButton => 'Usuń próg';
+
+  @override
+  String get invalidQuantityMessage => 'Podaj liczbę całkowitą, 0 lub więcej.';
 }

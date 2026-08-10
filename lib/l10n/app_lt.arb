@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Šerdies skersmuo (mm)",
   "tapeThicknessMmLabel": "Juostelės storis (mm)",
   "edgeBandingLengthResultLabel": "Juostelės ilgis (m)",
-  "calculateButton": "Apskaičiuoti"
+  "calculateButton": "Apskaičiuoti",
+  "shoppingListTitle": "Pirkinių sąrašas",
+  "shoppingListNoThresholds": "Kol kas nenustatyta jokių minimalaus atsargų kiekio ribų. Palieskite +, kad nustatytumėte pirmąją.",
+  "shoppingListAllSufficient": "Visos nustatytos ribos yra išlaikytos — nėra žemų atsargų.",
+  "currentStockLabel": "Sandėlyje",
+  "minimumStockLabel": "Minimali riba",
+  "setThresholdTitle": "Nustatyti minimalaus atsargų kiekio ribą",
+  "searchDecorHint": "Ieškoti dekoro (kodas arba pavadinimas)",
+  "minimumStockQuantityLabel": "Minimalus kiekis (vnt.)",
+  "clearThresholdButton": "Pašalinti ribą",
+  "invalidQuantityMessage": "Įveskite sveiką skaičių, 0 arba daugiau."
 }

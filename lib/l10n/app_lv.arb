@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Serdes diametrs (mm)",
   "tapeThicknessMmLabel": "Lentes biezums (mm)",
   "edgeBandingLengthResultLabel": "Lentes garums (m)",
-  "calculateButton": "Aprēķināt"
+  "calculateButton": "Aprēķināt",
+  "shoppingListTitle": "Iepirkumu saraksts",
+  "shoppingListNoThresholds": "Vēl nav iestatīts neviens minimālā krājuma slieksnis. Pieskarieties +, lai iestatītu pirmo.",
+  "shoppingListAllSufficient": "Visi iestatītie sliekšņi ir ievēroti — neviens krājums nav zems.",
+  "currentStockLabel": "Noliktavā",
+  "minimumStockLabel": "Minimālais slieksnis",
+  "setThresholdTitle": "Iestatīt minimālā krājuma slieksni",
+  "searchDecorHint": "Meklēt dekoru (kods vai nosaukums)",
+  "minimumStockQuantityLabel": "Minimālais krājums (gab.)",
+  "clearThresholdButton": "Noņemt slieksni",
+  "invalidQuantityMessage": "Ievadiet veselu skaitli, 0 vai lielāku."
 }

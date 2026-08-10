@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Promjer jezgre (mm)",
   "tapeThicknessMmLabel": "Debljina trake (mm)",
   "edgeBandingLengthResultLabel": "Duljina trake (m)",
-  "calculateButton": "Izračunaj"
+  "calculateButton": "Izračunaj",
+  "shoppingListTitle": "Popis za kupnju",
+  "shoppingListNoThresholds": "Još nisu postavljeni pragovi minimalne zalihe. Dodirnite + za postavljanje prvog.",
+  "shoppingListAllSufficient": "Svi postavljeni pragovi su zadovoljeni — nijedna zaliha nije niska.",
+  "currentStockLabel": "Na skladištu",
+  "minimumStockLabel": "Minimalni prag",
+  "setThresholdTitle": "Postavi prag minimalne zalihe",
+  "searchDecorHint": "Pretraži dekor (kod ili naziv)",
+  "minimumStockQuantityLabel": "Minimalna zaliha (kom.)",
+  "clearThresholdButton": "Ukloni prag",
+  "invalidQuantityMessage": "Unesite cijeli broj, 0 ili više."
 }

@@ -7,6 +7,7 @@ import 'v4_add_decors.dart';
 import 'v5_add_boards.dart';
 import 'v6_add_offcuts.dart';
 import 'v7_seed_egger_decors.dart';
+import 'v8_add_decor_minimum_stock.dart';
 
 /// A single migration step. Each version bump gets one implementation
 /// of this in its own file.
@@ -27,7 +28,8 @@ class MigrationRunner {
     V5AddBoardsMigration(),
     V6AddOffcutsMigration(),
     V7SeedEggerDecorsMigration(),
-    // V8... ← next migration goes here, in order
+    V8AddDecorMinimumStockMigration(),
+    // V9... ← next migration goes here, in order
   ];
 
   static Future<void> run(Database db, int fromVersion, int toVersion) async {

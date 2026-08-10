@@ -324,4 +324,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get calculateButton => 'Calculate';
+
+  @override
+  String get shoppingListTitle => 'Shopping list';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'No minimum stock thresholds set yet. Tap + to set the first one.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Every set threshold is satisfied — nothing is low on stock.';
+
+  @override
+  String get currentStockLabel => 'In stock';
+
+  @override
+  String get minimumStockLabel => 'Minimum threshold';
+
+  @override
+  String get setThresholdTitle => 'Set minimum stock threshold';
+
+  @override
+  String get searchDecorHint => 'Search decor (code or name)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Minimum stock (pcs)';
+
+  @override
+  String get clearThresholdButton => 'Clear threshold';
+
+  @override
+  String get invalidQuantityMessage => 'Enter a whole number, 0 or greater.';
 }

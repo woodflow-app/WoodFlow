@@ -7,7 +7,7 @@ class AppConstants {
 
   // --- Database ---
   static const String dbName = 'woodflow.db';
-  static const int dbVersion = 7;
+  static const int dbVersion = 8;
 
   // --- Logging ---
   static const String logTagDatabase = 'DATABASE';

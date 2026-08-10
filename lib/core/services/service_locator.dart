@@ -19,6 +19,7 @@ import '../../domain/services/qr_resolver.dart';
 import '../../domain/services/label_generator.dart';
 import '../../domain/services/dashboard_service.dart';
 import '../../domain/services/export_generator.dart';
+import '../../domain/services/shopping_list_service.dart';
 import '../../data/labels/pdf_label_generator.dart';
 import '../../data/export/pdf_export_generator.dart';
 import '../../data/export/csv_export_generator.dart';
@@ -138,6 +139,15 @@ Future<void> setupServiceLocator() async {
   sl.registerLazySingleton<ExportGenerator>(
     () => RtfExportGenerator(),
     instanceName: 'export_rtf',
+  );
+
+  // --- Services (Krok 13) ---
+  sl.registerLazySingleton<ShoppingListService>(
+    () => ShoppingListService(
+      sl<DecorRepository>(),
+      sl<BoardRepository>(),
+      sl<OffcutRepository>(),
+    ),
   );
 
   // --- App-wide reactive state (ChangeNotifier, listened to via

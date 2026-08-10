@@ -156,5 +156,15 @@
   "coreDiameterMmLabel": "Diamedr craidd (mm)",
   "tapeThicknessMmLabel": "Trwch y stribed (mm)",
   "edgeBandingLengthResultLabel": "Hyd y stribed (m)",
-  "calculateButton": "Cyfrifo"
+  "calculateButton": "Cyfrifo",
+  "shoppingListTitle": "Rhestr siopa",
+  "shoppingListNoThresholds": "Dim trothwyon stoc lleiaf wedi'u gosod eto. Tapiwch + i osod y cyntaf.",
+  "shoppingListAllSufficient": "Cyflawnir pob trothwy a osodwyd — nid oes unrhyw stoc yn isel.",
+  "currentStockLabel": "Mewn stoc",
+  "minimumStockLabel": "Trothwy lleiaf",
+  "setThresholdTitle": "Gosod trothwy stoc lleiaf",
+  "searchDecorHint": "Chwilio am addurn (cod neu enw)",
+  "minimumStockQuantityLabel": "Stoc lleiaf (darnau)",
+  "clearThresholdButton": "Clirio'r trothwy",
+  "invalidQuantityMessage": "Rhowch rif cyfan, 0 neu fwy."
 }

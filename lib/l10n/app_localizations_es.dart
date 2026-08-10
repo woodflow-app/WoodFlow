@@ -324,4 +324,36 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get calculateButton => 'Calcular';
+
+  @override
+  String get shoppingListTitle => 'Lista de la compra';
+
+  @override
+  String get shoppingListNoThresholds =>
+      'Aún no se ha establecido ningún umbral de stock mínimo. Toca + para establecer el primero.';
+
+  @override
+  String get shoppingListAllSufficient =>
+      'Todos los umbrales establecidos se cumplen — no hay stock bajo.';
+
+  @override
+  String get currentStockLabel => 'En stock';
+
+  @override
+  String get minimumStockLabel => 'Umbral mínimo';
+
+  @override
+  String get setThresholdTitle => 'Establecer umbral de stock mínimo';
+
+  @override
+  String get searchDecorHint => 'Buscar decorado (código o nombre)';
+
+  @override
+  String get minimumStockQuantityLabel => 'Stock mínimo (uds.)';
+
+  @override
+  String get clearThresholdButton => 'Eliminar umbral';
+
+  @override
+  String get invalidQuantityMessage => 'Introduce un número entero, 0 o mayor.';
 }
