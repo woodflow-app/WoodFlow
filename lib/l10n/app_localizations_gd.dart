@@ -261,4 +261,43 @@ class AppLocalizationsGd extends AppLocalizations {
   String daysAgo(int days) {
     return '$days latha air ais';
   }
+
+  @override
+  String get exportTitle => 'Às-phortadh';
+
+  @override
+  String get exportWarehouseLabel => 'Taigh-stòir';
+
+  @override
+  String get exportButton => 'Às-phortaich';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Chan eil bòrd no criomag anns an taigh-stòir seo airson às-phortadh.';
+
+  @override
+  String get exportColumnType => 'Seòrsa';
+
+  @override
+  String get exportColumnQrCode => 'Còd QR';
+
+  @override
+  String get exportColumnDecorCode => 'Còd an sgeadachaidh';
+
+  @override
+  String get exportColumnDecorName => 'Ainm an sgeadachaidh';
+
+  @override
+  String get exportColumnLocation => 'Àite';
+
+  @override
+  String get exportColumnStatus => 'Staid';
+
+  @override
+  String get exportColumnCreatedAt => 'Air a chruthachadh';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Dh\'fhàillig an às-phortadh: $message';
+  }
 }

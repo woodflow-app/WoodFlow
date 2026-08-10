@@ -254,4 +254,43 @@ class AppLocalizationsSv extends AppLocalizations {
   String daysAgo(int days) {
     return '$days dagar sedan';
   }
+
+  @override
+  String get exportTitle => 'Exportera';
+
+  @override
+  String get exportWarehouseLabel => 'Lager';
+
+  @override
+  String get exportButton => 'Exportera';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Detta lager har inga skivor eller kapbitar att exportera.';
+
+  @override
+  String get exportColumnType => 'Typ';
+
+  @override
+  String get exportColumnQrCode => 'QR-kod';
+
+  @override
+  String get exportColumnDecorCode => 'Dekorkod';
+
+  @override
+  String get exportColumnDecorName => 'Dekornamn';
+
+  @override
+  String get exportColumnLocation => 'Plats';
+
+  @override
+  String get exportColumnStatus => 'Status';
+
+  @override
+  String get exportColumnCreatedAt => 'Skapad';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Export misslyckades: $message';
+  }
 }

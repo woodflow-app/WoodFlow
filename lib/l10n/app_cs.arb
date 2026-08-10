@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Export",
+  "exportWarehouseLabel": "Sklad",
+  "exportButton": "Exportovat",
+  "exportEmptyWarehouse": "Tento sklad nemá žádné desky ani odřezky k exportu.",
+  "exportColumnType": "Typ",
+  "exportColumnQrCode": "QR kód",
+  "exportColumnDecorCode": "Kód dekoru",
+  "exportColumnDecorName": "Název dekoru",
+  "exportColumnLocation": "Umístění",
+  "exportColumnStatus": "Stav",
+  "exportColumnCreatedAt": "Vytvořeno",
+  "exportFailedMessage": "Export se nezdařil: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

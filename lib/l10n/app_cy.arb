@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Allforio",
+  "exportWarehouseLabel": "Warws",
+  "exportButton": "Allforio",
+  "exportEmptyWarehouse": "Nid oes panel na thoriad yn y warws hon i'w allforio.",
+  "exportColumnType": "Math",
+  "exportColumnQrCode": "Cod QR",
+  "exportColumnDecorCode": "Cod yr addurn",
+  "exportColumnDecorName": "Enw'r addurn",
+  "exportColumnLocation": "Lleoliad",
+  "exportColumnStatus": "Statws",
+  "exportColumnCreatedAt": "Wedi'i greu",
+  "exportFailedMessage": "Methodd yr allforio: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

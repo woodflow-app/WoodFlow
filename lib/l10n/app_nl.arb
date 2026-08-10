@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Exporteren",
+  "exportWarehouseLabel": "Magazijn",
+  "exportButton": "Exporteren",
+  "exportEmptyWarehouse": "Dit magazijn heeft geen platen of restplaten om te exporteren.",
+  "exportColumnType": "Type",
+  "exportColumnQrCode": "QR-code",
+  "exportColumnDecorCode": "Decorcode",
+  "exportColumnDecorName": "Decornaam",
+  "exportColumnLocation": "Locatie",
+  "exportColumnStatus": "Status",
+  "exportColumnCreatedAt": "Aangemaakt",
+  "exportFailedMessage": "Exporteren mislukt: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Easpórtáil",
+  "exportWarehouseLabel": "Stóras",
+  "exportButton": "Easpórtáil",
+  "exportEmptyWarehouse": "Níl painéal ná fuílleach le easpórtáil sa stóras seo.",
+  "exportColumnType": "Cineál",
+  "exportColumnQrCode": "Cód QR",
+  "exportColumnDecorCode": "Cód an mhaisithe",
+  "exportColumnDecorName": "Ainm an mhaisithe",
+  "exportColumnLocation": "Suíomh",
+  "exportColumnStatus": "Stádas",
+  "exportColumnCreatedAt": "Cruthaithe",
+  "exportFailedMessage": "Theip ar an easpórtáil: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

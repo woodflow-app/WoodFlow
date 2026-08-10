@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Export",
+  "exportWarehouseLabel": "Entrepôt",
+  "exportButton": "Exporter",
+  "exportEmptyWarehouse": "Cet entrepôt n'a aucun panneau ni chute à exporter.",
+  "exportColumnType": "Type",
+  "exportColumnQrCode": "Code QR",
+  "exportColumnDecorCode": "Code décor",
+  "exportColumnDecorName": "Nom du décor",
+  "exportColumnLocation": "Emplacement",
+  "exportColumnStatus": "Statut",
+  "exportColumnCreatedAt": "Créé",
+  "exportFailedMessage": "Échec de l'export : {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

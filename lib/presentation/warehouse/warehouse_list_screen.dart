@@ -9,6 +9,7 @@ import '../../l10n/app_localizations.dart';
 import '../rack/rack_list_screen.dart';
 import '../dashboard/owner_dashboard_screen.dart';
 import '../scan/scan_screen.dart';
+import '../export/export_screen.dart';
 
 /// Deliberately plain Material widgets — no WoodFlow Design Tokens
 /// applied here yet. This screen's job is to prove Warehouse can be
@@ -89,6 +90,15 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
       appBar: AppBar(
         title: Text(l10n.warehousesTitle),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.ios_share_outlined),
+            tooltip: l10n.exportTitle,
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const ExportScreen(),
+              ));
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.dashboard_outlined),
             tooltip: l10n.ownerDashboardTitle,

@@ -256,4 +256,43 @@ class AppLocalizationsSk extends AppLocalizations {
   String daysAgo(int days) {
     return 'pred $days dňami';
   }
+
+  @override
+  String get exportTitle => 'Export';
+
+  @override
+  String get exportWarehouseLabel => 'Sklad';
+
+  @override
+  String get exportButton => 'Exportovať';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Tento sklad nemá žiadne dosky ani odrezky na export.';
+
+  @override
+  String get exportColumnType => 'Typ';
+
+  @override
+  String get exportColumnQrCode => 'QR kód';
+
+  @override
+  String get exportColumnDecorCode => 'Kód dekoru';
+
+  @override
+  String get exportColumnDecorName => 'Názov dekoru';
+
+  @override
+  String get exportColumnLocation => 'Umiestnenie';
+
+  @override
+  String get exportColumnStatus => 'Stav';
+
+  @override
+  String get exportColumnCreatedAt => 'Vytvorené';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Export sa nepodaril: $message';
+  }
 }

@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Eksportēt",
+  "exportWarehouseLabel": "Noliktava",
+  "exportButton": "Eksportēt",
+  "exportEmptyWarehouse": "Šajā noliktavā nav plāksņu vai atgriezumu, ko eksportēt.",
+  "exportColumnType": "Tips",
+  "exportColumnQrCode": "QR kods",
+  "exportColumnDecorCode": "Dekora kods",
+  "exportColumnDecorName": "Dekora nosaukums",
+  "exportColumnLocation": "Atrašanās vieta",
+  "exportColumnStatus": "Statuss",
+  "exportColumnCreatedAt": "Izveidots",
+  "exportFailedMessage": "Eksportēšana neizdevās: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

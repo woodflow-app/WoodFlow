@@ -22,12 +22,10 @@ import 'app_localizations_lv.dart';
 import 'app_localizations_nl.dart';
 import 'app_localizations_no.dart';
 import 'app_localizations_pl.dart';
-import 'app_localizations_pt.dart';
 import 'app_localizations_ru.dart';
 import 'app_localizations_sk.dart';
 import 'app_localizations_sl.dart';
 import 'app_localizations_sv.dart';
-import 'app_localizations_uk.dart';
 
 // ignore_for_file: type=lint
 
@@ -132,12 +130,10 @@ abstract class AppLocalizations {
     Locale('nl'),
     Locale('no'),
     Locale('pl'),
-    Locale('pt'),
     Locale('ru'),
     Locale('sk'),
     Locale('sl'),
-    Locale('sv'),
-    Locale('uk')
+    Locale('sv')
   ];
 
   /// No description provided for @warehousesTitle.
@@ -595,6 +591,78 @@ abstract class AppLocalizations {
   /// In pl, this message translates to:
   /// **'{days} dni temu'**
   String daysAgo(int days);
+
+  /// No description provided for @exportTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Eksport'**
+  String get exportTitle;
+
+  /// No description provided for @exportWarehouseLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Magazyn'**
+  String get exportWarehouseLabel;
+
+  /// No description provided for @exportButton.
+  ///
+  /// In pl, this message translates to:
+  /// **'Eksportuj'**
+  String get exportButton;
+
+  /// No description provided for @exportEmptyWarehouse.
+  ///
+  /// In pl, this message translates to:
+  /// **'Ten magazyn nie ma płyt ani ścinków do eksportu.'**
+  String get exportEmptyWarehouse;
+
+  /// No description provided for @exportColumnType.
+  ///
+  /// In pl, this message translates to:
+  /// **'Typ'**
+  String get exportColumnType;
+
+  /// No description provided for @exportColumnQrCode.
+  ///
+  /// In pl, this message translates to:
+  /// **'Kod QR'**
+  String get exportColumnQrCode;
+
+  /// No description provided for @exportColumnDecorCode.
+  ///
+  /// In pl, this message translates to:
+  /// **'Kod dekoru'**
+  String get exportColumnDecorCode;
+
+  /// No description provided for @exportColumnDecorName.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nazwa dekoru'**
+  String get exportColumnDecorName;
+
+  /// No description provided for @exportColumnLocation.
+  ///
+  /// In pl, this message translates to:
+  /// **'Lokalizacja'**
+  String get exportColumnLocation;
+
+  /// No description provided for @exportColumnStatus.
+  ///
+  /// In pl, this message translates to:
+  /// **'Status'**
+  String get exportColumnStatus;
+
+  /// No description provided for @exportColumnCreatedAt.
+  ///
+  /// In pl, this message translates to:
+  /// **'Utworzono'**
+  String get exportColumnCreatedAt;
+
+  /// No description provided for @exportFailedMessage.
+  ///
+  /// In pl, this message translates to:
+  /// **'Eksport nie powiódł się: {message}'**
+  String exportFailedMessage(String message);
 }
 
 class _AppLocalizationsDelegate
@@ -625,12 +693,10 @@ class _AppLocalizationsDelegate
         'nl',
         'no',
         'pl',
-        'pt',
         'ru',
         'sk',
         'sl',
-        'sv',
-        'uk'
+        'sv'
       ].contains(locale.languageCode);
 
   @override
@@ -674,8 +740,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsNo();
     case 'pl':
       return AppLocalizationsPl();
-    case 'pt':
-      return AppLocalizationsPt();
     case 'ru':
       return AppLocalizationsRu();
     case 'sk':
@@ -684,8 +748,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsSl();
     case 'sv':
       return AppLocalizationsSv();
-    case 'uk':
-      return AppLocalizationsUk();
   }
 
   throw FlutterError(

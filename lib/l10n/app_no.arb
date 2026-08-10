@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Eksporter",
+  "exportWarehouseLabel": "Lager",
+  "exportButton": "Eksporter",
+  "exportEmptyWarehouse": "Dette lageret har ingen plater eller kappstykker å eksportere.",
+  "exportColumnType": "Type",
+  "exportColumnQrCode": "QR-kode",
+  "exportColumnDecorCode": "Dekorkode",
+  "exportColumnDecorName": "Dekornavn",
+  "exportColumnLocation": "Plassering",
+  "exportColumnStatus": "Status",
+  "exportColumnCreatedAt": "Opprettet",
+  "exportFailedMessage": "Eksport mislyktes: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

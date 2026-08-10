@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Export",
+  "exportWarehouseLabel": "Warehouse",
+  "exportButton": "Export",
+  "exportEmptyWarehouse": "This warehouse has no boards or offcuts to export.",
+  "exportColumnType": "Type",
+  "exportColumnQrCode": "QR code",
+  "exportColumnDecorCode": "Decor code",
+  "exportColumnDecorName": "Decor name",
+  "exportColumnLocation": "Location",
+  "exportColumnStatus": "Status",
+  "exportColumnCreatedAt": "Created",
+  "exportFailedMessage": "Export failed: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

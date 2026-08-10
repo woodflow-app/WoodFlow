@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Экспорт",
+  "exportWarehouseLabel": "Склад",
+  "exportButton": "Экспортировать",
+  "exportEmptyWarehouse": "В этом складе нет плит или обрезков для экспорта.",
+  "exportColumnType": "Тип",
+  "exportColumnQrCode": "QR-код",
+  "exportColumnDecorCode": "Код декора",
+  "exportColumnDecorName": "Название декора",
+  "exportColumnLocation": "Местоположение",
+  "exportColumnStatus": "Статус",
+  "exportColumnCreatedAt": "Создано",
+  "exportFailedMessage": "Ошибка экспорта: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

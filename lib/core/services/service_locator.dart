@@ -18,7 +18,11 @@ import '../../domain/repositories/offcut_repository.dart';
 import '../../domain/services/qr_resolver.dart';
 import '../../domain/services/label_generator.dart';
 import '../../domain/services/dashboard_service.dart';
+import '../../domain/services/export_generator.dart';
 import '../../data/labels/pdf_label_generator.dart';
+import '../../data/export/pdf_export_generator.dart';
+import '../../data/export/csv_export_generator.dart';
+import '../../data/export/rtf_export_generator.dart';
 import 'locale_provider.dart';
 
 /// Global service locator. Deliberately NOT a custom-built container —
@@ -111,6 +115,29 @@ Future<void> setupServiceLocator() async {
       sl<OffcutRepository>(),
       sl<DecorRepository>(),
     ),
+  );
+
+  // --- Services (Krok 10) ---
+  // Unlike LabelGenerator (one interface, one implementation), all
+  // three ExportGenerator formats have to be resolvable at once — the
+  // user picks PDF/CSV/RTF at runtime in ExportScreen. get_it's named
+  // instances give ExportScreen a way to ask for "the generator for
+  // this format" without ever importing a concrete data/export/ class
+  // itself — instanceName matches ExportFormat.name exactly ('pdf'/
+  // 'csv'/'rtf'), so resolving is `sl<ExportGenerator>(instanceName:
+  // 'export_${format.name}')`, never a switch statement duplicated
+  // between here and the screen.
+  sl.registerLazySingleton<ExportGenerator>(
+    () => PdfExportGenerator(),
+    instanceName: 'export_pdf',
+  );
+  sl.registerLazySingleton<ExportGenerator>(
+    () => CsvExportGenerator(),
+    instanceName: 'export_csv',
+  );
+  sl.registerLazySingleton<ExportGenerator>(
+    () => RtfExportGenerator(),
+    instanceName: 'export_rtf',
   );
 
   // --- App-wide reactive state (ChangeNotifier, listened to via

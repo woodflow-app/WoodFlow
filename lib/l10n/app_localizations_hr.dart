@@ -254,4 +254,43 @@ class AppLocalizationsHr extends AppLocalizations {
   String daysAgo(int days) {
     return 'prije $days dana';
   }
+
+  @override
+  String get exportTitle => 'Izvoz';
+
+  @override
+  String get exportWarehouseLabel => 'Skladište';
+
+  @override
+  String get exportButton => 'Izvezi';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Ovo skladište nema ploča ni otpadaka za izvoz.';
+
+  @override
+  String get exportColumnType => 'Vrsta';
+
+  @override
+  String get exportColumnQrCode => 'QR kod';
+
+  @override
+  String get exportColumnDecorCode => 'Kod dekora';
+
+  @override
+  String get exportColumnDecorName => 'Naziv dekora';
+
+  @override
+  String get exportColumnLocation => 'Lokacija';
+
+  @override
+  String get exportColumnStatus => 'Status';
+
+  @override
+  String get exportColumnCreatedAt => 'Stvoreno';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Izvoz nije uspio: $message';
+  }
 }

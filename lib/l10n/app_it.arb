@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Esportazione",
+  "exportWarehouseLabel": "Magazzino",
+  "exportButton": "Esporta",
+  "exportEmptyWarehouse": "Questo magazzino non ha pannelli né ritagli da esportare.",
+  "exportColumnType": "Tipo",
+  "exportColumnQrCode": "Codice QR",
+  "exportColumnDecorCode": "Codice decoro",
+  "exportColumnDecorName": "Nome decoro",
+  "exportColumnLocation": "Posizione",
+  "exportColumnStatus": "Stato",
+  "exportColumnCreatedAt": "Creato",
+  "exportFailedMessage": "Esportazione non riuscita: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

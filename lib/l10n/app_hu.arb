@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Exportálás",
+  "exportWarehouseLabel": "Raktár",
+  "exportButton": "Exportálás",
+  "exportEmptyWarehouse": "Ebben a raktárban nincs exportálható lap vagy hulladékdarab.",
+  "exportColumnType": "Típus",
+  "exportColumnQrCode": "QR-kód",
+  "exportColumnDecorCode": "Dekor kódja",
+  "exportColumnDecorName": "Dekor neve",
+  "exportColumnLocation": "Hely",
+  "exportColumnStatus": "Állapot",
+  "exportColumnCreatedAt": "Létrehozva",
+  "exportFailedMessage": "Az exportálás nem sikerült: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

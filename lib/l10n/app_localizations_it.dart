@@ -255,4 +255,43 @@ class AppLocalizationsIt extends AppLocalizations {
   String daysAgo(int days) {
     return '$days giorni fa';
   }
+
+  @override
+  String get exportTitle => 'Esportazione';
+
+  @override
+  String get exportWarehouseLabel => 'Magazzino';
+
+  @override
+  String get exportButton => 'Esporta';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Questo magazzino non ha pannelli né ritagli da esportare.';
+
+  @override
+  String get exportColumnType => 'Tipo';
+
+  @override
+  String get exportColumnQrCode => 'Codice QR';
+
+  @override
+  String get exportColumnDecorCode => 'Codice decoro';
+
+  @override
+  String get exportColumnDecorName => 'Nome decoro';
+
+  @override
+  String get exportColumnLocation => 'Posizione';
+
+  @override
+  String get exportColumnStatus => 'Stato';
+
+  @override
+  String get exportColumnCreatedAt => 'Creato';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Esportazione non riuscita: $message';
+  }
 }

@@ -254,4 +254,43 @@ class AppLocalizationsLt extends AppLocalizations {
   String daysAgo(int days) {
     return 'prieš $days d.';
   }
+
+  @override
+  String get exportTitle => 'Eksportuoti';
+
+  @override
+  String get exportWarehouseLabel => 'Sandėlis';
+
+  @override
+  String get exportButton => 'Eksportuoti';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Šiame sandėlyje nėra plokščių ar atraižų eksportavimui.';
+
+  @override
+  String get exportColumnType => 'Tipas';
+
+  @override
+  String get exportColumnQrCode => 'QR kodas';
+
+  @override
+  String get exportColumnDecorCode => 'Dekoro kodas';
+
+  @override
+  String get exportColumnDecorName => 'Dekoro pavadinimas';
+
+  @override
+  String get exportColumnLocation => 'Vieta';
+
+  @override
+  String get exportColumnStatus => 'Būsena';
+
+  @override
+  String get exportColumnCreatedAt => 'Sukurta';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Eksportavimas nepavyko: $message';
+  }
 }

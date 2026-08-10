@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Às-phortadh",
+  "exportWarehouseLabel": "Taigh-stòir",
+  "exportButton": "Às-phortaich",
+  "exportEmptyWarehouse": "Chan eil bòrd no criomag anns an taigh-stòir seo airson às-phortadh.",
+  "exportColumnType": "Seòrsa",
+  "exportColumnQrCode": "Còd QR",
+  "exportColumnDecorCode": "Còd an sgeadachaidh",
+  "exportColumnDecorName": "Ainm an sgeadachaidh",
+  "exportColumnLocation": "Àite",
+  "exportColumnStatus": "Staid",
+  "exportColumnCreatedAt": "Air a chruthachadh",
+  "exportFailedMessage": "Dh'fhàillig an às-phortadh: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

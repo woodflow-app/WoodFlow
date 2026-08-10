@@ -253,4 +253,43 @@ class AppLocalizationsPl extends AppLocalizations {
   String daysAgo(int days) {
     return '$days dni temu';
   }
+
+  @override
+  String get exportTitle => 'Eksport';
+
+  @override
+  String get exportWarehouseLabel => 'Magazyn';
+
+  @override
+  String get exportButton => 'Eksportuj';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Ten magazyn nie ma płyt ani ścinków do eksportu.';
+
+  @override
+  String get exportColumnType => 'Typ';
+
+  @override
+  String get exportColumnQrCode => 'Kod QR';
+
+  @override
+  String get exportColumnDecorCode => 'Kod dekoru';
+
+  @override
+  String get exportColumnDecorName => 'Nazwa dekoru';
+
+  @override
+  String get exportColumnLocation => 'Lokalizacja';
+
+  @override
+  String get exportColumnStatus => 'Status';
+
+  @override
+  String get exportColumnCreatedAt => 'Utworzono';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Eksport nie powiódł się: $message';
+  }
 }

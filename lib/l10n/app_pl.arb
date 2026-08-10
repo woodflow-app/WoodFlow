@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Eksport",
+  "exportWarehouseLabel": "Magazyn",
+  "exportButton": "Eksportuj",
+  "exportEmptyWarehouse": "Ten magazyn nie ma płyt ani ścinków do eksportu.",
+  "exportColumnType": "Typ",
+  "exportColumnQrCode": "Kod QR",
+  "exportColumnDecorCode": "Kod dekoru",
+  "exportColumnDecorName": "Nazwa dekoru",
+  "exportColumnLocation": "Lokalizacja",
+  "exportColumnStatus": "Status",
+  "exportColumnCreatedAt": "Utworzono",
+  "exportFailedMessage": "Eksport nie powiódł się: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

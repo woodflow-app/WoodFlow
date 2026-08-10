@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Izvoz",
+  "exportWarehouseLabel": "Skladišče",
+  "exportButton": "Izvozi",
+  "exportEmptyWarehouse": "To skladišče nima plošč ali odrezkov za izvoz.",
+  "exportColumnType": "Vrsta",
+  "exportColumnQrCode": "QR koda",
+  "exportColumnDecorCode": "Koda dekorja",
+  "exportColumnDecorName": "Ime dekorja",
+  "exportColumnLocation": "Lokacija",
+  "exportColumnStatus": "Stanje",
+  "exportColumnCreatedAt": "Ustvarjeno",
+  "exportFailedMessage": "Izvoz ni uspel: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

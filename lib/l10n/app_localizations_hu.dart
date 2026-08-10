@@ -254,4 +254,43 @@ class AppLocalizationsHu extends AppLocalizations {
   String daysAgo(int days) {
     return '$days napja';
   }
+
+  @override
+  String get exportTitle => 'Exportálás';
+
+  @override
+  String get exportWarehouseLabel => 'Raktár';
+
+  @override
+  String get exportButton => 'Exportálás';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Ebben a raktárban nincs exportálható lap vagy hulladékdarab.';
+
+  @override
+  String get exportColumnType => 'Típus';
+
+  @override
+  String get exportColumnQrCode => 'QR-kód';
+
+  @override
+  String get exportColumnDecorCode => 'Dekor kódja';
+
+  @override
+  String get exportColumnDecorName => 'Dekor neve';
+
+  @override
+  String get exportColumnLocation => 'Hely';
+
+  @override
+  String get exportColumnStatus => 'Állapot';
+
+  @override
+  String get exportColumnCreatedAt => 'Létrehozva';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Az exportálás nem sikerült: $message';
+  }
 }

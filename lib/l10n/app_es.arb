@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Exportar",
+  "exportWarehouseLabel": "Almacén",
+  "exportButton": "Exportar",
+  "exportEmptyWarehouse": "Este almacén no tiene tableros ni recortes para exportar.",
+  "exportColumnType": "Tipo",
+  "exportColumnQrCode": "Código QR",
+  "exportColumnDecorCode": "Código de decorado",
+  "exportColumnDecorName": "Nombre del decorado",
+  "exportColumnLocation": "Ubicación",
+  "exportColumnStatus": "Estado",
+  "exportColumnCreatedAt": "Creado",
+  "exportFailedMessage": "Error al exportar: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

@@ -254,4 +254,43 @@ class AppLocalizationsCs extends AppLocalizations {
   String daysAgo(int days) {
     return 'před $days dny';
   }
+
+  @override
+  String get exportTitle => 'Export';
+
+  @override
+  String get exportWarehouseLabel => 'Sklad';
+
+  @override
+  String get exportButton => 'Exportovat';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Tento sklad nemá žádné desky ani odřezky k exportu.';
+
+  @override
+  String get exportColumnType => 'Typ';
+
+  @override
+  String get exportColumnQrCode => 'QR kód';
+
+  @override
+  String get exportColumnDecorCode => 'Kód dekoru';
+
+  @override
+  String get exportColumnDecorName => 'Název dekoru';
+
+  @override
+  String get exportColumnLocation => 'Umístění';
+
+  @override
+  String get exportColumnStatus => 'Stav';
+
+  @override
+  String get exportColumnCreatedAt => 'Vytvořeno';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Export se nezdařil: $message';
+  }
 }

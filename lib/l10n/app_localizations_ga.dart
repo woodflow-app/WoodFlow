@@ -254,4 +254,43 @@ class AppLocalizationsGa extends AppLocalizations {
   String daysAgo(int days) {
     return '$days lá ó shin';
   }
+
+  @override
+  String get exportTitle => 'Easpórtáil';
+
+  @override
+  String get exportWarehouseLabel => 'Stóras';
+
+  @override
+  String get exportButton => 'Easpórtáil';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Níl painéal ná fuílleach le easpórtáil sa stóras seo.';
+
+  @override
+  String get exportColumnType => 'Cineál';
+
+  @override
+  String get exportColumnQrCode => 'Cód QR';
+
+  @override
+  String get exportColumnDecorCode => 'Cód an mhaisithe';
+
+  @override
+  String get exportColumnDecorName => 'Ainm an mhaisithe';
+
+  @override
+  String get exportColumnLocation => 'Suíomh';
+
+  @override
+  String get exportColumnStatus => 'Stádas';
+
+  @override
+  String get exportColumnCreatedAt => 'Cruthaithe';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Theip ar an easpórtáil: $message';
+  }
 }

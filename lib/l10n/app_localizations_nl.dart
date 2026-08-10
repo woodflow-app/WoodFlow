@@ -255,4 +255,43 @@ class AppLocalizationsNl extends AppLocalizations {
   String daysAgo(int days) {
     return '$days dagen geleden';
   }
+
+  @override
+  String get exportTitle => 'Exporteren';
+
+  @override
+  String get exportWarehouseLabel => 'Magazijn';
+
+  @override
+  String get exportButton => 'Exporteren';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Dit magazijn heeft geen platen of restplaten om te exporteren.';
+
+  @override
+  String get exportColumnType => 'Type';
+
+  @override
+  String get exportColumnQrCode => 'QR-code';
+
+  @override
+  String get exportColumnDecorCode => 'Decorcode';
+
+  @override
+  String get exportColumnDecorName => 'Decornaam';
+
+  @override
+  String get exportColumnLocation => 'Locatie';
+
+  @override
+  String get exportColumnStatus => 'Status';
+
+  @override
+  String get exportColumnCreatedAt => 'Aangemaakt';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Exporteren mislukt: $message';
+  }
 }

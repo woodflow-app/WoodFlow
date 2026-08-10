@@ -38,6 +38,13 @@ dependencies:
   # bezpośrednio przez `flutter pub get`, nie z pamięci).
   shared_preferences: ^2.3.0 # trwały wybór języka (LocaleProvider)
 
+  # Krok 10 — eksport PDF/CSV/RTF (ExportScreen). Bytes are handed to
+  # the share sheet via XFile.fromData — no temp-file write needed, no
+  # path_provider dependency: this keeps ExportScreen working on web
+  # too (dart:io/path_provider's file APIs aren't available there).
+  csv: ^8.0.0
+  share_plus: ^13.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -50,3 +57,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true # WYMAGANE — bez tego AppLocalizations się nie wygeneruje
+  assets:
+    # Krok 10 — PdfExportGenerator ładuje ten plik przez rootBundle.
+    # WYMAGANE dla poprawnego PDF: `pdf` package's built-in Helvetica
+    # ma tylko podstawowy zestaw znaków Base-14 (bez polskich znaków
+    # diakrytycznych, bez cyrylicy) — bez tej czcionki eksport PDF w
+    # większości z 21 obsługiwanych języków renderowałby puste/błędne
+    # znaki. Noto Sans, licencja SIL OFL 1.1 (assets/fonts/NotoSans-OFL.txt).
+    - assets/fonts/NotoSans-Variable.ttf

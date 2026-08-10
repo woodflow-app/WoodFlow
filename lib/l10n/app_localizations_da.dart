@@ -255,4 +255,43 @@ class AppLocalizationsDa extends AppLocalizations {
   String daysAgo(int days) {
     return '$days dage siden';
   }
+
+  @override
+  String get exportTitle => 'Eksport';
+
+  @override
+  String get exportWarehouseLabel => 'Lager';
+
+  @override
+  String get exportButton => 'Eksporter';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Dette lager har ingen plader eller afskær at eksportere.';
+
+  @override
+  String get exportColumnType => 'Type';
+
+  @override
+  String get exportColumnQrCode => 'QR-kode';
+
+  @override
+  String get exportColumnDecorCode => 'Dekorkode';
+
+  @override
+  String get exportColumnDecorName => 'Dekornavn';
+
+  @override
+  String get exportColumnLocation => 'Placering';
+
+  @override
+  String get exportColumnStatus => 'Status';
+
+  @override
+  String get exportColumnCreatedAt => 'Oprettet';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Eksport mislykkedes: $message';
+  }
 }

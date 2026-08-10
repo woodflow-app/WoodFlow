@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Eksportuoti",
+  "exportWarehouseLabel": "Sandėlis",
+  "exportButton": "Eksportuoti",
+  "exportEmptyWarehouse": "Šiame sandėlyje nėra plokščių ar atraižų eksportavimui.",
+  "exportColumnType": "Tipas",
+  "exportColumnQrCode": "QR kodas",
+  "exportColumnDecorCode": "Dekoro kodas",
+  "exportColumnDecorName": "Dekoro pavadinimas",
+  "exportColumnLocation": "Vieta",
+  "exportColumnStatus": "Būsena",
+  "exportColumnCreatedAt": "Sukurta",
+  "exportFailedMessage": "Eksportavimas nepavyko: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

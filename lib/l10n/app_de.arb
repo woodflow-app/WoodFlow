@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Export",
+  "exportWarehouseLabel": "Lager",
+  "exportButton": "Exportieren",
+  "exportEmptyWarehouse": "Dieses Lager hat keine Platten oder Verschnittstücke zum Exportieren.",
+  "exportColumnType": "Typ",
+  "exportColumnQrCode": "QR-Code",
+  "exportColumnDecorCode": "Dekorcode",
+  "exportColumnDecorName": "Dekorname",
+  "exportColumnLocation": "Standort",
+  "exportColumnStatus": "Status",
+  "exportColumnCreatedAt": "Erstellt",
+  "exportFailedMessage": "Export fehlgeschlagen: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

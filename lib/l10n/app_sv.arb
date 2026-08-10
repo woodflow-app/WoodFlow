@@ -127,5 +127,24 @@
         "type": "int"
       }
     }
+  },
+  "exportTitle": "Exportera",
+  "exportWarehouseLabel": "Lager",
+  "exportButton": "Exportera",
+  "exportEmptyWarehouse": "Detta lager har inga skivor eller kapbitar att exportera.",
+  "exportColumnType": "Typ",
+  "exportColumnQrCode": "QR-kod",
+  "exportColumnDecorCode": "Dekorkod",
+  "exportColumnDecorName": "Dekornamn",
+  "exportColumnLocation": "Plats",
+  "exportColumnStatus": "Status",
+  "exportColumnCreatedAt": "Skapad",
+  "exportFailedMessage": "Export misslyckades: {message}",
+  "@exportFailedMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
   }
 }

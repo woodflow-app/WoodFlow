@@ -253,4 +253,43 @@ class AppLocalizationsRu extends AppLocalizations {
   String daysAgo(int days) {
     return '$days дн. назад';
   }
+
+  @override
+  String get exportTitle => 'Экспорт';
+
+  @override
+  String get exportWarehouseLabel => 'Склад';
+
+  @override
+  String get exportButton => 'Экспортировать';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'В этом складе нет плит или обрезков для экспорта.';
+
+  @override
+  String get exportColumnType => 'Тип';
+
+  @override
+  String get exportColumnQrCode => 'QR-код';
+
+  @override
+  String get exportColumnDecorCode => 'Код декора';
+
+  @override
+  String get exportColumnDecorName => 'Название декора';
+
+  @override
+  String get exportColumnLocation => 'Местоположение';
+
+  @override
+  String get exportColumnStatus => 'Статус';
+
+  @override
+  String get exportColumnCreatedAt => 'Создано';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Ошибка экспорта: $message';
+  }
 }

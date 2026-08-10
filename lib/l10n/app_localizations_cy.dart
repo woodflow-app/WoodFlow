@@ -256,4 +256,43 @@ class AppLocalizationsCy extends AppLocalizations {
   String daysAgo(int days) {
     return '$days diwrnod yn ôl';
   }
+
+  @override
+  String get exportTitle => 'Allforio';
+
+  @override
+  String get exportWarehouseLabel => 'Warws';
+
+  @override
+  String get exportButton => 'Allforio';
+
+  @override
+  String get exportEmptyWarehouse =>
+      'Nid oes panel na thoriad yn y warws hon i\'w allforio.';
+
+  @override
+  String get exportColumnType => 'Math';
+
+  @override
+  String get exportColumnQrCode => 'Cod QR';
+
+  @override
+  String get exportColumnDecorCode => 'Cod yr addurn';
+
+  @override
+  String get exportColumnDecorName => 'Enw\'r addurn';
+
+  @override
+  String get exportColumnLocation => 'Lleoliad';
+
+  @override
+  String get exportColumnStatus => 'Statws';
+
+  @override
+  String get exportColumnCreatedAt => 'Wedi\'i greu';
+
+  @override
+  String exportFailedMessage(String message) {
+    return 'Methodd yr allforio: $message';
+  }
 }
