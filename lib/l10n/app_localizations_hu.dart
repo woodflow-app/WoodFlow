@@ -420,4 +420,13 @@ class AppLocalizationsHu extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Többlet: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Törli a(z) „$name” raktárt?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Ez a művelet nem vonható vissza. A raktárban lévő összes állvány és polc törlődik. Az azokon lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.';
 }

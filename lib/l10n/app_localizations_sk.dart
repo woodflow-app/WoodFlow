@@ -420,4 +420,13 @@ class AppLocalizationsSk extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Prebytok: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Odstrániť sklad „$name“?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Túto akciu nemožno vrátiť späť. Všetky regály a police v tomto sklade budú odstránené. Dosky a odrezky v nich budú archivované (nie odstránené) — ich história zostane viditeľná.';
 }

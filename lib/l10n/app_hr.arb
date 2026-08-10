@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Ploča",
   "aiQueryOffcutTypeLabel": "Otpadak",
   "aiQueryWasteAreaLabel": "Višak: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Izbrisati skladište „{name}”?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Ova radnja se ne može poništiti. Sve police i pretinci u ovom skladištu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva."
 }

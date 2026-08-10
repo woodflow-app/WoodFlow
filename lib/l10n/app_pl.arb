@@ -217,5 +217,8 @@
     "placeholders": {
       "value": { "type": "String" }
     }
-  }
+  },
+  "deleteWarehouseQuestion": "Usunąć magazyn „{name}”?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Ta operacja jest nieodwracalna. Wszystkie regały i półki w tym magazynie zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna."
 }

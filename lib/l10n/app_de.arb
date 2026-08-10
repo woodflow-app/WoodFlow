@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Platte",
   "aiQueryOffcutTypeLabel": "Verschnitt",
   "aiQueryWasteAreaLabel": "Überschuss: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Lager „{name}“ löschen?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Regale und Fächer in diesem Lager werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar."
 }

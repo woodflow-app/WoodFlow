@@ -419,4 +419,13 @@ class AppLocalizationsDa extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Overskud: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Slet lager „$name”?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Denne handling kan ikke fortrydes. Alle reoler og pladser i dette lager slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig.';
 }

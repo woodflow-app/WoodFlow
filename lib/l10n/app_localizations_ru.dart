@@ -416,4 +416,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Излишек: $value мм²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Удалить склад «$name»?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Это действие необратимо. Все стеллажи и полки этого склада будут удалены. Плиты и обрезки на них будут заархивированы (не удалены) — их история останется видимой.';
 }

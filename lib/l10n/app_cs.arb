@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Deska",
   "aiQueryOffcutTypeLabel": "Odřezek",
   "aiQueryWasteAreaLabel": "Přebytek: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Smazat sklad „{name}“?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Tuto akci nelze vrátit zpět. Všechny regály a police v tomto skladu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná."
 }

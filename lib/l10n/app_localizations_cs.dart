@@ -418,4 +418,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Přebytek: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Smazat sklad „$name“?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Tuto akci nelze vrátit zpět. Všechny regály a police v tomto skladu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná.';
 }

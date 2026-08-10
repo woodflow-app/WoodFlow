@@ -421,4 +421,13 @@ class AppLocalizationsCy extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Gormodedd: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Dileu\'r warws „$name”?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Ni ellir dadwneud y weithred hon. Bydd pob silff a lleoliad yn y warws hon yn cael eu dileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.';
 }

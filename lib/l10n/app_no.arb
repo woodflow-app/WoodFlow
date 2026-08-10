@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Plate",
   "aiQueryOffcutTypeLabel": "Avkapp",
   "aiQueryWasteAreaLabel": "Overskudd: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Slette lageret «{name}»?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Denne handlingen kan ikke angres. Alle reoler og plasser i dette lageret vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig."
 }

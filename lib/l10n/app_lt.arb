@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Plokštė",
   "aiQueryOffcutTypeLabel": "Atraiža",
   "aiQueryWasteAreaLabel": "Perteklius: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Ištrinti sandėlį „{name}“?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Šio veiksmo nebus galima anuliuoti. Visi šio sandėlio stelažai ir vietos bus ištrinti. Juose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma."
 }

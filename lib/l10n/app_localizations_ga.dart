@@ -419,4 +419,13 @@ class AppLocalizationsGa extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Barrachas: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Scrios an stóras „$name”?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach seilf agus áit sa stóras seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil.';
 }

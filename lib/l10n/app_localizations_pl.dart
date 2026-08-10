@@ -416,4 +416,13 @@ class AppLocalizationsPl extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Nadmiar: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Usunąć magazyn „$name”?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Ta operacja jest nieodwracalna. Wszystkie regały i półki w tym magazynie zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.';
 }

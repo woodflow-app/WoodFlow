@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Plade",
   "aiQueryOffcutTypeLabel": "Afskær",
   "aiQueryWasteAreaLabel": "Overskud: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Slet lager „{name}”?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Denne handling kan ikke fortrydes. Alle reoler og pladser i dette lager slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig."
 }

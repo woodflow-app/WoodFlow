@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Plaat",
   "aiQueryOffcutTypeLabel": "Reststuk",
   "aiQueryWasteAreaLabel": "Overschot: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Magazijn „{name}” verwijderen?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle rekken en vakken in dit magazijn worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar."
 }

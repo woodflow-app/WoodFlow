@@ -419,4 +419,13 @@ class AppLocalizationsHr extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Višak: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Izbrisati skladište „$name”?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Ova radnja se ne može poništiti. Sve police i pretinci u ovom skladištu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva.';
 }

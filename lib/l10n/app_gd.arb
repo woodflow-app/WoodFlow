@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Bòrd",
   "aiQueryOffcutTypeLabel": "Pìos",
   "aiQueryWasteAreaLabel": "Cus: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "A bheil thu airson an stòr „{name}” a sguabadh às?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile seilf is àite san stòr seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird 's na pìosan a th' ann (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn."
 }

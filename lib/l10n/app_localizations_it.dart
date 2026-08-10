@@ -421,4 +421,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Eccedenza: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Eliminare il magazzino «$name»?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Questa operazione è irreversibile. Tutti gli scaffali e i ripiani di questo magazzino verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile.';
 }

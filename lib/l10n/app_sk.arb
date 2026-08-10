@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Doska",
   "aiQueryOffcutTypeLabel": "Odrezok",
   "aiQueryWasteAreaLabel": "Prebytok: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Odstrániť sklad „{name}“?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Túto akciu nemožno vrátiť späť. Všetky regály a police v tomto sklade budú odstránené. Dosky a odrezky v nich budú archivované (nie odstránené) — ich história zostane viditeľná."
 }

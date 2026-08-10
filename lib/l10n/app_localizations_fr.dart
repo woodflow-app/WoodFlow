@@ -420,4 +420,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Surplus : $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Supprimer l\'entrepôt « $name » ?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Cette action est irréversible. Tous les racks et emplacements de cet entrepôt seront supprimés. Les plaques et chutes qu\'ils contiennent seront archivées (non supprimées) — leur historique reste visible.';
 }

@@ -418,4 +418,13 @@ class AppLocalizationsLv extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Pārpalikums: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Dzēst noliktavu „$name”?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Šo darbību nevar atsaukt. Visi plaukti un vietas šajā noliktavā tiks dzēsti. Tajos esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.';
 }

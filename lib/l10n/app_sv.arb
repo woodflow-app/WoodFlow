@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Skiva",
   "aiQueryOffcutTypeLabel": "Kapbit",
   "aiQueryWasteAreaLabel": "Överskott: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Ta bort lagret ”{name}”?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Denna åtgärd kan inte ångras. Alla hyllor och platser i detta lager kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig."
 }

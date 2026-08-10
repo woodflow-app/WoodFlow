@@ -879,6 +879,18 @@ abstract class AppLocalizations {
   /// In pl, this message translates to:
   /// **'Nadmiar: {value} mm²'**
   String aiQueryWasteAreaLabel(String value);
+
+  /// No description provided for @deleteWarehouseQuestion.
+  ///
+  /// In pl, this message translates to:
+  /// **'Usunąć magazyn „{name}”?'**
+  String deleteWarehouseQuestion(String name);
+
+  /// No description provided for @deleteWarehouseWarning.
+  ///
+  /// In pl, this message translates to:
+  /// **'Ta operacja jest nieodwracalna. Wszystkie regały i półki w tym magazynie zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.'**
+  String get deleteWarehouseWarning;
 }
 
 class _AppLocalizationsDelegate

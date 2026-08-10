@@ -23,6 +23,8 @@ import '../../domain/services/shopping_list_service.dart';
 import '../../domain/services/ai_query_parser.dart';
 import '../../domain/services/ai_query_engine.dart';
 import '../../domain/services/offcut_match_finder.dart';
+import '../../data/usecases/delete_warehouse_use_case_impl.dart';
+import '../../domain/usecases/delete_warehouse_use_case.dart';
 import '../../data/labels/pdf_label_generator.dart';
 import '../../data/export/pdf_export_generator.dart';
 import '../../data/export/csv_export_generator.dart';
@@ -92,6 +94,16 @@ Future<void> setupServiceLocator() async {
   );
 
   // Anything after Offcut registers here next, in that order.
+
+  // --- Use cases (multi-entity atomic operations — see ADR reasoning
+  // on DeleteWarehouseUseCase's class doc comment) ---
+  sl.registerLazySingleton<DeleteWarehouseUseCase>(
+    () => DeleteWarehouseUseCaseImpl(
+      sl<DatabaseService>(),
+      sl<AppLogger>(),
+      sl<EventPublisher>(),
+    ),
+  );
 
   // --- Services (Krok 7.2) ---
   sl.registerLazySingleton<QrResolver>(

@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Planc",
   "aiQueryOffcutTypeLabel": "Fuíoll",
   "aiQueryWasteAreaLabel": "Barrachas: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Scrios an stóras „{name}”?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach seilf agus áit sa stóras seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil."
 }

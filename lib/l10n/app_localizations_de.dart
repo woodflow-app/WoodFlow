@@ -422,4 +422,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Überschuss: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Lager „$name“ löschen?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Regale und Fächer in diesem Lager werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.';
 }

@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Плита",
   "aiQueryOffcutTypeLabel": "Обрезок",
   "aiQueryWasteAreaLabel": "Излишек: {value} мм²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Удалить склад «{name}»?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Это действие необратимо. Все стеллажи и полки этого склада будут удалены. Плиты и обрезки на них будут заархивированы (не удалены) — их история останется видимой."
 }

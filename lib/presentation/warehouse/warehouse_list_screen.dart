@@ -6,6 +6,7 @@ import '../../core/services/service_locator.dart';
 import '../../domain/entities/warehouse.dart';
 import '../../domain/entities/organization.dart';
 import '../../domain/repositories/warehouse_repository.dart';
+import '../../domain/usecases/delete_warehouse_use_case.dart';
 import '../../l10n/app_localizations.dart';
 import '../rack/rack_list_screen.dart';
 import '../dashboard/owner_dashboard_screen.dart';
@@ -31,6 +32,7 @@ class WarehouseListScreen extends StatefulWidget {
 
 class _WarehouseListScreenState extends State<WarehouseListScreen> {
   final WarehouseRepository _repository = sl<WarehouseRepository>();
+  final DeleteWarehouseUseCase _deleteWarehouse = sl<DeleteWarehouseUseCase>();
 
   List<Warehouse> _warehouses = [];
   bool _isLoading = true;
@@ -203,6 +205,11 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
             leading: const Icon(Icons.warehouse_outlined),
             title: Text(w.name),
             subtitle: w.address != null ? Text(w.address!) : null,
+            trailing: IconButton(
+              icon: const Icon(Icons.delete_outline),
+              tooltip: l10n.delete,
+              onPressed: () => _confirmDeleteWarehouse(w, l10n),
+            ),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (_) => RackListScreen(
@@ -214,6 +221,36 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
           );
         },
       ),
+    );
+  }
+
+  Future<void> _confirmDeleteWarehouse(Warehouse warehouse, AppLocalizations l10n) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.deleteWarehouseQuestion(warehouse.name)),
+        content: Text(l10n.deleteWarehouseWarning),
+        actions: [
+          TextButton(
+              onPressed: () => Navigator.of(dialogContext).pop(false),
+              child: Text(l10n.cancel)),
+          TextButton(
+              onPressed: () => Navigator.of(dialogContext).pop(true),
+              child: Text(l10n.delete, style: const TextStyle(color: Colors.red))),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+
+    final result = await _deleteWarehouse(warehouse.id);
+    result.when(
+      success: (_) => _load(),
+      failure: (f) {
+        if (mounted) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(f.message)));
+        }
+      },
     );
   }
 

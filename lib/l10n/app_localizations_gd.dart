@@ -427,4 +427,13 @@ class AppLocalizationsGd extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Cus: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'A bheil thu airson an stòr „$name” a sguabadh às?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile seilf is àite san stòr seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird \'s na pìosan a th\' ann (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.';
 }

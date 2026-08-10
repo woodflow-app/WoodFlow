@@ -419,4 +419,13 @@ class AppLocalizationsLt extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Perteklius: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Ištrinti sandėlį „$name“?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Šio veiksmo nebus galima anuliuoti. Visi šio sandėlio stelažai ir vietos bus ištrinti. Juose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma.';
 }

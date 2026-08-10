@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Lap",
   "aiQueryOffcutTypeLabel": "Hulladékdarab",
   "aiQueryWasteAreaLabel": "Többlet: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Törli a(z) „{name}” raktárt?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Ez a művelet nem vonható vissza. A raktárban lévő összes állvány és polc törlődik. Az azokon lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak."
 }

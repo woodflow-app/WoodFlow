@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Pannello",
   "aiQueryOffcutTypeLabel": "Ritaglio",
   "aiQueryWasteAreaLabel": "Eccedenza: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Eliminare il magazzino «{name}»?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Questa operazione è irreversibile. Tutti gli scaffali e i ripiani di questo magazzino verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile."
 }

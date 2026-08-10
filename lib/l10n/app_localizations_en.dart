@@ -419,4 +419,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Waste: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return 'Delete warehouse \"$name\"?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'This action cannot be undone. All racks and slots in this warehouse will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible.';
 }

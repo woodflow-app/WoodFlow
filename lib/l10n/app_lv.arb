@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Plāksne",
   "aiQueryOffcutTypeLabel": "Atgriezums",
   "aiQueryWasteAreaLabel": "Pārpalikums: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Dzēst noliktavu „{name}”?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "Šo darbību nevar atsaukt. Visi plaukti un vietas šajā noliktavā tiks dzēsti. Tajos esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama."
 }

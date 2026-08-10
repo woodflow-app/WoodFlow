@@ -420,4 +420,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String aiQueryWasteAreaLabel(String value) {
     return 'Excedente: $value mm²';
   }
+
+  @override
+  String deleteWarehouseQuestion(String name) {
+    return '¿Eliminar el almacén «$name»?';
+  }
+
+  @override
+  String get deleteWarehouseWarning =>
+      'Esta acción no se puede deshacer. Se eliminarán todas las estanterías y ubicaciones de este almacén. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible.';
 }

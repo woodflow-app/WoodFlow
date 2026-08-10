@@ -188,5 +188,8 @@
   "aiQueryBoardTypeLabel": "Board",
   "aiQueryOffcutTypeLabel": "Offcut",
   "aiQueryWasteAreaLabel": "Waste: {value} mm²",
-  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } }
+  "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
+  "deleteWarehouseQuestion": "Delete warehouse \"{name}\"?",
+  "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteWarehouseWarning": "This action cannot be undone. All racks and slots in this warehouse will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible."
 }
