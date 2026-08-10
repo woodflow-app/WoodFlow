@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
@@ -13,6 +14,8 @@ import '../export/export_screen.dart';
 import '../calculators/calculators_screen.dart';
 import '../shopping_list/shopping_list_screen.dart';
 import '../ai_query/ai_query_screen.dart';
+// QA-ONLY (see file doc comment) — DELETE this import before v1.0.
+import '../debug/qa_language_switcher_button.dart';
 
 /// Deliberately plain Material widgets — no WoodFlow Design Tokens
 /// applied here yet. This screen's job is to prove Warehouse can be
@@ -93,6 +96,12 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
       appBar: AppBar(
         title: Text(l10n.warehousesTitle),
         actions: [
+          // === QA-ONLY — DELETE this block before v1.0 (see
+          // qa_language_switcher_button.dart's doc comment) ===
+          // kDebugMode means this literally does not exist in a
+          // release/profile build — nothing to gate at runtime.
+          if (kDebugMode) const QaLanguageSwitcherButton(),
+          // === end QA-ONLY block ===
           IconButton(
             icon: const Icon(Icons.shopping_cart_outlined),
             tooltip: l10n.shoppingListTitle,
