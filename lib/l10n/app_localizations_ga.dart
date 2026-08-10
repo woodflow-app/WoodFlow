@@ -355,4 +355,68 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Cuir isteach slánuimhir, 0 nó níos mó.';
+
+  @override
+  String get aiQueryTitle => 'Fiafraigh den AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Cuir ceist faoin stóras, m.sh. \"Cé mhéad H3303 atá agam?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Seol';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Ní thuigim an cheist: „$query“. Bain triail as m.sh. „Cé mhéad H3303 atá agam?“';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity píosa ar stoc';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Suíomhanna — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Níl aon phlanc den mhaisiú seo ar stoc faoi láthair.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Toisí — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Níl aon ábhar den mhaisiú seo ar stoc faoi láthair.';
+
+  @override
+  String get aiQueryStaleHeader => 'Ábhar ina luí';
+
+  @override
+  String get aiQueryStaleEmpty => 'Níl aon ábhar ina luí.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Fuíoll oiriúnach — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Níl aon fhuíoll oiriúnach den mhaisiú seo.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Planc';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Fuíoll';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Barrachas: $value mm²';
+  }
 }

@@ -166,5 +166,56 @@
   "searchDecorHint": "Szukaj dekoru (kod lub nazwa)",
   "minimumStockQuantityLabel": "Minimalny stan (szt.)",
   "clearThresholdButton": "Usuń próg",
-  "invalidQuantityMessage": "Podaj liczbę całkowitą, 0 lub więcej."
+  "invalidQuantityMessage": "Podaj liczbę całkowitą, 0 lub więcej.",
+  "aiQueryTitle": "Zapytaj AI",
+  "aiQueryInputHint": "Zapytaj o magazyn, np. \"Ile mam H3303?\"",
+  "aiQuerySendTooltip": "Wyślij",
+  "aiQueryUnrecognized": "Nie rozumiem pytania: „{query}”. Spróbuj np. „Ile mam H3303?”",
+  "@aiQueryUnrecognized": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "aiQueryStockAnswer": "{code} — {name}: {quantity} szt. w magazynie",
+  "@aiQueryStockAnswer": {
+    "placeholders": {
+      "code": { "type": "String" },
+      "name": { "type": "String" },
+      "quantity": { "type": "int" }
+    }
+  },
+  "aiQueryLocationHeader": "Lokalizacje — {code} — {name}",
+  "@aiQueryLocationHeader": {
+    "placeholders": {
+      "code": { "type": "String" },
+      "name": { "type": "String" }
+    }
+  },
+  "aiQueryLocationEmpty": "Brak płyt tego dekoru obecnie w magazynie.",
+  "aiQueryDimensionsHeader": "Wymiary — {code} — {name}",
+  "@aiQueryDimensionsHeader": {
+    "placeholders": {
+      "code": { "type": "String" },
+      "name": { "type": "String" }
+    }
+  },
+  "aiQueryDimensionsEmpty": "Brak materiału tego dekoru obecnie w magazynie.",
+  "aiQueryStaleHeader": "Materiały zalegające",
+  "aiQueryStaleEmpty": "Brak zalegających materiałów.",
+  "aiQueryOffcutMatchHeader": "Pasujące ścinki — {code} — {name}",
+  "@aiQueryOffcutMatchHeader": {
+    "placeholders": {
+      "code": { "type": "String" },
+      "name": { "type": "String" }
+    }
+  },
+  "aiQueryOffcutMatchEmpty": "Brak pasującego ścinka tego dekoru.",
+  "aiQueryBoardTypeLabel": "Płyta",
+  "aiQueryOffcutTypeLabel": "Ścinek",
+  "aiQueryWasteAreaLabel": "Nadmiar: {value} mm²",
+  "@aiQueryWasteAreaLabel": {
+    "placeholders": {
+      "value": { "type": "String" }
+    }
+  }
 }

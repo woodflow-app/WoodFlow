@@ -357,4 +357,68 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get invalidQuantityMessage =>
       'Inserisci un numero intero, 0 o superiore.';
+
+  @override
+  String get aiQueryTitle => 'Chiedi all\'IA';
+
+  @override
+  String get aiQueryInputHint =>
+      'Fai una domanda sul magazzino, es. \"Quanto H3303 ho?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Invia';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Non capisco la domanda: «$query». Prova ad es. «Quanto H3303 ho?»';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity pz in magazzino';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Posizioni — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Nessun pannello di questo decoro attualmente in magazzino.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Dimensioni — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Nessun materiale di questo decoro attualmente in magazzino.';
+
+  @override
+  String get aiQueryStaleHeader => 'Materiali fermi';
+
+  @override
+  String get aiQueryStaleEmpty => 'Nessun materiale fermo.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Ritagli corrispondenti — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Nessun ritaglio corrispondente per questo decoro.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Pannello';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Ritaglio';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Eccedenza: $value mm²';
+  }
 }

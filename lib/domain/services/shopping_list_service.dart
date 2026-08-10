@@ -30,21 +30,9 @@ class ShoppingListService {
       final decorsResult = await _decors.getAll();
       if (decorsResult.isFailure) return Result.failure(decorsResult.failure);
 
-      final boardsResult = await _boards.getAll();
-      final offcutsResult = await _offcuts.getAll();
-      final boards = boardsResult.isSuccess ? boardsResult.data : const [];
-      final offcuts = offcutsResult.isSuccess ? offcutsResult.data : const [];
-
-      // Counted in Dart, not a SQL GROUP BY — same "small data today,
-      // revisit if it's ever measured as slow" tradeoff DashboardService
-      // already accepts explicitly for its own boards/offcuts pass.
-      final stockByDecorId = <String, int>{};
-      for (final board in boards) {
-        stockByDecorId[board.decorId] = (stockByDecorId[board.decorId] ?? 0) + 1;
-      }
-      for (final offcut in offcuts) {
-        stockByDecorId[offcut.decorId] = (stockByDecorId[offcut.decorId] ?? 0) + 1;
-      }
+      final stockResult = await currentStockByDecor();
+      if (stockResult.isFailure) return Result.failure(stockResult.failure);
+      final stockByDecorId = stockResult.data;
 
       final items = <ShoppingListItem>[];
       for (final decor in decorsResult.data) {
@@ -63,6 +51,36 @@ class ShoppingListService {
 
       items.sort((a, b) => b.shortageQuantity.compareTo(a.shortageQuantity));
       return Result.success(items);
+    } catch (e) {
+      return Result.failure(mapExceptionToFailure(e));
+    }
+  }
+
+  /// Current stock (Board+Offcut, non-archived) grouped by `decorId`.
+  /// Extracted out of `build()` in Krok 14 so `AiQueryEngine` can reuse
+  /// the exact same count for `stockQuantity` answers instead of
+  /// re-deriving it — the architecture-boundary rule for the AI layer
+  /// (extend an existing domain service, never duplicate its
+  /// aggregation logic).
+  Future<Result<Map<String, int>>> currentStockByDecor() async {
+    try {
+      final boardsResult = await _boards.getAll();
+      final offcutsResult = await _offcuts.getAll();
+      final boards = boardsResult.isSuccess ? boardsResult.data : const [];
+      final offcuts = offcutsResult.isSuccess ? offcutsResult.data : const [];
+
+      // Counted in Dart, not a SQL GROUP BY — same "small data today,
+      // revisit if it's ever measured as slow" tradeoff DashboardService
+      // already accepts explicitly for its own boards/offcuts pass.
+      final stockByDecorId = <String, int>{};
+      for (final board in boards) {
+        stockByDecorId[board.decorId] = (stockByDecorId[board.decorId] ?? 0) + 1;
+      }
+      for (final offcut in offcuts) {
+        stockByDecorId[offcut.decorId] = (stockByDecorId[offcut.decorId] ?? 0) + 1;
+      }
+
+      return Result.success(stockByDecorId);
     } catch (e) {
       return Result.failure(mapExceptionToFailure(e));
     }

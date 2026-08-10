@@ -354,4 +354,66 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Введите целое число, 0 или больше.';
+
+  @override
+  String get aiQueryTitle => 'Спросить ИИ';
+
+  @override
+  String get aiQueryInputHint =>
+      'Задайте вопрос о складе, напр. «Сколько у меня H3303?»';
+
+  @override
+  String get aiQuerySendTooltip => 'Отправить';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Не понимаю вопрос: «$query». Попробуйте, например, «Сколько у меня H3303?»';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity шт. на складе';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Расположение — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty => 'Плит этого декора сейчас нет на складе.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Размеры — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Материала этого декора сейчас нет на складе.';
+
+  @override
+  String get aiQueryStaleHeader => 'Залежавшиеся материалы';
+
+  @override
+  String get aiQueryStaleEmpty => 'Нет залежавшихся материалов.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Подходящие обрезки — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Нет подходящих обрезков этого декора.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Плита';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Обрезок';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Излишек: $value мм²';
+  }
 }

@@ -354,4 +354,67 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Vnesite celo število, 0 ali več.';
+
+  @override
+  String get aiQueryTitle => 'Vprašaj AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Postavite vprašanje o skladišču, npr. \"Koliko imam H3303?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Pošlji';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Ne razumem vprašanja: „$query”. Poskusite npr. „Koliko imam H3303?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity kos na zalogi';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Lokacije — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Trenutno ni plošč tega dekorja na zalogi.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Dimenzije — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Trenutno ni materiala tega dekorja na zalogi.';
+
+  @override
+  String get aiQueryStaleHeader => 'Zaostali material';
+
+  @override
+  String get aiQueryStaleEmpty => 'Ni zaostalega materiala.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Ustrezni odrezki — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Ni ustreznega odrezka tega dekorja.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Plošča';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Odrezek';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Presežek: $value mm²';
+  }
 }

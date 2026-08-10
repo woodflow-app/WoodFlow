@@ -356,4 +356,68 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Introduce un número entero, 0 o mayor.';
+
+  @override
+  String get aiQueryTitle => 'Preguntar a la IA';
+
+  @override
+  String get aiQueryInputHint =>
+      'Pregunta sobre el almacén, ej. \"¿Cuánto H3303 tengo?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Enviar';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'No entiendo la pregunta: «$query». Prueba p. ej. «¿Cuánto H3303 tengo?»';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity uds. en stock';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Ubicaciones — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'No hay tableros de este decorado actualmente en stock.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Dimensiones — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'No hay material de este decorado actualmente en stock.';
+
+  @override
+  String get aiQueryStaleHeader => 'Materiales estancados';
+
+  @override
+  String get aiQueryStaleEmpty => 'No hay materiales estancados.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Recortes coincidentes — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'No hay recortes coincidentes de este decorado.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Tablero';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Recorte';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Excedente: $value mm²';
+  }
 }

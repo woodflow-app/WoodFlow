@@ -356,4 +356,68 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get invalidQuantityMessage =>
       'Adjon meg egy egész számot, 0 vagy nagyobb.';
+
+  @override
+  String get aiQueryTitle => 'AI megkérdezése';
+
+  @override
+  String get aiQueryInputHint =>
+      'Tegyen fel kérdést a raktárról, pl. \"Mennyi H3303-am van?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Küldés';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Nem értem a kérdést: „$query”. Próbálja pl. „Mennyi H3303-am van?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity db készleten';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Helyek — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Jelenleg nincs ilyen dekorú lap készleten.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Méretek — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Jelenleg nincs ilyen dekorú anyag készleten.';
+
+  @override
+  String get aiQueryStaleHeader => 'Heverő anyagok';
+
+  @override
+  String get aiQueryStaleEmpty => 'Nincs heverő anyag.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Megfelelő hulladékdarabok — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Nincs megfelelő hulladékdarab ebből a dekorból.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Lap';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Hulladékdarab';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Többlet: $value mm²';
+  }
 }

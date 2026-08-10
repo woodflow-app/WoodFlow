@@ -355,4 +355,68 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Angi et helt tall, 0 eller mer.';
+
+  @override
+  String get aiQueryTitle => 'Spør AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Still et spørsmål om lageret, f.eks. \"Hvor mye H3303 har jeg?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Send';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Jeg forstår ikke spørsmålet: «$query». Prøv f.eks. «Hvor mye H3303 har jeg?»';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity stk. på lager';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Plasseringer — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Ingen plater av denne dekoren på lager nå.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Mål — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Ikke noe materiale av denne dekoren på lager nå.';
+
+  @override
+  String get aiQueryStaleHeader => 'Liggende materiale';
+
+  @override
+  String get aiQueryStaleEmpty => 'Ikke noe liggende materiale.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Passende avkapp — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Ikke noe passende avkapp av denne dekoren.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Plate';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Avkapp';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Overskudd: $value mm²';
+  }
 }

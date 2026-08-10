@@ -356,4 +356,67 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get invalidQuantityMessage =>
       'Įveskite sveiką skaičių, 0 arba daugiau.';
+
+  @override
+  String get aiQueryTitle => 'Klausti AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Užduokite klausimą apie sandėlį, pvz., \"Kiek turiu H3303?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Siųsti';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Nesuprantu klausimo: „$query“. Pabandykite, pvz., „Kiek turiu H3303?“';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity vnt. sandėlyje';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Vietos — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Šiuo metu sandėlyje nėra šio dekoro plokščių.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Matmenys — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Šiuo metu sandėlyje nėra šio dekoro medžiagos.';
+
+  @override
+  String get aiQueryStaleHeader => 'Gulinti medžiaga';
+
+  @override
+  String get aiQueryStaleEmpty => 'Gulinčios medžiagos nėra.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Tinkamos atraižos — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Nėra tinkamos šio dekoro atraižos.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Plokštė';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Atraiža';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Perteklius: $value mm²';
+  }
 }

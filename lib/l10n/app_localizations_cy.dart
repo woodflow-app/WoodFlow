@@ -357,4 +357,68 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Rhowch rif cyfan, 0 neu fwy.';
+
+  @override
+  String get aiQueryTitle => 'Gofyn i\'r AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Gofynnwch gwestiwn am y warws, e.e. \"Faint o H3303 sydd gennyf?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Anfon';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Dydw i ddim yn deall y cwestiwn: „$query”. Ceisiwch e.e. „Faint o H3303 sydd gennyf?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity darn mewn stoc';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Lleoliadau — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Dim byrddau o\'r addurn hwn mewn stoc ar hyn o bryd.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Dimensiynau — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Dim deunydd o\'r addurn hwn mewn stoc ar hyn o bryd.';
+
+  @override
+  String get aiQueryStaleHeader => 'Deunydd yn gorwedd';
+
+  @override
+  String get aiQueryStaleEmpty => 'Dim deunydd yn gorwedd.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Darnau gwastraff addas — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Dim darn gwastraff addas o\'r addurn hwn.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Bwrdd';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Darn gwastraff';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Gormodedd: $value mm²';
+  }
 }

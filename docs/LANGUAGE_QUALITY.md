@@ -102,6 +102,21 @@ nowe stringi.
 - [ ] *(jeśli warstwa "do przeglądu" lub niżej)* przegląd native
       speakera przed pokazaniem realnym klientom w tym języku
 
+## Krok 14 — wzorce NL parsera AI (osobne od kluczy ARB)
+
+`lib/data/ai_patterns/ai_patterns_xx.dart` (21 plików, jeden per
+język) to **inny rodzaj treści** niż klucze ARB powyżej: nie stałe
+etykiety UI, tylko otwarte warianty sformułowań pytań (frazy-wyzwalacze
+per typ zapytania) i słowa jednostek (mm/cm/m). Te same trzy warstwy
+pewności z tabel wyżej mają zastosowanie 1:1 — warstwa "silna"
+(en/pl/de/fr/it/es/ru) ma po 3–5 wariantów frazy na typ zapytania,
+warstwa "do przeglądu" i "wymaga przeglądu" (ga/cy/gd, `gd` najsłabszy)
+celowo minimalny zestaw (1–2 frazy), żeby nie sugerować pewności,
+której nie ma. Przed pokazaniem realnym klientom w językach spoza
+warstwy "silnej": ten sam przegląd native speakera co dla ARB, ale
+oceniający realne, naturalne sformułowanie pytania o magazyn, nie tylko
+poprawność gramatyczną pojedynczej frazy.
+
 ## Skąd te 21 języków
 
 Wybrane przez Piotra z pełnej listy języków europejskich (24 urzędowe UE + inne + regionalne), po dyskusji o realnym zakresie rynkowym vs. ambicji "wszystkie języki Europy". Zob. `woodflow_language_picker.html` — interaktywne narzędzie użyte do wyboru.

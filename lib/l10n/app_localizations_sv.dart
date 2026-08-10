@@ -355,4 +355,67 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Ange ett heltal, 0 eller mer.';
+
+  @override
+  String get aiQueryTitle => 'Fråga AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Ställ en fråga om lagret, t.ex. \"Hur mycket H3303 har jag?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Skicka';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Jag förstår inte frågan: ”$query”. Prova t.ex. ”Hur mycket H3303 har jag?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity st i lager';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Platser — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Inga skivor av denna dekor i lager just nu.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Mått — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Inget material av denna dekor i lager just nu.';
+
+  @override
+  String get aiQueryStaleHeader => 'Liggande material';
+
+  @override
+  String get aiQueryStaleEmpty => 'Inget liggande material.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Passande kapbitar — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Ingen passande kapbit av denna dekor.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Skiva';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Kapbit';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Överskott: $value mm²';
+  }
 }

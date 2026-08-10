@@ -20,10 +20,14 @@ import '../../domain/services/label_generator.dart';
 import '../../domain/services/dashboard_service.dart';
 import '../../domain/services/export_generator.dart';
 import '../../domain/services/shopping_list_service.dart';
+import '../../domain/services/ai_query_parser.dart';
+import '../../domain/services/ai_query_engine.dart';
+import '../../domain/services/offcut_match_finder.dart';
 import '../../data/labels/pdf_label_generator.dart';
 import '../../data/export/pdf_export_generator.dart';
 import '../../data/export/csv_export_generator.dart';
 import '../../data/export/rtf_export_generator.dart';
+import '../../data/ai_patterns/ai_patterns_registry.dart';
 import 'locale_provider.dart';
 
 /// Global service locator. Deliberately NOT a custom-built container —
@@ -147,6 +151,27 @@ Future<void> setupServiceLocator() async {
       sl<DecorRepository>(),
       sl<BoardRepository>(),
       sl<OffcutRepository>(),
+    ),
+  );
+
+  // --- Services (Krok 14) ---
+  // AiQueryEngine is the only class here allowed to touch repositories
+  // directly — AiQueryParser and OffcutMatchFinder are pure/stateless,
+  // no dependencies of their own. See ai_query_engine.dart's class
+  // comment for the architecture-boundary rule this wiring enforces.
+  sl.registerLazySingleton<AiQueryParser>(
+    () => AiQueryParser(aiPatternsRegistry),
+  );
+  sl.registerLazySingleton<OffcutMatchFinder>(() => const OffcutMatchFinder());
+  sl.registerLazySingleton<AiQueryEngine>(
+    () => AiQueryEngine(
+      sl<AiQueryParser>(),
+      sl<DecorRepository>(),
+      sl<BoardRepository>(),
+      sl<OffcutRepository>(),
+      sl<DashboardService>(),
+      sl<ShoppingListService>(),
+      sl<OffcutMatchFinder>(),
     ),
   );
 

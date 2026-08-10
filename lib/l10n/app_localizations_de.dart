@@ -358,4 +358,68 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get invalidQuantityMessage =>
       'Geben Sie eine ganze Zahl, 0 oder größer, ein.';
+
+  @override
+  String get aiQueryTitle => 'KI fragen';
+
+  @override
+  String get aiQueryInputHint =>
+      'Frage zum Lager, z. B. \"Wie viel H3303 habe ich?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Senden';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Ich verstehe die Frage nicht: „$query“. Versuchen Sie z. B. „Wie viel H3303 habe ich?“';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity Stk. auf Lager';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Standorte — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Keine Platten dieses Dekors derzeit auf Lager.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Abmessungen — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Kein Material dieses Dekors derzeit auf Lager.';
+
+  @override
+  String get aiQueryStaleHeader => 'Liegen gebliebenes Material';
+
+  @override
+  String get aiQueryStaleEmpty => 'Kein liegen gebliebenes Material.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Passender Verschnitt — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Kein passender Verschnitt dieses Dekors.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Platte';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Verschnitt';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Überschuss: $value mm²';
+  }
 }

@@ -363,4 +363,68 @@ class AppLocalizationsGd extends AppLocalizations {
   @override
   String get invalidQuantityMessage =>
       'Cuir a-steach àireamh shlàn, 0 no barrachd.';
+
+  @override
+  String get aiQueryTitle => 'Faighnich den AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Faighnich ceist mun stòr, m.e. \"Dè na tha agam de H3303?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Cuir';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Cha tuig mi a\' cheist: „$query”. Feuch m.e. „Dè na tha agam de H3303?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity pìos san stòr';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Ionadan — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Chan eil bùird den sgeadachadh seo san stòr an-dràsta.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Tomhasan — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Chan eil stuth den sgeadachadh seo san stòr an-dràsta.';
+
+  @override
+  String get aiQueryStaleHeader => 'Stuth na laighe';
+
+  @override
+  String get aiQueryStaleEmpty => 'Chan eil stuth na laighe ann.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Pìosan iomchaidh — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Chan eil pìos iomchaidh den sgeadachadh seo ann.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Bòrd';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Pìos';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Cus: $value mm²';
+  }
 }

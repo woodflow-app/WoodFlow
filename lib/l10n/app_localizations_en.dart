@@ -356,4 +356,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Enter a whole number, 0 or greater.';
+
+  @override
+  String get aiQueryTitle => 'Ask AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Ask about the warehouse, e.g. \"How much H3303 do I have?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Send';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'I don\'t understand: \"$query\". Try e.g. \"How much H3303 do I have?\"';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity pcs in stock';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Locations — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'No boards of this decor currently in stock.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Dimensions — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'No material of this decor currently in stock.';
+
+  @override
+  String get aiQueryStaleHeader => 'Stale materials';
+
+  @override
+  String get aiQueryStaleEmpty => 'No stale materials.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Matching offcuts — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'No matching offcut of this decor.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Board';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Offcut';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Waste: $value mm²';
+  }
 }

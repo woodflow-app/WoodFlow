@@ -356,4 +356,66 @@ class AppLocalizationsLv extends AppLocalizations {
   @override
   String get invalidQuantityMessage =>
       'Ievadiet veselu skaitli, 0 vai lielāku.';
+
+  @override
+  String get aiQueryTitle => 'Jautāt AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Uzdodiet jautājumu par noliktavu, piem., \"Cik man ir H3303?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Sūtīt';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Nesaprotu jautājumu: „$query”. Mēģiniet, piem., „Cik man ir H3303?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity gab. noliktavā';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Atrašanās vietas — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty => 'Šī dekora plākšņu pašlaik noliktavā nav.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Izmēri — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Šī dekora materiāla pašlaik noliktavā nav.';
+
+  @override
+  String get aiQueryStaleHeader => 'Guļošs materiāls';
+
+  @override
+  String get aiQueryStaleEmpty => 'Nav guļoša materiāla.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Piemēroti atgriezumi — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Nav piemērota šī dekora atgriezuma.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Plāksne';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Atgriezums';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Pārpalikums: $value mm²';
+  }
 }

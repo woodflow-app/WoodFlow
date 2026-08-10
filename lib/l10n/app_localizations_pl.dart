@@ -354,4 +354,66 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Podaj liczbę całkowitą, 0 lub więcej.';
+
+  @override
+  String get aiQueryTitle => 'Zapytaj AI';
+
+  @override
+  String get aiQueryInputHint => 'Zapytaj o magazyn, np. \"Ile mam H3303?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Wyślij';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Nie rozumiem pytania: „$query”. Spróbuj np. „Ile mam H3303?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity szt. w magazynie';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Lokalizacje — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Brak płyt tego dekoru obecnie w magazynie.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Wymiary — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Brak materiału tego dekoru obecnie w magazynie.';
+
+  @override
+  String get aiQueryStaleHeader => 'Materiały zalegające';
+
+  @override
+  String get aiQueryStaleEmpty => 'Brak zalegających materiałów.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Pasujące ścinki — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Brak pasującego ścinka tego dekoru.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Płyta';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Ścinek';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Nadmiar: $value mm²';
+  }
 }

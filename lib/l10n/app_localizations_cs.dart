@@ -355,4 +355,67 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Zadejte celé číslo, 0 nebo více.';
+
+  @override
+  String get aiQueryTitle => 'Zeptat se AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Zeptejte se na sklad, např. \"Kolik mám H3303?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Odeslat';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Nerozumím otázce: „$query“. Zkuste např. „Kolik mám H3303?“';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity ks skladem';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Umístění — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Žádné desky tohoto dekoru aktuálně skladem.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Rozměry — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Žádný materiál tohoto dekoru aktuálně skladem.';
+
+  @override
+  String get aiQueryStaleHeader => 'Ležící materiál';
+
+  @override
+  String get aiQueryStaleEmpty => 'Žádný ležící materiál.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Vhodné odřezky — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Žádný vhodný odřezek tohoto dekoru.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Deska';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Odřezek';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Přebytek: $value mm²';
+  }
 }

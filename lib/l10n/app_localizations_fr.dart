@@ -356,4 +356,68 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Indiquez un nombre entier, 0 ou plus.';
+
+  @override
+  String get aiQueryTitle => 'Demander à l\'IA';
+
+  @override
+  String get aiQueryInputHint =>
+      'Posez une question sur l\'entrepôt, ex. « Combien de H3303 ai-je ? »';
+
+  @override
+  String get aiQuerySendTooltip => 'Envoyer';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Je ne comprends pas : « $query ». Essayez par ex. « Combien de H3303 ai-je ? »';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name : $quantity pièces en stock';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Emplacements — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Aucune plaque de ce décor actuellement en stock.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Dimensions — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Aucun matériau de ce décor actuellement en stock.';
+
+  @override
+  String get aiQueryStaleHeader => 'Matériaux dormants';
+
+  @override
+  String get aiQueryStaleEmpty => 'Aucun matériau dormant.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Chutes correspondantes — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty =>
+      'Aucune chute correspondante pour ce décor.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Plaque';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Chute';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Surplus : $value mm²';
+  }
 }

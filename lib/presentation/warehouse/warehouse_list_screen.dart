@@ -12,6 +12,7 @@ import '../scan/scan_screen.dart';
 import '../export/export_screen.dart';
 import '../calculators/calculators_screen.dart';
 import '../shopping_list/shopping_list_screen.dart';
+import '../ai_query/ai_query_screen.dart';
 
 /// Deliberately plain Material widgets — no WoodFlow Design Tokens
 /// applied here yet. This screen's job is to prove Warehouse can be
@@ -134,6 +135,15 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (_) => const ScanScreen(),
+              ));
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.chat_outlined),
+            tooltip: l10n.aiQueryTitle,
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const AiQueryScreen(),
               ));
             },
           ),

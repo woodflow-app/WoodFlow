@@ -126,6 +126,21 @@ void main() {
     expect(result.data.map((i) => i.decor.id), [_decorH3303, _decorU702]);
   });
 
+  test('currentStockByDecor() returns the same counts build() uses'
+      ' internally — extracted in Krok 14 so AiQueryEngine can reuse'
+      ' it instead of re-deriving the count', () async {
+    final board = await boardRepo.create(
+        slotId: 's-1', decorId: _decorH3303, length: 2800, width: 2070, thickness: 18);
+    await offcutRepo.cutFromBoard(
+        parentBoardId: board.data.id, slotId: 's-1', length: 400, width: 300, thickness: 18);
+    await boardRepo.create(slotId: 's-1', decorId: _decorU702, length: 2800, width: 2070, thickness: 18);
+
+    final result = await shoppingListService.currentStockByDecor();
+    expect(result.isSuccess, isTrue);
+    expect(result.data[_decorH3303], 2); // 1 board + 1 offcut
+    expect(result.data[_decorU702], 1);
+  });
+
   test('clearing a threshold (copyWith explicit null) removes the decor'
       ' from the list', () async {
     final decorResult = await decorRepo.getById(_decorH3303);

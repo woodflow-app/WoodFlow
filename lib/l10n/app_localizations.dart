@@ -783,6 +783,102 @@ abstract class AppLocalizations {
   /// In pl, this message translates to:
   /// **'Podaj liczbę całkowitą, 0 lub więcej.'**
   String get invalidQuantityMessage;
+
+  /// No description provided for @aiQueryTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Zapytaj AI'**
+  String get aiQueryTitle;
+
+  /// No description provided for @aiQueryInputHint.
+  ///
+  /// In pl, this message translates to:
+  /// **'Zapytaj o magazyn, np. \"Ile mam H3303?\"'**
+  String get aiQueryInputHint;
+
+  /// No description provided for @aiQuerySendTooltip.
+  ///
+  /// In pl, this message translates to:
+  /// **'Wyślij'**
+  String get aiQuerySendTooltip;
+
+  /// No description provided for @aiQueryUnrecognized.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nie rozumiem pytania: „{query}”. Spróbuj np. „Ile mam H3303?”'**
+  String aiQueryUnrecognized(String query);
+
+  /// No description provided for @aiQueryStockAnswer.
+  ///
+  /// In pl, this message translates to:
+  /// **'{code} — {name}: {quantity} szt. w magazynie'**
+  String aiQueryStockAnswer(String code, String name, int quantity);
+
+  /// No description provided for @aiQueryLocationHeader.
+  ///
+  /// In pl, this message translates to:
+  /// **'Lokalizacje — {code} — {name}'**
+  String aiQueryLocationHeader(String code, String name);
+
+  /// No description provided for @aiQueryLocationEmpty.
+  ///
+  /// In pl, this message translates to:
+  /// **'Brak płyt tego dekoru obecnie w magazynie.'**
+  String get aiQueryLocationEmpty;
+
+  /// No description provided for @aiQueryDimensionsHeader.
+  ///
+  /// In pl, this message translates to:
+  /// **'Wymiary — {code} — {name}'**
+  String aiQueryDimensionsHeader(String code, String name);
+
+  /// No description provided for @aiQueryDimensionsEmpty.
+  ///
+  /// In pl, this message translates to:
+  /// **'Brak materiału tego dekoru obecnie w magazynie.'**
+  String get aiQueryDimensionsEmpty;
+
+  /// No description provided for @aiQueryStaleHeader.
+  ///
+  /// In pl, this message translates to:
+  /// **'Materiały zalegające'**
+  String get aiQueryStaleHeader;
+
+  /// No description provided for @aiQueryStaleEmpty.
+  ///
+  /// In pl, this message translates to:
+  /// **'Brak zalegających materiałów.'**
+  String get aiQueryStaleEmpty;
+
+  /// No description provided for @aiQueryOffcutMatchHeader.
+  ///
+  /// In pl, this message translates to:
+  /// **'Pasujące ścinki — {code} — {name}'**
+  String aiQueryOffcutMatchHeader(String code, String name);
+
+  /// No description provided for @aiQueryOffcutMatchEmpty.
+  ///
+  /// In pl, this message translates to:
+  /// **'Brak pasującego ścinka tego dekoru.'**
+  String get aiQueryOffcutMatchEmpty;
+
+  /// No description provided for @aiQueryBoardTypeLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Płyta'**
+  String get aiQueryBoardTypeLabel;
+
+  /// No description provided for @aiQueryOffcutTypeLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Ścinek'**
+  String get aiQueryOffcutTypeLabel;
+
+  /// No description provided for @aiQueryWasteAreaLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nadmiar: {value} mm²'**
+  String aiQueryWasteAreaLabel(String value);
 }
 
 class _AppLocalizationsDelegate

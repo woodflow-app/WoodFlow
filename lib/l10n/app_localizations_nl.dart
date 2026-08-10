@@ -356,4 +356,67 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Voer een geheel getal in, 0 of hoger.';
+
+  @override
+  String get aiQueryTitle => 'AI vragen';
+
+  @override
+  String get aiQueryInputHint =>
+      'Stel een vraag over het magazijn, bijv. \"Hoeveel H3303 heb ik?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Verzenden';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Ik begrijp de vraag niet: „$query”. Probeer bijv. „Hoeveel H3303 heb ik?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity stuks op voorraad';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Locaties — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Geen platen van dit decor momenteel op voorraad.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Afmetingen — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Geen materiaal van dit decor momenteel op voorraad.';
+
+  @override
+  String get aiQueryStaleHeader => 'Liggend materiaal';
+
+  @override
+  String get aiQueryStaleEmpty => 'Geen liggend materiaal.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Passende reststukken — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Geen passend reststuk van dit decor.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Plaat';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Reststuk';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Overschot: $value mm²';
+  }
 }

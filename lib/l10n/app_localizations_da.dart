@@ -356,4 +356,67 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get invalidQuantityMessage => 'Angiv et helt tal, 0 eller mere.';
+
+  @override
+  String get aiQueryTitle => 'Spørg AI';
+
+  @override
+  String get aiQueryInputHint =>
+      'Stil et spørgsmål om lageret, f.eks. \"Hvor meget H3303 har jeg?\"';
+
+  @override
+  String get aiQuerySendTooltip => 'Send';
+
+  @override
+  String aiQueryUnrecognized(String query) {
+    return 'Jeg forstår ikke spørgsmålet: „$query”. Prøv f.eks. „Hvor meget H3303 har jeg?”';
+  }
+
+  @override
+  String aiQueryStockAnswer(String code, String name, int quantity) {
+    return '$code — $name: $quantity stk. på lager';
+  }
+
+  @override
+  String aiQueryLocationHeader(String code, String name) {
+    return 'Placeringer — $code — $name';
+  }
+
+  @override
+  String get aiQueryLocationEmpty =>
+      'Ingen plader af denne dekor på lager lige nu.';
+
+  @override
+  String aiQueryDimensionsHeader(String code, String name) {
+    return 'Mål — $code — $name';
+  }
+
+  @override
+  String get aiQueryDimensionsEmpty =>
+      'Intet materiale af denne dekor på lager lige nu.';
+
+  @override
+  String get aiQueryStaleHeader => 'Liggende materiale';
+
+  @override
+  String get aiQueryStaleEmpty => 'Intet liggende materiale.';
+
+  @override
+  String aiQueryOffcutMatchHeader(String code, String name) {
+    return 'Passende afskær — $code — $name';
+  }
+
+  @override
+  String get aiQueryOffcutMatchEmpty => 'Intet passende afskær af denne dekor.';
+
+  @override
+  String get aiQueryBoardTypeLabel => 'Plade';
+
+  @override
+  String get aiQueryOffcutTypeLabel => 'Afskær';
+
+  @override
+  String aiQueryWasteAreaLabel(String value) {
+    return 'Overskud: $value mm²';
+  }
 }
