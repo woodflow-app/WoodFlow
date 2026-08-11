@@ -20,6 +20,7 @@ this table, it never hardcodes an expert's name or logic.
 | 7 | `flutter-expert` | when the change touches Flutter/Dart implementation | Flutter/Dart implementation quality |
 | 8 | `ui-ux-reviewer` | when the change touches a screen or user-facing flow | Usability, cognitive load, information hierarchy |
 | 8 | `design-system-expert` | when the change touches icons, colors, typography, components, spacing, or tokens | Visual-language consistency across the whole app |
+| 8 | `mobile-ux-expert` | when the change touches a screen, form, or scanning flow used on the warehouse/production floor | Real-world usability: gloves, noise, one-hand operation, tap-count, production speed |
 | 9 | `security-reviewer` | always | Auth, data exposure, injection, secret handling |
 | 10 | `performance-reviewer` | always | Rebuilds, query cost, memory, startup time |
 | 11 | `code-reviewer` | always | Duplication, naming, dead code, SOLID, testability — final quality gate |
