@@ -136,7 +136,7 @@ Prefer reusable components.
 
 
 
-Use Riverpod correctly.
+Use get\_it + StatefulWidget for state management — the established convention in this codebase (zero Riverpod dependency anywhere). Do not introduce Riverpod or a second DI/state mechanism alongside get\_it.
 
 
 

@@ -18,11 +18,11 @@ Always review:
 
 \- authorization
 
-\- Firebase Security Rules
+\- local SQLite data-at-rest (this app has no Firebase/Firestore/cloud storage — it's a local `sqflite` database)
 
-\- Firestore access
+\- permission/role enforcement on sensitive operations (e.g. QR code regeneration — already flagged in code with `⚠️ Brak wymuszenia uprawnień` comments, awaiting Auth in v2.5)
 
-\- Storage permissions
+\- the fact that this app has no authentication at all yet — don't assume auth-gated behavior exists where it doesn't
 
 \- API security
 

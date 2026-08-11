@@ -2,7 +2,23 @@
 
 
 
-Development-only Claude Code process — not a runtime feature. Nothing here is imported into Flutter, registered in `service\_locator.dart`, or shipped in the APK.
+Development-only Claude Code process — not a runtime feature. Nothing here is imported into Flutter, registered in `service\_locator.dart`, or shipped in the APK. Verified as of this revision: still true, no exceptions.
+
+
+
+\---
+
+
+
+\## Governance — read this before anything else
+
+
+
+\*\*Expert Consensus is advisory, never authoritative. Experts analyze, identify risks, explain trade-offs and provide recommendations. The final architectural and product decision always belongs to the Project Owner.\*\*
+
+
+
+This is not a formality — every consensus report ends with a "Decision required from Project Owner" section precisely because the report's job is to make a good decision easy, not to make the decision itself.
 
 
 
@@ -50,9 +66,13 @@ Run Expert Consensus, not just `expert-review`, for:
 
 \- roadmap decisions
 
+\- breaking changes (API changes, database migrations, cross-module refactoring, public interface changes)
+
+\- major product decisions (new modules, ERP/MES/CAD-CAM integrations, platform architecture, strategic roadmap decisions)
 
 
-These map directly onto the roster's high-stakes domains (architecture → `woodflow-architect`, database → `database-architect`, AI → `ai-architect`, UI redesign → the screen-level triad, website → `website-expert`, performance → `performance-reviewer`, security → `security-reviewer`, roadmap → `product-manager`). If none of these apply, `expert-review` is sufficient — don't run the heavier process on a small change just because it's available.
+
+These map directly onto the roster's high-stakes domains (architecture → `woodflow-architect`, database → `database-architect`, AI → `ai-architect`, UI redesign → the screen-level triad, website → `website-expert`, performance → `performance-reviewer`, security → `security-reviewer`, roadmap/major product decisions → `product-manager`, breaking changes → `woodflow-architect` + whichever domain expert owns the module being broken). If none of these apply, `expert-review` is sufficient — don't run the heavier process on a small change just because it's available.
 
 
 
@@ -132,6 +152,8 @@ When two experts genuinely disagree (not just different lenses on the same chang
 
 4\. If priority rules don't resolve it, do not silently pick a side — surface it as an Open Question for the user, with both options and their tradeoffs stated.
 
+5\. Never hide a minority opinion. If one expert disagrees with the other four, that one expert's position and reasoning still appears in the report, in full — a minority view being outvoted is not the same as it being wrong, and the Project Owner (see Governance) is the one who gets to weigh that, not the synthesis step.
+
 
 
 \---
@@ -142,7 +164,11 @@ When two experts genuinely disagree (not just different lenses on the same chang
 
 
 
-Overwritten per use (it reflects the most recent consensus run, not a running log — commit history is the log). Sections:
+Overwritten per use (it reflects the most recent consensus run, not a running log — commit history is the log). Sections marked \*\*mandatory\*\* must appear in every report even if brief; the rest are included when there's something real to put in them.
+
+
+
+Mandatory: Facts, Assumptions, Risks, Alternative solutions, Recommendation, Decision required from Project Owner. Every recommendation and alternative carries a cost tag — Small (minutes) / Medium (hours) / Large (days) / Major (weeks) — so the Project Owner can weigh impact against cost, not just merit in isolation.
 
 
 
@@ -196,13 +222,13 @@ Architecture / UX / Performance / Security / Business — include only categorie
 
 \## Recommended solution
 
-The synthesized call. Clearly marked as a recommendation, not a fact.
+The synthesized call. Clearly marked as a recommendation, not a fact. Tagged with an estimated implementation cost: \*\*Small\*\* (minutes) / \*\*Medium\*\* (hours) / \*\*Large\*\* (days) / \*\*Major\*\* (weeks).
 
 
 
 \## Alternative solutions
 
-Genuine alternatives considered, and why each wasn't the top recommendation.
+Genuine alternatives considered, and why each wasn't the top recommendation — each also tagged Small/Medium/Large/Major, so the Project Owner can weigh impact against cost when choosing between them, not just against the top recommendation.
 
 
 
@@ -220,7 +246,13 @@ High / Medium / Low, with one sentence explaining why — including naming which
 
 \## Open questions
 
-What consensus could not resolve. Needs explicit user input, not a guess.
+What consensus could not resolve analytically — a genuine unknown, not a decision waiting on the Project Owner.
+
+
+
+\## Decision required from Project Owner
+
+\*\*Mandatory, always the closing section.\*\* States plainly what needs the Project Owner's sign-off: which recommendation (or which alternative, if the Project Owner disagrees with the recommendation) to proceed with. Per Governance above, this report never decides — it hands off a decision, clearly framed, to the person who actually makes it.
 
 ```
 
@@ -241,4 +273,6 @@ What consensus could not resolve. Needs explicit user input, not a guess.
 \- Keep facts, assumptions, and recommendations in visibly separate sections — never blend "this is true" with "I think this is the right call."
 
 \- A consensus report is input to the user's decision, not the decision itself — end with confidence level and open questions, not a unilateral "implementing now."
+
+\- \*\*Run Expert Consensus only when a trigger above is actually matched.\*\* Every ordinary implementation task uses `expert-review`, not this. Running the heavier process on a small change wastes tokens and review time for no real benefit — efficiency is itself part of this process's job, not a tradeoff against it.
 

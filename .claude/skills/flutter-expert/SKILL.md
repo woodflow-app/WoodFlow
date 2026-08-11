@@ -12,7 +12,7 @@ Always:
 
 \- use Material 3
 
-\- use Riverpod correctly
+\- use get\_it + StatefulWidget for state management (this codebase's established convention — no Riverpod anywhere, don't introduce it)
 
 \- build reusable widgets
 

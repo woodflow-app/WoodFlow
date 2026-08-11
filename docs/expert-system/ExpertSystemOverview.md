@@ -19,15 +19,27 @@ registry so the roster never drifts out of sync between them:
   documented for humans at `ExpertConsensus.md`) — a heavier synthesis
   reserved for architecture changes, database changes, AI features,
   major UI redesign, website redesign, performance-critical code,
-  security-sensitive code, and roadmap decisions. It names where
-  experts agree, explains genuine disagreements instead of just
-  listing them, applies explicit priority/veto rules, and commits to
-  one recommended solution with a stated confidence level. See
-  `ExpertConsensus.md` for the full process, priority rules, and
-  conflict-resolution rules.
+  security-sensitive code, roadmap decisions, breaking changes (API
+  changes, database migrations, cross-module refactoring, public
+  interface changes), and major product decisions (new modules,
+  ERP/MES/CAD-CAM integrations, platform architecture, strategic
+  roadmap decisions). It names where experts agree, explains genuine
+  disagreements instead of just listing them, applies explicit
+  priority/veto rules, and commits to one recommended solution with a
+  stated confidence level. See `ExpertConsensus.md` for the full
+  process, priority rules, and conflict-resolution rules.
 
-Use `expert-review` by default. Escalate to `expert-consensus` only
-when one of its triggers applies — most changes don't need it.
+Use `expert-review` by default. Escalate to `expert-consensus` **only**
+when one of its triggers applies — running the heavier process on an
+ordinary implementation task costs tokens and review time for no real
+benefit.
+
+> **Governance:** Expert Consensus is advisory, never authoritative.
+> Experts analyze, identify risks, explain trade-offs and provide
+> recommendations. The final architectural and product decision always
+> belongs to the Project Owner. Every consensus report ends with a
+> mandatory "Decision required from Project Owner" section for exactly
+> this reason.
 
 ## Experts
 
