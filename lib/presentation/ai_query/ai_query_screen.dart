@@ -6,6 +6,7 @@ import '../../domain/entities/dashboard_snapshot.dart' show StaleItemType;
 import '../../domain/services/ai_query_engine.dart';
 import '../../l10n/app_localizations.dart';
 import '../board/board_detail_screen.dart';
+import '../design_system/design_system.dart';
 import '../offcut/offcut_detail_screen.dart';
 
 class _HistoryEntry {
@@ -74,34 +75,25 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.aiQueryTitle)),
+      appBar: WFTopBar(title: l10n.aiQueryTitle),
       body: Column(
         children: [
           Expanded(
             child: _history.isEmpty
-                ? Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(24),
-                      child: Text(l10n.aiQueryInputHint, textAlign: TextAlign.center),
-                    ),
-                  )
+                ? WFEmptyState(icon: Icons.auto_awesome_outlined, title: l10n.aiQueryInputHint)
                 : ListView.builder(
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(WFSpacing.sm),
                     itemCount: _history.length,
                     itemBuilder: (context, index) {
                       final entry = _history[_history.length - 1 - index];
-                      return Card(
-                        margin: const EdgeInsets.only(bottom: 12),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(entry.query, style: const TextStyle(fontWeight: FontWeight.bold)),
-                              const SizedBox(height: 8),
-                              _buildAnswer(entry.answer, l10n),
-                            ],
-                          ),
+                      return WFCard(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(entry.query, style: Theme.of(context).textTheme.titleMedium),
+                            const SizedBox(height: WFSpacing.sm),
+                            _buildAnswer(entry.answer, l10n),
+                          ],
                         ),
                       );
                     },
@@ -109,25 +101,25 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
           ),
           if (_error != null)
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(l10n.errorPrefix(_error!), style: const TextStyle(color: Colors.red)),
+              padding: const EdgeInsets.symmetric(horizontal: WFSpacing.md),
+              child: Text(
+                l10n.errorPrefix(_error!),
+                style: TextStyle(color: Theme.of(context).colorScheme.error),
+              ),
             ),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(WFSpacing.sm),
               child: Row(
                 children: [
                   Expanded(
-                    child: TextField(
+                    child: WFTextField(
                       controller: _controller,
-                      decoration: InputDecoration(
-                        hintText: l10n.aiQueryInputHint,
-                        border: const OutlineInputBorder(),
-                      ),
+                      labelText: l10n.aiQueryInputHint,
                       onSubmitted: (_) => _submit(),
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  const SizedBox(width: WFSpacing.sm),
                   IconButton(
                     icon: _isAsking
                         ? const SizedBox(
@@ -170,14 +162,13 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
       children: [
         Text(
           l10n.aiQueryLocationHeader(answer.decor.code, answer.decor.name),
-          style: const TextStyle(fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         for (final hit in answer.locations)
-          ListTile(
+          WFListTile(
             dense: true,
-            contentPadding: EdgeInsets.zero,
             leading: const Icon(Icons.crop_landscape_outlined),
-            title: Text(hit.location.breadcrumb),
+            title: hit.location.breadcrumb,
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => BoardDetailScreen(boardId: hit.boardId),
             )),
@@ -195,19 +186,16 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
       children: [
         Text(
           l10n.aiQueryDimensionsHeader(answer.decor.code, answer.decor.name),
-          style: const TextStyle(fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         for (final hit in answer.hits)
-          ListTile(
+          WFListTile(
             dense: true,
-            contentPadding: EdgeInsets.zero,
             leading: Icon(hit.type == StaleItemType.board
                 ? Icons.crop_landscape_outlined
                 : Icons.content_cut),
-            title: Text(_dimensionsText(hit.lengthMm, hit.widthMm, hit.thicknessMm)),
-            subtitle: Text(
-              hit.type == StaleItemType.board ? l10n.aiQueryBoardTypeLabel : l10n.aiQueryOffcutTypeLabel,
-            ),
+            title: _dimensionsText(hit.lengthMm, hit.widthMm, hit.thicknessMm),
+            subtitle: hit.type == StaleItemType.board ? l10n.aiQueryBoardTypeLabel : l10n.aiQueryOffcutTypeLabel,
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => hit.type == StaleItemType.board
                   ? BoardDetailScreen(boardId: hit.entityId)
@@ -225,16 +213,15 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(l10n.aiQueryStaleHeader, style: const TextStyle(fontWeight: FontWeight.w600)),
+        Text(l10n.aiQueryStaleHeader, style: Theme.of(context).textTheme.titleSmall),
         for (final item in answer.items)
-          ListTile(
+          WFListTile(
             dense: true,
-            contentPadding: EdgeInsets.zero,
             leading: Icon(item.type == StaleItemType.board
                 ? Icons.crop_landscape_outlined
                 : Icons.content_cut),
-            title: Text(item.decorLabel),
-            subtitle: Text(item.locationBreadcrumb ?? l10n.locationUnknown),
+            title: item.decorLabel,
+            subtitle: item.locationBreadcrumb ?? l10n.locationUnknown,
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => item.type == StaleItemType.board
                   ? BoardDetailScreen(boardId: item.entityId)
@@ -254,21 +241,18 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
       children: [
         Text(
           l10n.aiQueryOffcutMatchHeader(answer.decor.code, answer.decor.name),
-          style: const TextStyle(fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         for (final candidate in answer.candidates)
-          ListTile(
+          WFListTile(
             dense: true,
-            contentPadding: EdgeInsets.zero,
             leading: const Icon(Icons.content_cut),
-            title: Text(_dimensionsText(
+            title: _dimensionsText(
               candidate.offcut.length,
               candidate.offcut.width,
               candidate.offcut.thickness,
-            )),
-            subtitle: Text(
-              l10n.aiQueryWasteAreaLabel(candidate.wasteAreaMm2.toStringAsFixed(0)),
             ),
+            subtitle: l10n.aiQueryWasteAreaLabel(candidate.wasteAreaMm2.toStringAsFixed(0)),
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => OffcutDetailScreen(offcutId: candidate.offcut.id),
             )),

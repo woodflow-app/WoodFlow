@@ -20,6 +20,7 @@ import '../../domain/services/label_data_builder.dart';
 import '../../domain/services/label_generator.dart';
 import '../../l10n/app_localizations.dart';
 import '../board/board_detail_screen.dart';
+import '../design_system/design_system.dart';
 import '../offcut/offcut_detail_screen.dart';
 
 class SlotDetailScreen extends StatefulWidget {
@@ -93,8 +94,8 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('${widget.rackName} · ${_slot?.name ?? ''}'),
+      appBar: WFTopBar(
+        title: '${widget.rackName} · ${_slot?.name ?? ''}',
         actions: [
           if (!_isLoading && _error == null && _totalItems > 0)
             IconButton(
@@ -105,52 +106,49 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
         ],
       ),
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const WFLoadingState()
           : _error != null
-              ? Center(child: Text(l10n.errorPrefix(_error!)))
+              ? WFEmptyState(
+                  icon: Icons.error_outline,
+                  title: l10n.errorPrefix(_error!),
+                  actionLabel: l10n.retry,
+                  onAction: _load,
+                )
               : _buildBody(_slot!, l10n),
       floatingActionButton: _isLoading || _error != null
           ? null
-          : FloatingActionButton.extended(
-              onPressed: () => _openAddBoardDialog(l10n),
-              icon: const Icon(Icons.add),
-              label: Text(l10n.newBoardTitle),
+          : WFFloatingActionButton(
+              label: l10n.newBoardTitle,
+              onPressed: () => _openAddBoardSheet(l10n),
             ),
     );
   }
 
   Widget _buildBody(Slot slot, AppLocalizations l10n) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(WFSpacing.md),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ListTile(
-            title: Text(l10n.capacityLabel),
+          WFListTile(
+            title: l10n.capacityLabel,
             trailing: Text(l10n.slotFillCount(_totalItems, slot.capacity)),
           ),
           const Divider(),
           Expanded(
             child: (_boardsInSlot.isEmpty && _offcutsInSlot.isEmpty)
-                ? Center(
-                    child: Text(l10n.noItemsInSlot,
-                        style: const TextStyle(color: Colors.grey)),
-                  )
+                ? WFEmptyState(icon: Icons.inbox_outlined, title: l10n.noItemsInSlot)
                 : ListView(
                     children: [
                       if (_boardsInSlot.isNotEmpty)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4),
-                          child: Text(l10n.boardsSectionLabel,
-                              style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey)),
-                        ),
+                        WFSectionHeader(title: l10n.boardsSectionLabel),
                       ..._boardsInSlot.map((board) {
                         final decor = _decorFor(board.decorId);
-                        return ListTile(
+                        return WFListTile(
                           leading: const Icon(Icons.crop_landscape_outlined),
-                          title: Text(decor != null ? '${decor.code} — ${decor.name}' : board.decorId),
-                          subtitle: Text(
-                              '${board.length.toInt()}×${board.width.toInt()}×${board.thickness.toInt()} mm'),
+                          title: decor != null ? '${decor.code} — ${decor.name}' : board.decorId,
+                          subtitle:
+                              '${board.length.toInt()}×${board.width.toInt()}×${board.thickness.toInt()} mm',
                           onTap: () async {
                             await Navigator.of(context).push(MaterialPageRoute(
                               builder: (_) => BoardDetailScreen(boardId: board.id),
@@ -160,23 +158,19 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
                           trailing: IconButton(
                             icon: const Icon(Icons.content_cut, size: 20),
                             tooltip: l10n.cutOffcut,
-                            onPressed: () => _openCutDialog(board, l10n),
+                            onPressed: () => _openCutSheet(board, l10n),
                           ),
                         );
                       }),
                       if (_offcutsInSlot.isNotEmpty)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4),
-                          child: Text(l10n.offcutsSectionLabel,
-                              style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey)),
-                        ),
+                        WFSectionHeader(title: l10n.offcutsSectionLabel),
                       ..._offcutsInSlot.map((offcut) {
                         final decor = _decorFor(offcut.decorId);
-                        return ListTile(
+                        return WFListTile(
                           leading: const Icon(Icons.content_cut, size: 20),
-                          title: Text(decor != null ? '${decor.code} — ${decor.name}' : offcut.decorId),
-                          subtitle: Text(
-                              '${offcut.length.toInt()}×${offcut.width.toInt()}×${offcut.thickness.toInt()} mm · ${offcut.parentBoardId.substring(0, 8)}…'),
+                          title: decor != null ? '${decor.code} — ${decor.name}' : offcut.decorId,
+                          subtitle:
+                              '${offcut.length.toInt()}×${offcut.width.toInt()}×${offcut.thickness.toInt()} mm · ${offcut.parentBoardId.substring(0, 8)}…',
                           onTap: () async {
                             await Navigator.of(context).push(MaterialPageRoute(
                               builder: (_) => OffcutDetailScreen(offcutId: offcut.id),
@@ -188,9 +182,11 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
                     ],
                   ),
           ),
-          TextButton.icon(
-            icon: const Icon(Icons.delete_outline, color: Colors.red),
-            label: Text(l10n.deleteSlotButton, style: const TextStyle(color: Colors.red)),
+          const SizedBox(height: WFSpacing.sm),
+          WFButton(
+            label: l10n.deleteSlotButton,
+            icon: Icons.delete_outline,
+            role: WFButtonRole.destructive,
             onPressed: () => _confirmDelete(slot, l10n),
           ),
         ],
@@ -198,11 +194,9 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
     );
   }
 
-  Future<void> _openAddBoardDialog(AppLocalizations l10n) async {
+  Future<void> _openAddBoardSheet(AppLocalizations l10n) async {
     if (_allDecors.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.noDecorsInCatalog)),
-      );
+      showWFSnackbar(context, l10n.noDecorsInCatalog);
       return;
     }
 
@@ -211,81 +205,85 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
     final widthController = TextEditingController();
     final thicknessController = TextEditingController();
 
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => StatefulBuilder(
-        builder: (dialogContext, setDialogState) => AlertDialog(
-          title: Text(l10n.newBoardTitle),
-          content: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+    await showWFBottomSheet(
+      context,
+      builder: (sheetContext) => StatefulBuilder(
+        builder: (sheetContext, setSheetState) => Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(l10n.newBoardTitle, style: Theme.of(sheetContext).textTheme.titleLarge),
+            const SizedBox(height: WFSpacing.md),
+            DropdownButtonFormField<Decor>(
+              initialValue: selectedDecor,
+              decoration: InputDecoration(
+                labelText: l10n.decorLabel,
+                border: const OutlineInputBorder(),
+              ),
+              items: _allDecors
+                  .map((d) => DropdownMenuItem(
+                        value: d,
+                        child: Text('${d.code} — ${d.name}'),
+                      ))
+                  .toList(),
+              onChanged: (d) {
+                if (d != null) setSheetState(() => selectedDecor = d);
+              },
+            ),
+            const SizedBox(height: WFSpacing.sm),
+            Row(
               children: [
-                DropdownButtonFormField<Decor>(
-                  initialValue: selectedDecor,
-                  decoration: InputDecoration(labelText: l10n.decorLabel),
-                  items: _allDecors
-                      .map((d) => DropdownMenuItem(
-                            value: d,
-                            child: Text('${d.code} — ${d.name}'),
-                          ))
-                      .toList(),
-                  onChanged: (d) {
-                    if (d != null) setDialogState(() => selectedDecor = d);
-                  },
+                Expanded(
+                  child: WFTextField(
+                    controller: lengthController,
+                    labelText: l10n.lengthMm,
+                    keyboardType: TextInputType.number,
+                  ),
                 ),
-                const SizedBox(height: 12),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: lengthController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(labelText: l10n.lengthMm),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextField(
-                        controller: widthController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(labelText: l10n.widthMm),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextField(
-                        controller: thicknessController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(labelText: l10n.thicknessMm),
-                      ),
-                    ),
-                  ],
+                const SizedBox(width: WFSpacing.sm),
+                Expanded(
+                  child: WFTextField(
+                    controller: widthController,
+                    labelText: l10n.widthMm,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                const SizedBox(width: WFSpacing.sm),
+                Expanded(
+                  child: WFTextField(
+                    controller: thicknessController,
+                    labelText: l10n.thicknessMm,
+                    keyboardType: TextInputType.number,
+                  ),
                 ),
               ],
             ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () => Navigator.of(dialogContext).pop(false),
-                child: Text(l10n.cancel)),
-            FilledButton(
-                onPressed: () => Navigator.of(dialogContext).pop(true),
-                child: Text(l10n.addBoard)),
+            const SizedBox(height: WFSpacing.lg),
+            WFButton(
+              label: l10n.addBoard,
+              onPressed: () {
+                Navigator.of(sheetContext).pop();
+                _submitAddBoard(selectedDecor, lengthController, widthController, thicknessController, l10n);
+              },
+            ),
           ],
         ),
       ),
     );
-    if (confirmed != true) return;
+  }
 
+  Future<void> _submitAddBoard(
+    Decor selectedDecor,
+    TextEditingController lengthController,
+    TextEditingController widthController,
+    TextEditingController thicknessController,
+    AppLocalizations l10n,
+  ) async {
     final length = double.tryParse(lengthController.text);
     final width = double.tryParse(widthController.text);
     final thickness = double.tryParse(thicknessController.text);
     if (length == null || width == null || thickness == null) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.fillDimensionsCorrectly)),
-        );
-      }
+      if (mounted) showWFSnackbar(context, l10n.fillDimensionsCorrectly);
       return;
     }
 
@@ -299,10 +297,7 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
     result.when(
       success: (_) => _load(),
       failure: (f) {
-        if (mounted) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(f.message)));
-        }
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }
@@ -311,74 +306,80 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
   /// the same slot by default. Deliberately does NOT resize/touch
   /// the Board — that's the Cut Optimizer's job (later, separate
   /// v2.0/PRO feature), not this simple entity-creation step.
-  Future<void> _openCutDialog(Board board, AppLocalizations l10n) async {
+  Future<void> _openCutSheet(Board board, AppLocalizations l10n) async {
     final lengthController = TextEditingController();
     final widthController = TextEditingController();
     final thicknessController = TextEditingController(text: board.thickness.toString());
 
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.cutOffcut),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+    await showWFBottomSheet(
+      context,
+      builder: (sheetContext) => Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(l10n.cutOffcut, style: Theme.of(sheetContext).textTheme.titleLarge),
+          const SizedBox(height: WFSpacing.sm),
+          Text(
+            l10n.cutFromBoardNote(_decorFor(board.decorId)?.code ?? board.decorId),
+            style: Theme.of(sheetContext)
+                .textTheme
+                .bodySmall
+                ?.copyWith(color: Theme.of(sheetContext).colorScheme.onSurfaceVariant),
+          ),
+          const SizedBox(height: WFSpacing.md),
+          Row(
             children: [
-              Text(l10n.cutFromBoardNote(_decorFor(board.decorId)?.code ?? board.decorId),
-                  style: const TextStyle(fontSize: 12, color: Colors.grey)),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      controller: lengthController,
-                      keyboardType: TextInputType.number,
-                      autofocus: true,
-                      decoration: InputDecoration(labelText: l10n.lengthMm),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: TextField(
-                      controller: widthController,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(labelText: l10n.widthMm),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: TextField(
-                      controller: thicknessController,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(labelText: l10n.thicknessMm),
-                    ),
-                  ),
-                ],
+              Expanded(
+                child: WFTextField(
+                  controller: lengthController,
+                  labelText: l10n.lengthMm,
+                  keyboardType: TextInputType.number,
+                  autofocus: true,
+                ),
+              ),
+              const SizedBox(width: WFSpacing.sm),
+              Expanded(
+                child: WFTextField(
+                  controller: widthController,
+                  labelText: l10n.widthMm,
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+              const SizedBox(width: WFSpacing.sm),
+              Expanded(
+                child: WFTextField(
+                  controller: thicknessController,
+                  labelText: l10n.thicknessMm,
+                  keyboardType: TextInputType.number,
+                ),
               ),
             ],
           ),
-        ),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: Text(l10n.cancel)),
-          FilledButton(
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: Text(l10n.cut)),
+          const SizedBox(height: WFSpacing.lg),
+          WFButton(
+            label: l10n.cut,
+            onPressed: () {
+              Navigator.of(sheetContext).pop();
+              _submitCut(board, lengthController, widthController, thicknessController, l10n);
+            },
+          ),
         ],
       ),
     );
-    if (confirmed != true) return;
+  }
 
+  Future<void> _submitCut(
+    Board board,
+    TextEditingController lengthController,
+    TextEditingController widthController,
+    TextEditingController thicknessController,
+    AppLocalizations l10n,
+  ) async {
     final length = double.tryParse(lengthController.text);
     final width = double.tryParse(widthController.text);
     final thickness = double.tryParse(thicknessController.text);
     if (length == null || width == null || thickness == null) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.fillDimensionsCorrectly)),
-        );
-      }
+      if (mounted) showWFSnackbar(context, l10n.fillDimensionsCorrectly);
       return;
     }
 
@@ -392,31 +393,20 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
     result.when(
       success: (_) => _load(),
       failure: (f) {
-        if (mounted) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(f.message)));
-        }
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }
 
   Future<void> _confirmDelete(Slot slot, AppLocalizations l10n) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.deleteSlotQuestion),
-        content: Text(l10n.deleteSlotWarning),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: Text(l10n.cancel)),
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: Text(l10n.delete, style: const TextStyle(color: Colors.red))),
-        ],
-      ),
+    final confirmed = await showWFConfirmationDialog(
+      context,
+      title: l10n.deleteSlotQuestion,
+      message: l10n.deleteSlotWarning,
+      confirmLabel: l10n.delete,
+      cancelLabel: l10n.cancel,
     );
-    if (confirmed != true) return;
+    if (!confirmed) return;
 
     final result = await _slots.delete(slot.id);
     result.when(
@@ -424,10 +414,7 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
         if (mounted) Navigator.of(context).pop();
       },
       failure: (f) {
-        if (mounted) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(f.message)));
-        }
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }

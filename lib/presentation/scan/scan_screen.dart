@@ -11,6 +11,7 @@ import '../rack/rack_list_screen.dart';
 import '../rack/slot_detail_screen.dart';
 import '../rack/slot_grid_screen.dart';
 import '../../l10n/app_localizations.dart';
+import '../design_system/design_system.dart';
 
 /// Krok 7.2. The ONLY place that knows how to turn a camera frame
 /// into a navigation decision — it does this by asking QrResolver,
@@ -98,50 +99,48 @@ class _ScanScreenState extends State<ScanScreen> {
   /// before resolving.
   void _showNotFound() {
     final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet(
-      context: context,
-      builder: (sheetContext) => Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.qr_code_scanner, size: 40, color: Colors.grey),
-            const SizedBox(height: 12),
-            Text(
-              l10n.qrCodeNotFound,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.of(sheetContext).pop();
-                      _controller.start();
-                    },
-                    child: Text(l10n.scanAgain),
-                  ),
+    showWFBottomSheet(
+      context,
+      builder: (sheetContext) => Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.qr_code_scanner, size: 40, color: Theme.of(sheetContext).colorScheme.onSurfaceVariant),
+          const SizedBox(height: WFSpacing.sm),
+          Text(
+            l10n.qrCodeNotFound,
+            style: Theme.of(sheetContext).textTheme.titleMedium,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: WFSpacing.md),
+          Row(
+            children: [
+              Expanded(
+                child: WFButton(
+                  label: l10n.scanAgain,
+                  role: WFButtonRole.secondary,
+                  onPressed: () {
+                    Navigator.of(sheetContext).pop();
+                    _controller.start();
+                  },
                 ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: FilledButton(
-                    onPressed: () {
-                      Navigator.of(sheetContext).pop();
-                      // No dedicated manual-search screen exists yet
-                      // (that's Smart Material Finder, v1.5/START) —
-                      // popping back to wherever the user came from
-                      // is the honest, working fallback for today.
-                      Navigator.of(context).pop();
-                    },
-                    child: Text(l10n.searchManually),
-                  ),
+              ),
+              const SizedBox(width: WFSpacing.sm),
+              Expanded(
+                child: WFButton(
+                  label: l10n.searchManually,
+                  onPressed: () {
+                    Navigator.of(sheetContext).pop();
+                    // No dedicated manual-search screen exists yet
+                    // (that's Smart Material Finder, v1.5/START) —
+                    // popping back to wherever the user came from
+                    // is the honest, working fallback for today.
+                    Navigator.of(context).pop();
+                  },
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -149,7 +148,7 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context)!.scanQrCode)),
+      appBar: WFTopBar(title: AppLocalizations.of(context)!.scanQrCode),
       body: MobileScanner(
         controller: _controller,
         onDetect: (capture) {

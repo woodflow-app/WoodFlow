@@ -5,10 +5,11 @@ import '../../core/services/service_locator.dart';
 import '../../domain/entities/rack.dart';
 import '../../domain/repositories/rack_repository.dart';
 import '../../l10n/app_localizations.dart';
+import '../design_system/design_system.dart';
 import 'slot_grid_screen.dart';
 
 /// Entry point into Slice 4 — "Lokalizacje" from the old app, scoped
-/// to one warehouse. Mirrors LocationsScreen's rack list exactly.
+/// to one warehouse. Styled per `docs/design-system/WoodFlowDesignSystem.md`.
 class RackListScreen extends StatefulWidget {
   final String warehouseId;
   final String warehouseName;
@@ -53,37 +54,36 @@ class _RackListScreenState extends State<RackListScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.racksForWarehouseTitle(widget.warehouseName))),
+      appBar: WFTopBar(title: l10n.racksForWarehouseTitle(widget.warehouseName)),
       body: _buildBody(l10n),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => _openAddRackDialog(l10n),
-        icon: const Icon(Icons.add),
-        label: Text(l10n.newRackTitle),
+      floatingActionButton: WFFloatingActionButton(
+        label: l10n.newRackTitle,
+        onPressed: () => _openAddRackSheet(l10n),
       ),
     );
   }
 
   Widget _buildBody(AppLocalizations l10n) {
-    if (_isLoading) return const Center(child: CircularProgressIndicator());
-    if (_error != null) return Center(child: Text(l10n.errorPrefix(_error!)));
-    if (_list.isEmpty) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Text(
-            l10n.noRacksYet,
-            textAlign: TextAlign.center,
-          ),
-        ),
+    if (_isLoading) return const WFLoadingState();
+    if (_error != null) {
+      return WFEmptyState(
+        icon: Icons.error_outline,
+        title: l10n.errorPrefix(_error!),
+        actionLabel: l10n.retry,
+        onAction: _load,
       );
     }
+    if (_list.isEmpty) {
+      return WFEmptyState(icon: Icons.view_column_outlined, title: l10n.noRacksYet);
+    }
     return ListView.builder(
+      padding: const EdgeInsets.symmetric(vertical: WFSpacing.sm),
       itemCount: _list.length,
       itemBuilder: (context, index) {
         final rack = _list[index];
-        return ListTile(
+        return WFListTile(
           leading: const Icon(Icons.view_column_outlined),
-          title: Text(l10n.rackNameTitle(rack.name)),
+          title: l10n.rackNameTitle(rack.name),
           trailing: const Icon(Icons.chevron_right),
           onTap: () async {
             await Navigator.of(context).push(MaterialPageRoute(
@@ -97,41 +97,45 @@ class _RackListScreenState extends State<RackListScreen> {
     );
   }
 
-  Future<void> _openAddRackDialog(AppLocalizations l10n) async {
+  void _openAddRackSheet(AppLocalizations l10n) {
     final controller = TextEditingController();
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.newRackTitle),
-        content: TextField(
-          controller: controller,
-          autofocus: true,
-          decoration: InputDecoration(labelText: l10n.nameHintRack),
-        ),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: Text(l10n.cancel)),
-          FilledButton(
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: Text(l10n.addRack)),
+
+    showWFBottomSheet(
+      context,
+      builder: (context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(l10n.newRackTitle, style: Theme.of(context).textTheme.titleLarge),
+          const SizedBox(height: WFSpacing.md),
+          WFTextField(controller: controller, labelText: l10n.nameHintRack, autofocus: true),
+          const SizedBox(height: WFSpacing.lg),
+          WFButton(
+            label: l10n.addRack,
+            onPressed: () {
+              final name = controller.text.trim();
+              if (name.isEmpty) return;
+              Navigator.of(context).pop();
+              _addRack(name);
+            },
+          ),
         ],
       ),
     );
-    if (confirmed != true || controller.text.trim().isEmpty) return;
+  }
 
+  Future<void> _addRack(String name) async {
     final now = DateTime.now();
     final result = await _racks.create(Rack(
       id: const Uuid().v4(),
       warehouseId: widget.warehouseId,
-      name: controller.text.trim(),
+      name: name,
       createdAt: now,
       updatedAt: now,
     ));
     result.when(
       success: (_) => _load(),
-      failure: (f) => ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(f.message))),
+      failure: (f) => showWFSnackbar(context, f.message),
     );
   }
 }

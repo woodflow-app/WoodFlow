@@ -5,6 +5,7 @@ import '../../domain/entities/edge_banding_length.dart';
 import '../../domain/services/board_measurement_calculator.dart';
 import '../../domain/services/edge_banding_calculator.dart';
 import '../../l10n/app_localizations.dart';
+import '../design_system/design_system.dart';
 
 /// Krok 11 — two pure calculators behind one tabbed screen. Reached
 /// two ways, same pattern as `BoardDetailScreen`: standalone from
@@ -51,8 +52,8 @@ class _CalculatorsScreenState extends State<CalculatorsScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.calculatorsTitle),
+      appBar: WFTopBar(
+        title: l10n.calculatorsTitle,
         bottom: TabBar(
           controller: _tabController,
           tabs: [
@@ -148,47 +149,44 @@ class _AreaVolumeCalculatorTabState extends State<_AreaVolumeCalculatorTab> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(WFSpacing.md),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextFormField(
+            WFTextField(
               controller: _lengthController,
-              decoration: InputDecoration(labelText: l10n.lengthMm),
+              labelText: l10n.lengthMm,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               validator: (v) => _validatePositive(v, l10n),
             ),
-            const SizedBox(height: 8),
-            TextFormField(
+            const SizedBox(height: WFSpacing.sm),
+            WFTextField(
               controller: _widthController,
-              decoration: InputDecoration(labelText: l10n.widthMm),
+              labelText: l10n.widthMm,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               validator: (v) => _validatePositive(v, l10n),
             ),
-            const SizedBox(height: 8),
-            TextFormField(
+            const SizedBox(height: WFSpacing.sm),
+            WFTextField(
               controller: _thicknessController,
-              decoration: InputDecoration(labelText: l10n.thicknessMm),
+              labelText: l10n.thicknessMm,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               validator: (v) => _validatePositive(v, l10n),
             ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: _calculate,
-              child: Text(l10n.calculateButton),
-            ),
+            const SizedBox(height: WFSpacing.md),
+            WFButton(label: l10n.calculateButton, onPressed: _calculate),
             if (_result != null) ...[
-              const Divider(height: 32),
-              ListTile(
+              const Divider(height: WFSpacing.xxl),
+              WFListTile(
                 leading: const Icon(Icons.square_foot_outlined),
-                title: Text(l10n.areaM2Label),
+                title: l10n.areaM2Label,
                 trailing: Text(_result!.areaM2.toStringAsFixed(3)),
               ),
-              ListTile(
+              WFListTile(
                 leading: const Icon(Icons.view_in_ar_outlined),
-                title: Text(l10n.volumeM3Label),
+                title: l10n.volumeM3Label,
                 trailing: Text(_result!.volumeM3.toStringAsFixed(4)),
               ),
             ],
@@ -233,9 +231,7 @@ class _EdgeBandingCalculatorTabState extends State<_EdgeBandingCalculatorTab> {
     final outer = double.parse(_outerController.text);
     final core = double.parse(_coreController.text);
     if (outer <= core) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.fillDimensionsCorrectly)),
-      );
+      showWFSnackbar(context, l10n.fillDimensionsCorrectly);
       return;
     }
 
@@ -252,42 +248,39 @@ class _EdgeBandingCalculatorTabState extends State<_EdgeBandingCalculatorTab> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(WFSpacing.md),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextFormField(
+            WFTextField(
               controller: _outerController,
-              decoration: InputDecoration(labelText: l10n.outerDiameterMmLabel),
+              labelText: l10n.outerDiameterMmLabel,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               validator: (v) => _validatePositive(v, l10n),
             ),
-            const SizedBox(height: 8),
-            TextFormField(
+            const SizedBox(height: WFSpacing.sm),
+            WFTextField(
               controller: _coreController,
-              decoration: InputDecoration(labelText: l10n.coreDiameterMmLabel),
+              labelText: l10n.coreDiameterMmLabel,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               validator: (v) => _validatePositive(v, l10n),
             ),
-            const SizedBox(height: 8),
-            TextFormField(
+            const SizedBox(height: WFSpacing.sm),
+            WFTextField(
               controller: _thicknessController,
-              decoration: InputDecoration(labelText: l10n.tapeThicknessMmLabel),
+              labelText: l10n.tapeThicknessMmLabel,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               validator: (v) => _validatePositive(v, l10n),
             ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () => _calculate(l10n),
-              child: Text(l10n.calculateButton),
-            ),
+            const SizedBox(height: WFSpacing.md),
+            WFButton(label: l10n.calculateButton, onPressed: () => _calculate(l10n)),
             if (_result != null) ...[
-              const Divider(height: 32),
-              ListTile(
+              const Divider(height: WFSpacing.xxl),
+              WFListTile(
                 leading: const Icon(Icons.straighten_outlined),
-                title: Text(l10n.edgeBandingLengthResultLabel),
+                title: l10n.edgeBandingLengthResultLabel,
                 trailing: Text(_result!.meters.toStringAsFixed(2)),
               ),
             ],

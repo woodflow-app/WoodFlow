@@ -18,6 +18,7 @@ import '../../domain/services/ledger_entry_formatter.dart';
 import '../../l10n/app_localizations.dart';
 import '../board/board_detail_screen.dart';
 import '../calculators/calculators_screen.dart';
+import '../design_system/design_system.dart';
 
 /// Reached two ways, same as BoardDetailScreen: normal navigation,
 /// or as a `WF-O-...` QR-scan destination (Krok 7.2).
@@ -150,8 +151,8 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.offcutTitle),
+      appBar: WFTopBar(
+        title: l10n.offcutTitle,
         actions: [
           IconButton(
             icon: const Icon(Icons.calculate_outlined),
@@ -161,61 +162,60 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
         ],
       ),
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const WFLoadingState()
           : _error != null
-              ? Center(child: Text(l10n.errorPrefix(_error!)))
+              ? WFEmptyState(
+                  icon: Icons.error_outline,
+                  title: l10n.errorPrefix(_error!),
+                  actionLabel: l10n.retry,
+                  onAction: _load,
+                )
               : _buildBody(_offcut!, l10n),
     );
   }
 
   Widget _buildBody(Offcut offcut, AppLocalizations l10n) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(WFSpacing.md),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Center(
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                border: Border.all(color: Theme.of(context).dividerColor),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                children: [
-                  const Icon(Icons.qr_code_2, size: 96),
-                  const SizedBox(height: 6),
-                  SelectableText(offcut.qrCode,
-                      style: const TextStyle(fontFamily: 'monospace', fontSize: 13)),
-                ],
-              ),
+          WFCard(
+            child: Column(
+              children: [
+                const Icon(Icons.qr_code_2, size: 96),
+                const SizedBox(height: WFSpacing.xs),
+                SelectableText(offcut.qrCode,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontFamily: 'monospace')),
+              ],
             ),
           ),
-          const SizedBox(height: 16),
           Text(
             _decor != null ? '${_decor!.code} — ${_decor!.name}' : offcut.decorId,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ),
           Text(
             '${offcut.length.toInt()} × ${offcut.width.toInt()} × ${offcut.thickness.toInt()} mm',
+            style: Theme.of(context).textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: WFSpacing.sm),
           if (_breadcrumb != null)
-            ListTile(
+            WFListTile(
               leading: const Icon(Icons.location_on_outlined),
-              title: Text(_breadcrumb!),
+              title: _breadcrumb!,
               dense: true,
             ),
-          ListTile(
+          WFListTile(
             leading: const Icon(Icons.info_outline),
-            title: Text(l10n.statusLabel(_statusText(l10n, offcut.status))),
+            title: l10n.statusLabel(_statusText(l10n, offcut.status)),
             dense: true,
           ),
-          TextButton.icon(
-            icon: const Icon(Icons.crop_landscape_outlined, size: 18),
-            label: Text(l10n.viewSourceBoard),
+          WFButton(
+            icon: Icons.crop_landscape_outlined,
+            label: l10n.viewSourceBoard,
+            role: WFButtonRole.tertiary,
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (_) => BoardDetailScreen(boardId: offcut.parentBoardId),
@@ -226,9 +226,10 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
           Row(
             children: [
               Expanded(
-                child: OutlinedButton.icon(
-                  icon: const Icon(Icons.archive_outlined),
-                  label: Text(l10n.archive),
+                child: WFButton(
+                  icon: Icons.archive_outlined,
+                  label: l10n.archive,
+                  role: WFButtonRole.secondary,
                   onPressed: offcut.status == OffcutStatus.archived
                       ? null
                       : () => _confirmArchive(offcut, l10n),
@@ -236,13 +237,10 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
               ),
             ],
           ),
-          const SizedBox(height: 16),
-          Text(l10n.historyLabel, style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: WFSpacing.md),
+          WFSectionHeader(title: l10n.historyLabel),
           if (_ledger.isEmpty)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              child: Text(l10n.noEntries, style: const TextStyle(color: Colors.grey)),
-            )
+            WFEmptyState(icon: Icons.history, title: l10n.noEntries)
           else
             ..._ledger.map((entry) {
               final description = LedgerEntryFormatter.format(
@@ -250,11 +248,11 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
                 eventLabels: _eventLabels(l10n),
                 slotNames: _slotNames,
               );
-              return ListTile(
+              return WFListTile(
                 dense: true,
                 leading: Icon(_iconForEvent(entry.eventType)),
-                title: Text(description.title),
-                subtitle: description.detail != null ? Text(description.detail!) : null,
+                title: description.title,
+                subtitle: description.detail,
                 trailing: Text(_formatDate(entry.occurredAt)),
               );
             }),
@@ -285,30 +283,20 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
   }
 
   Future<void> _confirmArchive(Offcut offcut, AppLocalizations l10n) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.archiveOffcutQuestion),
-        content: Text(l10n.historyStaysVisible),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: Text(l10n.cancel)),
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: Text(l10n.archive)),
-        ],
-      ),
+    final confirmed = await showWFConfirmationDialog(
+      context,
+      title: l10n.archiveOffcutQuestion,
+      message: l10n.historyStaysVisible,
+      confirmLabel: l10n.archive,
+      cancelLabel: l10n.cancel,
     );
-    if (confirmed != true) return;
+    if (!confirmed) return;
 
     final result = await _offcuts.archive(offcut.id);
     result.when(
       success: (_) => _load(),
       failure: (f) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(f.message)));
-        }
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }

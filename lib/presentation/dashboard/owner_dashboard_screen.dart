@@ -5,6 +5,7 @@ import '../../domain/entities/dashboard_snapshot.dart';
 import '../../domain/services/dashboard_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../board/board_detail_screen.dart';
+import '../design_system/design_system.dart';
 import '../offcut/offcut_detail_screen.dart';
 
 /// Krok 9. Deliberately does ZERO aggregation, computation, or
@@ -57,13 +58,18 @@ class _OwnerDashboardScreenState extends State<OwnerDashboardScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.ownerDashboardTitle)),
+      appBar: WFTopBar(title: l10n.ownerDashboardTitle),
       body: RefreshIndicator(
         onRefresh: _load,
         child: _isLoading
-            ? const Center(child: CircularProgressIndicator())
+            ? const WFLoadingState()
             : _error != null
-                ? Center(child: Text(l10n.errorPrefix(_error!)))
+                ? WFEmptyState(
+                    icon: Icons.error_outline,
+                    title: l10n.errorPrefix(_error!),
+                    actionLabel: l10n.retry,
+                    onAction: _load,
+                  )
                 : _buildBody(_snapshot!, l10n),
       ),
     );
@@ -71,79 +77,85 @@ class _OwnerDashboardScreenState extends State<OwnerDashboardScreen> {
 
   Widget _buildBody(DashboardSnapshot snapshot, AppLocalizations l10n) {
     return ListView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(WFSpacing.md),
       children: [
         Row(
           children: [
-            Expanded(child: _statCard(l10n.totalBoardsLabel, '${snapshot.totalBoards}')),
-            const SizedBox(width: 12),
-            Expanded(child: _statCard(l10n.totalOffcutsLabel, '${snapshot.totalOffcuts}')),
+            Expanded(child: _statCard(context, l10n.totalBoardsLabel, '${snapshot.totalBoards}')),
+            const SizedBox(width: WFSpacing.sm),
+            Expanded(child: _statCard(context, l10n.totalOffcutsLabel, '${snapshot.totalOffcuts}')),
           ],
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: WFSpacing.sm),
         Row(
           children: [
             Expanded(
               child: _statCard(
+                context,
                 l10n.overallFillRateLabel,
                 '${(snapshot.overallFillRate * 100).toStringAsFixed(0)}%',
               ),
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: WFSpacing.sm),
             Expanded(
               child: _statCard(
+                context,
                 l10n.totalRacksSlotsLabel,
                 '${snapshot.totalRacks} / ${snapshot.totalSlots}',
               ),
             ),
           ],
         ),
-        const SizedBox(height: 24),
-        Text(l10n.staleItemsSectionTitle,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-        const SizedBox(height: 4),
-        Text(l10n.staleItemsSectionSubtitle,
-            style: const TextStyle(color: Colors.grey, fontSize: 12)),
-        const SizedBox(height: 8),
+        const SizedBox(height: WFSpacing.xl),
+        WFSectionHeader(title: l10n.staleItemsSectionTitle),
+        Text(
+          l10n.staleItemsSectionSubtitle,
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall
+              ?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
+        ),
+        const SizedBox(height: WFSpacing.sm),
         if (snapshot.staleItems.isEmpty)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: Text(l10n.noStaleItems, style: const TextStyle(color: Colors.grey)),
-          )
+          WFEmptyState(icon: Icons.check_circle_outline, title: l10n.noStaleItems)
         else
-          ...snapshot.staleItems.map((item) => Card(
-                child: ListTile(
+          ...snapshot.staleItems.map((item) => WFCard(
+                padding: EdgeInsets.zero,
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => item.type == StaleItemType.board
+                        ? BoardDetailScreen(boardId: item.entityId)
+                        : OffcutDetailScreen(offcutId: item.entityId),
+                  ));
+                },
+                child: WFListTile(
                   leading: Icon(item.type == StaleItemType.board
                       ? Icons.crop_landscape_outlined
                       : Icons.content_cut),
-                  title: Text(item.decorLabel),
-                  subtitle: Text(item.locationBreadcrumb ?? l10n.locationUnknown),
+                  title: item.decorLabel,
+                  subtitle: item.locationBreadcrumb ?? l10n.locationUnknown,
                   trailing: Text(_ageInDays(item.createdAt, l10n)),
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => item.type == StaleItemType.board
-                          ? BoardDetailScreen(boardId: item.entityId)
-                          : OffcutDetailScreen(offcutId: item.entityId),
-                    ));
-                  },
                 ),
               )),
       ],
     );
   }
 
-  Widget _statCard(String label, String value) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 4),
-            Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
-          ],
-        ),
+  Widget _statCard(BuildContext context, String label, String value) {
+    return WFCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(value, style: Theme.of(context).textTheme.headlineSmall),
+          const SizedBox(height: WFSpacing.xs),
+          Text(
+            label,
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall
+                ?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
+          ),
+        ],
       ),
     );
   }

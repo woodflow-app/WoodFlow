@@ -8,6 +8,7 @@ import '../../domain/entities/organization.dart';
 import '../../domain/repositories/warehouse_repository.dart';
 import '../../domain/usecases/delete_warehouse_use_case.dart';
 import '../../l10n/app_localizations.dart';
+import '../design_system/design_system.dart';
 import '../rack/rack_list_screen.dart';
 import '../dashboard/owner_dashboard_screen.dart';
 import '../scan/scan_screen.dart';
@@ -18,11 +19,10 @@ import '../ai_query/ai_query_screen.dart';
 // QA-ONLY (see file doc comment) — DELETE this import before v1.0.
 import '../debug/qa_language_switcher_button.dart';
 
-/// Deliberately plain Material widgets — no WoodFlow Design Tokens
-/// applied here yet. This screen's job is to prove Warehouse can be
-/// listed/created end-to-end through the architecture, not to look
-/// finished. Restyle once Design Tokens exist; don't invent one-off
-/// colors/spacing here that the token system would otherwise define.
+/// Styled per `docs/design-system/WoodFlowDesignSystem.md`. The
+/// 7-action-icon AppBar below is a known open question from that
+/// document (information architecture, not a token decision) — icon
+/// count/placement is unchanged here on purpose pending that call.
 class WarehouseListScreen extends StatefulWidget {
   const WarehouseListScreen({super.key});
 
@@ -81,13 +81,7 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
     final result = await _repository.create(warehouse);
     result.when(
       success: (_) => _load(),
-      failure: (f) => _showError(f.message),
-    );
-  }
-
-  void _showError(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
+      failure: (f) => showWFSnackbar(context, f.message),
     );
   }
 
@@ -95,8 +89,8 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.warehousesTitle),
+      appBar: WFTopBar(
+        title: l10n.warehousesTitle,
         actions: [
           // === QA-ONLY — DELETE this block before v1.0 (see
           // qa_language_switcher_button.dart's doc comment) ===
@@ -161,50 +155,45 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
         ],
       ),
       body: _buildBody(l10n),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: WFFloatingActionButton(
+        label: l10n.newWarehouseTitle,
         onPressed: () => _openAddWarehouseSheet(l10n),
-        child: const Icon(Icons.add),
       ),
     );
   }
 
   Widget _buildBody(AppLocalizations l10n) {
     if (_isLoading) {
-      return const Center(child: CircularProgressIndicator());
+      return const WFLoadingState();
     }
 
     if (_errorMessage != null) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(l10n.errorPrefix(_errorMessage!)),
-              const SizedBox(height: 8),
-              ElevatedButton(onPressed: _load, child: Text(l10n.retry)),
-            ],
-          ),
-        ),
+      return WFEmptyState(
+        icon: Icons.error_outline,
+        title: l10n.errorPrefix(_errorMessage!),
+        actionLabel: l10n.retry,
+        onAction: _load,
       );
     }
 
     if (_warehouses.isEmpty) {
-      return Center(
-        child: Text(l10n.noWarehousesYet),
+      return WFEmptyState(
+        icon: Icons.warehouse_outlined,
+        title: l10n.noWarehousesYet,
       );
     }
 
     return RefreshIndicator(
       onRefresh: _load,
       child: ListView.builder(
+        padding: const EdgeInsets.symmetric(vertical: WFSpacing.sm),
         itemCount: _warehouses.length,
         itemBuilder: (context, index) {
           final w = _warehouses[index];
-          return ListTile(
+          return WFListTile(
             leading: const Icon(Icons.warehouse_outlined),
-            title: Text(w.name),
-            subtitle: w.address != null ? Text(w.address!) : null,
+            title: w.name,
+            subtitle: w.address,
             trailing: IconButton(
               icon: const Icon(Icons.delete_outline),
               tooltip: l10n.delete,
@@ -225,31 +214,20 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
   }
 
   Future<void> _confirmDeleteWarehouse(Warehouse warehouse, AppLocalizations l10n) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.deleteWarehouseQuestion(warehouse.name)),
-        content: Text(l10n.deleteWarehouseWarning),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: Text(l10n.cancel)),
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: Text(l10n.delete, style: const TextStyle(color: Colors.red))),
-        ],
-      ),
+    final confirmed = await showWFConfirmationDialog(
+      context,
+      title: l10n.deleteWarehouseQuestion(warehouse.name),
+      message: l10n.deleteWarehouseWarning,
+      confirmLabel: l10n.delete,
+      cancelLabel: l10n.cancel,
     );
-    if (confirmed != true) return;
+    if (!confirmed) return;
 
     final result = await _deleteWarehouse(warehouse.id);
     result.when(
       success: (_) => _load(),
       failure: (f) {
-        if (mounted) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(f.message)));
-        }
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }
@@ -258,49 +236,31 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
     final nameController = TextEditingController();
     final addressController = TextEditingController();
 
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      builder: (context) => Padding(
-        padding: EdgeInsets.only(
-          left: 16,
-          right: 16,
-          top: 16,
-          bottom: MediaQuery.of(context).viewInsets.bottom + 16,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(l10n.newWarehouseTitle, style: const TextStyle(fontSize: 18)),
-            const SizedBox(height: 12),
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(labelText: l10n.nameLabel),
-              autofocus: true,
-            ),
-            const SizedBox(height: 8),
-            TextField(
-              controller: addressController,
-              decoration: InputDecoration(labelText: l10n.addressOptional),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                final name = nameController.text.trim();
-                if (name.isEmpty) return;
-                Navigator.of(context).pop();
-                _addWarehouse(
-                  name,
-                  addressController.text.trim().isEmpty
-                      ? null
-                      : addressController.text.trim(),
-                );
-              },
-              child: Text(l10n.save),
-            ),
-          ],
-        ),
+    showWFBottomSheet(
+      context,
+      builder: (context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(l10n.newWarehouseTitle, style: Theme.of(context).textTheme.titleLarge),
+          const SizedBox(height: WFSpacing.md),
+          WFTextField(controller: nameController, labelText: l10n.nameLabel, autofocus: true),
+          const SizedBox(height: WFSpacing.sm),
+          WFTextField(controller: addressController, labelText: l10n.addressOptional),
+          const SizedBox(height: WFSpacing.lg),
+          WFButton(
+            label: l10n.save,
+            onPressed: () {
+              final name = nameController.text.trim();
+              if (name.isEmpty) return;
+              Navigator.of(context).pop();
+              _addWarehouse(
+                name,
+                addressController.text.trim().isEmpty ? null : addressController.text.trim(),
+              );
+            },
+          ),
+        ],
       ),
     );
   }

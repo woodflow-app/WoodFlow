@@ -15,6 +15,7 @@ import '../../domain/repositories/warehouse_repository.dart';
 import '../../domain/services/export_data_builder.dart';
 import '../../domain/services/export_generator.dart';
 import '../../l10n/app_localizations.dart';
+import '../design_system/design_system.dart';
 
 /// Krok 10 — lets the user export a warehouse's full Board+Offcut
 /// inventory (with resolved location/decor/status) as PDF, CSV, or
@@ -75,7 +76,7 @@ class _ExportScreenState extends State<ExportScreen> {
   }
 
   void _showMessage(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    showWFSnackbar(context, message);
   }
 
   ExportGenerator _generatorFor(ExportFormat format) {
@@ -210,50 +211,46 @@ class _ExportScreenState extends State<ExportScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.exportTitle)),
+      appBar: WFTopBar(title: l10n.exportTitle),
       body: _buildBody(l10n),
     );
   }
 
   Widget _buildBody(AppLocalizations l10n) {
     if (_isLoadingWarehouses) {
-      return const Center(child: CircularProgressIndicator());
+      return const WFLoadingState();
     }
 
     if (_loadErrorMessage != null) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(l10n.errorPrefix(_loadErrorMessage!)),
-              const SizedBox(height: 8),
-              ElevatedButton(onPressed: _loadWarehouses, child: Text(l10n.retry)),
-            ],
-          ),
-        ),
+      return WFEmptyState(
+        icon: Icons.error_outline,
+        title: l10n.errorPrefix(_loadErrorMessage!),
+        actionLabel: l10n.retry,
+        onAction: _loadWarehouses,
       );
     }
 
     if (_warehouseList.isEmpty) {
-      return Center(child: Text(l10n.noWarehousesYet));
+      return WFEmptyState(icon: Icons.warehouse_outlined, title: l10n.noWarehousesYet);
     }
 
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(WFSpacing.md),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           DropdownButtonFormField<String>(
             initialValue: _selectedWarehouseId,
-            decoration: InputDecoration(labelText: l10n.exportWarehouseLabel),
+            decoration: InputDecoration(
+              labelText: l10n.exportWarehouseLabel,
+              border: const OutlineInputBorder(),
+            ),
             items: _warehouseList
                 .map((w) => DropdownMenuItem(value: w.id, child: Text(w.name)))
                 .toList(),
             onChanged: (value) => setState(() => _selectedWarehouseId = value),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: WFSpacing.xl),
           SegmentedButton<ExportFormat>(
             segments: const [
               ButtonSegment(value: ExportFormat.pdf, label: Text('PDF')),
@@ -263,16 +260,11 @@ class _ExportScreenState extends State<ExportScreen> {
             selected: {_selectedFormat},
             onSelectionChanged: (selection) => setState(() => _selectedFormat = selection.first),
           ),
-          const SizedBox(height: 24),
-          ElevatedButton(
+          const SizedBox(height: WFSpacing.xl),
+          WFButton(
+            label: l10n.exportButton,
             onPressed: _isExporting || _selectedWarehouseId == null ? null : _export,
-            child: _isExporting
-                ? const SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  )
-                : Text(l10n.exportButton),
+            icon: _isExporting ? null : Icons.ios_share_outlined,
           ),
         ],
       ),

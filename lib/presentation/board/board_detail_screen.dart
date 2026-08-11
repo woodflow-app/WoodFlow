@@ -14,6 +14,7 @@ import '../../domain/repositories/slot_repository.dart';
 import '../../domain/services/ledger_entry_formatter.dart';
 import '../../l10n/app_localizations.dart';
 import '../calculators/calculators_screen.dart';
+import '../design_system/design_system.dart';
 
 /// Reached two ways: normal navigation from a slot's board list, OR
 /// as a QR-scan destination (Krok 7.2) — `QrResolver` resolves
@@ -121,8 +122,8 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.boardTitle),
+      appBar: WFTopBar(
+        title: l10n.boardTitle,
         actions: [
           IconButton(
             icon: const Icon(Icons.calculate_outlined),
@@ -132,73 +133,73 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
         ],
       ),
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const WFLoadingState()
           : _error != null
-              ? Center(child: Text(l10n.errorPrefix(_error!)))
+              ? WFEmptyState(
+                  icon: Icons.error_outline,
+                  title: l10n.errorPrefix(_error!),
+                  actionLabel: l10n.retry,
+                  onAction: _load,
+                )
               : _buildBody(_board!, l10n),
     );
   }
 
   Widget _buildBody(Board board, AppLocalizations l10n) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(WFSpacing.md),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Center(
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                border: Border.all(color: Theme.of(context).dividerColor),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                children: [
-                  const Icon(Icons.qr_code_2, size: 96),
-                  const SizedBox(height: 6),
-                  SelectableText(board.qrCode,
-                      style: const TextStyle(fontFamily: 'monospace', fontSize: 13)),
-                ],
-              ),
+          WFCard(
+            child: Column(
+              children: [
+                const Icon(Icons.qr_code_2, size: 96),
+                const SizedBox(height: WFSpacing.xs),
+                SelectableText(board.qrCode,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontFamily: 'monospace')),
+              ],
             ),
           ),
-          const SizedBox(height: 16),
           Text(
             _decor != null ? '${_decor!.code} — ${_decor!.name}' : board.decorId,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ),
           Text(
             '${board.length.toInt()} × ${board.width.toInt()} × ${board.thickness.toInt()} mm',
+            style: Theme.of(context).textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: WFSpacing.sm),
           if (_location != null)
-            ListTile(
+            WFListTile(
               leading: const Icon(Icons.location_on_outlined),
-              title: Text(_location!.breadcrumb),
+              title: _location!.breadcrumb,
               dense: true,
             ),
-          ListTile(
+          WFListTile(
             leading: const Icon(Icons.info_outline),
-            title: Text(l10n.statusLabel(_statusText(l10n, board.status))),
+            title: l10n.statusLabel(_statusText(l10n, board.status)),
             dense: true,
           ),
           const Divider(),
           Row(
             children: [
               Expanded(
-                child: OutlinedButton.icon(
-                  icon: const Icon(Icons.swap_horiz),
-                  label: Text(l10n.move),
+                child: WFButton(
+                  icon: Icons.swap_horiz,
+                  label: l10n.move,
+                  role: WFButtonRole.secondary,
                   onPressed: _location == null ? null : () => _openMoveDialog(board, l10n),
                 ),
               ),
-              const SizedBox(width: 8),
+              const SizedBox(width: WFSpacing.sm),
               Expanded(
-                child: OutlinedButton.icon(
-                  icon: const Icon(Icons.archive_outlined),
-                  label: Text(l10n.archive),
+                child: WFButton(
+                  icon: Icons.archive_outlined,
+                  label: l10n.archive,
+                  role: WFButtonRole.secondary,
                   onPressed: board.status == BoardStatus.archived
                       ? null
                       : () => _confirmArchive(board, l10n),
@@ -206,13 +207,10 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
               ),
             ],
           ),
-          const SizedBox(height: 16),
-          Text(l10n.historyLabel, style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: WFSpacing.md),
+          WFSectionHeader(title: l10n.historyLabel),
           if (_ledger.isEmpty)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              child: Text(l10n.noEntries, style: const TextStyle(color: Colors.grey)),
-            )
+            WFEmptyState(icon: Icons.history, title: l10n.noEntries)
           else
             ..._ledger.map((entry) {
               final description = LedgerEntryFormatter.format(
@@ -220,11 +218,11 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
                 eventLabels: _eventLabels(l10n),
                 slotNames: _slotNames,
               );
-              return ListTile(
+              return WFListTile(
                 dense: true,
                 leading: Icon(_iconForEvent(entry.eventType)),
-                title: Text(description.title),
-                subtitle: description.detail != null ? Text(description.detail!) : null,
+                title: description.title,
+                subtitle: description.detail,
                 trailing: Text(_formatDate(entry.occurredAt)),
               );
             }),
@@ -264,9 +262,7 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
     if (!mounted || slotsResult.isFailure) return;
     final others = slotsResult.data.where((s) => s.id != board.slotId).toList();
     if (others.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.noOtherSlotInRack)),
-      );
+      showWFSnackbar(context, l10n.noOtherSlotInRack);
       return;
     }
 
@@ -288,38 +284,26 @@ class _BoardDetailScreenState extends State<BoardDetailScreen> {
     result.when(
       success: (_) => _load(),
       failure: (f) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(f.message)));
-        }
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }
 
   Future<void> _confirmArchive(Board board, AppLocalizations l10n) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.archiveBoardQuestion),
-        content: Text(l10n.historyStaysVisible),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: Text(l10n.cancel)),
-          TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: Text(l10n.archive)),
-        ],
-      ),
+    final confirmed = await showWFConfirmationDialog(
+      context,
+      title: l10n.archiveBoardQuestion,
+      message: l10n.historyStaysVisible,
+      confirmLabel: l10n.archive,
+      cancelLabel: l10n.cancel,
     );
-    if (confirmed != true) return;
+    if (!confirmed) return;
 
     final result = await _boards.archive(board.id);
     result.when(
       success: (_) => _load(),
       failure: (f) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(f.message)));
-        }
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }
