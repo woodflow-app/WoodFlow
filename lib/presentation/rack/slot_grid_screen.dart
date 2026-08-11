@@ -182,6 +182,8 @@ class _SlotChip extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Icon(Icons.inbox_outlined, size: 18, color: Theme.of(context).colorScheme.outline),
+            const SizedBox(height: 4),
             Text(occupancy.slot.name,
                 style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
             const SizedBox(height: 8),

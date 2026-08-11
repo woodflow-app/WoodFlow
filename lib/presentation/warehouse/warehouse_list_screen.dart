@@ -150,7 +150,7 @@ class _WarehouseListScreenState extends State<WarehouseListScreen> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.chat_outlined),
+            icon: const Icon(Icons.auto_awesome_outlined),
             tooltip: l10n.aiQueryTitle,
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(

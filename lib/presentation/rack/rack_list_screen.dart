@@ -82,7 +82,7 @@ class _RackListScreenState extends State<RackListScreen> {
       itemBuilder: (context, index) {
         final rack = _list[index];
         return ListTile(
-          leading: const Icon(Icons.shelves),
+          leading: const Icon(Icons.view_column_outlined),
           title: Text(l10n.rackNameTitle(rack.name)),
           trailing: const Icon(Icons.chevron_right),
           onTap: () async {

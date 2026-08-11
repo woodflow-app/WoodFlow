@@ -19,9 +19,11 @@ this table, it never hardcodes an expert's name or logic.
 | 6 | `ai-architect` | when the change is AI/ML/decision-engine-shaped | Right-sized AI tier, explainability, architecture-boundary protection |
 | 7 | `flutter-expert` | when the change touches Flutter/Dart implementation | Flutter/Dart implementation quality |
 | 8 | `ui-ux-reviewer` | when the change touches a screen or user-facing flow | Usability, cognitive load, information hierarchy |
+| 8 | `design-system-expert` | when the change touches icons, colors, typography, components, spacing, or tokens | Visual-language consistency across the whole app |
 | 9 | `security-reviewer` | always | Auth, data exposure, injection, secret handling |
 | 10 | `performance-reviewer` | always | Rebuilds, query cost, memory, startup time |
 | 11 | `code-reviewer` | always | Duplication, naming, dead code, SOLID, testability — final quality gate |
+| — | `website-expert` | only for the public marketing website — never for the WoodFlow Flutter app | Landing page, SEO, conversion, public-site performance |
 
 **Priority** is execution/reporting order, not importance — every
 applicable expert's findings appear in the combined report regardless

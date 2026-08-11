@@ -147,7 +147,7 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
                       ..._boardsInSlot.map((board) {
                         final decor = _decorFor(board.decorId);
                         return ListTile(
-                          leading: const Icon(Icons.crop_square),
+                          leading: const Icon(Icons.crop_landscape_outlined),
                           title: Text(decor != null ? '${decor.code} — ${decor.name}' : board.decorId),
                           subtitle: Text(
                               '${board.length.toInt()}×${board.width.toInt()}×${board.thickness.toInt()} mm'),

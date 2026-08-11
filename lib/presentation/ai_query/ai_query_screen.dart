@@ -176,7 +176,7 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
           ListTile(
             dense: true,
             contentPadding: EdgeInsets.zero,
-            leading: const Icon(Icons.crop_square),
+            leading: const Icon(Icons.crop_landscape_outlined),
             title: Text(hit.location.breadcrumb),
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => BoardDetailScreen(boardId: hit.boardId),
@@ -201,7 +201,9 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
           ListTile(
             dense: true,
             contentPadding: EdgeInsets.zero,
-            leading: Icon(hit.type == StaleItemType.board ? Icons.crop_square : Icons.content_cut),
+            leading: Icon(hit.type == StaleItemType.board
+                ? Icons.crop_landscape_outlined
+                : Icons.content_cut),
             title: Text(_dimensionsText(hit.lengthMm, hit.widthMm, hit.thicknessMm)),
             subtitle: Text(
               hit.type == StaleItemType.board ? l10n.aiQueryBoardTypeLabel : l10n.aiQueryOffcutTypeLabel,
@@ -228,7 +230,9 @@ class _AiQueryScreenState extends State<AiQueryScreen> {
           ListTile(
             dense: true,
             contentPadding: EdgeInsets.zero,
-            leading: Icon(item.type == StaleItemType.board ? Icons.crop_square : Icons.content_cut),
+            leading: Icon(item.type == StaleItemType.board
+                ? Icons.crop_landscape_outlined
+                : Icons.content_cut),
             title: Text(item.decorLabel),
             subtitle: Text(item.locationBreadcrumb ?? l10n.locationUnknown),
             onTap: () => Navigator.of(context).push(MaterialPageRoute(

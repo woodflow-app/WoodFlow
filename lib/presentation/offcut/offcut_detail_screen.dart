@@ -214,7 +214,7 @@ class _OffcutDetailScreenState extends State<OffcutDetailScreen> {
             dense: true,
           ),
           TextButton.icon(
-            icon: const Icon(Icons.crop_square, size: 18),
+            icon: const Icon(Icons.crop_landscape_outlined, size: 18),
             label: Text(l10n.viewSourceBoard),
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(

@@ -114,7 +114,7 @@ class _OwnerDashboardScreenState extends State<OwnerDashboardScreen> {
           ...snapshot.staleItems.map((item) => Card(
                 child: ListTile(
                   leading: Icon(item.type == StaleItemType.board
-                      ? Icons.crop_square
+                      ? Icons.crop_landscape_outlined
                       : Icons.content_cut),
                   title: Text(item.decorLabel),
                   subtitle: Text(item.locationBreadcrumb ?? l10n.locationUnknown),
