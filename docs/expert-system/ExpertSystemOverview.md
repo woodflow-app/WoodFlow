@@ -6,10 +6,28 @@ registered in `service_locator.dart`, or shipped in the APK. See
 `docs/adr/expert-system-foundation.md` for why this exists as a
 Claude-Code-side process rather than application code.
 
-The pipeline that runs these experts is `.claude/skills/expert-review/`
-(`SKILL.md` = the runner, `registry.md` = the source of truth this
-document is generated from — if the two ever disagree, `registry.md`
-is correct).
+## Two review tiers
+
+There are two ways experts get run, both reading from the same
+registry so the roster never drifts out of sync between them:
+
+- **`expert-review`** (`.claude/skills/expert-review/SKILL.md`,
+  `registry.md`) — the default, lightweight pass for most nontrivial
+  changes: run applicable experts, combine findings into one
+  categorized report, done.
+- **`expert-consensus`** (`.claude/skills/expert-consensus/SKILL.md`,
+  documented for humans at `ExpertConsensus.md`) — a heavier synthesis
+  reserved for architecture changes, database changes, AI features,
+  major UI redesign, website redesign, performance-critical code,
+  security-sensitive code, and roadmap decisions. It names where
+  experts agree, explains genuine disagreements instead of just
+  listing them, applies explicit priority/veto rules, and commits to
+  one recommended solution with a stated confidence level. See
+  `ExpertConsensus.md` for the full process, priority rules, and
+  conflict-resolution rules.
+
+Use `expert-review` by default. Escalate to `expert-consensus` only
+when one of its triggers applies — most changes don't need it.
 
 ## Experts
 
