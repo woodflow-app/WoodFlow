@@ -18,6 +18,7 @@ import '../../domain/repositories/slot_repository.dart';
 import '../../domain/repositories/warehouse_repository.dart';
 import '../../domain/services/label_data_builder.dart';
 import '../../domain/services/label_generator.dart';
+import '../../domain/usecases/delete_slot_use_case.dart';
 import '../../l10n/app_localizations.dart';
 import '../board/board_detail_screen.dart';
 import '../design_system/design_system.dart';
@@ -40,6 +41,7 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
   final RackRepository _racks = sl<RackRepository>();
   final WarehouseRepository _warehouses = sl<WarehouseRepository>();
   final LabelGenerator _labelGenerator = sl<LabelGenerator>();
+  final DeleteSlotUseCase _deleteSlot = sl<DeleteSlotUseCase>();
 
   Slot? _slot;
   List<Board> _boardsInSlot = [];
@@ -408,7 +410,7 @@ class _SlotDetailScreenState extends State<SlotDetailScreen> {
     );
     if (!confirmed) return;
 
-    final result = await _slots.delete(slot.id);
+    final result = await _deleteSlot(slot.id);
     result.when(
       success: (_) {
         if (mounted) Navigator.of(context).pop();

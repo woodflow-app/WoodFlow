@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "¿Archivar este tablero?",
   "archiveOffcutQuestion": "¿Archivar este recorte?",
   "historyStaysVisible": "El historial (Ledger) seguirá visible.",
-  "deleteSlotWarning": "Esta acción no se puede deshacer. Los tableros y recortes asignados a este hueco no se eliminarán — solo perderán su ubicación asignada (slot_id apuntará a un registro inexistente — un futuro paso de limpieza, si es necesario).",
+  "deleteSlotWarning": "Esta acción no se puede deshacer. Los tableros y recortes de este hueco se archivarán (no se eliminarán); su historial seguirá visible.",
   "fillDimensionsCorrectly": "Completa las dimensiones correctamente.",
   "noDecorsInCatalog": "No hay decorados en el catálogo — añade al menos uno.",
   "noOtherSlotInRack": "No hay otro hueco en esta estantería.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "¿Eliminar el almacén «{name}»?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Esta acción no se puede deshacer. Se eliminarán todas las estanterías y ubicaciones de este almacén. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible."
+  "deleteWarehouseWarning": "Esta acción no se puede deshacer. Se eliminarán todas las estanterías y ubicaciones de este almacén. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible.",
+  "deleteRackQuestion": "¿Eliminar la estantería «{name}»?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Esta acción no se puede deshacer. Se eliminarán todos los huecos de esta estantería. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible."
 }

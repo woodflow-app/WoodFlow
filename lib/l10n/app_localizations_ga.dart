@@ -91,7 +91,7 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Ní féidir an gníomh seo a chealú. Ní scriosfar na painéil agus na fuíollaigh atá sannta don sliotán seo — ach caillfidh siad a suíomh sannta (léireoidh slot_id taifead nach ann dó — céim ghlanta amach anseo más gá).';
+      'Ní féidir an gníomh seo a chealú. Cuirfear cartlann ar na painéil agus na fuíollaigh sa sliotán seo (ní scriosfar iad) — fanfaidh a stair le feiceáil.';
 
   @override
   String get fillDimensionsCorrectly => 'Líon isteach na toisí i gceart.';
@@ -428,4 +428,13 @@ class AppLocalizationsGa extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach seilf agus áit sa stóras seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Scrios an raca „$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach sliotán sa raca seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil.';
 }

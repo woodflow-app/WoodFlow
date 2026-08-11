@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Cartlannaigh an painéal seo?",
   "archiveOffcutQuestion": "Cartlannaigh an fuílleach seo?",
   "historyStaysVisible": "Fanfaidh an stair (Ledger) le feiceáil.",
-  "deleteSlotWarning": "Ní féidir an gníomh seo a chealú. Ní scriosfar na painéil agus na fuíollaigh atá sannta don sliotán seo — ach caillfidh siad a suíomh sannta (léireoidh slot_id taifead nach ann dó — céim ghlanta amach anseo más gá).",
+  "deleteSlotWarning": "Ní féidir an gníomh seo a chealú. Cuirfear cartlann ar na painéil agus na fuíollaigh sa sliotán seo (ní scriosfar iad) — fanfaidh a stair le feiceáil.",
   "fillDimensionsCorrectly": "Líon isteach na toisí i gceart.",
   "noDecorsInCatalog": "Níl aon mhaisiú sa chatalóg — cuir ceann amháin ar a laghad leis.",
   "noOtherSlotInRack": "Níl aon sliotán eile sa raca seo.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Scrios an stóras „{name}”?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach seilf agus áit sa stóras seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil."
+  "deleteWarehouseWarning": "Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach seilf agus áit sa stóras seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil.",
+  "deleteRackQuestion": "Scrios an raca „{name}”?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach sliotán sa raca seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil."
 }

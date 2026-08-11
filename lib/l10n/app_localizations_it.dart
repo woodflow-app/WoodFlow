@@ -91,7 +91,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Questa azione è irreversibile. I pannelli e i ritagli assegnati a questo vano non verranno eliminati — perderanno solo la posizione assegnata (slot_id punterà a un record inesistente — un futuro passaggio di pulizia, se necessario).';
+      'Questa operazione è irreversibile. I pannelli e i ritagli in questo vano verranno archiviati (non eliminati) — la cronologia rimane visibile.';
 
   @override
   String get fillDimensionsCorrectly =>
@@ -430,4 +430,13 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Questa operazione è irreversibile. Tutti gli scaffali e i ripiani di questo magazzino verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Eliminare lo scaffale «$name»?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Questa operazione è irreversibile. Tutti i vani di questo scaffale verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile.';
 }

@@ -301,7 +301,7 @@ abstract class AppLocalizations {
   /// No description provided for @deleteSlotWarning.
   ///
   /// In pl, this message translates to:
-  /// **'Ta operacja jest nieodwracalna. Płyty i ścinki przypisane do tej półki nie zostaną usunięte, tylko stracą przypisaną lokalizację (slot_id wskaże na nieistniejący rekord — kolejny krok porządkowy, gdy zajdzie taka potrzeba).'**
+  /// **'Ta operacja jest nieodwracalna. Płyty i ścinki w tej półce zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.'**
   String get deleteSlotWarning;
 
   /// No description provided for @fillDimensionsCorrectly.
@@ -891,6 +891,18 @@ abstract class AppLocalizations {
   /// In pl, this message translates to:
   /// **'Ta operacja jest nieodwracalna. Wszystkie regały i półki w tym magazynie zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.'**
   String get deleteWarehouseWarning;
+
+  /// No description provided for @deleteRackQuestion.
+  ///
+  /// In pl, this message translates to:
+  /// **'Usunąć regał „{name}”?'**
+  String deleteRackQuestion(String name);
+
+  /// No description provided for @deleteRackWarning.
+  ///
+  /// In pl, this message translates to:
+  /// **'Ta operacja jest nieodwracalna. Wszystkie półki w tym regale zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.'**
+  String get deleteRackWarning;
 }
 
 class _AppLocalizationsDelegate

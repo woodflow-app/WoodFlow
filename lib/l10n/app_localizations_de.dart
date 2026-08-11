@@ -91,7 +91,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Dieser Vorgang kann nicht widerrufen werden. Platten und Verschnittstücke in diesem Fach werden nicht gelöscht — sie verlieren nur ihren zugewiesenen Standort (slot_id verweist dann auf keinen bestehenden Datensatz — ein späterer Aufräumschritt, falls nötig).';
+      'Dieser Vorgang kann nicht rückgängig gemacht werden. Platten und Verschnittstücke in diesem Fach werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.';
 
   @override
   String get fillDimensionsCorrectly => 'Bitte die Maße korrekt ausfüllen.';
@@ -431,4 +431,13 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Regale und Fächer in diesem Lager werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Regal „$name“ löschen?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Fächer in diesem Regal werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.';
 }

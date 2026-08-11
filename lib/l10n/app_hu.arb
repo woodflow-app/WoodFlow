@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Archiválja ezt a lapot?",
   "archiveOffcutQuestion": "Archiválja ezt a hulladékdarabot?",
   "historyStaysVisible": "Az előzmények (Ledger) láthatók maradnak.",
-  "deleteSlotWarning": "Ez a művelet nem vonható vissza. Az ehhez a rekeszhez rendelt lapok és hulladékdarabok nem törlődnek — csak elvesztik a hozzárendelt helyüket (a slot_id egy nem létező rekordra fog mutatni — jövőbeli takarítási lépés, ha szükséges).",
+  "deleteSlotWarning": "Ez a művelet nem vonható vissza. Az ebben a rekeszben lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.",
   "fillDimensionsCorrectly": "Töltse ki helyesen a méreteket.",
   "noDecorsInCatalog": "Nincs dekor a katalógusban — adjon hozzá legalább egyet.",
   "noOtherSlotInRack": "Nincs másik rekesz ezen az állványon.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Törli a(z) „{name}” raktárt?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Ez a művelet nem vonható vissza. A raktárban lévő összes állvány és polc törlődik. Az azokon lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak."
+  "deleteWarehouseWarning": "Ez a művelet nem vonható vissza. A raktárban lévő összes állvány és polc törlődik. Az azokon lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.",
+  "deleteRackQuestion": "Törli a(z) „{name}” állványt?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Ez a művelet nem vonható vissza. Az állványon lévő összes rekesz törlődik. Az azokban lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak."
 }

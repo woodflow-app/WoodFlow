@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Archiviare questo pannello?",
   "archiveOffcutQuestion": "Archiviare questo ritaglio?",
   "historyStaysVisible": "La cronologia (Ledger) resterà visibile.",
-  "deleteSlotWarning": "Questa azione è irreversibile. I pannelli e i ritagli assegnati a questo vano non verranno eliminati — perderanno solo la posizione assegnata (slot_id punterà a un record inesistente — un futuro passaggio di pulizia, se necessario).",
+  "deleteSlotWarning": "Questa operazione è irreversibile. I pannelli e i ritagli in questo vano verranno archiviati (non eliminati) — la cronologia rimane visibile.",
   "fillDimensionsCorrectly": "Inserisci correttamente le dimensioni.",
   "noDecorsInCatalog": "Nessun decoro nel catalogo — aggiungine almeno uno.",
   "noOtherSlotInRack": "Nessun altro vano in questo scaffale.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Eliminare il magazzino «{name}»?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Questa operazione è irreversibile. Tutti gli scaffali e i ripiani di questo magazzino verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile."
+  "deleteWarehouseWarning": "Questa operazione è irreversibile. Tutti gli scaffali e i ripiani di questo magazzino verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile.",
+  "deleteRackQuestion": "Eliminare lo scaffale «{name}»?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Questa operazione è irreversibile. Tutti i vani di questo scaffale verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile."
 }

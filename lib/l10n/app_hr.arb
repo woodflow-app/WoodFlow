@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Arhivirati ovu ploču?",
   "archiveOffcutQuestion": "Arhivirati ovaj otpadak?",
   "historyStaysVisible": "Povijest (Ledger) ostaje vidljiva.",
-  "deleteSlotWarning": "Ova radnja se ne može poništiti. Ploče i otpaci dodijeljeni ovom pretincu neće biti izbrisani — samo će izgubiti dodijeljenu lokaciju (slot_id će upućivati na nepostojeći zapis — budući korak čišćenja ako bude potrebno).",
+  "deleteSlotWarning": "Ova radnja se ne može poništiti. Ploče i otpaci u ovom pretincu bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva.",
   "fillDimensionsCorrectly": "Ispravno popunite dimenzije.",
   "noDecorsInCatalog": "Nema dekora u katalogu — dodajte barem jedan.",
   "noOtherSlotInRack": "Nema drugog pretinca u ovom regalu.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Izbrisati skladište „{name}”?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Ova radnja se ne može poništiti. Sve police i pretinci u ovom skladištu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva."
+  "deleteWarehouseWarning": "Ova radnja se ne može poništiti. Sve police i pretinci u ovom skladištu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva.",
+  "deleteRackQuestion": "Izbrisati regal „{name}”?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Ova radnja se ne može poništiti. Svi pretinci na ovom regalu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva."
 }

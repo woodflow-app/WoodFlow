@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 import '../../core/services/service_locator.dart';
 import '../../domain/entities/rack.dart';
 import '../../domain/repositories/rack_repository.dart';
+import '../../domain/usecases/delete_rack_use_case.dart';
 import '../../l10n/app_localizations.dart';
 import '../design_system/design_system.dart';
 import 'slot_grid_screen.dart';
@@ -22,6 +23,7 @@ class RackListScreen extends StatefulWidget {
 
 class _RackListScreenState extends State<RackListScreen> {
   final RackRepository _racks = sl<RackRepository>();
+  final DeleteRackUseCase _deleteRack = sl<DeleteRackUseCase>();
   List<Rack> _list = [];
   bool _isLoading = true;
   String? _error;
@@ -84,7 +86,11 @@ class _RackListScreenState extends State<RackListScreen> {
         return WFListTile(
           leading: const Icon(Icons.view_column_outlined),
           title: l10n.rackNameTitle(rack.name),
-          trailing: const Icon(Icons.chevron_right),
+          trailing: IconButton(
+            icon: const Icon(Icons.delete_outline),
+            tooltip: l10n.delete,
+            onPressed: () => _confirmDeleteRack(rack, l10n),
+          ),
           onTap: () async {
             await Navigator.of(context).push(MaterialPageRoute(
               builder: (_) =>
@@ -93,6 +99,25 @@ class _RackListScreenState extends State<RackListScreen> {
             _load();
           },
         );
+      },
+    );
+  }
+
+  Future<void> _confirmDeleteRack(Rack rack, AppLocalizations l10n) async {
+    final confirmed = await showWFConfirmationDialog(
+      context,
+      title: l10n.deleteRackQuestion(rack.name),
+      message: l10n.deleteRackWarning,
+      confirmLabel: l10n.delete,
+      cancelLabel: l10n.cancel,
+    );
+    if (!confirmed) return;
+
+    final result = await _deleteRack(rack.id);
+    result.when(
+      success: (_) => _load(),
+      failure: (f) {
+        if (mounted) showWFSnackbar(context, f.message);
       },
     );
   }

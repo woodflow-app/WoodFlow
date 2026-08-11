@@ -91,7 +91,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Túto akciu nie je možné vrátiť späť. Dosky a odrezky priradené k tejto priehradke sa nezmažú — iba stratia priradené umiestnenie (slot_id bude odkazovať na neexistujúci záznam — budúci krok upratovania, ak bude potrebný).';
+      'Túto akciu nie je možné vrátiť späť. Dosky a odrezky v tejto priehradke budú archivované (nie odstránené) — ich história zostane viditeľná.';
 
   @override
   String get fillDimensionsCorrectly => 'Vyplňte rozmery správne.';
@@ -429,4 +429,13 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Túto akciu nemožno vrátiť späť. Všetky regály a police v tomto sklade budú odstránené. Dosky a odrezky v nich budú archivované (nie odstránené) — ich história zostane viditeľná.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Odstrániť regál „$name“?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Túto akciu nemožno vrátiť späť. Všetky priehradky v tomto regáli budú odstránené. Dosky a odrezky v nich budú archivované (nie odstránené) — ich história zostane viditeľná.';
 }

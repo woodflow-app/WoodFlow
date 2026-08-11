@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Platte archivieren?",
   "archiveOffcutQuestion": "Verschnitt archivieren?",
   "historyStaysVisible": "Der Verlauf (Ledger) bleibt sichtbar.",
-  "deleteSlotWarning": "Dieser Vorgang kann nicht widerrufen werden. Platten und Verschnittstücke in diesem Fach werden nicht gelöscht — sie verlieren nur ihren zugewiesenen Standort (slot_id verweist dann auf keinen bestehenden Datensatz — ein späterer Aufräumschritt, falls nötig).",
+  "deleteSlotWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Platten und Verschnittstücke in diesem Fach werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.",
   "fillDimensionsCorrectly": "Bitte die Maße korrekt ausfüllen.",
   "noDecorsInCatalog": "Keine Dekore im Katalog — mindestens eines hinzufügen.",
   "noOtherSlotInRack": "Kein weiteres Fach in diesem Regal.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Lager „{name}“ löschen?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Regale und Fächer in diesem Lager werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar."
+  "deleteWarehouseWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Regale und Fächer in diesem Lager werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.",
+  "deleteRackQuestion": "Regal „{name}“ löschen?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Fächer in diesem Regal werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar."
 }

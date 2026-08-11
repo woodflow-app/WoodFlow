@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Archivovat tuto desku?",
   "archiveOffcutQuestion": "Archivovat tento odřezek?",
   "historyStaysVisible": "Historie (Ledger) zůstane viditelná.",
-  "deleteSlotWarning": "Tuto akci nelze vrátit zpět. Desky a odřezky přiřazené k této pozici nebudou smazány — pouze ztratí přiřazené umístění (slot_id bude odkazovat na neexistující záznam — budoucí úklidový krok, pokud bude potřeba).",
+  "deleteSlotWarning": "Tuto akci nelze vrátit zpět. Desky a odřezky v této pozici budou archivovány (ne smazány) — jejich historie zůstane viditelná.",
   "fillDimensionsCorrectly": "Vyplňte rozměry správně.",
   "noDecorsInCatalog": "V katalogu nejsou žádné dekory — přidejte alespoň jeden.",
   "noOtherSlotInRack": "V tomto regálu není žádná jiná pozice.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Smazat sklad „{name}“?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Tuto akci nelze vrátit zpět. Všechny regály a police v tomto skladu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná."
+  "deleteWarehouseWarning": "Tuto akci nelze vrátit zpět. Všechny regály a police v tomto skladu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná.",
+  "deleteRackQuestion": "Smazat regál „{name}“?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Tuto akci nelze vrátit zpět. Všechny police v tomto regálu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná."
 }

@@ -91,7 +91,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Esta acción no se puede deshacer. Los tableros y recortes asignados a este hueco no se eliminarán — solo perderán su ubicación asignada (slot_id apuntará a un registro inexistente — un futuro paso de limpieza, si es necesario).';
+      'Esta acción no se puede deshacer. Los tableros y recortes de este hueco se archivarán (no se eliminarán); su historial seguirá visible.';
 
   @override
   String get fillDimensionsCorrectly =>
@@ -429,4 +429,13 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Esta acción no se puede deshacer. Se eliminarán todas las estanterías y ubicaciones de este almacén. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return '¿Eliminar la estantería «$name»?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Esta acción no se puede deshacer. Se eliminarán todos los huecos de esta estantería. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible.';
 }

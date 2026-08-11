@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Archifo'r panel yma?",
   "archiveOffcutQuestion": "Archifo'r toriad yma?",
   "historyStaysVisible": "Bydd yr hanes (Ledger) yn parhau i fod yn weladwy.",
-  "deleteSlotWarning": "Ni ellir dad-wneud y weithred hon. Ni fydd paneli a thoriadau sydd wedi'u neilltuo i'r slot hwn yn cael eu dileu — dim ond yn colli eu lleoliad neilltuedig (bydd slot_id yn pwyntio at gofnod nad yw'n bodoli — cam glanhau yn y dyfodol os bydd angen).",
+  "deleteSlotWarning": "Ni ellir dad-wneud y weithred hon. Bydd paneli a thoriadau yn y slot yma yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.",
   "fillDimensionsCorrectly": "Llenwch y dimensiynau yn gywir.",
   "noDecorsInCatalog": "Dim addurniadau yn y catalog — ychwanegwch o leiaf un.",
   "noOtherSlotInRack": "Dim slot arall yn y rac hwn.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Dileu'r warws „{name}”?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Ni ellir dadwneud y weithred hon. Bydd pob silff a lleoliad yn y warws hon yn cael eu dileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy."
+  "deleteWarehouseWarning": "Ni ellir dadwneud y weithred hon. Bydd pob silff a lleoliad yn y warws hon yn cael eu dileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.",
+  "deleteRackQuestion": "Dileu'r rac „{name}”?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Ni ellir dadwneud y weithred hon. Bydd pob slot ar y rac hon yn cael ei ddileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy."
 }

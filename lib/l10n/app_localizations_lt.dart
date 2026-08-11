@@ -91,7 +91,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Šio veiksmo negalima anuliuoti. Šiai ląstelei priskirtos plokštės ir atraižos nebus ištrintos — jos tik prarasite priskirtą vietą (slot_id nurodys į neegzistuojantį įrašą — būsimas sutvarkymo žingsnis, jei reikės).';
+      'Šio veiksmo negalima anuliuoti. Šioje ląstelėje esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma.';
 
   @override
   String get fillDimensionsCorrectly => 'Užpildykite matmenis teisingai.';
@@ -428,4 +428,13 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Šio veiksmo nebus galima anuliuoti. Visi šio sandėlio stelažai ir vietos bus ištrinti. Juose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Ištrinti stelažą „$name“?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Šio veiksmo nebus galima anuliuoti. Visos šio stelažo ląstelės bus ištrintos. Jose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma.';
 }

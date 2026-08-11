@@ -91,7 +91,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Denne handling kan ikke fortrydes. Plader og afskær tildelt denne hylde bliver ikke slettet — de mister blot deres tildelte placering (slot_id vil pege på en post, der ikke findes — et fremtidigt oprydningsskridt hvis nødvendigt).';
+      'Denne handling kan ikke fortrydes. Plader og afskær på denne hylde arkiveres (slettes ikke) — deres historik forbliver synlig.';
 
   @override
   String get fillDimensionsCorrectly => 'Udfyld målene korrekt.';
@@ -428,4 +428,13 @@ class AppLocalizationsDa extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Denne handling kan ikke fortrydes. Alle reoler og pladser i dette lager slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Slet reol „$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Denne handling kan ikke fortrydes. Alle pladser på denne reol slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig.';
 }

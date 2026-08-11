@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Archyvuoti šią plokštę?",
   "archiveOffcutQuestion": "Archyvuoti šią atraižą?",
   "historyStaysVisible": "Istorija (Ledger) išliks matoma.",
-  "deleteSlotWarning": "Šio veiksmo negalima anuliuoti. Šiai ląstelei priskirtos plokštės ir atraižos nebus ištrintos — jos tik prarasite priskirtą vietą (slot_id nurodys į neegzistuojantį įrašą — būsimas sutvarkymo žingsnis, jei reikės).",
+  "deleteSlotWarning": "Šio veiksmo negalima anuliuoti. Šioje ląstelėje esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma.",
   "fillDimensionsCorrectly": "Užpildykite matmenis teisingai.",
   "noDecorsInCatalog": "Kataloge nėra dekorų — pridėkite bent vieną.",
   "noOtherSlotInRack": "Šiame stelaže nėra kitos ląstelės.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Ištrinti sandėlį „{name}“?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Šio veiksmo nebus galima anuliuoti. Visi šio sandėlio stelažai ir vietos bus ištrinti. Juose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma."
+  "deleteWarehouseWarning": "Šio veiksmo nebus galima anuliuoti. Visi šio sandėlio stelažai ir vietos bus ištrinti. Juose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma.",
+  "deleteRackQuestion": "Ištrinti stelažą „{name}“?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Šio veiksmo nebus galima anuliuoti. Visos šio stelažo ląstelės bus ištrintos. Jose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma."
 }

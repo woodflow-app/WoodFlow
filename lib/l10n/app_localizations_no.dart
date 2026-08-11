@@ -91,7 +91,7 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Denne handlingen kan ikke angres. Plater og kappstykker tilknyttet denne hyllen blir ikke slettet — de mister bare sin tilknyttede plassering (slot_id vil peke på en post som ikke finnes — et fremtidig ryddesteg om nødvendig).';
+      'Denne handlingen kan ikke angres. Plater og kappstykker på denne hyllen vil bli arkivert (ikke slettet) — historikken deres forblir synlig.';
 
   @override
   String get fillDimensionsCorrectly => 'Fyll inn målene riktig.';
@@ -428,4 +428,13 @@ class AppLocalizationsNo extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Denne handlingen kan ikke angres. Alle reoler og plasser i dette lageret vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Slette reolen «$name»?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Denne handlingen kan ikke angres. Alle plasser på denne reolen vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig.';
 }

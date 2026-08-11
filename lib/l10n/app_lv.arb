@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Arhivēt šo plāksni?",
   "archiveOffcutQuestion": "Arhivēt šo atgriezumu?",
   "historyStaysVisible": "Vēsture (Ledger) paliks redzama.",
-  "deleteSlotWarning": "Šo darbību nevar atsaukt. Plāksnes un atgriezumi, kas piešķirti šai nišai, netiks dzēsti — tie tikai zaudēs piešķirto atrašanās vietu (slot_id norādīs uz neesošu ierakstu — turpmāks sakopšanas solis, ja tas būs nepieciešams).",
+  "deleteSlotWarning": "Šo darbību nevar atsaukt. Šajā nišā esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.",
   "fillDimensionsCorrectly": "Aizpildiet izmērus pareizi.",
   "noDecorsInCatalog": "Katalogā nav dekoru — pievienojiet vismaz vienu.",
   "noOtherSlotInRack": "Šajā plauktā nav citas nišas.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Dzēst noliktavu „{name}”?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Šo darbību nevar atsaukt. Visi plaukti un vietas šajā noliktavā tiks dzēsti. Tajos esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama."
+  "deleteWarehouseWarning": "Šo darbību nevar atsaukt. Visi plaukti un vietas šajā noliktavā tiks dzēsti. Tajos esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.",
+  "deleteRackQuestion": "Dzēst plauktu „{name}”?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Šo darbību nevar atsaukt. Visas nišas šajā plauktā tiks dzēstas. Tajās esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama."
 }

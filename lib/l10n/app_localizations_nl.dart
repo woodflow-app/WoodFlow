@@ -92,7 +92,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Deze actie kan niet ongedaan worden gemaakt. Platen en restplaten in dit vak worden niet verwijderd — ze verliezen alleen hun toegewezen locatie (slot_id verwijst dan naar een niet-bestaand record — een toekomstige opruimstap indien nodig).';
+      'Deze actie kan niet ongedaan worden gemaakt. Platen en restplaten in dit vak worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.';
 
   @override
   String get fillDimensionsCorrectly => 'Vul de afmetingen correct in.';
@@ -428,4 +428,13 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Deze actie kan niet ongedaan worden gemaakt. Alle rekken en vakken in dit magazijn worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Rek „$name” verwijderen?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Deze actie kan niet ongedaan worden gemaakt. Alle vakken in dit rek worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.';
 }

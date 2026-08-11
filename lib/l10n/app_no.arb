@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Arkivere denne platen?",
   "archiveOffcutQuestion": "Arkivere dette kappstykket?",
   "historyStaysVisible": "Historikken (Ledger) forblir synlig.",
-  "deleteSlotWarning": "Denne handlingen kan ikke angres. Plater og kappstykker tilknyttet denne hyllen blir ikke slettet — de mister bare sin tilknyttede plassering (slot_id vil peke på en post som ikke finnes — et fremtidig ryddesteg om nødvendig).",
+  "deleteSlotWarning": "Denne handlingen kan ikke angres. Plater og kappstykker på denne hyllen vil bli arkivert (ikke slettet) — historikken deres forblir synlig.",
   "fillDimensionsCorrectly": "Fyll inn målene riktig.",
   "noDecorsInCatalog": "Ingen dekorer i katalogen — legg til minst én.",
   "noOtherSlotInRack": "Ingen annen hylle i denne reolen.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Slette lageret «{name}»?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Denne handlingen kan ikke angres. Alle reoler og plasser i dette lageret vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig."
+  "deleteWarehouseWarning": "Denne handlingen kan ikke angres. Alle reoler og plasser i dette lageret vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig.",
+  "deleteRackQuestion": "Slette reolen «{name}»?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Denne handlingen kan ikke angres. Alle plasser på denne reolen vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig."
 }

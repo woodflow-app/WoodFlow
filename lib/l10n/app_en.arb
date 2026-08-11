@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Archive this board?",
   "archiveOffcutQuestion": "Archive this offcut?",
   "historyStaysVisible": "History (Ledger) will remain visible.",
-  "deleteSlotWarning": "This action cannot be undone. Boards and offcuts assigned to this slot will not be deleted — they will just lose their assigned location (slot_id will point to a non-existent record — a future cleanup step, if ever needed).",
+  "deleteSlotWarning": "This action cannot be undone. Boards and offcuts in this slot will be archived (not deleted) — their history remains visible.",
   "fillDimensionsCorrectly": "Please fill in the dimensions correctly.",
   "noDecorsInCatalog": "No decors in the catalog — add at least one.",
   "noOtherSlotInRack": "No other slot in this rack.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Delete warehouse \"{name}\"?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "This action cannot be undone. All racks and slots in this warehouse will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible."
+  "deleteWarehouseWarning": "This action cannot be undone. All racks and slots in this warehouse will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible.",
+  "deleteRackQuestion": "Delete rack \"{name}\"?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "This action cannot be undone. All slots in this rack will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible."
 }

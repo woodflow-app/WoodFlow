@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Deze plaat archiveren?",
   "archiveOffcutQuestion": "Deze restplaat archiveren?",
   "historyStaysVisible": "De geschiedenis (Ledger) blijft zichtbaar.",
-  "deleteSlotWarning": "Deze actie kan niet ongedaan worden gemaakt. Platen en restplaten in dit vak worden niet verwijderd — ze verliezen alleen hun toegewezen locatie (slot_id verwijst dan naar een niet-bestaand record — een toekomstige opruimstap indien nodig).",
+  "deleteSlotWarning": "Deze actie kan niet ongedaan worden gemaakt. Platen en restplaten in dit vak worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.",
   "fillDimensionsCorrectly": "Vul de afmetingen correct in.",
   "noDecorsInCatalog": "Geen decors in de catalogus — voeg er minstens één toe.",
   "noOtherSlotInRack": "Geen ander vak in dit rek.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Magazijn „{name}” verwijderen?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle rekken en vakken in dit magazijn worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar."
+  "deleteWarehouseWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle rekken en vakken in dit magazijn worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.",
+  "deleteRackQuestion": "Rek „{name}” verwijderen?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle vakken in dit rek worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar."
 }

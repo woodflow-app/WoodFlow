@@ -91,7 +91,7 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Ova radnja se ne može poništiti. Ploče i otpaci dodijeljeni ovom pretincu neće biti izbrisani — samo će izgubiti dodijeljenu lokaciju (slot_id će upućivati na nepostojeći zapis — budući korak čišćenja ako bude potrebno).';
+      'Ova radnja se ne može poništiti. Ploče i otpaci u ovom pretincu bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva.';
 
   @override
   String get fillDimensionsCorrectly => 'Ispravno popunite dimenzije.';
@@ -428,4 +428,13 @@ class AppLocalizationsHr extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Ova radnja se ne može poništiti. Sve police i pretinci u ovom skladištu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Izbrisati regal „$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Ova radnja se ne može poništiti. Svi pretinci na ovom regalu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva.';
 }

@@ -1,18 +1,12 @@
-import 'dart:convert';
-
-import 'package:sqflite/sqflite.dart' hide DatabaseException;
-import 'package:uuid/uuid.dart';
-
 import '../../core/errors/exceptions.dart';
 import '../../core/errors/failures.dart';
 import '../../core/events/event_publisher.dart';
 import '../../core/logging/app_logger.dart';
-import '../../domain/entities/board_transaction.dart';
-import '../../domain/entities/offcut_transaction.dart';
 import '../../domain/events/board_events.dart';
 import '../../domain/events/offcut_events.dart';
 import '../../domain/usecases/delete_warehouse_use_case.dart';
 import '../database/database_service.dart';
+import 'cascade_archive_helpers.dart';
 
 /// Cascading warehouse deletion. Lives in `data/usecases/`, not as a
 /// method on `WarehouseRepositoryImpl`, because it must touch six
@@ -45,19 +39,20 @@ import '../database/database_service.dart';
 ///   material row itself is not" behavior `SlotRepositoryImpl.delete()`
 ///   already established for slot deletion.
 ///
-/// Duplicates the small archive-row-shape from
-/// `BoardRepositoryImpl.archive()`/`OffcutRepositoryImpl.archive()`
-/// rather than calling them, for the same reason ADR-023 accepts that
-/// cost: avoids coupling this use case to two repositories' private
-/// implementation details for one atomic operation.
+/// Archiving itself is done via `archiveBoardInTransaction`/
+/// `archiveOffcutInTransaction` (`cascade_archive_helpers.dart`) — a
+/// small shared helper, not a call into `BoardRepositoryImpl.archive()`/
+/// `OffcutRepositoryImpl.archive()` (those open their own transaction,
+/// which sqflite can't nest inside this one). The same helper is shared
+/// by `DeleteRackUseCaseImpl`/`DeleteSlotUseCaseImpl`, which face the
+/// identical "archive contained stock, delete the container" shape one
+/// level down the hierarchy.
 class DeleteWarehouseUseCaseImpl implements DeleteWarehouseUseCase {
   DeleteWarehouseUseCaseImpl(this._db, this._logger, this._events);
 
   final DatabaseService _db;
   final AppLogger _logger;
   final EventPublisher _events;
-
-  final _uuid = const Uuid();
 
   @override
   Future<Result<void>> call(String warehouseId) async {
@@ -89,7 +84,7 @@ class DeleteWarehouseUseCaseImpl implements DeleteWarehouseUseCase {
                 where: 'slot_id = ? AND status = ?', whereArgs: [slotId, 'inStock']);
             for (final boardRow in boardRows) {
               final boardId = boardRow['id'] as String;
-              await _archiveBoard(txn, boardId, now, nowMs);
+              await archiveBoardInTransaction(txn, boardId, now, nowMs, note: 'warehouse deleted');
               archivedBoardIds.add(boardId);
             }
 
@@ -97,7 +92,7 @@ class DeleteWarehouseUseCaseImpl implements DeleteWarehouseUseCase {
                 where: 'slot_id = ? AND status = ?', whereArgs: [slotId, 'available']);
             for (final offcutRow in offcutRows) {
               final offcutId = offcutRow['id'] as String;
-              await _archiveOffcut(txn, offcutId, now, nowMs);
+              await archiveOffcutInTransaction(txn, offcutId, now, nowMs, note: 'warehouse deleted');
               archivedOffcutIds.add(offcutId);
             }
 
@@ -131,69 +126,5 @@ class DeleteWarehouseUseCaseImpl implements DeleteWarehouseUseCase {
           tag: 'USECASE', error: e, stackTrace: st);
       return Result.failure(mapExceptionToFailure(e));
     }
-  }
-
-  Future<void> _archiveBoard(Transaction txn, String boardId, DateTime now, int nowMs) async {
-    await txn.update(
-      'boards',
-      {'status': 'archived', 'updated_at': nowMs},
-      where: 'id = ?',
-      whereArgs: [boardId],
-    );
-
-    final txnId = _uuid.v4();
-    await txn.insert('board_transactions', {
-      'id': txnId,
-      'board_id': boardId,
-      'type': BoardTransactionType.archived.dbValue,
-      'from_slot_id': null,
-      'to_slot_id': null,
-      'occurred_at': nowMs,
-      'user_id': null,
-      'note': 'warehouse deleted',
-    });
-
-    await txn.insert('ledger_entries', {
-      'id': _uuid.v4(),
-      'transaction_id': txnId,
-      'entity_type': 'board',
-      'entity_id': boardId,
-      'event_type': BoardTransactionType.archived.dbValue,
-      'occurred_at': nowMs,
-      'user_id': null,
-      'payload': jsonEncode({}),
-    });
-  }
-
-  Future<void> _archiveOffcut(Transaction txn, String offcutId, DateTime now, int nowMs) async {
-    await txn.update(
-      'offcuts',
-      {'status': 'archived', 'updated_at': nowMs},
-      where: 'id = ?',
-      whereArgs: [offcutId],
-    );
-
-    final txnId = _uuid.v4();
-    await txn.insert('offcut_transactions', {
-      'id': txnId,
-      'offcut_id': offcutId,
-      'type': OffcutTransactionType.archived.dbValue,
-      'from_slot_id': null,
-      'to_slot_id': null,
-      'occurred_at': nowMs,
-      'user_id': null,
-      'note': 'warehouse deleted',
-    });
-
-    await txn.insert('ledger_entries', {
-      'id': _uuid.v4(),
-      'transaction_id': txnId,
-      'entity_type': 'offcut',
-      'entity_id': offcutId,
-      'event_type': OffcutTransactionType.archived.dbValue,
-      'occurred_at': nowMs,
-      'user_id': null,
-      'payload': jsonEncode({}),
-    });
   }
 }

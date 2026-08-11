@@ -91,7 +91,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Cette action est irréversible. Les panneaux et chutes affectés à cet emplacement ne seront pas supprimés — ils perdront simplement leur emplacement assigné (slot_id pointera vers un enregistrement inexistant — une étape de nettoyage future si nécessaire).';
+      'Cette action est irréversible. Les panneaux et chutes de cet emplacement seront archivés (non supprimés) — leur historique reste visible.';
 
   @override
   String get fillDimensionsCorrectly =>
@@ -429,4 +429,13 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Cette action est irréversible. Tous les racks et emplacements de cet entrepôt seront supprimés. Les plaques et chutes qu\'ils contiennent seront archivées (non supprimées) — leur historique reste visible.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Supprimer le rayonnage « $name » ?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Cette action est irréversible. Tous les emplacements de ce rayonnage seront supprimés. Les plaques et chutes qu\'ils contiennent seront archivées (non supprimées) — leur historique reste visible.';
 }

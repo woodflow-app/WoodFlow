@@ -91,7 +91,7 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Šo darbību nevar atsaukt. Plāksnes un atgriezumi, kas piešķirti šai nišai, netiks dzēsti — tie tikai zaudēs piešķirto atrašanās vietu (slot_id norādīs uz neesošu ierakstu — turpmāks sakopšanas solis, ja tas būs nepieciešams).';
+      'Šo darbību nevar atsaukt. Šajā nišā esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.';
 
   @override
   String get fillDimensionsCorrectly => 'Aizpildiet izmērus pareizi.';
@@ -427,4 +427,13 @@ class AppLocalizationsLv extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Šo darbību nevar atsaukt. Visi plaukti un vietas šajā noliktavā tiks dzēsti. Tajos esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Dzēst plauktu „$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Šo darbību nevar atsaukt. Visas nišas šajā plauktā tiks dzēstas. Tajās esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.';
 }

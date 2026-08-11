@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "A bheil thu airson am bòrd seo a thasglannachadh?",
   "archiveOffcutQuestion": "A bheil thu airson a' chriomag seo a thasglannachadh?",
   "historyStaysVisible": "Bidh an eachdraidh (Ledger) fhathast ri fhaicinn.",
-  "deleteSlotWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Cha tèid bùird is criomagan a chaidh a shònrachadh dhan slot seo a sguabadh às — chan ann ach gun caill iad an t-àite a chaidh a shònrachadh (bidh slot_id a' comharrachadh clàr nach eil ann — ceum glanaidh san àm ri teachd ma tha feum air).",
+  "deleteSlotWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid tasgladh a dhèanamh air na bùird is criomagan a tha san slot seo (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.",
   "fillDimensionsCorrectly": "Lìon a-steach na tomhasan mar bu chòir.",
   "noDecorsInCatalog": "Chan eil sgeadachadh sam bith sa chatalog — cuir fear a-steach co-dhiù.",
   "noOtherSlotInRack": "Chan eil slot eile san rac seo.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "A bheil thu airson an stòr „{name}” a sguabadh às?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile seilf is àite san stòr seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird 's na pìosan a th' ann (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn."
+  "deleteWarehouseWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile seilf is àite san stòr seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird 's na pìosan a th' ann (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.",
+  "deleteRackQuestion": "A bheil thu airson an rac „{name}” a sguabadh às?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile slot air an rac seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird 's na pìosan a th' annta (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn."
 }

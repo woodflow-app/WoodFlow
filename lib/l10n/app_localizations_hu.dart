@@ -91,7 +91,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Ez a művelet nem vonható vissza. Az ehhez a rekeszhez rendelt lapok és hulladékdarabok nem törlődnek — csak elvesztik a hozzárendelt helyüket (a slot_id egy nem létező rekordra fog mutatni — jövőbeli takarítási lépés, ha szükséges).';
+      'Ez a művelet nem vonható vissza. Az ebben a rekeszben lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.';
 
   @override
   String get fillDimensionsCorrectly => 'Töltse ki helyesen a méreteket.';
@@ -429,4 +429,13 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Ez a művelet nem vonható vissza. A raktárban lévő összes állvány és polc törlődik. Az azokon lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Törli a(z) „$name” állványt?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Ez a művelet nem vonható vissza. Az állványon lévő összes rekesz törlődik. Az azokban lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.';
 }

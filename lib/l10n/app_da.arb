@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Arkiver denne plade?",
   "archiveOffcutQuestion": "Arkiver dette afskær?",
   "historyStaysVisible": "Historikken (Ledger) forbliver synlig.",
-  "deleteSlotWarning": "Denne handling kan ikke fortrydes. Plader og afskær tildelt denne hylde bliver ikke slettet — de mister blot deres tildelte placering (slot_id vil pege på en post, der ikke findes — et fremtidigt oprydningsskridt hvis nødvendigt).",
+  "deleteSlotWarning": "Denne handling kan ikke fortrydes. Plader og afskær på denne hylde arkiveres (slettes ikke) — deres historik forbliver synlig.",
   "fillDimensionsCorrectly": "Udfyld målene korrekt.",
   "noDecorsInCatalog": "Ingen dekorer i kataloget — tilføj mindst én.",
   "noOtherSlotInRack": "Ingen anden hylde i denne reol.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Slet lager „{name}”?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Denne handling kan ikke fortrydes. Alle reoler og pladser i dette lager slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig."
+  "deleteWarehouseWarning": "Denne handling kan ikke fortrydes. Alle reoler og pladser i dette lager slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig.",
+  "deleteRackQuestion": "Slet reol „{name}”?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Denne handling kan ikke fortrydes. Alle pladser på denne reol slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig."
 }

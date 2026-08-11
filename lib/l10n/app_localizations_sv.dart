@@ -91,7 +91,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Denna åtgärd kan inte ångras. Skivor och kapbitar i detta fack tas inte bort — de förlorar bara sin tilldelade plats (slot_id kommer att peka på en post som inte finns — ett framtida rensningssteg om det behövs).';
+      'Denna åtgärd kan inte ångras. Skivor och kapbitar i detta fack arkiveras (tas inte bort) — deras historik förblir synlig.';
 
   @override
   String get fillDimensionsCorrectly => 'Fyll i måtten korrekt.';
@@ -427,4 +427,13 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Denna åtgärd kan inte ångras. Alla hyllor och platser i detta lager kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Ta bort hyllstället ”$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Denna åtgärd kan inte ångras. Alla fack i detta hyllställ kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig.';
 }

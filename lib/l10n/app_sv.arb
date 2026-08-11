@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Arkivera denna skiva?",
   "archiveOffcutQuestion": "Arkivera denna kapbit?",
   "historyStaysVisible": "Historiken (Ledger) förblir synlig.",
-  "deleteSlotWarning": "Denna åtgärd kan inte ångras. Skivor och kapbitar i detta fack tas inte bort — de förlorar bara sin tilldelade plats (slot_id kommer att peka på en post som inte finns — ett framtida rensningssteg om det behövs).",
+  "deleteSlotWarning": "Denna åtgärd kan inte ångras. Skivor och kapbitar i detta fack arkiveras (tas inte bort) — deras historik förblir synlig.",
   "fillDimensionsCorrectly": "Fyll i måtten korrekt.",
   "noDecorsInCatalog": "Inga dekorer i katalogen — lägg till minst en.",
   "noOtherSlotInRack": "Inget annat fack i detta hyllställ.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Ta bort lagret ”{name}”?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Denna åtgärd kan inte ångras. Alla hyllor och platser i detta lager kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig."
+  "deleteWarehouseWarning": "Denna åtgärd kan inte ångras. Alla hyllor och platser i detta lager kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig.",
+  "deleteRackQuestion": "Ta bort hyllstället ”{name}”?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Denna åtgärd kan inte ångras. Alla fack i detta hyllställ kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig."
 }

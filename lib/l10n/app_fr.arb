@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Archiver ce panneau ?",
   "archiveOffcutQuestion": "Archiver cette chute ?",
   "historyStaysVisible": "L'historique (Ledger) restera visible.",
-  "deleteSlotWarning": "Cette action est irréversible. Les panneaux et chutes affectés à cet emplacement ne seront pas supprimés — ils perdront simplement leur emplacement assigné (slot_id pointera vers un enregistrement inexistant — une étape de nettoyage future si nécessaire).",
+  "deleteSlotWarning": "Cette action est irréversible. Les panneaux et chutes de cet emplacement seront archivés (non supprimés) — leur historique reste visible.",
   "fillDimensionsCorrectly": "Veuillez renseigner correctement les dimensions.",
   "noDecorsInCatalog": "Aucun décor dans le catalogue — ajoutez-en au moins un.",
   "noOtherSlotInRack": "Aucun autre emplacement dans ce rayonnage.",
@@ -191,5 +191,8 @@
   "@aiQueryWasteAreaLabel": { "placeholders": { "value": { "type": "String" } } },
   "deleteWarehouseQuestion": "Supprimer l'entrepôt « {name} » ?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Cette action est irréversible. Tous les racks et emplacements de cet entrepôt seront supprimés. Les plaques et chutes qu'ils contiennent seront archivées (non supprimées) — leur historique reste visible."
+  "deleteWarehouseWarning": "Cette action est irréversible. Tous les racks et emplacements de cet entrepôt seront supprimés. Les plaques et chutes qu'ils contiennent seront archivées (non supprimées) — leur historique reste visible.",
+  "deleteRackQuestion": "Supprimer le rayonnage « {name} » ?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Cette action est irréversible. Tous les emplacements de ce rayonnage seront supprimés. Les plaques et chutes qu'ils contiennent seront archivées (non supprimées) — leur historique reste visible."
 }

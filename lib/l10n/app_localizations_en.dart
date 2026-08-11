@@ -91,7 +91,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'This action cannot be undone. Boards and offcuts assigned to this slot will not be deleted — they will just lose their assigned location (slot_id will point to a non-existent record — a future cleanup step, if ever needed).';
+      'This action cannot be undone. Boards and offcuts in this slot will be archived (not deleted) — their history remains visible.';
 
   @override
   String get fillDimensionsCorrectly =>
@@ -428,4 +428,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'This action cannot be undone. All racks and slots in this warehouse will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Delete rack \"$name\"?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'This action cannot be undone. All slots in this rack will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible.';
 }

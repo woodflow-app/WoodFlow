@@ -91,7 +91,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Tega dejanja ni mogoče razveljaviti. Plošče in odrezki, dodeljeni temu predalu, ne bodo izbrisani — samo izgubili bodo dodeljeno lokacijo (slot_id bo kazal na neobstoječ zapis — prihodnji korak čiščenja, če bo potreben).';
+      'Tega dejanja ni mogoče razveljaviti. Plošče in odrezki v tem predalu bodo arhivirani (ne izbrisani) — njihova zgodovina ostane vidna.';
 
   @override
   String get fillDimensionsCorrectly => 'Pravilno izpolnite dimenzije.';
@@ -426,4 +426,13 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Tega dejanja ni mogoče razveljaviti. Vse police in mesta v tem skladišču bodo izbrisani. Plošče in odrezki na njih bodo arhivirani (ne izbrisani) — njihova zgodovina ostane vidna.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Izbrisati regal „$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Tega dejanja ni mogoče razveljaviti. Vsi predali na tem regalu bodo izbrisani. Plošče in odrezki na njih bodo arhivirani (ne izbrisani) — njihova zgodovina ostane vidna.';
 }

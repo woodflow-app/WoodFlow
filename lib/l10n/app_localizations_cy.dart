@@ -92,7 +92,7 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Ni ellir dad-wneud y weithred hon. Ni fydd paneli a thoriadau sydd wedi\'u neilltuo i\'r slot hwn yn cael eu dileu — dim ond yn colli eu lleoliad neilltuedig (bydd slot_id yn pwyntio at gofnod nad yw\'n bodoli — cam glanhau yn y dyfodol os bydd angen).';
+      'Ni ellir dad-wneud y weithred hon. Bydd paneli a thoriadau yn y slot yma yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.';
 
   @override
   String get fillDimensionsCorrectly => 'Llenwch y dimensiynau yn gywir.';
@@ -430,4 +430,13 @@ class AppLocalizationsCy extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Ni ellir dadwneud y weithred hon. Bydd pob silff a lleoliad yn y warws hon yn cael eu dileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Dileu\'r rac „$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Ni ellir dadwneud y weithred hon. Bydd pob slot ar y rac hon yn cael ei ddileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.';
 }

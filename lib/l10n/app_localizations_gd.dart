@@ -95,7 +95,7 @@ class AppLocalizationsGd extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Cha ghabh an gnìomh seo a neo-dhèanamh. Cha tèid bùird is criomagan a chaidh a shònrachadh dhan slot seo a sguabadh às — chan ann ach gun caill iad an t-àite a chaidh a shònrachadh (bidh slot_id a\' comharrachadh clàr nach eil ann — ceum glanaidh san àm ri teachd ma tha feum air).';
+      'Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid tasgladh a dhèanamh air na bùird is criomagan a tha san slot seo (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.';
 
   @override
   String get fillDimensionsCorrectly =>
@@ -436,4 +436,13 @@ class AppLocalizationsGd extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile seilf is àite san stòr seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird \'s na pìosan a th\' ann (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'A bheil thu airson an rac „$name” a sguabadh às?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile slot air an rac seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird \'s na pìosan a th\' annta (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.';
 }

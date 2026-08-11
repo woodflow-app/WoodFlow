@@ -27,7 +27,7 @@
   "archiveBoardQuestion": "Zarchiwizować płytę?",
   "archiveOffcutQuestion": "Zarchiwizować ścinek?",
   "historyStaysVisible": "Historia (Ledger) pozostanie widoczna.",
-  "deleteSlotWarning": "Ta operacja jest nieodwracalna. Płyty i ścinki przypisane do tej półki nie zostaną usunięte, tylko stracą przypisaną lokalizację (slot_id wskaże na nieistniejący rekord — kolejny krok porządkowy, gdy zajdzie taka potrzeba).",
+  "deleteSlotWarning": "Ta operacja jest nieodwracalna. Płyty i ścinki w tej półce zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.",
   "fillDimensionsCorrectly": "Uzupełnij wymiary poprawnie.",
   "noDecorsInCatalog": "Brak dekorów w katalogu — dodaj przynajmniej jeden.",
   "noOtherSlotInRack": "Brak innej półki w tym regale.",
@@ -220,5 +220,8 @@
   },
   "deleteWarehouseQuestion": "Usunąć magazyn „{name}”?",
   "@deleteWarehouseQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteWarehouseWarning": "Ta operacja jest nieodwracalna. Wszystkie regały i półki w tym magazynie zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna."
+  "deleteWarehouseWarning": "Ta operacja jest nieodwracalna. Wszystkie regały i półki w tym magazynie zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.",
+  "deleteRackQuestion": "Usunąć regał „{name}”?",
+  "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
+  "deleteRackWarning": "Ta operacja jest nieodwracalna. Wszystkie półki w tym regale zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna."
 }

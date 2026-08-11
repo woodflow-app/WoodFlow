@@ -91,7 +91,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Tuto akci nelze vrátit zpět. Desky a odřezky přiřazené k této pozici nebudou smazány — pouze ztratí přiřazené umístění (slot_id bude odkazovat na neexistující záznam — budoucí úklidový krok, pokud bude potřeba).';
+      'Tuto akci nelze vrátit zpět. Desky a odřezky v této pozici budou archivovány (ne smazány) — jejich historie zůstane viditelná.';
 
   @override
   String get fillDimensionsCorrectly => 'Vyplňte rozměry správně.';
@@ -427,4 +427,13 @@ class AppLocalizationsCs extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Tuto akci nelze vrátit zpět. Všechny regály a police v tomto skladu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Smazat regál „$name“?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Tuto akci nelze vrátit zpět. Všechny police v tomto regálu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná.';
 }

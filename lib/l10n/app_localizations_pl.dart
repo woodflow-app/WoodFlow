@@ -91,7 +91,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get deleteSlotWarning =>
-      'Ta operacja jest nieodwracalna. Płyty i ścinki przypisane do tej półki nie zostaną usunięte, tylko stracą przypisaną lokalizację (slot_id wskaże na nieistniejący rekord — kolejny krok porządkowy, gdy zajdzie taka potrzeba).';
+      'Ta operacja jest nieodwracalna. Płyty i ścinki w tej półce zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.';
 
   @override
   String get fillDimensionsCorrectly => 'Uzupełnij wymiary poprawnie.';
@@ -425,4 +425,13 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get deleteWarehouseWarning =>
       'Ta operacja jest nieodwracalna. Wszystkie regały i półki w tym magazynie zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.';
+
+  @override
+  String deleteRackQuestion(String name) {
+    return 'Usunąć regał „$name”?';
+  }
+
+  @override
+  String get deleteRackWarning =>
+      'Ta operacja jest nieodwracalna. Wszystkie półki w tym regale zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.';
 }

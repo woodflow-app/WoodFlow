@@ -25,6 +25,10 @@ import '../../domain/services/ai_query_engine.dart';
 import '../../domain/services/offcut_match_finder.dart';
 import '../../data/usecases/delete_warehouse_use_case_impl.dart';
 import '../../domain/usecases/delete_warehouse_use_case.dart';
+import '../../data/usecases/delete_rack_use_case_impl.dart';
+import '../../domain/usecases/delete_rack_use_case.dart';
+import '../../data/usecases/delete_slot_use_case_impl.dart';
+import '../../domain/usecases/delete_slot_use_case.dart';
 import '../../data/labels/pdf_label_generator.dart';
 import '../../data/export/pdf_export_generator.dart';
 import '../../data/export/csv_export_generator.dart';
@@ -99,6 +103,20 @@ Future<void> setupServiceLocator() async {
   // on DeleteWarehouseUseCase's class doc comment) ---
   sl.registerLazySingleton<DeleteWarehouseUseCase>(
     () => DeleteWarehouseUseCaseImpl(
+      sl<DatabaseService>(),
+      sl<AppLogger>(),
+      sl<EventPublisher>(),
+    ),
+  );
+  sl.registerLazySingleton<DeleteRackUseCase>(
+    () => DeleteRackUseCaseImpl(
+      sl<DatabaseService>(),
+      sl<AppLogger>(),
+      sl<EventPublisher>(),
+    ),
+  );
+  sl.registerLazySingleton<DeleteSlotUseCase>(
+    () => DeleteSlotUseCaseImpl(
       sl<DatabaseService>(),
       sl<AppLogger>(),
       sl<EventPublisher>(),
