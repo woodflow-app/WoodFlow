@@ -745,6 +745,18 @@ eventually be scheduled.
   `CutOptimizationEngine` never proposes a non-guillotine (interior-cut)
   placement — this is now a hard correctness constraint, not a
   preference to spot-check.
+- **Independent geometric re-validation test, for the already-existing
+  requirement in Sections 2 and 8:** given a persisted `CutPlacement`
+  that would not actually fit its assigned source once kerf is
+  accounted for, execution must reject it — independent of, and
+  regardless of, what `CutOptimizationEngine` originally proposed.
+  This tests the "never trust the proposer's own math as the only
+  check" guarantee (Section 8), already required by Section 2's
+  Validation subsection — this row only documents that existing
+  requirement in Section 9's own testing strategy for the first time;
+  distinct from the Guillotine-validity tests above, which test the
+  *proposer's* correctness rather than a second, independent check at
+  execution time.
 - **Edge-case testing:** zero-fit, exact-fit-zero-waste,
   kerf-consumes-remaining-space, mismatched decor/thickness correctly
   rejected, concurrent-execution race.
@@ -759,7 +771,10 @@ eventually be scheduled.
   — this feature must extend `OffcutMatchFinder`'s usage, not alter
   its contract; **a persisted `CuttingJob` is fully reconstructable
   after an app restart**, not just within the same in-memory session —
-  a concrete, testable consequence of Open Question 2's resolution.
+  a concrete, testable consequence of Open Question 2's resolution; and
+  **`arb_consistency_test.dart` continues to pass** with every new l10n
+  key this feature introduces present and consistent across all 21
+  languages (Ch. 21.1), the same bar Krok 14 held itself to.
 
 ---
 
