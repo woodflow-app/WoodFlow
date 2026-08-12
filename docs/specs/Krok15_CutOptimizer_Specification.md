@@ -599,6 +599,99 @@ isn't silently assumed to scale forever.
 | **QR** | Optional safety check: scanning a Board's QR to confirm it's the one about to be cut, before execution — reuses the existing scan-resolves-to-entity pattern (Ch. 11). Not required for v1. |
 | **Existing workflows** | `cutFromBoard()` (already exists on `OffcutRepository`) is the primitive `ExecuteCuttingPlanUseCase` orchestrates repeatedly within one transaction — Cut Optimizer does not replace it, it composes it, the same relationship `DeleteWarehouseUseCase` has to the plain repository `archive()`/`delete()` methods it wraps. |
 
+### Output & Machine Integration (Printer / Saw)
+
+**What Stage 1 actually needs for output:** the core Stage 1 requirement
+is that an operator can see and correctly follow the proposed cutting
+plan at a real saw. That requirement is satisfied by a standardized,
+human-readable cutting plan — something the operator reads or prints —
+not by the app controlling a machine directly.
+
+**Why standardized PDF / human-readable output satisfies the core
+requirement:** every workflow this spec describes (Section 3's
+Optimization Results screen, Section 6's placement/waste output) ends
+in information a human reviews and then physically executes on
+existing equipment. A PDF cutting sheet carries that same information
+in a form that's printable, shareable, and archivable, with no
+dependency on any specific saw's capabilities.
+
+**Why output generation belongs to the existing `ExportGenerator`
+pattern:** `ExportGenerator` (Ch. 14) is already this app's generic
+content-generation abstraction — interface + `get_it`-registered
+implementations (`export_pdf`/`export_csv`/`export_rtf`),
+`presentation/` never importing a concrete generator directly. A
+cutting-plan/cutting-sheet document is content in a target format —
+exactly what `ExportGenerator` already exists to produce (Export row,
+above; Section 10 Phase F). This analysis introduces no new
+content-generation abstraction.
+
+**The correct role and boundary of `PrinterService`:** `PrinterService`
+is a transport-layer abstraction — it sends an already-generated
+document to physical hardware (Bluetooth/Wi-Fi/USB), the same
+interface+`get_it` shape as `LabelGenerator`/`ExportGenerator`. Full,
+authoritative record: `docs/adr/printer-integration.md` (also Ch.
+20.7, Ch. 24.2, and the Decision Log, Ch. 25) — not restated here.
+`PrinterService` remains scoped to label printing (Krok 7.3) today,
+has never been implemented, and this analysis does not make it a
+dependency of Cut Optimizer. Cut Optimizer output should be routed
+through `PrinterService` only if and when that output is literally
+being sent as a printable document to a physical printer. The app's
+existing `Printing.layoutPdf()` OS-native print-dialog integration
+(already used in `slot_detail_screen.dart`) is a separate,
+already-available "print this PDF" path that needs no new
+abstraction for this feature.
+
+**Generic output vs. manufacturer-specific integration (Level 0–3):**
+
+| Level | Description | Stage 1 status |
+|---|---|---|
+| 0 | Standardized, human-readable cutting-plan PDF (extends `ExportGenerator`, Ch. 14) | The only level Stage 1's core workflow needs. Not yet scheduled — Phase F, Section 10, unchanged by this analysis |
+| 1 | Manufacturer-neutral, machine-importable export format | Future capability, not Stage 1. Still content generation — would extend `ExportGenerator` (Ch. 14) the same way `export_pdf`/`export_csv`/`export_rtf` do today, not a new abstraction. No requirement established yet; what's needed is product justification and scheduling, not new architecture |
+| 2 | Manufacturer-specific export formats/protocols (e.g. a Homag- or Biesse-specific file) | Out of scope for Stage 1. Not assumed, not researched. If ever pursued, sits behind a generic abstraction — same extensibility pattern as `ExportGenerator`'s three format implementations and the per-manufacturer decor-catalog precedent (Ch. 12/20.7/24.3) — never embedded in `CutOptimizationEngine` |
+| 3 | Direct machine communication/control | Out of scope for Stage 1 and not planned. No manufacturer protocols, APIs, or machine capabilities are assumed or invented anywhere in this spec |
+
+**Consequences of not making direct machine integration part of Step
+15:**
+- *Product:* the operator still gets the full value this spec promises
+  — a correct, minimal-waste cutting plan — executed manually on
+  existing equipment, consistent with Section 6's stated equipment
+  assumption ("the app produces a plan for a human to follow, not
+  machine-control output").
+- *Technical:* no new hardware-protocol layer, no new manufacturer
+  dependency, no G-code or machine-specific format generation — the
+  whole feature stays inside already-proven patterns
+  (`ExportGenerator`, pure domain services).
+- *Maintenance:* no added maintenance burden from hardware/protocol
+  support; the only generation surface stays a PDF, already maintained
+  under Ch. 14.
+- *Scope:* Step 15 stays a software-only, Stage 1/FREE-tier feature —
+  consistent with Ch. 1/26's Stage 1 roadmap framing and the
+  printer-integration ADR's own principle that printing/machine output
+  is always optional, never a dependency.
+
+**What would require separate future technical research** (explicitly
+not undertaken here — no protocols, APIs, formats, or machine
+capabilities are invented): whether a genuine Level 1
+manufacturer-neutral machine-importable format is ever justified by
+real customer demand; which specific manufacturers (Homag, Biesse,
+SCM, Morbidelli, Scheer, Stefani, or others) would need Level 2
+support, and what their actual import formats/protocols are; whether
+Level 3 direct communication is ever in scope for any future Stage.
+None of this is assumed, scheduled, or designed by this document.
+
+**Dependency / Open Question created by this analysis:** none. This
+subsection records an already-completed analysis and its conclusion
+(Level 0 sufficient for Stage 1; Level 1 a future `ExportGenerator`-pattern
+extension if ever product-justified; Levels 2–3 out of scope, requiring
+separate future research into undocumented manufacturer protocols if
+ever pursued) — it is a scope/architecture
+record, not an unresolved product decision, and it does not affect
+Open Questions 1–7 (Section 11), which concern the optimization
+algorithm and data model, not output/machine integration. The Export
+row's existing "still not required for v1" status is unchanged; Phase
+F (Section 10) remains where a cutting-sheet PDF export would
+eventually be scheduled.
+
 ---
 
 ## 8. Risks
