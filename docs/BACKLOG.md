@@ -282,3 +282,54 @@ learned adjustments exist too).
 - Does not apply to Krok 14 — its answers are direct data lookups with no
   "decision" to explain (the answer *is* the explanation: "you asked for X,
   here is X").
+
+---
+
+## Smart Slot Recommendation
+
+**Priority:** Medium
+
+**Problem it solves:** When placing a new Board or Offcut into a Slot, the
+operator has no assistance today deciding *where* — every Rack/Slot in a
+Warehouse looks the same to the app, so the current picker offers no signal
+about which location would actually make sense (grouping the same decor
+together, favoring slots with available capacity, and similar). This is a
+different problem from Krok 14's AI query engine, which only answers
+"where is X *already*" — nothing today helps decide where something *new*
+should go.
+
+**Expected user value:** When adding a Board/Offcut to a Slot, the system
+suggests one or more candidate Slots based on existing warehouse data — but
+the suggestion is always advisory, never a decision made for the operator:
+- The operator can accept, reject, or override the recommended slot at any
+  time.
+- If the recommended slot is no longer available by the time the operator
+  acts on it, the system offers **"Find another location"** — it never
+  silently substitutes a different slot or forces the original
+  recommendation through.
+- The recommendation never forces or automatically executes a warehouse
+  operation on its own — it only ever proposes; the operator's own
+  confirmation is what actually places material, the same as every other
+  create/move flow already in the app.
+- The recommendation is advisory only, end to end — the operator remains in
+  control of the final placement at every step.
+
+**Dependencies:** None on unbuilt features — could be built entirely on top
+of Stage 1's existing Warehouse/Rack/Slot/Board/Offcut entities and
+repositories. Would likely reuse the same "search existing data, propose,
+let the operator decide" shape already established by Krok 14's
+`OffcutMatchFinder` and the Cut Optimizer's own propose-never-auto-execute
+pattern (`docs/specs/Krok15_CutOptimizer_Specification.md`), rather than
+inventing a new interaction model.
+
+**Acceptance criteria (future):**
+- The operator can accept, reject, or override the recommended slot at any
+  time before confirming placement.
+- If the recommended slot becomes unavailable, the system offers "Find
+  another location" — it never silently substitutes or forces a different
+  slot.
+- The recommendation never forces or automatically executes a warehouse
+  operation — placement always requires explicit operator confirmation,
+  matching every other create/move flow in the app.
+- The recommendation is advisory only; declining it entirely (manual slot
+  selection) remains fully supported and is never degraded.
