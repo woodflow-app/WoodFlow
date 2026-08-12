@@ -520,8 +520,8 @@ leftover region, persisted as a `CutPlacement` row with a `null`
   the summary total, never persisted as stock.
 `exceedsUsefulThreshold` is evaluated and recorded at planning time,
 but the threshold itself could still change before execution — an
-explicit, named consequence of Open Question 4 remaining open,
-carried into Section 8's risk list rather than papered over.
+explicit, named consequence of Open Question 4 remaining open, not
+yet reflected as its own row in Section 8's risk list.
 
 ### What assumptions are being made about the cutting equipment
 
