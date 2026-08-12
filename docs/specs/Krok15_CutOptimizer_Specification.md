@@ -792,7 +792,7 @@ is a distinct unit of work from the atomic execution use case.
 
 | Phase | Scope | Outcome | Dependencies | Validation checklist |
 |---|---|---|---|---|
-| **A** | Data model entities + pure, guillotine-only `CutOptimizationEngine`, unit tests only | A fully tested, standalone optimization engine, callable from a test harness, touching no UI or database | None beyond existing `OffcutMatchFinder`/`BoardRepository` | Unit tests green; algorithm produces valid, guillotine-only (non-overlapping, in-bounds, no interior cuts) placements against a hand-checked fixture set |
+| **A** | Data model entities + pure, guillotine-only `CutOptimizationEngine`, unit tests only | A fully tested, standalone optimization engine, callable from a test harness, touching no UI or database | **Resolution of Open Question 4** (minimum-useful-offcut threshold) — Phase A cannot begin until this is formally resolved, per Product Owner decision (Section 11); otherwise none beyond existing `OffcutMatchFinder`/`BoardRepository` | Unit tests green; algorithm produces valid, guillotine-only (non-overlapping, in-bounds, no interior cuts) placements against a hand-checked fixture set |
 | **B** *(new)* | `v9` migration (`cutting_jobs`, `cutting_piece_requests`, `cut_placements`) + `CuttingJobRepository(Impl)`, repository and migration tests | A working persistence layer for cutting jobs and computed layouts, independent of execution | Phase A (needs the entities it's persisting) | Migration test green (`PRAGMA table_info`); repository tests green covering the full status lifecycle |
 | **C** | `ExecuteCuttingPlanUseCase(Impl)` + integration tests, including stale-plan and independent geometric re-validation (Section 9) | A persisted, `planned` job reliably becomes real, atomic Board/Offcut/Ledger changes, or fails cleanly if stale or no longer geometrically valid | Phase A + B | Integration tests green; matches the existing atomic-use-case verification bar (Ch. 23.3) |
 | **D** | Presentation: Cutting List, Results, Confirmation screens, now with save/resume, `WF*` components only | A working, on-device-testable feature, minus its permanent navigation entry point | Phase A + B + C | On-device manual QA (this project's established `adb`-driven pattern); full 21-language l10n (Ch. 21.1) |
@@ -906,7 +906,13 @@ explicit go-ahead per Chapter 23.
    execution, the threshold used at planning time and the threshold
    in effect at execution time could disagree if this ever becomes a
    mutable setting — a new reason to eventually resolve this
-   cleanly, not a resolution of it now.
+   cleanly, not a resolution of it now. **Product Owner decision
+   (sequencing only — does not resolve the question above):** Phase A
+   must not begin until this question is formally resolved. This is a
+   deliberate choice to avoid introducing any unapproved interim
+   default or placeholder value for `exceedsUsefulThreshold` into
+   Phase A's `CutOptimizationEngine` or data model — the question
+   above remains exactly as open as stated.
 5. **Does Cut Optimizer need its own Command Hub module slot** (a
    7th, where Ch. 5.2 currently names six), **or should it ship
    through an interim entry point** decoupled from Chapter 5's own
@@ -959,8 +965,10 @@ instruction this update itself is not a green light for Phase 2.
 algorithm approach (Sections 4, 5, 6) as directionally sound and now
 fully specified against decisions 1–2. Questions 3 and 7 carry
 concrete planning notes (defaults) for whenever they're eventually
-addressed, but remain unresolved. Questions 4–6 affect later phases
-(C onward in the revised plan) and don't need to block Phase A's
-eventual start once you separately approve moving to Phase 2.
+addressed, but remain unresolved. **Question 4 now blocks Phase A itself**, per Product Owner decision
+(Section 11) — Phase A cannot begin until it is formally resolved.
+Questions 5–6 affect later phases (C onward in the revised plan) and
+don't need to block Phase A's eventual start once you separately
+approve moving to Phase 2.
 
 Waiting for your review.
