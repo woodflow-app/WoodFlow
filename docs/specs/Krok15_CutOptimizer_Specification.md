@@ -880,7 +880,7 @@ named trade-off.
    future discussion stays traceable to the same item.
 2. **`CuttingJob` and its optimization results are persisted.** Must
    survive leaving the screen and support later review, export, and
-   integration — reconciled throughout Sections 2, 4, 5, 7, 8, 9, 10
+   integration — reconciled throughout Sections 2, 4, 5, 6, 7, 8, 9, 10
    above. Same numbering-stability reasoning as item 1.
 
 **Both approvals are answers to these two questions only — not
