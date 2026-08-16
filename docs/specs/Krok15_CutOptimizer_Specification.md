@@ -10,7 +10,10 @@ Phase 2 work begins.
 (guillotine cutting only) and 2 (`CuttingJob` persisted) — see Section
 11. Every section below has been reconciled against those two
 decisions. **This is still not approval to begin implementation** —
-Open Questions 3–7 remain open, and no Phase 2 work has started.
+Open Questions 3–7 remain open, and no Phase 2 work has started. The
+Product Owner has also decided (Section 11) that Phase A specifically
+cannot begin until Open Question 4 is resolved — a sequencing
+decision, not a resolution of that question.
 
 **Location note:** this is the first Phase 1 spec filed under
 `docs/specs/` — no existing Handbook chapter or archived document
