@@ -959,8 +959,12 @@ Questions 1 and 2 — the two that determined the algorithm's and data
 model's fundamental shape — are now resolved (Section 11). This
 removes the specific blocker that previously stood in front of Phase
 A starting *once approved*, but it does not, on its own, constitute
-that approval. Open Questions 3–7 remain, and per your explicit
-instruction this update itself is not a green light for Phase 2.
+that approval. Open Questions 3, 5, 6, and 7 remain without
+individually blocking Phase A; **Open Question 4 additionally now
+blocks Phase A itself, per Product Owner decision (Strategy D,
+Section 11)** — even once Phase 2 is separately approved, Phase A
+cannot begin until Open Question 4 is resolved. Per your explicit
+instruction, this update itself is not a green light for Phase 2.
 
 **Recommendation:** approve the architecture, data model, and
 algorithm approach (Sections 4, 5, 6) as directionally sound and now
