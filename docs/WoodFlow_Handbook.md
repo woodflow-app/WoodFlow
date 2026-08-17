@@ -1323,6 +1323,7 @@ archive — ADRs remain their own permanent record type).
 | Illustration style | Procedural blueprint/CAD `CustomPainter` line art (Ch. 6.1) | Hand-illustrated pictorial scenes | No illustration-asset pipeline exists; blueprints' own schematic simplicity matches what code-drawn paths can do well |
 | Navigation | WoodFlow Command Hub (overlay portrait, rail landscape/tablet) (Ch. 5) | Radial menu; persistent bottom dock; hiding Scan inside a menu | Radial/dock don't match a drill-down hierarchy or this app's own reference brands; Scan is too high-frequency to bury |
 | Dark mode | Required (Ch. 7) | Light-only, deferred indefinitely | Explicit product requirement; `WF*` components already theme-driven, low marginal cost |
+| Cut Optimizer (Krok 15) cutting-sheet export | Deferred to Phase F — not in current v1/Stage 1 scope; general inventory Export (Krok 10, Ch. 14) unaffected, stays in v1/FREE as already implemented | Pulling cutting-sheet export into current v1 scope | Confirms the Krok 15 spec's existing Phase F deferral (`docs/specs/Krok15_CutOptimizer_Specification.md` §7/8/10) as the actual decision, not just a planning note; v1's core workflow is already satisfied by on-screen plan review; avoids expanding current v1/Stage 1 scope |
 
 ---
 
