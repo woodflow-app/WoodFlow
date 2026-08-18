@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach seilf agus áit sa stóras seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil.",
   "deleteRackQuestion": "Scrios an raca „{name}”?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach sliotán sa raca seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil."
+  "deleteRackWarning": "Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach sliotán sa raca seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil.",
+
+  "decorCatalogBreadcrumb": "Stóras",
+  "decorCatalogTitle": "Catalóg maisiúcháin",
+  "decorCatalogSearchHint": "Cuardaigh de réir cóid nó ainm…",
+  "decorFilterAll": "Uile",
+  "decorFilterBoard": "Cláir",
+  "decorFilterWorktop": "Dromchlaí oibre",
+  "decorFilterEdging": "Imill",
+  "decorTypeBoard": "Clár",
+  "decorTypeWorktop": "Dromchla oibre",
+  "decorTypeEdging": "Imeall",
+  "decorEmptyNoData": "Níl aon mhaisiúcháin sa bhunachar sonraí",
+  "decorEmptyNoResults": "Níl aon mhaisiúchán a mheaitseálann le “{query}”",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Bain triail eile as",
+  "decorApproxColorLabel": "dath garbh",
+  "decorSeeRealPhoto": "Féach ar ghrianghraf an mhaisiúcháin",
+  "decorImageSourceNote": "osclaíonn sé suíomh oifigiúil {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Níl aon nasc íomhá don mhaisiúchán seo",
+  "decorFailedToOpenLinkSnackbar": "Níorbh fhéidir an nasc a oscailt"
 }

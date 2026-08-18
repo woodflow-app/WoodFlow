@@ -8,6 +8,7 @@ import 'v5_add_boards.dart';
 import 'v6_add_offcuts.dart';
 import 'v7_seed_egger_decors.dart';
 import 'v8_add_decor_minimum_stock.dart';
+import 'v10_full_migration_fixed.dart';
 
 /// A single migration step. Each version bump gets one implementation
 /// of this in its own file.
@@ -29,7 +30,10 @@ class MigrationRunner {
     V6AddOffcutsMigration(),
     V7SeedEggerDecorsMigration(),
     V8AddDecorMinimumStockMigration(),
-    // V9... ← next migration goes here, in order
+    // V9 is reserved for Krok 15's v9_add_cutting_jobs.dart (Cut
+    // Optimizer, docs/specs/Krok15_CutOptimizer_Specification.md
+    // lines 295, 445-446) — not implemented yet, do not use v9 here.
+    V10RestructureAndSeedDecorsMigration(),
   ];
 
   static Future<void> run(Database db, int fromVersion, int toVersion) async {

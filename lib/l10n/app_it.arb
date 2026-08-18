@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Questa operazione è irreversibile. Tutti gli scaffali e i ripiani di questo magazzino verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile.",
   "deleteRackQuestion": "Eliminare lo scaffale «{name}»?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Questa operazione è irreversibile. Tutti i vani di questo scaffale verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile."
+  "deleteRackWarning": "Questa operazione è irreversibile. Tutti i vani di questo scaffale verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile.",
+
+  "decorCatalogBreadcrumb": "Magazzino",
+  "decorCatalogTitle": "Catalogo dei decorativi",
+  "decorCatalogSearchHint": "Cerca per codice o nome…",
+  "decorFilterAll": "Tutti",
+  "decorFilterBoard": "Pannelli",
+  "decorFilterWorktop": "Piani di lavoro",
+  "decorFilterEdging": "Bordature",
+  "decorTypeBoard": "Pannello",
+  "decorTypeWorktop": "Piano di lavoro",
+  "decorTypeEdging": "Bordatura",
+  "decorEmptyNoData": "Nessun decorativo nel database",
+  "decorEmptyNoResults": "Nessun decorativo corrisponde a «{query}»",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Riprova",
+  "decorApproxColorLabel": "colore approssimativo",
+  "decorSeeRealPhoto": "Visualizza la foto del decorativo",
+  "decorImageSourceNote": "apre il sito ufficiale di {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Nessun link all’immagine per questo decorativo",
+  "decorFailedToOpenLinkSnackbar": "Impossibile aprire il link"
 }

@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Šo darbību nevar atsaukt. Visi plaukti un vietas šajā noliktavā tiks dzēsti. Tajos esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.",
   "deleteRackQuestion": "Dzēst plauktu „{name}”?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Šo darbību nevar atsaukt. Visas nišas šajā plauktā tiks dzēstas. Tajās esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama."
+  "deleteRackWarning": "Šo darbību nevar atsaukt. Visas nišas šajā plauktā tiks dzēstas. Tajās esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.",
+
+  "decorCatalogBreadcrumb": "Noliktava",
+  "decorCatalogTitle": "Dekoru katalogs",
+  "decorCatalogSearchHint": "Meklēt pēc koda vai nosaukuma…",
+  "decorFilterAll": "Visi",
+  "decorFilterBoard": "Plāksnes",
+  "decorFilterWorktop": "Darba virsmas",
+  "decorFilterEdging": "Malu lentes",
+  "decorTypeBoard": "Plāksne",
+  "decorTypeWorktop": "Darba virsma",
+  "decorTypeEdging": "Malu lente",
+  "decorEmptyNoData": "Datu bāzē nav dekoru",
+  "decorEmptyNoResults": "Nav dekoru, kas atbilst vaicājumam „{query}“",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Mēģināt vēlreiz",
+  "decorApproxColorLabel": "aptuvenā krāsa",
+  "decorSeeRealPhoto": "Skatīt dekora fotoattēlu",
+  "decorImageSourceNote": "atver {domain} oficiālo vietni",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Šim dekoram nav attēla saites",
+  "decorFailedToOpenLinkSnackbar": "Neizdevās atvērt saiti"
 }

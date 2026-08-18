@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile seilf is àite san stòr seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird 's na pìosan a th' ann (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.",
   "deleteRackQuestion": "A bheil thu airson an rac „{name}” a sguabadh às?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile slot air an rac seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird 's na pìosan a th' annta (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn."
+  "deleteRackWarning": "Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile slot air an rac seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird 's na pìosan a th' annta (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.",
+
+  "decorCatalogBreadcrumb": "Taigh-stòir",
+  "decorCatalogTitle": "Catalog sgeadachaidh",
+  "decorCatalogSearchHint": "Lorg a rèir còd no ainm…",
+  "decorFilterAll": "Uile",
+  "decorFilterBoard": "Bùird",
+  "decorFilterWorktop": "Uachdaran-obrach",
+  "decorFilterEdging": "Oirean",
+  "decorTypeBoard": "Bòrd",
+  "decorTypeWorktop": "Uachdar-obrach",
+  "decorTypeEdging": "Oir",
+  "decorEmptyNoData": "Chan eil sgeadachaidhean san stòr-dàta",
+  "decorEmptyNoResults": "Chan eil sgeadachadh sam bith a’ maidseadh ri “{query}”",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Feuch a-rithist",
+  "decorApproxColorLabel": "dath tuairmseach",
+  "decorSeeRealPhoto": "Seall dealbh den sgeadachadh",
+  "decorImageSourceNote": "fosglaidh e làrach-lìn oifigeil {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Chan eil ceangal ìomhaigh ann airson an sgeadachaidh seo",
+  "decorFailedToOpenLinkSnackbar": "Cha b’ urrainn dhuinn an ceangal fhosgladh"
 }

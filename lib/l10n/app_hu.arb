@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Ez a művelet nem vonható vissza. A raktárban lévő összes állvány és polc törlődik. Az azokon lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.",
   "deleteRackQuestion": "Törli a(z) „{name}” állványt?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Ez a művelet nem vonható vissza. Az állványon lévő összes rekesz törlődik. Az azokban lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak."
+  "deleteRackWarning": "Ez a művelet nem vonható vissza. Az állványon lévő összes rekesz törlődik. Az azokban lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.",
+
+  "decorCatalogBreadcrumb": "Raktár",
+  "decorCatalogTitle": "Dekorkatalógus",
+  "decorCatalogSearchHint": "Keresés kód vagy név alapján…",
+  "decorFilterAll": "Összes",
+  "decorFilterBoard": "Lemezek",
+  "decorFilterWorktop": "Munkalapok",
+  "decorFilterEdging": "Élzárók",
+  "decorTypeBoard": "Lemez",
+  "decorTypeWorktop": "Munkalap",
+  "decorTypeEdging": "Élzáró",
+  "decorEmptyNoData": "Nincsenek dekorok az adatbázisban",
+  "decorEmptyNoResults": "Nincs a keresésnek megfelelő dekor: „{query}”",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Próbáld újra",
+  "decorApproxColorLabel": "hozzávetőleges szín",
+  "decorSeeRealPhoto": "Dekorfotó megtekintése",
+  "decorImageSourceNote": "megnyitja a(z) {domain} hivatalos webhelyét",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Ehhez a dekorhoz nincs képlink",
+  "decorFailedToOpenLinkSnackbar": "A hivatkozás nem nyitható meg"
 }

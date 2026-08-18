@@ -8,12 +8,14 @@ import '../../data/repositories/rack_repository_impl.dart';
 import '../../data/repositories/slot_repository_impl.dart';
 import '../../data/repositories/board_repository_impl.dart';
 import '../../data/repositories/decor_repository_impl.dart';
+import '../../data/repositories/decor_catalog_repository_impl.dart';
 import '../../data/repositories/offcut_repository_impl.dart';
 import '../../domain/repositories/warehouse_repository.dart';
 import '../../domain/repositories/rack_repository.dart';
 import '../../domain/repositories/slot_repository.dart';
 import '../../domain/repositories/board_repository.dart';
 import '../../domain/repositories/decor_repository.dart';
+import '../../domain/repositories/decor_catalog_repository.dart';
 import '../../domain/repositories/offcut_repository.dart';
 import '../../domain/services/qr_resolver.dart';
 import '../../domain/services/label_generator.dart';
@@ -77,6 +79,9 @@ Future<void> setupServiceLocator() async {
   );
   sl.registerLazySingleton<DecorRepository>(
     () => DecorRepositoryImpl(sl<DatabaseService>(), sl<AppLogger>()),
+  );
+  sl.registerLazySingleton<DecorCatalogRepository>(
+    () => DecorCatalogRepositoryImpl(sl<DatabaseService>(), sl<AppLogger>()),
   );
   sl.registerLazySingleton<BoardRepository>(
     () => BoardRepositoryImpl(
