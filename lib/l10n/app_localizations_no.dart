@@ -437,4 +437,62 @@ class AppLocalizationsNo extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Denne handlingen kan ikke angres. Alle plasser på denne reolen vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Lager';
+
+  @override
+  String get decorCatalogTitle => 'Dekorkatalog';
+
+  @override
+  String get decorCatalogSearchHint => 'Søk etter kode eller navn…';
+
+  @override
+  String get decorFilterAll => 'Alle';
+
+  @override
+  String get decorFilterBoard => 'Plater';
+
+  @override
+  String get decorFilterWorktop => 'Benkeplater';
+
+  @override
+  String get decorFilterEdging => 'Kantbånd';
+
+  @override
+  String get decorTypeBoard => 'Plate';
+
+  @override
+  String get decorTypeWorktop => 'Benkeplate';
+
+  @override
+  String get decorTypeEdging => 'Kantbånd';
+
+  @override
+  String get decorEmptyNoData => 'Ingen dekorer i databasen';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Ingen dekorer samsvarer med «$query»';
+  }
+
+  @override
+  String get decorRetry => 'Prøv igjen';
+
+  @override
+  String get decorApproxColorLabel => 'omtrentlig farge';
+
+  @override
+  String get decorSeeRealPhoto => 'Se bilde av dekoren';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'åpner det offisielle nettstedet til $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Ingen bildelenke for denne dekoren';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Kunne ikke åpne lenken';
 }

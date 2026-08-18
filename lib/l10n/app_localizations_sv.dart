@@ -436,4 +436,62 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Denna åtgärd kan inte ångras. Alla fack i detta hyllställ kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Lager';
+
+  @override
+  String get decorCatalogTitle => 'Dekorkatalog';
+
+  @override
+  String get decorCatalogSearchHint => 'Sök efter kod eller namn…';
+
+  @override
+  String get decorFilterAll => 'Alla';
+
+  @override
+  String get decorFilterBoard => 'Skivor';
+
+  @override
+  String get decorFilterWorktop => 'Bänkskivor';
+
+  @override
+  String get decorFilterEdging => 'Kantband';
+
+  @override
+  String get decorTypeBoard => 'Skiva';
+
+  @override
+  String get decorTypeWorktop => 'Bänkskiva';
+
+  @override
+  String get decorTypeEdging => 'Kantband';
+
+  @override
+  String get decorEmptyNoData => 'Inga dekorer i databasen';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Inga dekorer som matchar ”$query”';
+  }
+
+  @override
+  String get decorRetry => 'Försök igen';
+
+  @override
+  String get decorApproxColorLabel => 'ungefärlig färg';
+
+  @override
+  String get decorSeeRealPhoto => 'Visa foto av dekoren';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'öppnar den officiella webbplatsen för $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Ingen bildlänk för denna dekor';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Det gick inte att öppna länken';
 }

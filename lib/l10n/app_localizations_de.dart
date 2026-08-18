@@ -440,4 +440,63 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Fächer in diesem Regal werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Lager';
+
+  @override
+  String get decorCatalogTitle => 'Dekorkatalog';
+
+  @override
+  String get decorCatalogSearchHint => 'Nach Code oder Name suchen…';
+
+  @override
+  String get decorFilterAll => 'Alle';
+
+  @override
+  String get decorFilterBoard => 'Platten';
+
+  @override
+  String get decorFilterWorktop => 'Arbeitsplatten';
+
+  @override
+  String get decorFilterEdging => 'Kanten';
+
+  @override
+  String get decorTypeBoard => 'Platte';
+
+  @override
+  String get decorTypeWorktop => 'Arbeitsplatte';
+
+  @override
+  String get decorTypeEdging => 'Kante';
+
+  @override
+  String get decorEmptyNoData => 'Keine Dekore in der Datenbank';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Keine Dekore passend zu „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Erneut versuchen';
+
+  @override
+  String get decorApproxColorLabel => 'ungefähre Farbdarstellung';
+
+  @override
+  String get decorSeeRealPhoto => 'Originalfoto ansehen';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'öffnet die offizielle Website $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Kein Bildlink für dieses Dekor';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar =>
+      'Der Link konnte nicht geöffnet werden';
 }

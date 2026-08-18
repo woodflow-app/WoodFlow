@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Tuto akci nelze vrátit zpět. Všechny regály a police v tomto skladu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná.",
   "deleteRackQuestion": "Smazat regál „{name}“?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Tuto akci nelze vrátit zpět. Všechny police v tomto regálu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná."
+  "deleteRackWarning": "Tuto akci nelze vrátit zpět. Všechny police v tomto regálu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná.",
+
+  "decorCatalogBreadcrumb": "Sklad",
+  "decorCatalogTitle": "Katalog dekorů",
+  "decorCatalogSearchHint": "Hledat kód nebo název…",
+  "decorFilterAll": "Vše",
+  "decorFilterBoard": "Desky",
+  "decorFilterWorktop": "Pracovní desky",
+  "decorFilterEdging": "Hrany",
+  "decorTypeBoard": "Deska",
+  "decorTypeWorktop": "Pracovní deska",
+  "decorTypeEdging": "Hrana",
+  "decorEmptyNoData": "V databázi nejsou žádné dekory",
+  "decorEmptyNoResults": "Žádné dekory neodpovídají „{query}“",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Zkusit znovu",
+  "decorApproxColorLabel": "orientační barva",
+  "decorSeeRealPhoto": "Zobrazit fotografii dekoru",
+  "decorImageSourceNote": "otevře oficiální web {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Pro tento dekor není odkaz na obrázek",
+  "decorFailedToOpenLinkSnackbar": "Odkaz se nepodařilo otevřít"
 }

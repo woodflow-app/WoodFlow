@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Tega dejanja ni mogoče razveljaviti. Vse police in mesta v tem skladišču bodo izbrisani. Plošče in odrezki na njih bodo arhivirani (ne izbrisani) — njihova zgodovina ostane vidna.",
   "deleteRackQuestion": "Izbrisati regal „{name}”?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Tega dejanja ni mogoče razveljaviti. Vsi predali na tem regalu bodo izbrisani. Plošče in odrezki na njih bodo arhivirani (ne izbrisani) — njihova zgodovina ostane vidna."
+  "deleteRackWarning": "Tega dejanja ni mogoče razveljaviti. Vsi predali na tem regalu bodo izbrisani. Plošče in odrezki na njih bodo arhivirani (ne izbrisani) — njihova zgodovina ostane vidna.",
+
+  "decorCatalogBreadcrumb": "Skladišče",
+  "decorCatalogTitle": "Katalog dekorjev",
+  "decorCatalogSearchHint": "Išči po kodi ali imenu…",
+  "decorFilterAll": "Vse",
+  "decorFilterBoard": "Plošče",
+  "decorFilterWorktop": "Delovne plošče",
+  "decorFilterEdging": "Robni trakovi",
+  "decorTypeBoard": "Plošča",
+  "decorTypeWorktop": "Delovna plošča",
+  "decorTypeEdging": "Robni trak",
+  "decorEmptyNoData": "V zbirki podatkov ni dekorjev",
+  "decorEmptyNoResults": "Noben dekor ne ustreza iskanju »{query}«",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Poskusi znova",
+  "decorApproxColorLabel": "približna barva",
+  "decorSeeRealPhoto": "Oglej si fotografijo dekorja",
+  "decorImageSourceNote": "odpre uradno spletno mesto {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Za ta dekor ni povezave do slike",
+  "decorFailedToOpenLinkSnackbar": "Povezave ni bilo mogoče odpreti"
 }

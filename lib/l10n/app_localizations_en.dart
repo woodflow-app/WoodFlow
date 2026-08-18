@@ -437,4 +437,62 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'This action cannot be undone. All slots in this rack will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Warehouse';
+
+  @override
+  String get decorCatalogTitle => 'Decor Catalogue';
+
+  @override
+  String get decorCatalogSearchHint => 'Search code or name…';
+
+  @override
+  String get decorFilterAll => 'All';
+
+  @override
+  String get decorFilterBoard => 'Boards';
+
+  @override
+  String get decorFilterWorktop => 'Worktops';
+
+  @override
+  String get decorFilterEdging => 'Edging';
+
+  @override
+  String get decorTypeBoard => 'Board';
+
+  @override
+  String get decorTypeWorktop => 'Worktop';
+
+  @override
+  String get decorTypeEdging => 'Edging';
+
+  @override
+  String get decorEmptyNoData => 'No decors in the database';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'No decors matching “$query”';
+  }
+
+  @override
+  String get decorRetry => 'Try again';
+
+  @override
+  String get decorApproxColorLabel => 'approximate colour';
+
+  @override
+  String get decorSeeRealPhoto => 'View actual photo';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'opens the official $domain website';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'No image link for this decor';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Couldn’t open the link';
 }

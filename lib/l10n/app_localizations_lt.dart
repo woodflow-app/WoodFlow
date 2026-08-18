@@ -437,4 +437,63 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Šio veiksmo nebus galima anuliuoti. Visos šio stelažo ląstelės bus ištrintos. Jose esančios plokštės ir atraižos bus archyvuotos (neištrintos) — jų istorija liks matoma.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Sandėlis';
+
+  @override
+  String get decorCatalogTitle => 'Dekorų katalogas';
+
+  @override
+  String get decorCatalogSearchHint => 'Ieškoti pagal kodą arba pavadinimą…';
+
+  @override
+  String get decorFilterAll => 'Visi';
+
+  @override
+  String get decorFilterBoard => 'Plokštės';
+
+  @override
+  String get decorFilterWorktop => 'Stalviršiai';
+
+  @override
+  String get decorFilterEdging => 'Briaunos';
+
+  @override
+  String get decorTypeBoard => 'Plokštė';
+
+  @override
+  String get decorTypeWorktop => 'Stalviršis';
+
+  @override
+  String get decorTypeEdging => 'Briauna';
+
+  @override
+  String get decorEmptyNoData => 'Duomenų bazėje nėra dekorų';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Nėra dekorų, atitinkančių „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Bandykite dar kartą';
+
+  @override
+  String get decorApproxColorLabel => 'apytikslė spalva';
+
+  @override
+  String get decorSeeRealPhoto => 'Peržiūrėti dekoro nuotrauką';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'atidaro oficialią $domain svetainę';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Šiam dekorui nėra paveikslėlio nuorodos';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Nepavyko atidaryti nuorodos';
 }

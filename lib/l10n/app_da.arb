@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Denne handling kan ikke fortrydes. Alle reoler og pladser i dette lager slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig.",
   "deleteRackQuestion": "Slet reol „{name}”?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Denne handling kan ikke fortrydes. Alle pladser på denne reol slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig."
+  "deleteRackWarning": "Denne handling kan ikke fortrydes. Alle pladser på denne reol slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig.",
+
+  "decorCatalogBreadcrumb": "Lager",
+  "decorCatalogTitle": "Dekorkatalog",
+  "decorCatalogSearchHint": "Søg efter kode eller navn…",
+  "decorFilterAll": "Alle",
+  "decorFilterBoard": "Plader",
+  "decorFilterWorktop": "Bordplader",
+  "decorFilterEdging": "Kantbånd",
+  "decorTypeBoard": "Plade",
+  "decorTypeWorktop": "Bordplade",
+  "decorTypeEdging": "Kantbånd",
+  "decorEmptyNoData": "Ingen dekorer i databasen",
+  "decorEmptyNoResults": "Ingen dekorer matcher „{query}“",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Prøv igen",
+  "decorApproxColorLabel": "omtrentlig farve",
+  "decorSeeRealPhoto": "Se foto af dekoren",
+  "decorImageSourceNote": "åbner det officielle websted for {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Intet billedlink til denne dekor",
+  "decorFailedToOpenLinkSnackbar": "Linket kunne ikke åbnes"
 }

@@ -45,6 +45,10 @@ dependencies:
   csv: ^8.0.0
   share_plus: ^13.3.0
 
+  # Katalog dekorów — otwiera oficjalną stronę producenta ze zdjęciem
+  # (DecorCatalogScreen); nie przechowujemy/nie redystrybuujemy zdjęć.
+  url_launcher: ^6.3.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

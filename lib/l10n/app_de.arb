@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Regale und Fächer in diesem Lager werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.",
   "deleteRackQuestion": "Regal „{name}“ löschen?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Fächer in diesem Regal werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar."
+  "deleteRackWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Alle Fächer in diesem Regal werden gelöscht. Platten und Verschnitt darin werden archiviert (nicht gelöscht) — die Historie bleibt sichtbar.",
+
+  "decorCatalogBreadcrumb": "Lager",
+  "decorCatalogTitle": "Dekorkatalog",
+  "decorCatalogSearchHint": "Nach Code oder Name suchen…",
+  "decorFilterAll": "Alle",
+  "decorFilterBoard": "Platten",
+  "decorFilterWorktop": "Arbeitsplatten",
+  "decorFilterEdging": "Kanten",
+  "decorTypeBoard": "Platte",
+  "decorTypeWorktop": "Arbeitsplatte",
+  "decorTypeEdging": "Kante",
+  "decorEmptyNoData": "Keine Dekore in der Datenbank",
+  "decorEmptyNoResults": "Keine Dekore passend zu „{query}“",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Erneut versuchen",
+  "decorApproxColorLabel": "ungefähre Farbdarstellung",
+  "decorSeeRealPhoto": "Originalfoto ansehen",
+  "decorImageSourceNote": "öffnet die offizielle Website {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Kein Bildlink für dieses Dekor",
+  "decorFailedToOpenLinkSnackbar": "Der Link konnte nicht geöffnet werden"
 }

@@ -445,4 +445,64 @@ class AppLocalizationsGd extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Cha ghabh an gnìomh seo a neo-dhèanamh. Thèid a h-uile slot air an rac seo a sguabadh às. Thèid tasgladh a dhèanamh air na bùird \'s na pìosan a th\' annta (chan ann gan sguabadh às) — fuirichidh an eachdraidh rim faicinn.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Taigh-stòir';
+
+  @override
+  String get decorCatalogTitle => 'Catalog sgeadachaidh';
+
+  @override
+  String get decorCatalogSearchHint => 'Lorg a rèir còd no ainm…';
+
+  @override
+  String get decorFilterAll => 'Uile';
+
+  @override
+  String get decorFilterBoard => 'Bùird';
+
+  @override
+  String get decorFilterWorktop => 'Uachdaran-obrach';
+
+  @override
+  String get decorFilterEdging => 'Oirean';
+
+  @override
+  String get decorTypeBoard => 'Bòrd';
+
+  @override
+  String get decorTypeWorktop => 'Uachdar-obrach';
+
+  @override
+  String get decorTypeEdging => 'Oir';
+
+  @override
+  String get decorEmptyNoData => 'Chan eil sgeadachaidhean san stòr-dàta';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Chan eil sgeadachadh sam bith a’ maidseadh ri “$query”';
+  }
+
+  @override
+  String get decorRetry => 'Feuch a-rithist';
+
+  @override
+  String get decorApproxColorLabel => 'dath tuairmseach';
+
+  @override
+  String get decorSeeRealPhoto => 'Seall dealbh den sgeadachadh';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'fosglaidh e làrach-lìn oifigeil $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Chan eil ceangal ìomhaigh ann airson an sgeadachaidh seo';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar =>
+      'Cha b’ urrainn dhuinn an ceangal fhosgladh';
 }

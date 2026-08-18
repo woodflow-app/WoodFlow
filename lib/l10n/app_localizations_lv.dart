@@ -436,4 +436,62 @@ class AppLocalizationsLv extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Šo darbību nevar atsaukt. Visas nišas šajā plauktā tiks dzēstas. Tajās esošās plāksnes un atgriezumi tiks arhivēti (nevis dzēsti) — to vēsture paliks redzama.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Noliktava';
+
+  @override
+  String get decorCatalogTitle => 'Dekoru katalogs';
+
+  @override
+  String get decorCatalogSearchHint => 'Meklēt pēc koda vai nosaukuma…';
+
+  @override
+  String get decorFilterAll => 'Visi';
+
+  @override
+  String get decorFilterBoard => 'Plāksnes';
+
+  @override
+  String get decorFilterWorktop => 'Darba virsmas';
+
+  @override
+  String get decorFilterEdging => 'Malu lentes';
+
+  @override
+  String get decorTypeBoard => 'Plāksne';
+
+  @override
+  String get decorTypeWorktop => 'Darba virsma';
+
+  @override
+  String get decorTypeEdging => 'Malu lente';
+
+  @override
+  String get decorEmptyNoData => 'Datu bāzē nav dekoru';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Nav dekoru, kas atbilst vaicājumam „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Mēģināt vēlreiz';
+
+  @override
+  String get decorApproxColorLabel => 'aptuvenā krāsa';
+
+  @override
+  String get decorSeeRealPhoto => 'Skatīt dekora fotoattēlu';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'atver $domain oficiālo vietni';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Šim dekoram nav attēla saites';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Neizdevās atvērt saiti';
 }

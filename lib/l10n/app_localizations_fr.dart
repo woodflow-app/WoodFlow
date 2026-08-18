@@ -438,4 +438,62 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Cette action est irréversible. Tous les emplacements de ce rayonnage seront supprimés. Les plaques et chutes qu\'ils contiennent seront archivées (non supprimées) — leur historique reste visible.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Entrepôt';
+
+  @override
+  String get decorCatalogTitle => 'Catalogue des décors';
+
+  @override
+  String get decorCatalogSearchHint => 'Rechercher un code ou un nom…';
+
+  @override
+  String get decorFilterAll => 'Tous';
+
+  @override
+  String get decorFilterBoard => 'Panneaux';
+
+  @override
+  String get decorFilterWorktop => 'Plans de travail';
+
+  @override
+  String get decorFilterEdging => 'Chants';
+
+  @override
+  String get decorTypeBoard => 'Panneau';
+
+  @override
+  String get decorTypeWorktop => 'Plan de travail';
+
+  @override
+  String get decorTypeEdging => 'Chant';
+
+  @override
+  String get decorEmptyNoData => 'Aucun décor dans la base de données';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Aucun décor correspondant à « $query »';
+  }
+
+  @override
+  String get decorRetry => 'Réessayer';
+
+  @override
+  String get decorApproxColorLabel => 'couleur approximative';
+
+  @override
+  String get decorSeeRealPhoto => 'Voir la photo du décor';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'ouvre le site officiel de $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Aucun lien d’image pour ce décor';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Impossible d’ouvrir le lien';
 }

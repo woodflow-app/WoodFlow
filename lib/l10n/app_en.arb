@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "This action cannot be undone. All racks and slots in this warehouse will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible.",
   "deleteRackQuestion": "Delete rack \"{name}\"?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "This action cannot be undone. All slots in this rack will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible."
+  "deleteRackWarning": "This action cannot be undone. All slots in this rack will be deleted. Boards and offcuts inside them will be archived (not deleted) — their history remains visible.",
+
+  "decorCatalogBreadcrumb": "Warehouse",
+  "decorCatalogTitle": "Decor Catalogue",
+  "decorCatalogSearchHint": "Search code or name…",
+  "decorFilterAll": "All",
+  "decorFilterBoard": "Boards",
+  "decorFilterWorktop": "Worktops",
+  "decorFilterEdging": "Edging",
+  "decorTypeBoard": "Board",
+  "decorTypeWorktop": "Worktop",
+  "decorTypeEdging": "Edging",
+  "decorEmptyNoData": "No decors in the database",
+  "decorEmptyNoResults": "No decors matching “{query}”",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Try again",
+  "decorApproxColorLabel": "approximate colour",
+  "decorSeeRealPhoto": "View actual photo",
+  "decorImageSourceNote": "opens the official {domain} website",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "No image link for this decor",
+  "decorFailedToOpenLinkSnackbar": "Couldn’t open the link"
 }

@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Это действие необратимо. Все стеллажи и полки этого склада будут удалены. Плиты и обрезки на них будут заархивированы (не удалены) — их история останется видимой.",
   "deleteRackQuestion": "Удалить стеллаж «{name}»?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Это действие необратимо. Все ячейки этого стеллажа будут удалены. Плиты и обрезки на них будут заархивированы (не удалены) — их история останется видимой."
+  "deleteRackWarning": "Это действие необратимо. Все ячейки этого стеллажа будут удалены. Плиты и обрезки на них будут заархивированы (не удалены) — их история останется видимой.",
+
+  "decorCatalogBreadcrumb": "Склад",
+  "decorCatalogTitle": "Каталог декоров",
+  "decorCatalogSearchHint": "Поиск по коду или названию…",
+  "decorFilterAll": "Все",
+  "decorFilterBoard": "Плиты",
+  "decorFilterWorktop": "Столешницы",
+  "decorFilterEdging": "Кромка",
+  "decorTypeBoard": "Плита",
+  "decorTypeWorktop": "Столешница",
+  "decorTypeEdging": "Кромка",
+  "decorEmptyNoData": "В базе данных нет декоров",
+  "decorEmptyNoResults": "Нет декоров, соответствующих «{query}»",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Повторить попытку",
+  "decorApproxColorLabel": "приблизительный цвет",
+  "decorSeeRealPhoto": "Посмотреть фото декора",
+  "decorImageSourceNote": "открывает официальный сайт {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Нет ссылки на изображение этого декора",
+  "decorFailedToOpenLinkSnackbar": "Не удалось открыть ссылку"
 }

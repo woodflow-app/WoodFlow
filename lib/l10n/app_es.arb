@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Esta acción no se puede deshacer. Se eliminarán todas las estanterías y ubicaciones de este almacén. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible.",
   "deleteRackQuestion": "¿Eliminar la estantería «{name}»?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Esta acción no se puede deshacer. Se eliminarán todos los huecos de esta estantería. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible."
+  "deleteRackWarning": "Esta acción no se puede deshacer. Se eliminarán todos los huecos de esta estantería. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible.",
+
+  "decorCatalogBreadcrumb": "Almacén",
+  "decorCatalogTitle": "Catálogo de decorativos",
+  "decorCatalogSearchHint": "Buscar por código o nombre…",
+  "decorFilterAll": "Todos",
+  "decorFilterBoard": "Tableros",
+  "decorFilterWorktop": "Encimeras",
+  "decorFilterEdging": "Cantos",
+  "decorTypeBoard": "Tablero",
+  "decorTypeWorktop": "Encimera",
+  "decorTypeEdging": "Canto",
+  "decorEmptyNoData": "No hay decorativos en la base de datos",
+  "decorEmptyNoResults": "Ningún decorativo coincide con «{query}»",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Intentar de nuevo",
+  "decorApproxColorLabel": "color aproximado",
+  "decorSeeRealPhoto": "Ver la foto del decorativo",
+  "decorImageSourceNote": "abre el sitio web oficial de {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "No hay enlace de imagen para este decorativo",
+  "decorFailedToOpenLinkSnackbar": "No se pudo abrir el enlace"
 }

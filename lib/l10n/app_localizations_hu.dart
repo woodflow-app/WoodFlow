@@ -438,4 +438,62 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Ez a művelet nem vonható vissza. Az állványon lévő összes rekesz törlődik. Az azokban lévő lapok és hulladékdarabok archiválásra kerülnek (nem törlődnek) — előzményeik láthatók maradnak.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Raktár';
+
+  @override
+  String get decorCatalogTitle => 'Dekorkatalógus';
+
+  @override
+  String get decorCatalogSearchHint => 'Keresés kód vagy név alapján…';
+
+  @override
+  String get decorFilterAll => 'Összes';
+
+  @override
+  String get decorFilterBoard => 'Lemezek';
+
+  @override
+  String get decorFilterWorktop => 'Munkalapok';
+
+  @override
+  String get decorFilterEdging => 'Élzárók';
+
+  @override
+  String get decorTypeBoard => 'Lemez';
+
+  @override
+  String get decorTypeWorktop => 'Munkalap';
+
+  @override
+  String get decorTypeEdging => 'Élzáró';
+
+  @override
+  String get decorEmptyNoData => 'Nincsenek dekorok az adatbázisban';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Nincs a keresésnek megfelelő dekor: „$query”';
+  }
+
+  @override
+  String get decorRetry => 'Próbáld újra';
+
+  @override
+  String get decorApproxColorLabel => 'hozzávetőleges szín';
+
+  @override
+  String get decorSeeRealPhoto => 'Dekorfotó megtekintése';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'megnyitja a(z) $domain hivatalos webhelyét';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Ehhez a dekorhoz nincs képlink';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'A hivatkozás nem nyitható meg';
 }

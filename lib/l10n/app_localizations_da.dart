@@ -437,4 +437,62 @@ class AppLocalizationsDa extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Denne handling kan ikke fortrydes. Alle pladser på denne reol slettes. Plader og afskær i dem arkiveres (slettes ikke) — deres historik forbliver synlig.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Lager';
+
+  @override
+  String get decorCatalogTitle => 'Dekorkatalog';
+
+  @override
+  String get decorCatalogSearchHint => 'Søg efter kode eller navn…';
+
+  @override
+  String get decorFilterAll => 'Alle';
+
+  @override
+  String get decorFilterBoard => 'Plader';
+
+  @override
+  String get decorFilterWorktop => 'Bordplader';
+
+  @override
+  String get decorFilterEdging => 'Kantbånd';
+
+  @override
+  String get decorTypeBoard => 'Plade';
+
+  @override
+  String get decorTypeWorktop => 'Bordplade';
+
+  @override
+  String get decorTypeEdging => 'Kantbånd';
+
+  @override
+  String get decorEmptyNoData => 'Ingen dekorer i databasen';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Ingen dekorer matcher „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Prøv igen';
+
+  @override
+  String get decorApproxColorLabel => 'omtrentlig farve';
+
+  @override
+  String get decorSeeRealPhoto => 'Se foto af dekoren';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'åbner det officielle websted for $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Intet billedlink til denne dekor';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Linket kunne ikke åbnes';
 }

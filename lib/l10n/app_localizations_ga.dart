@@ -437,4 +437,64 @@ class AppLocalizationsGa extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Ní féidir an gníomh seo a chur ar ceal. Scriosfar gach sliotán sa raca seo. Cuirfear cartlann ar na plancanna agus an fuíoll iontu (ní scriosfar iad) — fanfaidh a stair le feiceáil.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Stóras';
+
+  @override
+  String get decorCatalogTitle => 'Catalóg maisiúcháin';
+
+  @override
+  String get decorCatalogSearchHint => 'Cuardaigh de réir cóid nó ainm…';
+
+  @override
+  String get decorFilterAll => 'Uile';
+
+  @override
+  String get decorFilterBoard => 'Cláir';
+
+  @override
+  String get decorFilterWorktop => 'Dromchlaí oibre';
+
+  @override
+  String get decorFilterEdging => 'Imill';
+
+  @override
+  String get decorTypeBoard => 'Clár';
+
+  @override
+  String get decorTypeWorktop => 'Dromchla oibre';
+
+  @override
+  String get decorTypeEdging => 'Imeall';
+
+  @override
+  String get decorEmptyNoData => 'Níl aon mhaisiúcháin sa bhunachar sonraí';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Níl aon mhaisiúchán a mheaitseálann le “$query”';
+  }
+
+  @override
+  String get decorRetry => 'Bain triail eile as';
+
+  @override
+  String get decorApproxColorLabel => 'dath garbh';
+
+  @override
+  String get decorSeeRealPhoto => 'Féach ar ghrianghraf an mhaisiúcháin';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'osclaíonn sé suíomh oifigiúil $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Níl aon nasc íomhá don mhaisiúchán seo';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar =>
+      'Níorbh fhéidir an nasc a oscailt';
 }

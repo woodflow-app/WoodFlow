@@ -903,6 +903,114 @@ abstract class AppLocalizations {
   /// In pl, this message translates to:
   /// **'Ta operacja jest nieodwracalna. Wszystkie półki w tym regale zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.'**
   String get deleteRackWarning;
+
+  /// No description provided for @decorCatalogBreadcrumb.
+  ///
+  /// In pl, this message translates to:
+  /// **'Magazyn'**
+  String get decorCatalogBreadcrumb;
+
+  /// No description provided for @decorCatalogTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Katalog dekorów'**
+  String get decorCatalogTitle;
+
+  /// No description provided for @decorCatalogSearchHint.
+  ///
+  /// In pl, this message translates to:
+  /// **'Szukaj kodu lub nazwy…'**
+  String get decorCatalogSearchHint;
+
+  /// No description provided for @decorFilterAll.
+  ///
+  /// In pl, this message translates to:
+  /// **'Wszystkie'**
+  String get decorFilterAll;
+
+  /// No description provided for @decorFilterBoard.
+  ///
+  /// In pl, this message translates to:
+  /// **'Płyty'**
+  String get decorFilterBoard;
+
+  /// No description provided for @decorFilterWorktop.
+  ///
+  /// In pl, this message translates to:
+  /// **'Blaty'**
+  String get decorFilterWorktop;
+
+  /// No description provided for @decorFilterEdging.
+  ///
+  /// In pl, this message translates to:
+  /// **'Obrzeża'**
+  String get decorFilterEdging;
+
+  /// No description provided for @decorTypeBoard.
+  ///
+  /// In pl, this message translates to:
+  /// **'Płyta'**
+  String get decorTypeBoard;
+
+  /// No description provided for @decorTypeWorktop.
+  ///
+  /// In pl, this message translates to:
+  /// **'Blat'**
+  String get decorTypeWorktop;
+
+  /// No description provided for @decorTypeEdging.
+  ///
+  /// In pl, this message translates to:
+  /// **'Obrzeże'**
+  String get decorTypeEdging;
+
+  /// No description provided for @decorEmptyNoData.
+  ///
+  /// In pl, this message translates to:
+  /// **'Brak dekorów w bazie danych'**
+  String get decorEmptyNoData;
+
+  /// No description provided for @decorEmptyNoResults.
+  ///
+  /// In pl, this message translates to:
+  /// **'Brak dekorów pasujących do „{query}”'**
+  String decorEmptyNoResults(String query);
+
+  /// No description provided for @decorRetry.
+  ///
+  /// In pl, this message translates to:
+  /// **'Spróbuj ponownie'**
+  String get decorRetry;
+
+  /// No description provided for @decorApproxColorLabel.
+  ///
+  /// In pl, this message translates to:
+  /// **'kolor przybliżony'**
+  String get decorApproxColorLabel;
+
+  /// No description provided for @decorSeeRealPhoto.
+  ///
+  /// In pl, this message translates to:
+  /// **'Zobacz zdjęcie dekoru'**
+  String get decorSeeRealPhoto;
+
+  /// No description provided for @decorImageSourceNote.
+  ///
+  /// In pl, this message translates to:
+  /// **'otwiera oficjalną stronę {domain}'**
+  String decorImageSourceNote(String domain);
+
+  /// No description provided for @decorNoImageLinkSnackbar.
+  ///
+  /// In pl, this message translates to:
+  /// **'Brak linku do zdjęcia tego dekoru'**
+  String get decorNoImageLinkSnackbar;
+
+  /// No description provided for @decorFailedToOpenLinkSnackbar.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nie udało się otworzyć linku'**
+  String get decorFailedToOpenLinkSnackbar;
 }
 
 class _AppLocalizationsDelegate

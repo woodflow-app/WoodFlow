@@ -438,4 +438,63 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Esta acción no se puede deshacer. Se eliminarán todos los huecos de esta estantería. Los tableros y recortes que contienen se archivarán (no se eliminarán); su historial seguirá visible.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Almacén';
+
+  @override
+  String get decorCatalogTitle => 'Catálogo de decorativos';
+
+  @override
+  String get decorCatalogSearchHint => 'Buscar por código o nombre…';
+
+  @override
+  String get decorFilterAll => 'Todos';
+
+  @override
+  String get decorFilterBoard => 'Tableros';
+
+  @override
+  String get decorFilterWorktop => 'Encimeras';
+
+  @override
+  String get decorFilterEdging => 'Cantos';
+
+  @override
+  String get decorTypeBoard => 'Tablero';
+
+  @override
+  String get decorTypeWorktop => 'Encimera';
+
+  @override
+  String get decorTypeEdging => 'Canto';
+
+  @override
+  String get decorEmptyNoData => 'No hay decorativos en la base de datos';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Ningún decorativo coincide con «$query»';
+  }
+
+  @override
+  String get decorRetry => 'Intentar de nuevo';
+
+  @override
+  String get decorApproxColorLabel => 'color aproximado';
+
+  @override
+  String get decorSeeRealPhoto => 'Ver la foto del decorativo';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'abre el sitio web oficial de $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'No hay enlace de imagen para este decorativo';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'No se pudo abrir el enlace';
 }

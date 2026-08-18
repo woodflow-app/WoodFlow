@@ -436,4 +436,63 @@ class AppLocalizationsCs extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Tuto akci nelze vrátit zpět. Všechny police v tomto regálu budou smazány. Desky a odřezky v nich budou archivovány (ne smazány) — jejich historie zůstane viditelná.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Sklad';
+
+  @override
+  String get decorCatalogTitle => 'Katalog dekorů';
+
+  @override
+  String get decorCatalogSearchHint => 'Hledat kód nebo název…';
+
+  @override
+  String get decorFilterAll => 'Vše';
+
+  @override
+  String get decorFilterBoard => 'Desky';
+
+  @override
+  String get decorFilterWorktop => 'Pracovní desky';
+
+  @override
+  String get decorFilterEdging => 'Hrany';
+
+  @override
+  String get decorTypeBoard => 'Deska';
+
+  @override
+  String get decorTypeWorktop => 'Pracovní deska';
+
+  @override
+  String get decorTypeEdging => 'Hrana';
+
+  @override
+  String get decorEmptyNoData => 'V databázi nejsou žádné dekory';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Žádné dekory neodpovídají „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Zkusit znovu';
+
+  @override
+  String get decorApproxColorLabel => 'orientační barva';
+
+  @override
+  String get decorSeeRealPhoto => 'Zobrazit fotografii dekoru';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'otevře oficiální web $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Pro tento dekor není odkaz na obrázek';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Odkaz se nepodařilo otevřít';
 }

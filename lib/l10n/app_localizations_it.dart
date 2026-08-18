@@ -439,4 +439,63 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Questa operazione è irreversibile. Tutti i vani di questo scaffale verranno eliminati. I pannelli e i ritagli al loro interno verranno archiviati (non eliminati) — la cronologia rimane visibile.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Magazzino';
+
+  @override
+  String get decorCatalogTitle => 'Catalogo dei decorativi';
+
+  @override
+  String get decorCatalogSearchHint => 'Cerca per codice o nome…';
+
+  @override
+  String get decorFilterAll => 'Tutti';
+
+  @override
+  String get decorFilterBoard => 'Pannelli';
+
+  @override
+  String get decorFilterWorktop => 'Piani di lavoro';
+
+  @override
+  String get decorFilterEdging => 'Bordature';
+
+  @override
+  String get decorTypeBoard => 'Pannello';
+
+  @override
+  String get decorTypeWorktop => 'Piano di lavoro';
+
+  @override
+  String get decorTypeEdging => 'Bordatura';
+
+  @override
+  String get decorEmptyNoData => 'Nessun decorativo nel database';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Nessun decorativo corrisponde a «$query»';
+  }
+
+  @override
+  String get decorRetry => 'Riprova';
+
+  @override
+  String get decorApproxColorLabel => 'colore approssimativo';
+
+  @override
+  String get decorSeeRealPhoto => 'Visualizza la foto del decorativo';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'apre il sito ufficiale di $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Nessun link all’immagine per questo decorativo';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Impossibile aprire il link';
 }

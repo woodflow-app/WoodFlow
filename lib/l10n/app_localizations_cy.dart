@@ -439,4 +439,63 @@ class AppLocalizationsCy extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Ni ellir dadwneud y weithred hon. Bydd pob slot ar y rac hon yn cael ei ddileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Warws';
+
+  @override
+  String get decorCatalogTitle => 'Catalog addurniadau';
+
+  @override
+  String get decorCatalogSearchHint => 'Chwilio yn ôl cod neu enw…';
+
+  @override
+  String get decorFilterAll => 'Pob un';
+
+  @override
+  String get decorFilterBoard => 'Byrddau';
+
+  @override
+  String get decorFilterWorktop => 'Arwynebau gwaith';
+
+  @override
+  String get decorFilterEdging => 'Ymylon';
+
+  @override
+  String get decorTypeBoard => 'Bwrdd';
+
+  @override
+  String get decorTypeWorktop => 'Arwyneb gwaith';
+
+  @override
+  String get decorTypeEdging => 'Ymyl';
+
+  @override
+  String get decorEmptyNoData => 'Dim addurniadau yn y gronfa ddata';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Dim addurniadau sy’n cyfateb i “$query”';
+  }
+
+  @override
+  String get decorRetry => 'Ceisiwch eto';
+
+  @override
+  String get decorApproxColorLabel => 'lliw bras';
+
+  @override
+  String get decorSeeRealPhoto => 'Gweld llun o’r addurn';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'yn agor gwefan swyddogol $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Dim dolen ddelwedd ar gyfer yr addurn hwn';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Methu agor y ddolen';
 }

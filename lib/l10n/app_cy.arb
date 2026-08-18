@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Ni ellir dadwneud y weithred hon. Bydd pob silff a lleoliad yn y warws hon yn cael eu dileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.",
   "deleteRackQuestion": "Dileu'r rac „{name}”?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Ni ellir dadwneud y weithred hon. Bydd pob slot ar y rac hon yn cael ei ddileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy."
+  "deleteRackWarning": "Ni ellir dadwneud y weithred hon. Bydd pob slot ar y rac hon yn cael ei ddileu. Bydd byrddau a darnau gwastraff ynddynt yn cael eu harchifo (heb eu dileu) — bydd eu hanes yn parhau i fod yn weladwy.",
+
+  "decorCatalogBreadcrumb": "Warws",
+  "decorCatalogTitle": "Catalog addurniadau",
+  "decorCatalogSearchHint": "Chwilio yn ôl cod neu enw…",
+  "decorFilterAll": "Pob un",
+  "decorFilterBoard": "Byrddau",
+  "decorFilterWorktop": "Arwynebau gwaith",
+  "decorFilterEdging": "Ymylon",
+  "decorTypeBoard": "Bwrdd",
+  "decorTypeWorktop": "Arwyneb gwaith",
+  "decorTypeEdging": "Ymyl",
+  "decorEmptyNoData": "Dim addurniadau yn y gronfa ddata",
+  "decorEmptyNoResults": "Dim addurniadau sy’n cyfateb i “{query}”",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Ceisiwch eto",
+  "decorApproxColorLabel": "lliw bras",
+  "decorSeeRealPhoto": "Gweld llun o’r addurn",
+  "decorImageSourceNote": "yn agor gwefan swyddogol {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Dim dolen ddelwedd ar gyfer yr addurn hwn",
+  "decorFailedToOpenLinkSnackbar": "Methu agor y ddolen"
 }

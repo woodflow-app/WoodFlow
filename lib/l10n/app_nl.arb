@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle rekken en vakken in dit magazijn worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.",
   "deleteRackQuestion": "Rek „{name}” verwijderen?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle vakken in dit rek worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar."
+  "deleteRackWarning": "Deze actie kan niet ongedaan worden gemaakt. Alle vakken in dit rek worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.",
+
+  "decorCatalogBreadcrumb": "Magazijn",
+  "decorCatalogTitle": "Decorcatalogus",
+  "decorCatalogSearchHint": "Zoek op code of naam…",
+  "decorFilterAll": "Alle",
+  "decorFilterBoard": "Platen",
+  "decorFilterWorktop": "Werkbladen",
+  "decorFilterEdging": "Kantenband",
+  "decorTypeBoard": "Plaat",
+  "decorTypeWorktop": "Werkblad",
+  "decorTypeEdging": "Kantenband",
+  "decorEmptyNoData": "Geen decors in de database",
+  "decorEmptyNoResults": "Geen decors die overeenkomen met „{query}“",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Opnieuw proberen",
+  "decorApproxColorLabel": "benaderde kleur",
+  "decorSeeRealPhoto": "Bekijk de foto van het decor",
+  "decorImageSourceNote": "opent de officiële website van {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Geen afbeeldingslink voor dit decor",
+  "decorFailedToOpenLinkSnackbar": "Kan de link niet openen"
 }

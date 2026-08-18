@@ -437,4 +437,62 @@ class AppLocalizationsHr extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Ova radnja se ne može poništiti. Svi pretinci na ovom regalu bit će izbrisani. Ploče i otpaci u njima bit će arhivirani (ne izbrisani) — njihova povijest ostaje vidljiva.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Skladište';
+
+  @override
+  String get decorCatalogTitle => 'Katalog dekora';
+
+  @override
+  String get decorCatalogSearchHint => 'Pretraži po šifri ili nazivu…';
+
+  @override
+  String get decorFilterAll => 'Sve';
+
+  @override
+  String get decorFilterBoard => 'Ploče';
+
+  @override
+  String get decorFilterWorktop => 'Radne ploče';
+
+  @override
+  String get decorFilterEdging => 'Kantne trake';
+
+  @override
+  String get decorTypeBoard => 'Ploča';
+
+  @override
+  String get decorTypeWorktop => 'Radna ploča';
+
+  @override
+  String get decorTypeEdging => 'Kantna traka';
+
+  @override
+  String get decorEmptyNoData => 'Nema dekora u bazi podataka';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Nema dekora koji odgovaraju „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Pokušaj ponovno';
+
+  @override
+  String get decorApproxColorLabel => 'približna boja';
+
+  @override
+  String get decorSeeRealPhoto => 'Pogledaj fotografiju dekora';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'otvara službenu web-stranicu $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Nema poveznice na sliku ovog dekora';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Poveznicu nije moguće otvoriti';
 }

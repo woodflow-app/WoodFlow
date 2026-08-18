@@ -438,4 +438,63 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Túto akciu nemožno vrátiť späť. Všetky priehradky v tomto regáli budú odstránené. Dosky a odrezky v nich budú archivované (nie odstránené) — ich história zostane viditeľná.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Sklad';
+
+  @override
+  String get decorCatalogTitle => 'Katalóg dekorov';
+
+  @override
+  String get decorCatalogSearchHint => 'Hľadať kód alebo názov…';
+
+  @override
+  String get decorFilterAll => 'Všetky';
+
+  @override
+  String get decorFilterBoard => 'Dosky';
+
+  @override
+  String get decorFilterWorktop => 'Pracovné dosky';
+
+  @override
+  String get decorFilterEdging => 'Hrany';
+
+  @override
+  String get decorTypeBoard => 'Doska';
+
+  @override
+  String get decorTypeWorktop => 'Pracovná doska';
+
+  @override
+  String get decorTypeEdging => 'Hrana';
+
+  @override
+  String get decorEmptyNoData => 'V databáze nie sú žiadne dekory';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Žiadne dekory nezodpovedajú výrazu „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Skúsiť znova';
+
+  @override
+  String get decorApproxColorLabel => 'orientačná farba';
+
+  @override
+  String get decorSeeRealPhoto => 'Zobraziť fotografiu dekoru';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'otvorí oficiálnu webovú stránku $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Pre tento dekor nie je k dispozícii odkaz na obrázok';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Odkaz sa nepodarilo otvoriť';
 }

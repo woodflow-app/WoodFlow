@@ -434,4 +434,62 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Ta operacja jest nieodwracalna. Wszystkie półki w tym regale zostaną usunięte. Płyty i ścinki w nich zostaną zarchiwizowane (nie usunięte) — historia pozostanie widoczna.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Magazyn';
+
+  @override
+  String get decorCatalogTitle => 'Katalog dekorów';
+
+  @override
+  String get decorCatalogSearchHint => 'Szukaj kodu lub nazwy…';
+
+  @override
+  String get decorFilterAll => 'Wszystkie';
+
+  @override
+  String get decorFilterBoard => 'Płyty';
+
+  @override
+  String get decorFilterWorktop => 'Blaty';
+
+  @override
+  String get decorFilterEdging => 'Obrzeża';
+
+  @override
+  String get decorTypeBoard => 'Płyta';
+
+  @override
+  String get decorTypeWorktop => 'Blat';
+
+  @override
+  String get decorTypeEdging => 'Obrzeże';
+
+  @override
+  String get decorEmptyNoData => 'Brak dekorów w bazie danych';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Brak dekorów pasujących do „$query”';
+  }
+
+  @override
+  String get decorRetry => 'Spróbuj ponownie';
+
+  @override
+  String get decorApproxColorLabel => 'kolor przybliżony';
+
+  @override
+  String get decorSeeRealPhoto => 'Zobacz zdjęcie dekoru';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'otwiera oficjalną stronę $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Brak linku do zdjęcia tego dekoru';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Nie udało się otworzyć linku';
 }

@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Denna åtgärd kan inte ångras. Alla hyllor och platser i detta lager kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig.",
   "deleteRackQuestion": "Ta bort hyllstället ”{name}”?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Denna åtgärd kan inte ångras. Alla fack i detta hyllställ kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig."
+  "deleteRackWarning": "Denna åtgärd kan inte ångras. Alla fack i detta hyllställ kommer att tas bort. Skivor och kapbitar i dem arkiveras (tas inte bort) — deras historik förblir synlig.",
+
+  "decorCatalogBreadcrumb": "Lager",
+  "decorCatalogTitle": "Dekorkatalog",
+  "decorCatalogSearchHint": "Sök efter kod eller namn…",
+  "decorFilterAll": "Alla",
+  "decorFilterBoard": "Skivor",
+  "decorFilterWorktop": "Bänkskivor",
+  "decorFilterEdging": "Kantband",
+  "decorTypeBoard": "Skiva",
+  "decorTypeWorktop": "Bänkskiva",
+  "decorTypeEdging": "Kantband",
+  "decorEmptyNoData": "Inga dekorer i databasen",
+  "decorEmptyNoResults": "Inga dekorer som matchar ”{query}”",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Försök igen",
+  "decorApproxColorLabel": "ungefärlig färg",
+  "decorSeeRealPhoto": "Visa foto av dekoren",
+  "decorImageSourceNote": "öppnar den officiella webbplatsen för {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Ingen bildlänk för denna dekor",
+  "decorFailedToOpenLinkSnackbar": "Det gick inte att öppna länken"
 }

@@ -434,4 +434,63 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Это действие необратимо. Все ячейки этого стеллажа будут удалены. Плиты и обрезки на них будут заархивированы (не удалены) — их история останется видимой.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Склад';
+
+  @override
+  String get decorCatalogTitle => 'Каталог декоров';
+
+  @override
+  String get decorCatalogSearchHint => 'Поиск по коду или названию…';
+
+  @override
+  String get decorFilterAll => 'Все';
+
+  @override
+  String get decorFilterBoard => 'Плиты';
+
+  @override
+  String get decorFilterWorktop => 'Столешницы';
+
+  @override
+  String get decorFilterEdging => 'Кромка';
+
+  @override
+  String get decorTypeBoard => 'Плита';
+
+  @override
+  String get decorTypeWorktop => 'Столешница';
+
+  @override
+  String get decorTypeEdging => 'Кромка';
+
+  @override
+  String get decorEmptyNoData => 'В базе данных нет декоров';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Нет декоров, соответствующих «$query»';
+  }
+
+  @override
+  String get decorRetry => 'Повторить попытку';
+
+  @override
+  String get decorApproxColorLabel => 'приблизительный цвет';
+
+  @override
+  String get decorSeeRealPhoto => 'Посмотреть фото декора';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'открывает официальный сайт $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar =>
+      'Нет ссылки на изображение этого декора';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Не удалось открыть ссылку';
 }

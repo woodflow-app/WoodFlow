@@ -194,5 +194,34 @@
   "deleteWarehouseWarning": "Denne handlingen kan ikke angres. Alle reoler og plasser i dette lageret vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig.",
   "deleteRackQuestion": "Slette reolen «{name}»?",
   "@deleteRackQuestion": { "placeholders": { "name": { "type": "String" } } },
-  "deleteRackWarning": "Denne handlingen kan ikke angres. Alle plasser på denne reolen vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig."
+  "deleteRackWarning": "Denne handlingen kan ikke angres. Alle plasser på denne reolen vil bli slettet. Plater og avkapp i dem vil bli arkivert (ikke slettet) — historikken deres forblir synlig.",
+
+  "decorCatalogBreadcrumb": "Lager",
+  "decorCatalogTitle": "Dekorkatalog",
+  "decorCatalogSearchHint": "Søk etter kode eller navn…",
+  "decorFilterAll": "Alle",
+  "decorFilterBoard": "Plater",
+  "decorFilterWorktop": "Benkeplater",
+  "decorFilterEdging": "Kantbånd",
+  "decorTypeBoard": "Plate",
+  "decorTypeWorktop": "Benkeplate",
+  "decorTypeEdging": "Kantbånd",
+  "decorEmptyNoData": "Ingen dekorer i databasen",
+  "decorEmptyNoResults": "Ingen dekorer samsvarer med «{query}»",
+  "@decorEmptyNoResults": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+  "decorRetry": "Prøv igjen",
+  "decorApproxColorLabel": "omtrentlig farge",
+  "decorSeeRealPhoto": "Se bilde av dekoren",
+  "decorImageSourceNote": "åpner det offisielle nettstedet til {domain}",
+  "@decorImageSourceNote": {
+    "placeholders": {
+      "domain": { "type": "String" }
+    }
+  },
+  "decorNoImageLinkSnackbar": "Ingen bildelenke for denne dekoren",
+  "decorFailedToOpenLinkSnackbar": "Kunne ikke åpne lenken"
 }

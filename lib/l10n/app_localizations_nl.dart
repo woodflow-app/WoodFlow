@@ -437,4 +437,62 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get deleteRackWarning =>
       'Deze actie kan niet ongedaan worden gemaakt. Alle vakken in dit rek worden verwijderd. Platen en reststukken erin worden gearchiveerd (niet verwijderd) — hun geschiedenis blijft zichtbaar.';
+
+  @override
+  String get decorCatalogBreadcrumb => 'Magazijn';
+
+  @override
+  String get decorCatalogTitle => 'Decorcatalogus';
+
+  @override
+  String get decorCatalogSearchHint => 'Zoek op code of naam…';
+
+  @override
+  String get decorFilterAll => 'Alle';
+
+  @override
+  String get decorFilterBoard => 'Platen';
+
+  @override
+  String get decorFilterWorktop => 'Werkbladen';
+
+  @override
+  String get decorFilterEdging => 'Kantenband';
+
+  @override
+  String get decorTypeBoard => 'Plaat';
+
+  @override
+  String get decorTypeWorktop => 'Werkblad';
+
+  @override
+  String get decorTypeEdging => 'Kantenband';
+
+  @override
+  String get decorEmptyNoData => 'Geen decors in de database';
+
+  @override
+  String decorEmptyNoResults(String query) {
+    return 'Geen decors die overeenkomen met „$query“';
+  }
+
+  @override
+  String get decorRetry => 'Opnieuw proberen';
+
+  @override
+  String get decorApproxColorLabel => 'benaderde kleur';
+
+  @override
+  String get decorSeeRealPhoto => 'Bekijk de foto van het decor';
+
+  @override
+  String decorImageSourceNote(String domain) {
+    return 'opent de officiële website van $domain';
+  }
+
+  @override
+  String get decorNoImageLinkSnackbar => 'Geen afbeeldingslink voor dit decor';
+
+  @override
+  String get decorFailedToOpenLinkSnackbar => 'Kan de link niet openen';
 }
