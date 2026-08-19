@@ -1269,7 +1269,11 @@ and not there:
 - Claude Code (Builder) is never the independent verifier of its own
   implementation — Level 1 self-check (§23.3) and Level 2 independent
   verification (§23.8) are always different parties.
-- Claude Code remains the sole party that writes to the repository.
+- Claude Code remains the sole Builder authorized to modify project
+  files and create implementation commits. Independent reviewers may
+  use GitHub review metadata — PR comments, review threads, approve/
+  request-changes status — without any right to modify implementation
+  files or create implementation commits themselves.
 - A reviewer's conclusion is advisory; it does not itself approve or
   block — exactly as `Decision_Framework.md` already states for the
   Independent Reviewer role.
