@@ -1,14 +1,12 @@
 # WoodFlow — Product Vision & UI/UX Master Specification
 
-**Status: GOVERNING DOCUMENT, PROPOSAL SECTIONS UNAPPROVED.** Per your
-instruction, this is now the primary design authority for WoodFlow —
-future UI work follows it unless you explicitly override. That
-authority applies to the *process* (§9) and to already-approved
-material (referenced, not repeated, below) immediately. It does
-**not** retroactively approve implementation of anything still marked
-proposal in the referenced documents, or anything new in this one —
-nothing here has been implemented, and per §9, nothing will be until
-you say so explicitly.
+**Status: Historyczny / Nieaktualny — patrz `docs/WoodFlow_Handbook.md`.**
+This document was at one point treated as the governing document for
+UI decisions, before `docs/WoodFlow_Handbook.md` existed. The Handbook
+is now the single source of truth for WoodFlow and wins in case of any
+disagreement (`docs/WoodFlow_Handbook.md`, front matter). This file is
+preserved solely for its original reasoning and historical context,
+not as an alternate source of truth.
 
 This document doesn't duplicate the detailed work already done — it
 governs, consolidates, resolves open questions with your new input,

@@ -3,6 +3,12 @@
 Wszystkie istotne zmiany w projekcie są odnotowywane w tym pliku.
 Format wersji: `MAJOR.MINOR.PATCH` (np. v0.1.0).
 
+**Uwaga: SUPERSEDED.** Ten plik jest zamrożonym dokumentem opisującym
+poprzednią, przed-przebudową wersję aplikacji ("Offcut Manager") i nie
+jest już aktualizowany. Zachowany wyłącznie dla kontekstu
+historycznego. Aktualny log zmian dla obecnej architektury WoodFlow
+(Warehouse → Rack → Slot → Board/Offcut): `docs/CHANGELOG.md`.
+
 ## [0.3.0] — 2026-07-12
 
 ### Dodano

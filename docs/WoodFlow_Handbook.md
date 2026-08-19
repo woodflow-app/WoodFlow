@@ -1233,6 +1233,171 @@ New commits, not amended ones, except when explicitly requested.
 Focused, atomic commits — unrelated changes are separate commits, even
 in the same session.
 
+### 23.5 Roles in AI-assisted development
+
+`docs/project/Decision_Framework.md` defines three tool-agnostic roles
+— Product Owner, Implementation Team, Independent Reviewer — and
+deliberately does not name who or what fills them, so that changing
+tooling never requires rewriting that document. This section names
+the current WoodFlow-specific occupants, which is why it lives here
+and not there:
+
+- **Project Owner (Piotr)** — product direction, scope, priorities,
+  approvals, final acceptance. The only role that reaches CONFIRMED
+  (§23.7).
+- **ChatGPT** — strategy, architecture, Phase 1 specification/proposal
+  work, coordination, repository-based verification *where that
+  access is actually available* — this is not assumed to exist by
+  default; confirm current reach before relying on it for a given
+  review.
+- **Claude** — Independent Challenger/Reviewer: independent review of
+  specifications and diffs, evidence review, and the lightweight
+  Continuity Guardian function (§23.8). Advisory only, same as the
+  Independent Reviewer role in `Decision_Framework.md` — a review is
+  never itself an approval.
+- **Claude Code** — the sole Builder / repository writer:
+  implementation, tests, the existing §23.1–23.4 checks. Claude Code's
+  own `expert-review`/`expert-consensus` runs are Builder self-check
+  (Level 1, §23.8), not independent verification of the resulting
+  diff.
+- **GitHub `main`** — durable shared technical state and evidence base
+  once a change is pushed; not a source of authority on its own (see
+  §23.6).
+
+**Hard separations, non-negotiable:**
+- The author of an artifact is never that artifact's reviewer.
+- Claude Code (Builder) is never the independent verifier of its own
+  implementation — Level 1 self-check (§23.3) and Level 2 independent
+  verification (§23.8) are always different parties.
+- Claude Code remains the sole Builder authorized to modify project
+  files and create implementation commits. Independent reviewers may
+  use GitHub review metadata — PR comments, review threads, approve/
+  request-changes status — without any right to modify implementation
+  files or create implementation commits themselves.
+- A reviewer's conclusion is advisory; it does not itself approve or
+  block — exactly as `Decision_Framework.md` already states for the
+  Independent Reviewer role.
+- The Project Owner retains final authority over every decision this
+  section governs. Nothing here creates a second approval gate
+  alongside §23.2 — VERIFIED is a precondition for asking the Project
+  Owner to CONFIRM, never a substitute for that decision.
+
+### 23.6 Source-of-truth model
+
+Two categories, kept distinct because conflating them is how a stale
+document ends up outranking a current decision:
+
+**Normative — what SHOULD be, in priority order:**
+1. A Project Owner decision recorded durably in the repository
+2. This Handbook
+3. Active ADRs (`docs/adr/`, excluding `_archived_not_official/`) and
+   `docs/INVARIANTS.md`
+4. Current approved specifications
+
+**Factual — what IS, in priority order:**
+5. Current code on `main` at a named commit SHA, plus available
+   verification evidence
+6. Current status documentation — Chapter 26 for the Stage 1/FREE
+   roadmap status specifically; the ✅/🟡/📝/🔮 markers (see this
+   document's own front matter) for individual chapter/feature status
+7. Historical audits
+8. Archive / `_archived_not_official` material
+9. AI conversation context
+
+**Conflict rules:**
+- Handbook vs. archive/historical audit → Handbook wins.
+- Handbook vs. an active ADR → escalate to the Project Owner; do not
+  silently pick one.
+- Handbook vs. code → treated as a defect/inconsistency requiring
+  resolution, not silently resolved in either direction.
+- Status documentation vs. code → code wins on factual implementation
+  state.
+- AI memory vs. repository → repository wins, always.
+- An unrecorded chat decision → not durable project authority. Chat
+  may produce proposals, analysis, and even a Project Owner decision
+  in the moment, but any decision intended to govern future WoodFlow
+  work must be recorded in the repository — this Handbook, the
+  Decision Log (Ch. 25), or an ADR — before it becomes durable project
+  authority. This is not a claim that chat-only information "does not
+  exist"; it is a claim about what future sessions are entitled to
+  treat as settled.
+
+### 23.7 Decision lifecycle
+
+```
+PROPOSED → APPROVED → IMPLEMENTED → VERIFIED → CONFIRMED
+```
+with **REJECTED** and **SUPERSEDED** as historical/terminal states
+reachable from any point.
+
+- **PROPOSED** — an idea or specification exists.
+- **APPROVED** — the Project Owner has approved a *direction*. This is
+  distinct from **APPROVED TO BUILD**: approving a direction is not
+  authorization to implement it (§23.2's "approve the direction is
+  not implement it" rule applies identically here).
+- **IMPLEMENTED** — the Builder (Claude Code) has built it and passed
+  its own Level 1 self-check (§23.3/§23.8). This is the highest state
+  Claude Code may reach on its own.
+- **VERIFIED** — a non-author party has independently checked the
+  implementation against the approved scope (§23.8, Level 2). This is
+  the highest state an independent reviewer may reach.
+- **CONFIRMED** — the Project Owner has accepted the work. Only the
+  Project Owner may reach this state. A CONFIRMED item may receive
+  this Handbook's normal ✅ marker.
+
+These rules apply **prospectively**, from the activation of this
+system onward. Kroki 1–14 are not retroactively downgraded or
+re-audited solely because this verification model is stronger than
+what existed when they were accepted — historical work stays governed
+by the process that existed at the time, unless a concrete defect or
+contradiction requires reopening it.
+
+### 23.8 Proportional review and the Continuity Guardian function
+
+**Level 1 — Builder self-check.** The existing §23.3 checklist,
+performed by Claude Code. Maximum resulting state: IMPLEMENTED.
+
+**Level 2 — independent non-author diff review**, required before an
+IMPLEMENTED change can become VERIFIED, for changes touching at least
+one of:
+- database migrations or schema;
+- domain contracts, entities, repository interfaces, or domain
+  services;
+- dependencies (`pubspec.yaml`/`pubspec.lock`);
+- `docs/INVARIANTS.md`;
+- QR/label/export external formats;
+- material user-facing behaviour or workflow — a meaningful change to
+  how the user/operator performs or experiences a task, not a
+  padding, colour, typo, or other trivial visual adjustment.
+
+Level 2 review checks, at minimum: the named commit SHA; evidence
+appropriate to the change; whether the diff matches the approved
+scope; whether any silent scope expansion occurred; whether relevant
+tests/evidence would actually detect a failure of the changed
+behaviour. `.claude/skills/expert-review` remains valuable Level 1
+internal quality control — it does not by itself constitute Level 2
+independent verification, because it runs as part of the Builder's own
+process before code exists.
+
+Changes outside the Level 2 trigger list stay at Level 1 — this is not
+a second Project Owner gate; §23.2 remains the Owner's approval point,
+unchanged.
+
+**Continuity Guardian function** — not a new agent, a checklist applied
+during Level 2 (or Level 1, where relevant) review. It checks for:
+- contradictions with CONFIRMED decisions;
+- contradictions with active ADRs or `docs/INVARIANTS.md`;
+- stale documentation being treated as current;
+- duplicated authority (two documents claiming to govern the same
+  topic);
+- architecture or scope drift from what was approved;
+- incorrect implementation/status claims (something marked ✅ or
+  IMPLEMENTED that the code doesn't actually support).
+
+This function operates as part of review and governance, not as
+runtime application architecture — the same boundary already drawn
+around the Expert System (§23.1, `docs/adr/expert-system-foundation.md`).
+
 ---
 
 ## 24. Future Ideas
@@ -1324,6 +1489,7 @@ archive — ADRs remain their own permanent record type).
 | Navigation | WoodFlow Command Hub (overlay portrait, rail landscape/tablet) (Ch. 5) | Radial menu; persistent bottom dock; hiding Scan inside a menu | Radial/dock don't match a drill-down hierarchy or this app's own reference brands; Scan is too high-frequency to bury |
 | Dark mode | Required (Ch. 7) | Light-only, deferred indefinitely | Explicit product requirement; `WF*` components already theme-driven, low marginal cost |
 | Cut Optimizer (Krok 15) cutting-sheet export | Deferred to Phase F — not in current v1/Stage 1 scope; general inventory Export (Krok 10, Ch. 14) unaffected, stays in v1/FREE as already implemented | Pulling cutting-sheet export into current v1 scope | Confirms the Krok 15 spec's existing Phase F deferral (`docs/specs/Krok15_CutOptimizer_Specification.md` §7/8/10) as the actual decision, not just a planning note; v1's core workflow is already satisfied by on-screen plan review; avoids expanding current v1/Stage 1 scope |
+| AI Development System V1 — roles, source of truth, decision lifecycle (Ch. 23.5–23.8) | Extend Chapter 23 in place | Standalone `AI_Development_System.md`; CI/`.github/workflows` enforcement in V1; a second Project Owner approval gate alongside §23.2 | Chapter 2's extend-not-duplicate rule; matches the `expert-system-foundation.md` precedent of process discipline over programmatic enforcement; `Decision_Framework.md`'s Independent Reviewer role already existed but was filled only by Claude Code's own self-review in practice — this closes that specific gap without new infrastructure |
 
 ---
 
