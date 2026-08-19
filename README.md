@@ -86,7 +86,9 @@ redundantnie. Patrz `docs/PRE_BUILD_AUDIT.md`.
 flutter test
 ```
 
-10 plików w `test/` — repozytoria (Warehouse, Rack/Slot, Board,
-Offcut, Organization/Decor), generowanie QR, `QrResolver`,
-`LabelDataBuilder`, `LedgerEntryFormatter`, spójność ARB
-(`arb_consistency_test.dart`).
+Pliki w `test/` (aktualna liczba i lista — patrz katalog) —
+repozytoria (Warehouse, Rack/Slot, Board, Offcut, Organization/Decor),
+generowanie QR, `QrResolver`, `LabelDataBuilder`,
+`LedgerEntryFormatter`, spójność ARB (`arb_consistency_test.dart`),
+przypadki użycia usuwania (Warehouse/Rack/Slot), ekran listy
+magazynów, kalkulatory, katalog dekorów EGGER, silnik zapytań AI.

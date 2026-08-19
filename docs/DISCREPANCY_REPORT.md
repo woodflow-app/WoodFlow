@@ -1,5 +1,10 @@
 # WoodFlow — Raport rozbieżności: Slice 1–4 vs zamrożone dokumenty
 
+**Status: Historyczny / SUPERSEDED.** Ten raport porównuje wczesne
+iteracje (Slice 1–4) z dokumentami zamrożonymi sprzed obecnej
+architektury WoodFlow. Nie opisuje dzisiejszego stanu projektu i nie
+jest aktualizowany. Aktualne źródło prawdy: `docs/WoodFlow_Handbook.md`.
+
 **Cel:** porównanie tego, co zbudowaliśmy w tej rozmowie (Backend
 Foundation, Warehouse, Board, Offcut, Cut Operation, Rack/Slot) z
 siedmioma zamrożonymi dokumentami referencyjnymi, które przesłałeś.
