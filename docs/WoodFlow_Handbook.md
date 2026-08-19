@@ -1227,6 +1227,36 @@ Every implementation phase ends with `flutter analyze` (0 issues),
 (succeeds) — reported as an explicit checklist. Commit only after
 explicit approval, even when verification is clean.
 
+**CI V1 — implemented and CONFIRMED.** GitHub Actions
+(`.github/workflows/ci.yml`) runs this same checklist automatically
+on every pull request targeting `main`: `flutter pub get`, `flutter
+gen-l10n`, `flutter analyze`, `flutter test`, `flutter build apk
+--debug`. The required status check is named **`build`** — that is
+the job name GitHub reports, not the workflow name `CI`; branch
+protection checks for `build` specifically. The workflow triggers
+only on `pull_request` events targeting `main`, not on direct pushes
+to `main`.
+
+**Branch Protection V1 — implemented and CONFIRMED**, on `main`:
+- A pull request is required before merging.
+- The `build` check must pass before merge.
+- `strict: true` — a PR's branch must be up to date with `main`
+  before it can merge; if `main` advances while the PR is open, the
+  PR may need updating and another CI run before it can merge.
+- `required_approving_review_count: 0` — no GitHub-native approval is
+  required. This is intentional for the current single-owner
+  repository: Independent Reviewer input (§23.5) happens through PR
+  comments and review threads, not GitHub's approval mechanism.
+- `enforce_admins: false` — **the repository administrator can bypass
+  this protection.** Branch Protection V1 primarily guards against
+  accidental changes and covers the normal non-admin merge path; it
+  is not an absolute technical barrier against a deliberate
+  administrator bypass. `main` is not bypass-proof.
+- Force pushes and branch deletion are both disabled.
+- Linear history is not required — plain merge commits remain
+  allowed, which preserves the merge strategy used for PR #2 (a
+  normal merge commit, not squash or rebase).
+
 ### 23.4 Commit discipline
 
 New commits, not amended ones, except when explicitly requested.
