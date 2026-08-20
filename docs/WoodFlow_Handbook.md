@@ -47,7 +47,7 @@ Nothing marked 🟡, 📝, or 🔮 gets implemented without explicit approval
 5. [Navigation — Command Hub](#5-navigation--command-hub) 📝
 6. [Visual Identity](#6-visual-identity) 🟡
 7. [Themes — Light & Dark](#7-themes--light--dark) 🟡
-8. [Responsive Design — Phone / Tablet / Desktop](#8-responsive-design--phone--tablet--desktop) 🟡/📝
+8. [Responsive Design — Phone / Tablet / Desktop](#8-responsive-design--phone-tablet--desktop) 🟡/📝
 9. [Warehouse Module](#9-warehouse-module) ✅
 10. [Inventory Management](#10-inventory-management) ✅
 11. [QR System](#11-qr-system) ✅
@@ -1085,6 +1085,16 @@ Enforced structurally unless noted:
   dependency; app stays fully usable with zero printer configured.
   `PrinterService` abstraction, same interface+`get_it` shape as
   `LabelGenerator`/`ExportGenerator`. Full record: Chapter 25.
+- **Standalone Core (generalized principle)** — the printer-integration
+  pattern above is one instance of a broader, now-named rule: *external
+  integrations are optional, never required for Core operation.* Cabinet
+  Vision, ERP systems, and any future third-party integration must never
+  become a dependency of WoodFlow Core's basic functioning — a failed or
+  disconnected integration must never cause a Core failure. Future
+  integrations are expected to extend Core, the same way `PrinterService`
+  and `ExportGenerator` extend it today, never to gate it. This section
+  names the principle; it does not design WoodFlow Connect, a public API,
+  or any specific future integration — those remain undesigned.
 - **Smart Offcut Scoring Engine** — v1 (today) collects data only; v2.x
   adds a deterministic, fully configurable rule-based score
   (Keep/Review/Scrap), always a recommendation, never automatic; v3.0
@@ -1520,6 +1530,9 @@ archive — ADRs remain their own permanent record type).
 | Dark mode | Required (Ch. 7) | Light-only, deferred indefinitely | Explicit product requirement; `WF*` components already theme-driven, low marginal cost |
 | Cut Optimizer (Krok 15) cutting-sheet export | Deferred to Phase F — not in current v1/Stage 1 scope; general inventory Export (Krok 10, Ch. 14) unaffected, stays in v1/FREE as already implemented | Pulling cutting-sheet export into current v1 scope | Confirms the Krok 15 spec's existing Phase F deferral (`docs/specs/Krok15_CutOptimizer_Specification.md` §7/8/10) as the actual decision, not just a planning note; v1's core workflow is already satisfied by on-screen plan review; avoids expanding current v1/Stage 1 scope |
 | AI Development System V1 — roles, source of truth, decision lifecycle (Ch. 23.5–23.8) | Extend Chapter 23 in place | Standalone `AI_Development_System.md`; CI/`.github/workflows` enforcement in V1; a second Project Owner approval gate alongside §23.2 | Chapter 2's extend-not-duplicate rule; matches the `expert-system-foundation.md` precedent of process discipline over programmatic enforcement; `Decision_Framework.md`'s Independent Reviewer role already existed but was filled only by Claude Code's own self-review in practice — this closes that specific gap without new infrastructure |
+| SaaS Foundation / 1000+ customers | Approved direction: WoodFlow is designed to scale as a self-service SaaS capable of eventually serving 1000+ companies, with self-service onboarding/configuration, automated billing/subscriptions/payment recovery, and monitoring/observability as approved directions — not requiring Project Owner manual handling as the normal operating model. **A durable, standing requirement within this direction: WoodFlow must give a customer the ability to recover/export their data and to end their use of the service safely, without unreasonable vendor lock-in.** This is distinct from the existing Krok 10 inventory Export (PDF/CSV/RTF, Ch. 14) — that export produces a formatted report of current stock for operational use; this requirement concerns a customer's own account data at exit, a different scope and purpose. **Backend architecture, tenant model, and provisioning are not yet designed. This is APPROVED DIRECTION, not APPROVED TO BUILD.** A future Phase 1 must still resolve: exact data scope, export format, retention policy, deletion policy, account-closure procedure, and dependency on backup/restore capability. Backup/disaster-recovery, tested restore, restore-per-tenant, dev/staging/production separation, feature flags/kill switch, and incident/status communication remain open questions for that future Phase 1 — not separately decided here. | Manual, Project-Owner-mediated onboarding/support as the permanent operating model; treating data portability as fully undecided rather than a standing customer right | A single-owner-serviced model does not scale past a small customer count; a customer's right to their own data and a clean exit is a durable commitment independent of how the export mechanism is eventually built |
+| Offline / Degraded Operation | High-priority architecture requirement: a temporary loss of internet connectivity on the shop floor must not stop core WoodFlow work, and must never cause silent data loss. This is not an open question of *whether* WoodFlow becomes SaaS — that direction is approved above — it is an open question of *how* a future SaaS/backend architecture reconciles with reliable shop-floor operation. A future Phase 1 must resolve at minimum: what works locally without internet, which operations are blocked, local queue, retry, later synchronization, conflict resolution, how offline/degraded state is signaled, protection against duplicate operations, and protection against silent data loss. **No solution is designed here. This is APPROVED DIRECTION, not APPROVED TO BUILD.** | Assuming permanent, uninterrupted connectivity as a baseline requirement | A warehouse floor connectivity gap is a realistic, recurring condition, not an edge case — naming this as a requirement now prevents a future backend design from silently assuming it away |
+| Security by Design | Durable architectural requirement: security is evaluated before any production/SaaS launch, not treated as an afterthought. A future Security Architecture Phase 1 must cover at minimum: authentication, authorization/RBAC, tenant isolation, MFA strategy, encryption in transit/at rest, secrets handling, auditability, secure logging, data access boundaries, threat modelling, data classification, and abuse/misuse scenarios. Threat modelling must explicitly ask "how could this feature/system be used against WoodFlow, a customer, or another tenant?" — not only "does it work?" **No specific mechanism is designed here; this does not become a 13th immutable Product Principle (Chapter 3 is unchanged). This is APPROVED DIRECTION, not APPROVED TO BUILD.** | Deferring security consideration until a specific incident or launch deadline forces it | Security-by-design is cheapest and most effective when the requirement is on record before architecture exists, not retrofitted after |
 
 ---
 
