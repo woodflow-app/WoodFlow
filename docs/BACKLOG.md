@@ -333,3 +333,32 @@ inventing a new interaction model.
   matching every other create/move flow in the app.
 - The recommendation is advisory only; declining it entirely (manual slot
   selection) remains fully supported and is never degraded.
+
+---
+
+## Physical Storage Safety
+
+**Priority:** High
+
+**Problem it solves:** Overcrowded or poorly organized offcut storage
+creates a real physical risk — materials stacked beyond safe capacity or
+haphazardly arranged can topple onto an operator. Today `Slot.capacity`
+exists only as a number driving the fill-ratio display (Ch. 9 of the
+Handbook) — it carries no safety semantics and triggers no warning of any
+kind when exceeded or approached.
+
+**Expected user value:** A future warning mechanism that helps operators
+and owners recognize when a Slot's physical storage is approaching an
+unsafe state, rather than relying entirely on visual judgment on the
+floor.
+
+**Dependencies:** None on unbuilt features — `Slot.capacity` already
+exists as a starting data point, though it is not assumed here to already
+solve the problem.
+
+**Acceptance criteria (future):**
+- To be defined by a future Phase 1 — this entry intentionally does not
+  specify capacity limits, overcrowding-detection logic, warning
+  thresholds, or how risk is presented to the operator.
+- Must not assume `Slot.capacity`'s existing fill-ratio number is
+  sufficient on its own without that future Phase 1 explicitly deciding so.
