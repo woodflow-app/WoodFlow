@@ -47,7 +47,7 @@ Nothing marked 🟡, 📝, or 🔮 gets implemented without explicit approval
 5. [Navigation — Command Hub](#5-navigation--command-hub) 📝
 6. [Visual Identity](#6-visual-identity) 🟡
 7. [Themes — Light & Dark](#7-themes--light--dark) 🟡
-8. [Responsive Design — Phone / Tablet / Desktop](#8-responsive-design--phone-tablet--desktop) 🟡/📝
+8. [Responsive Design — Phone / Tablet / Desktop](#8-responsive-design--phone--tablet--desktop) 🟡/📝
 9. [Warehouse Module](#9-warehouse-module) ✅
 10. [Inventory Management](#10-inventory-management) ✅
 11. [QR System](#11-qr-system) ✅
