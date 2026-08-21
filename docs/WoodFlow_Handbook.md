@@ -1334,6 +1334,13 @@ and not there:
   once a change is pushed; not a source of authority on its own (see
   §23.6).
 
+**Communication channel.** GitHub PRs are the canonical communication
+channel for Builder ↔ Independent Reviewer collaboration. The Builder
+reports implementation evidence in the PR. The Independent Reviewer
+records review findings in the PR. The Project Owner is required only
+for explicit Project Owner decisions, authorization gates, and
+CONFIRMED status.
+
 **Hard separations, non-negotiable:**
 - The author of an artifact is never that artifact's reviewer.
 - Claude Code (Builder) is never the independent verifier of its own
