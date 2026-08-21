@@ -37,3 +37,7 @@ Until then, the universal/template project remains **DEFERRED**. Do not create a
 ## Entries
 
 Append informal entries below. No required template.
+
+### 2026-08-21 — Direct-to-main governance bypass
+
+The log was created by committing directly to `main` even though the established WoodFlow workflow had been using PRs. According to the recorded session context, the direct write was performed by the ChatGPT Orchestrator; GitHub itself does not independently verify that actor because the repository records the shared `woodflow-app` account. The real reason was that it was faster and the change looked trivial; the exception was not explicitly authorised. Counterfactual: a PR probably would not have found a content defect in this small documentation-only change, but it would have preserved the workflow and avoided creating an informal precedent that “small docs can bypass PR.” `main` was reported by GitHub as `protected: true`, yet the direct commit still became `main` HEAD, proving that the protection state alone does not guarantee that direct writes are blocked.
