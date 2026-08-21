@@ -1,28 +1,31 @@
 # Product Owner TOTP Authorization — Design & Threat Model
 
-**Status:** DESIGN FOR INDEPENDENT REVIEW — NOT APPROVED FOR MERGE  
-**Approver:** Piotr Dobrowolski — Product Owner  
-**Plan/Build authorization:** GRANTED for this design scope only  
-**Merge authorization:** NOT GRANTED  
+**Status:** REVISED AFTER INDEPENDENT REVIEW — REQUIRES RE-REVIEW  
+**Authentication state:** TEXT CLAIM ONLY — NOT AUTHENTICATED  
+**Implementation authorization:** NOT GRANTED BY THIS DOCUMENT  
+**Merge authorization:** NOT GRANTED
 
 ## 1. Purpose
 
 Design a Product Owner authorization mechanism using Google Authenticator-compatible TOTP without exposing the TOTP secret or six-digit codes to ChatGPT, Claude, Claude Code, GitHub comments, or repository files.
 
-This document is the design and threat-model phase only. It does not authorize production implementation or merge.
+This document is the design and threat-model phase only. It does not itself prove Product Owner identity, authorize executable implementation, or authorize merge.
+
+Any Product Owner approval written inside this document, a PR body, a chat, or other ordinary text must be treated as `TEXT CLAIM ONLY — NOT AUTHENTICATED` unless it is backed by independently verifiable authorization evidence produced by the trusted verifier described below.
 
 ## 2. Security goals
 
 The mechanism must ensure that:
 
-1. The TOTP seed remains under Piotr Dobrowolski's control and is never stored in chat history, repository content, PR comments, logs, screenshots intended for agents, or AI prompts.
+1. The TOTP seed remains under Product Owner control and is never stored in chat history, repository content, PR comments, AI prompts, application logs, analytics, or crash reports.
 2. Six-digit TOTP codes are entered only into a dedicated verifier surface and are never copied into ChatGPT, Claude, Claude Code, or GitHub.
 3. A successful verification creates a durable authorization record that contains no reusable secret.
 4. Every authorization is bound to one explicit decision and immutable target data.
 5. `MERGE APPROVED` is bound to an exact PR number and exact independently verified HEAD SHA.
 6. A new commit after merge authorization makes the previous authorization unusable for the new HEAD.
-7. Replaying an old authorization proof for another PR, SHA, decision type, or project must fail.
+7. Replaying an old authorization proof for another PR, SHA, decision type, project, nonce, or authorization ID must fail.
 8. AI agents may verify the resulting proof/status but must not possess enough information to generate a valid Product Owner authorization themselves.
+9. The verifier is a separate trust boundary from the WoodFlow Review Bridge and from all AI agents.
 
 ## 3. Non-goals
 
@@ -34,25 +37,37 @@ This first design does not attempt to:
 - grant AI access to the TOTP seed;
 - create a general user-login system for WoodFlow customers;
 - redesign GitHub branch protection;
-- silently authorize merge based on a chat message alone.
+- silently authorize merge based on a chat message alone;
+- let a PR or document self-declare an authenticated Product Owner decision.
 
 ## 4. Proposed architecture
 
 ### 4.1 Components
 
-**A. Google Authenticator on Piotr Dobrowolski's phone**
-- Holds the TOTP account/seed.
+**A. Google Authenticator on the Product Owner's phone**
+- Holds the enrolled TOTP account.
 - Generates short-lived TOTP codes.
 - The seed and codes are never shared with AI.
 
 **B. Product Owner Authorization Verifier**
-- A small, separate trusted verifier outside ChatGPT/Claude/Claude Code.
-- Presents the exact decision payload before accepting a TOTP code.
-- Validates the TOTP code.
+- A dedicated service separate from ChatGPT, Claude, Claude Code, and `woodflow-review-bridge`.
+- Initial deployment target: a separate Cloudflare Worker in the Product Owner-controlled Cloudflare account, with a separate service name, route, bindings, logs, and deployment history.
+- The Review Bridge must not have a binding that can read the verifier's TOTP secret.
+- Presents the exact canonical decision payload before accepting a TOTP code.
+- Validates the TOTP code and replay state.
 - Produces a non-secret authorization record/proof.
-- Must not echo the submitted TOTP code into durable logs.
+- Never echoes the submitted TOTP code into durable logs or responses.
+- Fails closed if required secret storage, replay state, trusted time, or audit persistence is unavailable.
 
-**C. Authorization Record**
+**C. Verifier secret storage**
+- The verifier requires the enrolled TOTP seed in order to validate codes.
+- The seed must be stored only in a secret binding controlled by the Product Owner, such as Cloudflare Secrets Store / Worker secret storage.
+- The seed must not exist in source code, Wrangler configuration committed to Git, environment files committed to Git, PRs, chat, screenshots intended for agents, or Review Bridge bindings.
+- Enrolment/re-enrolment writes the seed directly into the verifier's secret store through a Product Owner-controlled administrative path.
+- Secret values must never be returned by health/status endpoints.
+- A future move to a different verifier runtime or secret store is an architecture/security change requiring independent review before use.
+
+**D. Authorization Record**
 Contains only non-secret metadata sufficient to audit the decision, for example:
 
 ```text
@@ -65,6 +80,7 @@ Decision payload hash: <hash>
 Authorized at: <UTC timestamp>
 Verification result: VERIFIED
 Authorization ID: <random unique identifier>
+Verifier version: <immutable version>
 ```
 
 The record must never contain:
@@ -73,7 +89,24 @@ The record must never contain:
 - submitted six-digit code;
 - reusable session secret.
 
-### 4.2 Decision payload
+### 4.2 Verifier trust boundary and operations
+
+The verifier is security-critical infrastructure and must not be treated as trusted merely because it is called a verifier.
+
+For the initial deployment:
+
+- hosting/account ownership: Product Owner-controlled Cloudflare account;
+- runtime: dedicated Cloudflare Worker, separate from the Review Bridge;
+- secret access: verifier-only secret binding; no AI/Review Bridge access;
+- deployment: explicit Product Owner-controlled deployment; no autonomous AI deployment to the verifier;
+- source changes: reviewed through the normal WoodFlow change process before deployment;
+- runtime logs: metadata only; request bodies, TOTP codes, seed material, recovery material, and authorization secrets are forbidden;
+- observability: failed verification counts, lockouts, verifier version, and non-secret authorization IDs may be logged;
+- fail-safe: if verifier integrity/version cannot be established, authorization status is `REQUIRES APPROVAL`.
+
+The verifier's own version must be included in every authorization record so later consumers can identify exactly which verifier implementation produced the evidence.
+
+### 4.3 Decision payload
 
 Before TOTP verification, the verifier constructs a canonical payload. For merge authorization it must include at minimum:
 
@@ -84,28 +117,32 @@ decision = MERGE APPROVED
 pr_number = <number>
 verified_head_sha = <40-char SHA>
 approver = Piotr Dobrowolski — Product Owner
+nonce = <single-use random value>
 ```
 
-The user must see this exact target before confirming.
+The Product Owner must see this exact target before confirming.
 
-For a plan/build authorization the payload must identify the exact plan/task/specification version or immutable digest being approved.
+For a plan/build authorization the payload must identify the exact plan/task/specification version or immutable digest being approved. A generic statement such as `PLAN + BUILD APPROVED` without an immutable target is insufficient.
 
-### 4.3 Binding and replay protection
+### 4.4 Binding and replay protection
 
 A successful TOTP check is not sufficient by itself. The resulting authorization must be tied to the canonical decision payload.
 
-The verifier must generate a unique authorization ID and payload digest. A later consumer validates that:
+The verifier must generate a unique authorization ID, single-use nonce, and payload digest. A later consumer validates that:
 
 - the decision type matches;
 - repository/project matches;
 - PR matches where applicable;
 - HEAD SHA matches exactly for merge;
 - the payload digest matches the decision presented to the Product Owner;
+- the nonce has not been consumed before;
 - the authorization has not already been invalidated or superseded.
 
 An authorization for one SHA must not validate for another SHA.
 
-### 4.4 Merge invalidation rule
+The verifier must also prevent one accepted TOTP time-step/code from being used to mint more than one authorization record. A successful verification consumes the accepted TOTP time-step for authorization purposes; a second attempt using the same accepted step must fail even if the code is still within its normal clock-validity window.
+
+### 4.5 Merge invalidation rule
 
 `MERGE APPROVED` applies only to the exact independently verified HEAD SHA named in the authorization record.
 
@@ -125,14 +162,18 @@ The changed HEAD must undergo the required independent verification before a new
 2. TOTP seed generation/enrolment must happen in the trusted verifier context, not in AI chat.
 3. The seed must never be committed to GitHub.
 4. `.env`, logs, crash reports, analytics, clipboard history, screenshots, shell history, and PR output must be considered potential leak paths.
-5. Submitted codes must be redacted and not persisted.
-6. Rate-limit failed verification attempts.
-7. Allow only a narrow clock-skew window appropriate for TOTP.
-8. Recovery/re-enrolment must require an explicit Product Owner recovery process; AI must not be able to reset TOTP by itself.
+5. Submitted codes must be redacted and must not be persisted.
+6. Failed verification attempts are limited to a maximum of **5 failures in a rolling 10-minute window** for the Product Owner verifier identity.
+7. Failure backoff is applied before another attempt is accepted: approximately **2 s, 5 s, 15 s, 30 s** for successive failures within the window; the fifth failure triggers lockout.
+8. After the fifth failure within the rolling window, verification is locked for **15 minutes** and a non-secret security event is recorded. The lockout cannot be bypassed by changing IP address, browser session, or AI agent.
+9. A successful verification clears the ordinary failure counter only after the authorization record has been durably created; it does not erase audit history.
+10. Allow only a narrow clock-skew window appropriate for TOTP; the implementation baseline is the current 30-second step plus at most one adjacent step on either side. A wider window requires a new security review.
+11. Recovery/re-enrolment must require an explicit Product Owner recovery process; AI must not be able to reset TOTP by itself.
+12. Rate limits, replay state, and lockout state must be enforced server-side in the verifier trust boundary, not only in UI code.
 
 ## 6. Authorization evidence and audit trail
 
-The durable evidence should prove what was authorized without claiming that the text record itself cryptographically proves identity.
+The durable evidence should prove what was authorized without claiming that ordinary text by itself cryptographically proves identity.
 
 Minimum evidence:
 
@@ -141,6 +182,7 @@ Minimum evidence:
 - immutable target identifiers;
 - UTC authorization timestamp;
 - unique authorization ID;
+- single-use nonce identifier or digest;
 - payload digest;
 - verifier result;
 - verifier version.
@@ -157,7 +199,7 @@ from:
 TEXT CLAIM ONLY — NOT AUTHENTICATED
 ```
 
-AI-generated text must never be allowed to upgrade itself from the second state to the first.
+AI-generated text, PR text, repository prose, commit messages, or chat statements must never be allowed to upgrade themselves from the second state to the first.
 
 ## 7. Threat model
 
@@ -165,13 +207,13 @@ AI-generated text must never be allowed to upgrade itself from the second state 
 **Risk:** AI/chat history receives a live authentication factor.  
 **Control:** codes are accepted only by the dedicated verifier. Chat instructions explicitly reject TOTP codes and direct the Product Owner to the verifier.
 
-### Threat B — TOTP seed committed or logged
+### Threat B — TOTP seed committed, logged, or exposed through the Review Bridge
 **Risk:** permanent compromise; attackers can generate future codes.  
-**Control:** seed never enters repo/chat; secret storage must be local/OS-protected; repository and logs contain only non-secret evidence.
+**Control:** seed never enters repo/chat; it exists only in verifier-only secret storage. The Review Bridge has no binding or API response that reveals it. Logs contain only non-secret evidence.
 
 ### Threat C — replay of an old authorization
-**Risk:** a valid old approval is reused for another PR/SHA.  
-**Control:** authorization is bound to canonical payload + exact identifiers; different payload must fail validation.
+**Risk:** a valid old approval is reused for another PR/SHA or repeated for the same target.  
+**Control:** authorization is bound to canonical payload + exact identifiers + single-use nonce; consumed authorization IDs/nonces cannot be reused.
 
 ### Threat D — new commit after `MERGE APPROVED`
 **Risk:** unreviewed code is merged using approval for an older HEAD.  
@@ -191,23 +233,32 @@ AI-generated text must never be allowed to upgrade itself from the second state 
 
 ### Threat H — malicious or accidental payload substitution
 **Risk:** Product Owner thinks one change is approved while verifier records another.  
-**Control:** verifier displays repository, decision, PR/task identifier, and SHA/digest before code entry; authorization record is generated from exactly the displayed canonical payload.
+**Control:** verifier displays repository, decision, PR/task identifier, SHA/digest, and nonce before code entry; authorization record is generated from exactly the displayed canonical payload.
 
 ### Threat I — clock manipulation
 **Risk:** TOTP verification window is weakened or legitimate codes fail.  
-**Control:** trusted system time, narrow skew allowance, explicit failure rather than permissive fallback.
+**Control:** trusted system time, explicit bounded skew, and failure rather than permissive fallback.
 
 ### Threat J — recovery path becomes bypass
 **Risk:** attacker or agent resets TOTP more easily than authenticating.  
 **Control:** recovery is separate, explicit, high-friction, Product-Owner-controlled, and auditable; AI cannot invoke recovery autonomously.
 
+### Threat K — verifier compromise
+**Risk:** attacker controlling the verifier can read the seed, falsify verification results, or mint authorization records.  
+**Control:** verifier is isolated from the Review Bridge and AI agents; uses verifier-only secret storage; has explicit deployment/version evidence; changes require normal review; consumers fail closed if verifier version/evidence is missing or untrusted.
+
+### Threat L — brute-force TOTP guessing
+**Risk:** six-digit code space is small enough that an unrestricted online verifier can be attacked.  
+**Control:** server-side rolling failure limit, escalating backoff, 15-minute lockout after five failures, audit event, and no IP-only bypass.
+
 ## 8. Known limitations
 
 1. Google Authenticator/TOTP proves possession of the enrolled TOTP secret at verification time; it does not by itself prove the human legal identity behind the device.
-2. If the Product Owner's phone or TOTP seed is compromised, valid approvals may be generated by an attacker until re-enrolment/revocation.
+2. If the Product Owner's phone, Cloudflare account, verifier runtime, or TOTP seed is compromised, valid approvals may be generated by an attacker until re-enrolment/revocation.
 3. TOTP does not fix GitHub ruleset bypass permissions. Repository enforcement remains a separate layer.
-4. The quality of the system depends on the verifier itself being trustworthy and correctly binding the visible decision to the generated evidence.
+4. The verifier remains a high-value trusted component; isolation and evidence reduce risk but do not make verifier compromise impossible.
 5. This design intentionally does not solve all future multi-user approval requirements; it is scoped to the current Product Owner authorization need.
+6. The concrete rate-limit and skew baselines in this document are security design choices and must themselves pass independent review before implementation.
 
 ## 9. Fail-safe rules
 
@@ -215,27 +266,33 @@ AI-generated text must never be allowed to upgrade itself from the second state 
 - If current PR HEAD differs from authorized SHA: `REQUIRES APPROVAL`.
 - If an agent sees a TOTP code in chat: do not repeat, store, or treat it as durable approval; instruct the Product Owner to use the verifier.
 - If the verifier cannot validate the exact target: STOP; never infer approval.
+- If verifier secret storage, replay state, lockout state, trusted time, or audit persistence is unavailable: STOP; never fall back to text approval.
+- If a document or PR claims `APPROVED` without verifier evidence: treat it as `TEXT CLAIM ONLY — NOT AUTHENTICATED`.
 
 ## 10. Implementation gate after this design
 
 Before executable implementation begins, an Independent Reviewer must check at minimum:
 
-- whether any secret can reach AI or GitHub;
-- whether authorization can be replayed across PRs/SHAs;
+- whether any secret can reach AI, the Review Bridge, or GitHub;
+- whether verifier secret storage and trust boundaries are concrete and enforceable;
+- whether authorization can be replayed across PRs/SHAs/nonces or reused within one TOTP time-step;
 - whether exact-SHA invalidation is enforced;
 - whether logs persist submitted TOTP codes;
+- whether brute-force protections are server-side and testable;
 - whether recovery creates a weaker bypass;
 - whether the evidence format can be fabricated by an AI and mistaken for authenticated proof;
 - whether the design accidentally creates a new way to bypass the existing Product Owner/Reviewer separation.
 
-Only after that review may the implementation phase proceed within the already approved scope. No merge to `main` is authorized by this document.
+A successful independent design review does **not** itself authorize implementation. Executable implementation requires a separate explicit Product Owner authorization bound to the reviewed design version/digest. Merge requires its own separate authorization bound to the exact independently verified PR HEAD SHA.
 
 ## 11. Current decision state
 
 ```text
-Piotr Dobrowolski — Product Owner — PLAN + BUILD APPROVED
-
-Scope: design and threat model for Google Authenticator-compatible Product Owner authorization, followed by independent review before implementation.
-
+DESIGN STATUS: REVISED AFTER INDEPENDENT REVIEW
+AUTHENTICATION STATE: TEXT CLAIM ONLY — NOT AUTHENTICATED
+IMPLEMENTATION AUTHORIZATION: NOT GRANTED BY THIS DOCUMENT
 MERGE APPROVAL: NOT GRANTED
+NEXT REQUIRED GATE: INDEPENDENT RE-REVIEW OF THIS REVISION
 ```
+
+This section intentionally does not claim authenticated Product Owner approval. Until the trusted verifier exists, ordinary repository text cannot prove the identity/authenticity of a Product Owner decision. The document therefore remains a design artifact awaiting re-review and, if it passes, a separate explicit Product Owner implementation decision.
