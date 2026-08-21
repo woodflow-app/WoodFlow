@@ -1,11 +1,12 @@
 # WoodFlow Handbook
 
-**Version:** 1.0 — **Frozen (Approved)**
-**Status:** Official project reference, approved by the Product Owner
-on 2026-08-12. Future product decisions are made against this version
-unless explicitly superseded.
+**Baseline:** v1.0 — Frozen 2026-08-12
+**Current Status:** Approved with amendments — official project
+reference, approved by the Product Owner on 2026-08-12, with
+amendments approved 2026-08-21. Future product decisions are made
+against this version unless explicitly superseded.
 **Owner:** Piotr
-**Last Updated:** 2026-08-12
+**Last Updated:** 2026-08-21
 
 This is the single source of truth for the WoodFlow project — product
 vision, design system, module documentation, architecture, and
@@ -91,9 +92,16 @@ company owner finds beautiful, and a customer immediately trusts —
 recognized eventually not only for functionality but for its own
 industrial visual identity.
 
-**Current roadmap:** Stage 1 / FREE — 15 steps ("Kroki"), 14 shipped,
-1 remaining (Cut Optimizer, Krok 15). Full canonical status: Chapter
-26.
+**Current roadmap:** Stage 1 / Essential — 15 steps ("Kroki"), 14
+shipped, 1 remaining (Cut Optimizer, Krok 15). Full canonical status:
+Chapter 26.
+
+**Long-term differentiation:** WoodFlow's edge is not replicating
+Cabinet Vision or becoming a generic inventory tool — it is building
+increasingly capable Material/Offcut/Warehouse Decision Intelligence,
+answering not just "which offcut fits?" but eventually "what is the
+best material decision for this task?" A future, distinct capability;
+not a description of what exists today.
 
 ---
 
@@ -273,7 +281,7 @@ barrel import (`design_system.dart`).
 
 ### 4.6 User Experience Principles
 
-Eight principles every screen is checked against — not aspirational
+Nine principles every screen is checked against — not aspirational
 copy, a working checklist. These are Chapter 3's Product Principles
 (specifically #3, #4, #6, #7, and now #11) applied at screen-design
 granularity, not a second, independent principle set — where one of
@@ -323,6 +331,12 @@ separate list).
    budget and an explicit rejected list, not just an approved list —
    consistency is treated as a design value in its own right, not the
    absence of one.
+9. **Maximum intelligence underneath, minimum complexity for the
+   user.** Sophisticated internal analysis is welcome; what the
+   operator sees is a simple, actionable result ("USE THIS OFFCUT,"
+   "ORDER 4 SHEETS," "SAFETY RISK"), with a "why?" available on
+   request, never forced. A complex calculation must never justify a
+   complex screen.
 
 ### 4.7 The 7-icon AppBar question — proposed resolution pending approval
 
@@ -1218,6 +1232,22 @@ For any new or significantly changed UI/visual feature:
 + UX explanation + performance impact + a concrete mockup for anything
 visual. Wait for explicit approval.
 
+**Value Gate (operationalises Principles 5 and 12, Ch. 3 — text of
+those Principles is unchanged):** for a significant feature, Phase 1
+must show a defensible reason for existing, evaluated against
+relevant business-value dimensions where evidence is reasonably
+obtainable — material, money/cost, labour time, machine time,
+purchasing, waste, downtime, stock utilisation, errors/rework, safety
+risk. Where relevant: real customer/problem evidence, competitor/
+market evidence, implementation complexity, architectural cost,
+measurement feasibility, privacy/security, and offline/degraded
+operation (Ch. 25). **A feature does not need to improve every
+dimension** — it needs sufficient value relative to its complexity/
+cost, proportionate to its size. This is not a new approval gate
+alongside Phase 1 — it is what "why does this solve a real problem"
+(Principle 5) means in practice, applied at the same point in the
+existing process.
+
 **Phase 2:** implementation, testing, refinement — only after
 approval.
 
@@ -1465,7 +1495,7 @@ opinion about the idea itself.
 | Health Check | Medium | Data-quality issues accumulate silently |
 | Diagnostics | Medium | No way to see DB/migration/sync/printer state without dev access |
 | Works with WoodFlow | Medium | No certification path for hardware vendors |
-| Feature Preview | Medium | Higher-tier features would dead-end FREE users |
+| Feature Preview | Medium | Higher-tier features would dead-end Essential users |
 | Confidence Level *(future AI)* | Low | A future scored recommendation needs a reliability indicator |
 | Explain AI *(future AI)* | Low | A future recommendation needs visible reasoning |
 
@@ -1503,6 +1533,23 @@ opinion about the idea itself.
   graphic-design work, not something procedural code produces well.
 - **Export presets** — do not exist as a persisted entity (Ch. 16.2).
 
+### 24.4 Product Intelligence research pool
+
+A broader research exercise (cross-industry candidate ideas,
+competitor evidence, Value Gate analysis) is tracked separately at
+`docs/research/PRODUCT_INTELLIGENCE_MATRIX.md`. Per Principle 9, its
+existence there is **not roadmap authority** — no candidate is
+approved, scheduled, or tier-assigned by appearing in that document.
+Each must independently pass:
+
+**Idea → Specification (including Value Gate) → Independent Review →
+Discussion → Product Owner Approval → Implementation → Verification →
+Acceptance**
+
+— the existing Ch. 23.7 decision lifecycle, unchanged. Value Gate is
+not a separate approval stage; it is part of Specification (Ch. 23.2),
+the same as for any other proposal.
+
 ---
 
 ## 25. Decision Log
@@ -1533,6 +1580,10 @@ archive — ADRs remain their own permanent record type).
 | SaaS Foundation / 1000+ customers | Approved direction: WoodFlow is designed to scale as a self-service SaaS capable of eventually serving 1000+ companies, with self-service onboarding/configuration, automated billing/subscriptions/payment recovery, and monitoring/observability as approved directions — not requiring Project Owner manual handling as the normal operating model. **A durable, standing requirement within this direction: WoodFlow must give a customer the ability to recover/export their data and to end their use of the service safely, without unreasonable vendor lock-in.** This is distinct from the existing Krok 10 inventory Export (PDF/CSV/RTF, Ch. 14) — that export produces a formatted report of current stock for operational use; this requirement concerns a customer's own account data at exit, a different scope and purpose. **Backend architecture, tenant model, and provisioning are not yet designed. This is APPROVED DIRECTION, not APPROVED TO BUILD.** A future Phase 1 must still resolve: exact data scope, export format, retention policy, deletion policy, account-closure procedure, and dependency on backup/restore capability. Backup/disaster-recovery, tested restore, restore-per-tenant, dev/staging/production separation, feature flags/kill switch, and incident/status communication remain open questions for that future Phase 1 — not separately decided here. | Manual, Project-Owner-mediated onboarding/support as the permanent operating model; treating data portability as fully undecided rather than a standing customer right | A single-owner-serviced model does not scale past a small customer count; a customer's right to their own data and a clean exit is a durable commitment independent of how the export mechanism is eventually built |
 | Offline / Degraded Operation | High-priority architecture requirement: a temporary loss of internet connectivity on the shop floor must not stop core WoodFlow work, and must never cause silent data loss. This is not an open question of *whether* WoodFlow becomes SaaS — that direction is approved above — it is an open question of *how* a future SaaS/backend architecture reconciles with reliable shop-floor operation. A future Phase 1 must resolve at minimum: what works locally without internet, which operations are blocked, local queue, retry, later synchronization, conflict resolution, how offline/degraded state is signaled, protection against duplicate operations, and protection against silent data loss. **No solution is designed here. This is APPROVED DIRECTION, not APPROVED TO BUILD.** | Assuming permanent, uninterrupted connectivity as a baseline requirement | A warehouse floor connectivity gap is a realistic, recurring condition, not an edge case — naming this as a requirement now prevents a future backend design from silently assuming it away |
 | Security by Design | Durable architectural requirement: security is evaluated before any production/SaaS launch, not treated as an afterthought. A future Security Architecture Phase 1 must cover at minimum: authentication, authorization/RBAC, tenant isolation, MFA strategy, encryption in transit/at rest, secrets handling, auditability, secure logging, data access boundaries, threat modelling, data classification, and abuse/misuse scenarios. Threat modelling must explicitly ask "how could this feature/system be used against WoodFlow, a customer, or another tenant?" — not only "does it work?" **No specific mechanism is designed here; this does not become a 13th immutable Product Principle (Chapter 3 is unchanged). This is APPROVED DIRECTION, not APPROVED TO BUILD.** | Deferring security consideration until a specific incident or launch deadline forces it | Security-by-design is cheapest and most effective when the requirement is on record before architecture exists, not retrofitted after |
+| WoodFlow Value Gate | Approved direction: significant features are evaluated against named business-value dimensions before roadmap acceptance, per Ch. 23.2 — operationalises Principles 5 and 12 (Ch. 3), whose text remains unchanged. Proportionate to feature size; not every dimension must improve, and this must not become bureaucracy blocking small, obvious improvements. **APPROVED DIRECTION.** | Accepting features on intuition/competitive pressure alone; a mandatory checklist heavy enough to block small fixes | Evidence-based prioritisation without adding a second approval gate or touching immutable Principles |
+| Subscription Value Ladder (Essential/Professional/Business/Enterprise) | Approved conceptual direction: Essential = complete core + fundamental material/time-saving workflows. Professional = deeper Material Decision Intelligence. Business = factory/workflow-level optimisation. Enterprise = organisation/multi-site optimisation. No specific existing feature is assigned to a tier by this entry, and this entry does not override any feature-to-tier assignment already explicitly approved by the Product Owner and recorded in authoritative project sources — it only avoids creating new feature-to-tier mappings here. Mapping "Decision Engine" to Professional specifically requires the separate audit tracked below. **APPROVED DIRECTION, not APPROVED TO BUILD.** | Assigning current features to tiers now without that audit; reading this entry as erasing any prior tier decision | A conceptual ladder can be recorded before its feature mapping is solved, same pattern as SaaS/Offline/Security |
+| WoodFlow Value Engine | Approved direction: where reliable data exists, WoodFlow may eventually report value created, strictly labelled: MEASURED / CALCULATED / ESTIMATED. These categories must never be merged or presented as equally certain. Never present an estimate as measured fact. Never invent ROI. Prefer no number over a misleading number. Any ESTIMATED figure's assumptions must be inspectable. This extends the Value Gate's evidence discipline to customer-facing reporting. **APPROVED DIRECTION, no reporting mechanism designed here.** | Presenting any estimate as measured fact; inventing ROI | Trust depends entirely on the three categories never blurring |
+| Material Intelligence strategic direction | Approved long-term direction (Ch. 1): Decision Engine evolves from "which offcut fits?" toward "what is the best material decision for this task?" — Material/Offcut/Warehouse/Safety/Value Intelligence. **APPROVED DIRECTION; does not authorise any current-release capability, input, or architecture.** | Treating this as approval for any specific input such as material age, reuse probability, predictive logic, AI capability, or other unapproved intelligence now | Names the destination without committing to a path, consistent with the existing SaaS/Offline/Security approved-direction pattern |
 
 ---
 
@@ -1546,7 +1597,7 @@ is authoritative for status; if this table and that file ever
 disagree, `docs/CHANGELOG.md` is wrong and needs updating to match
 reality, the same as this table would.
 
-**Stage 1 / FREE roadmap (15 steps):**
+**Stage 1 / Essential roadmap (15 steps):**
 
 | Krok | Feature | Status |
 |---|---|---|
