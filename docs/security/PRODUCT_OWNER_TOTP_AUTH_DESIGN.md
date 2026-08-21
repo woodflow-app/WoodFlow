@@ -5,6 +5,22 @@
 **Implementation authorization:** NOT GRANTED BY THIS DOCUMENT  
 **Merge authorization:** NOT GRANTED
 
+## 0. Review provenance and source-of-truth check
+
+This file is a temporary Phase 1 security design/review artifact. It is not an alternate source of WoodFlow product authority; `docs/WoodFlow_Handbook.md` remains authoritative.
+
+Before retaining this standalone artifact, the repository was checked for an existing Product Owner TOTP/authorization design and none was found on `main`. The applicable Handbook rule is Chapter 2's single-source-of-truth rule: before introducing a new document or architectural pattern, first determine whether an existing chapter or section already owns the topic; if it does, extend that existing location rather than creating duplicate authority.
+
+Canonical evidence for this check at the PR base is the Handbook blob identified by the review bridge as `2d4ba6525eeab0bbe229a2508067ddeb64a7713e`. The design remains subordinate to that Handbook. If this design later receives explicit implementation approval, any durable normative rule needed for future WoodFlow work must be folded into the Handbook or another explicitly designated durable governance location before implementation proceeds.
+
+Review history for this PR is evidence only, not authority:
+
+- initial Independent Review: request `3581ce8e-73dc-4c6f-a70a-f17497bf0424`, HEAD `f0fb54b30672e4fa64cda688e8db8d84f3bfd258`, verdict `NEEDS_CHANGES`, confidence `HIGH`;
+- second Independent Review: request `f3e978d5-10cd-4149-9953-d75ccce893e4`, HEAD `a4a2e6c83fe3f144fb5a9d68cbc7981ac95fa23c`, verdict `NEEDS_CHANGES`, confidence `MEDIUM`;
+- third Independent Review: request `15f4aae7-2b98-4635-91e0-fc6f5650c0d2`, HEAD `a4a2e6c83fe3f144fb5a9d68cbc7981ac95fa23c`, verdict `NEEDS_CHANGES`, confidence `MEDIUM`.
+
+These identifiers establish review provenance only. They do not authenticate Product Owner approval, authorize implementation, authorize merge, or mutate WoodFlow project state.
+
 ## 1. Purpose
 
 Design a Product Owner authorization mechanism using Google Authenticator-compatible TOTP without exposing the TOTP secret or six-digit codes to ChatGPT, Claude, Claude Code, GitHub comments, or repository files.
