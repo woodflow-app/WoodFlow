@@ -285,7 +285,7 @@ Nine principles every screen is checked against — not aspirational
 copy, a working checklist. These are Chapter 3's Product Principles
 (specifically #3, #4, #6, #7, and now #11) applied at screen-design
 granularity, not a second, independent principle set — where one of
-the eight below and a Chapter 3 principle appear to overlap, they're
+the nine below and a Chapter 3 principle appear to overlap, they're
 the same rule at two levels of resolution, not two rules to reconcile.
 Several also extend the three original findings from the Design
 System audit (still true, folded in below rather than kept as a
@@ -1367,7 +1367,7 @@ document ends up outranking a current decision:
 **Factual — what IS, in priority order:**
 5. Current code on `main` at a named commit SHA, plus available
    verification evidence
-6. Current status documentation — Chapter 26 for the Stage 1/FREE
+6. Current status documentation — Chapter 26 for the Stage 1/Essential
    roadmap status specifically; the ✅/🟡/📝/🔮 markers (see this
    document's own front matter) for individual chapter/feature status
 7. Historical audits
