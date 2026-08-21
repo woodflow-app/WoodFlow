@@ -21,6 +21,8 @@ Review history for this PR is evidence only, not authority:
 
 These identifiers establish review provenance only. They do not authenticate Product Owner approval, authorize implementation, authorize merge, or mutate WoodFlow project state.
 
+References below to a WoodFlow Review Bridge are separation requirements only. This design does not depend on that bridge existing. If no review/orchestration bridge existed, every verifier security requirement below would remain unchanged; the verifier must simply remain isolated from any AI or review/orchestration service that exists now or later.
+
 ## 1. Purpose
 
 Design a Product Owner authorization mechanism using Google Authenticator-compatible TOTP without exposing the TOTP secret or six-digit codes to ChatGPT, Claude, Claude Code, GitHub comments, or repository files.
@@ -68,9 +70,9 @@ This first design does not attempt to:
 - The seed and codes are never shared with AI.
 
 **B. Product Owner Authorization Verifier**
-- A dedicated service separate from ChatGPT, Claude, Claude Code, and `woodflow-review-bridge`.
+- A dedicated service separate from ChatGPT, Claude, Claude Code, and any `woodflow-review-bridge` or equivalent review/orchestration service.
 - Initial deployment target: a separate Cloudflare Worker in the Product Owner-controlled Cloudflare account, with a separate service name, route, bindings, logs, and deployment history.
-- The Review Bridge must not have a binding that can read the verifier's TOTP secret or GitHub verifier credential.
+- No review/orchestration service may have a binding that can read the verifier's TOTP secret or GitHub verifier credential.
 - Presents the exact canonical decision payload before accepting a TOTP code.
 - Independently resolves authoritative GitHub state for PR/SHA-bound decisions.
 - Validates the TOTP code and replay state.
@@ -81,7 +83,7 @@ This first design does not attempt to:
 **C. Verifier secret storage**
 - The verifier requires the enrolled TOTP seed in order to validate codes.
 - The seed must be stored only in a secret binding controlled by the Product Owner, such as Cloudflare Secrets Store / Worker secret storage.
-- The verifier's GitHub authentication material must likewise be stored only in verifier-controlled secret bindings and must not be shared with the Review Bridge or AI agents.
+- The verifier's GitHub authentication material must likewise be stored only in verifier-controlled secret bindings and must not be shared with any review/orchestration service or AI agent.
 - The TOTP seed and GitHub credentials must not exist in source code, Wrangler configuration committed to Git, environment files committed to Git, PRs, chat, screenshots intended for agents, or Review Bridge bindings.
 - Enrolment/re-enrolment writes the seed directly into the verifier's secret store through a Product Owner-controlled administrative path.
 - Secret values must never be returned by health/status endpoints.
@@ -132,8 +134,8 @@ The verifier is security-critical infrastructure and must not be treated as trus
 For the initial deployment:
 
 - hosting/account ownership: Product Owner-controlled Cloudflare account;
-- runtime: dedicated Cloudflare Worker, separate from the Review Bridge;
-- secret access: verifier-only secret bindings; no AI/Review Bridge access;
+- runtime: dedicated Cloudflare Worker, separate from any review/orchestration service;
+- secret access: verifier-only secret bindings; no AI/review-orchestration access;
 - strongly consistent state: verifier-owned Durable Object namespace;
 - authoritative PR state: verifier-only, read-only GitHub App installation access;
 - deployment: explicit Product Owner-controlled deployment; no autonomous AI deployment to the verifier;
@@ -250,9 +252,9 @@ AI-generated text, PR text, repository prose, commit messages, or chat statement
 **Risk:** AI/chat history receives a live authentication factor.  
 **Control:** codes are accepted only by the dedicated verifier. Chat instructions explicitly reject TOTP codes and direct the Product Owner to the verifier.
 
-### Threat B — TOTP seed committed, logged, or exposed through the Review Bridge
+### Threat B — TOTP seed committed, logged, or exposed through a review/orchestration service
 **Risk:** permanent compromise; attackers can generate future codes.  
-**Control:** seed never enters repo/chat; it exists only in verifier-only secret storage. The Review Bridge has no binding or API response that reveals it. Logs contain only non-secret evidence.
+**Control:** seed never enters repo/chat; it exists only in verifier-only secret storage. Review/orchestration services have no binding or API response that reveals it. Logs contain only non-secret evidence.
 
 ### Threat C — replay of an old authorization
 **Risk:** a valid old approval is reused for another PR/SHA or repeated for the same target.  
@@ -288,7 +290,7 @@ AI-generated text, PR text, repository prose, commit messages, or chat statement
 
 ### Threat K — verifier compromise
 **Risk:** attacker controlling the verifier can read the seed, GitHub credential, falsify verification results, or mint authorization records.  
-**Control:** verifier is isolated from the Review Bridge and AI agents; uses verifier-only secret storage and strongly consistent state; has explicit deployment/version evidence; changes require normal review; consumers fail closed if verifier version/evidence is missing or untrusted.
+**Control:** verifier is isolated from review/orchestration services and AI agents; uses verifier-only secret storage and strongly consistent state; has explicit deployment/version evidence; changes require normal review; consumers fail closed if verifier version/evidence is missing or untrusted.
 
 ### Threat L — brute-force TOTP guessing
 **Risk:** six-digit code space is small enough that an unrestricted online verifier can be attacked.  
@@ -320,7 +322,7 @@ AI-generated text, PR text, repository prose, commit messages, or chat statement
 
 Before executable implementation begins, an Independent Reviewer must check at minimum:
 
-- whether any secret can reach AI, the Review Bridge, or GitHub;
+- whether any secret can reach AI, a review/orchestration service, or GitHub;
 - whether verifier secret storage and trust boundaries are concrete and enforceable;
 - whether Durable Object state transitions make nonce, authorization-ID, accepted-TOTP-step, failure-counter, and lockout handling strongly consistent and race-safe;
 - whether authorization can be replayed across PRs/SHAs/nonces or reused within one TOTP time-step;
