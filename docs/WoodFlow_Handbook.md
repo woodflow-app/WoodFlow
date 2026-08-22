@@ -1468,6 +1468,51 @@ This function operates as part of review and governance, not as
 runtime application architecture — the same boundary already drawn
 around the Expert System (§23.1, `docs/adr/expert-system-foundation.md`).
 
+### 23.9 Independent Review Bridge — runtime verification
+
+**Operating contract.** The Independent Review Bridge classifies
+failures before deciding queue behaviour.
+
+- **Terminal (non-retryable).** Explicitly known deterministic local
+  error codes may be classified as terminal. A terminal failure
+  results in queue acknowledgement rather than retry, so no further
+  review attempt is made for that message.
+- **Retryable.** HTTP-response failures, network failures, and
+  unrecognised/unknown failures remain retryable — the deliberate
+  Design B choice: uncertain failures retain the previous retry
+  behaviour rather than being permanently discarded on insufficient
+  evidence.
+
+The Independent Review Bridge remains GitHub-writes-disabled; its
+review role is advisory. This write-disabled constraint applies to
+the Independent Review Bridge specifically — a separate system from
+ChatGPT's own GitHub connector, whose distinct mutation capability
+and the resulting capability/authority ambiguity are recorded in
+`docs/GOVERNANCE-FRICTION-LOG.md`. A pull request whose diff exceeds
+the configured size limit may be terminally rejected and therefore
+receive no independent review — a real production limitation, not
+only a test condition. `QUEUE_TERMINAL_FAILURE_ACKNOWLEDGED`
+currently has no user-visible notification, so a pull request may
+remain unreviewed unless observability is checked — a known
+operational limitation. `bridgeVersion` should be incremented
+whenever deployed bridge behaviour changes, so `/health` can identify
+the deployed contract.
+
+**Verification state.** Runtime-verified end to end: 1 of 13 terminal
+error codes (`PULL_REQUEST_DIFF_TOO_LARGE`). Runtime-tested Worker
+version: `b04b7d96-5d56-480c-b352-12b1e6e15f26`. The remaining 12
+terminal codes have no runtime end-to-end proof from this checkpoint.
+No automated-test evidence has been produced for the remaining 12
+codes. Safe reproduction would require merging special failure
+conditions into `main` or deliberately damaging secrets/configuration,
+neither of which was accepted for this checkpoint. **Design B must
+therefore not be described as fully runtime verified.**
+
+The executable Worker source remains the factual authority for
+implementation behaviour (§23.6); this section records the
+relied-upon operating contract and current verification boundary,
+not implementation detail.
+
 ---
 
 ## 24. Future Ideas
@@ -1580,6 +1625,7 @@ archive — ADRs remain their own permanent record type).
 | SaaS Foundation / 1000+ customers | Approved direction: WoodFlow is designed to scale as a self-service SaaS capable of eventually serving 1000+ companies, with self-service onboarding/configuration, automated billing/subscriptions/payment recovery, and monitoring/observability as approved directions — not requiring Project Owner manual handling as the normal operating model. **A durable, standing requirement within this direction: WoodFlow must give a customer the ability to recover/export their data and to end their use of the service safely, without unreasonable vendor lock-in.** This is distinct from the existing Krok 10 inventory Export (PDF/CSV/RTF, Ch. 14) — that export produces a formatted report of current stock for operational use; this requirement concerns a customer's own account data at exit, a different scope and purpose. **Backend architecture, tenant model, and provisioning are not yet designed. This is APPROVED DIRECTION, not APPROVED TO BUILD.** A future Phase 1 must still resolve: exact data scope, export format, retention policy, deletion policy, account-closure procedure, and dependency on backup/restore capability. Backup/disaster-recovery, tested restore, restore-per-tenant, dev/staging/production separation, feature flags/kill switch, and incident/status communication remain open questions for that future Phase 1 — not separately decided here. | Manual, Project-Owner-mediated onboarding/support as the permanent operating model; treating data portability as fully undecided rather than a standing customer right | A single-owner-serviced model does not scale past a small customer count; a customer's right to their own data and a clean exit is a durable commitment independent of how the export mechanism is eventually built |
 | Offline / Degraded Operation | High-priority architecture requirement: a temporary loss of internet connectivity on the shop floor must not stop core WoodFlow work, and must never cause silent data loss. This is not an open question of *whether* WoodFlow becomes SaaS — that direction is approved above — it is an open question of *how* a future SaaS/backend architecture reconciles with reliable shop-floor operation. A future Phase 1 must resolve at minimum: what works locally without internet, which operations are blocked, local queue, retry, later synchronization, conflict resolution, how offline/degraded state is signaled, protection against duplicate operations, and protection against silent data loss. **No solution is designed here. This is APPROVED DIRECTION, not APPROVED TO BUILD.** | Assuming permanent, uninterrupted connectivity as a baseline requirement | A warehouse floor connectivity gap is a realistic, recurring condition, not an edge case — naming this as a requirement now prevents a future backend design from silently assuming it away |
 | Security by Design | Durable architectural requirement: security is evaluated before any production/SaaS launch, not treated as an afterthought. A future Security Architecture Phase 1 must cover at minimum: authentication, authorization/RBAC, tenant isolation, MFA strategy, encryption in transit/at rest, secrets handling, auditability, secure logging, data access boundaries, threat modelling, data classification, and abuse/misuse scenarios. Threat modelling must explicitly ask "how could this feature/system be used against WoodFlow, a customer, or another tenant?" — not only "does it work?" **No specific mechanism is designed here; this does not become a 13th immutable Product Principle (Chapter 3 is unchanged). This is APPROVED DIRECTION, not APPROVED TO BUILD.** | Deferring security consideration until a specific incident or launch deadline forces it | Security-by-design is cheapest and most effective when the requirement is on record before architecture exists, not retrofitted after |
+| Independent Review Bridge retry classification | Design B — only explicitly known deterministic local error codes are terminal; HTTP/network/unknown failures remain retryable (§23.9) | Design A — classifying retryability from an HTTP-status allowlist/denylist | Evidence was insufficient to safely classify HTTP status families as terminal — the same status can represent different failure families; Design B preserves existing retry behaviour for uncertain/network failures |
 | WoodFlow Value Gate | Approved direction: significant features are evaluated against named business-value dimensions before roadmap acceptance, per Ch. 23.2 — operationalises Principles 5 and 12 (Ch. 3), whose text remains unchanged. Proportionate to feature size; not every dimension must improve, and this must not become bureaucracy blocking small, obvious improvements. **APPROVED DIRECTION.** | Accepting features on intuition/competitive pressure alone; a mandatory checklist heavy enough to block small fixes | Evidence-based prioritisation without adding a second approval gate or touching immutable Principles |
 | Subscription Value Ladder (Essential/Professional/Business/Enterprise) | Approved conceptual direction: Essential = complete core + fundamental material/time-saving workflows. Professional = deeper Material Decision Intelligence. Business = factory/workflow-level optimisation. Enterprise = organisation/multi-site optimisation. No specific existing feature is assigned to a tier by this entry, and this entry does not override any feature-to-tier assignment already explicitly approved by the Product Owner and recorded in authoritative project sources — it only avoids creating new feature-to-tier mappings here. Mapping "Decision Engine" to Professional specifically requires the separate audit tracked below. **APPROVED DIRECTION, not APPROVED TO BUILD.** | Assigning current features to tiers now without that audit; reading this entry as erasing any prior tier decision | A conceptual ladder can be recorded before its feature mapping is solved, same pattern as SaaS/Offline/Security |
 | WoodFlow Value Engine | Approved direction: where reliable data exists, WoodFlow may eventually report value created, strictly labelled: MEASURED / CALCULATED / ESTIMATED. These categories must never be merged or presented as equally certain. Never present an estimate as measured fact. Never invent ROI. Prefer no number over a misleading number. Any ESTIMATED figure's assumptions must be inspectable. This extends the Value Gate's evidence discipline to customer-facing reporting. **APPROVED DIRECTION, no reporting mechanism designed here.** | Presenting any estimate as measured fact; inventing ROI | Trust depends entirely on the three categories never blurring |
