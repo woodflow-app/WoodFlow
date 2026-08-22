@@ -1491,15 +1491,22 @@ and the resulting capability/authority ambiguity are recorded in
 `docs/GOVERNANCE-FRICTION-LOG.md`. A pull request whose diff exceeds
 the configured size limit may be terminally rejected and therefore
 receive no independent review — a real production limitation, not
-only a test condition.
+only a test condition. `QUEUE_TERMINAL_FAILURE_ACKNOWLEDGED`
+currently has no user-visible notification, so a pull request may
+remain unreviewed unless observability is checked — a known
+operational limitation. `bridgeVersion` should be incremented
+whenever deployed bridge behaviour changes, so `/health` can identify
+the deployed contract.
 
 **Verification state.** Runtime-verified end to end: 1 of 13 terminal
-error codes (`PULL_REQUEST_DIFF_TOO_LARGE`). The remaining 12 terminal
-codes have no runtime end-to-end proof from this checkpoint — safe
-reproduction would require merging special failure conditions into
-`main` or deliberately damaging secrets/configuration, neither of
-which was accepted for this checkpoint. **Design B must therefore not
-be described as fully runtime verified.**
+error codes (`PULL_REQUEST_DIFF_TOO_LARGE`). Runtime-tested Worker
+version: `b04b7d96-5d56-480c-b352-12b1e6e15f26`. The remaining 12
+terminal codes have no runtime end-to-end proof from this checkpoint.
+No automated-test evidence has been produced for the remaining 12
+codes. Safe reproduction would require merging special failure
+conditions into `main` or deliberately damaging secrets/configuration,
+neither of which was accepted for this checkpoint. **Design B must
+therefore not be described as fully runtime verified.**
 
 The executable Worker source remains the factual authority for
 implementation behaviour (§23.6); this section records the
